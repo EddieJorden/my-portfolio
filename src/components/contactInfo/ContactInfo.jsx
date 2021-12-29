@@ -16,13 +16,13 @@ const ContactInfo = () => {
                             <h2>Eddie Moger</h2>
                             <h3>email <span><a href="mailto:emoger@gmail.com">emoger@gmail.com</a></span></h3>
                             <h3>phone <span><a href="tel:650-218-6940">650-218-6940</a></span></h3>
-                            <h3><a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/">my linkedIn</a></h3>
-                            <h3><Link to="/Resume">Resume</Link></h3>
+                            <h3>github <span><a href="https://github.com/EddieJorden">My Github</a></span></h3>
+                            <h3>linkedIn <a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/">My Linkedin</a></h3>
+                            <h3>Resume <Link to="/Resume">My Resume</Link></h3>
                             <NavButton buttonText='home' linkTo='/'/>
                         </td>
                     </tr>
                 </tbody>
-                
             </table>
         </div>
     )
