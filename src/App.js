@@ -1,13 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import ContactInfo from './components/contactInfo/ContactInfo';
+import { Routes, Route, Link } from "react-router-dom";
+import MyResume from './components/myResume/MyResume';
+import Home from './components/home/Home';
+
 
 function App() {
   return (
     <div className="App">
       <div>
-        <h1>Eddie Moger</h1>
-        <h2>front end web developer</h2>
-        <h3>based out of Silicon Valley CA</h3>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/ContactInfo" element={<ContactInfo />} />
+          <Route path="/Resume" element={<MyResume />}/>
+        </Routes>
       </div>
     </div>
   );
