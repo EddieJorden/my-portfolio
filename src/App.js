@@ -3,6 +3,7 @@ import ContactInfo from './components/contactInfo/ContactInfo';
 import { Routes, Route } from "react-router-dom";
 import MyResume from './components/myResume/MyResume';
 import Home from './components/home/Home';
+import ThreeJs from './components/threeJsBackground/ThreeJsBackground';
 
 function App() {
 
@@ -11,8 +12,9 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="/ContactInfo" element={<ContactInfo />} />
+          <Route path="/ContactInfo" element={<ContactInfo />}/>
           <Route path="/Resume" element={<MyResume />}/>
+          <Route path="/threejs" element={<ThreeJs />}/>
         </Routes>
       </div>
     </div>

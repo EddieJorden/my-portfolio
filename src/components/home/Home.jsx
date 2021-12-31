@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import NavButton from "../navButton/NavButton";
-// import * as THREE from "three";
-// import componentDidMount from 'react';
 
 class Home extends Component {
 
-      render() {
+    render() {
         return (
             <div>
                 <h1>This is the Home Page</h1>
@@ -17,8 +15,7 @@ class Home extends Component {
                 </div>
             </div>
         )
-      }
-    
+    }
 };
 
 export default Home;
