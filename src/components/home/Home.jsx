@@ -3,9 +3,20 @@ import NavButton from "../navButton/NavButton";
 import styled from 'styled-components'
 
 const HomeDiv = styled.div`
+    .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 1rem;
+        grid-auto-flow: row;
+    }
+
+    h1 {
+        text-shadow: 1px 1px white, 1px 1px white, 1px 1px white, 1px 1px white,;
+    }
+
     @media (max-width: 375px) {
         img {
-            width: 100%;
+            width: 200%;
             align-items: center;
             margin-bottom: 0px;
         }
@@ -25,12 +36,35 @@ const HomeDiv = styled.div`
         }
 
         .moger {
-            margin-bottom: 35px
+            margin-bottom: 50px
         }
 
         .info {
             margin: 0px;
             padding: 0px;
+        }
+    }
+
+    @media (min-width: 376px) and (max-width: 1079px) {
+        .container {
+            grid-template-column: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            color: red;
+            grid-column: 2 / span 1;
+            grid-row:
+        }
+    }
+
+    @media (min-width: 1080px) {
+        img {
+            width: 100%;
         }
     }
 `
@@ -40,8 +74,8 @@ class Home extends Component {
     render() {
         return (
             <HomeDiv>
-                <div>
-                    <img src="/PXL_20210320_171356477.jpeg" alt="me apreciating ancient knowledge" style={{ maxHeight: "80vh", maxWidth: "100%" }}/>
+                <div class="container">
+                    <img src="/PXL_20210320_171356477.jpeg" alt="me apreciating ancient knowledge" />
                 </div>
                 <div class="info" style={{ padding: '15px', margin: '15px', textAlign: 'right' }}>
                     <h1 class="eddie" style={{ lineHeight: '7px', fontSize: '52px' }}>Eddie </h1>
@@ -50,14 +84,7 @@ class Home extends Component {
                     <h3 style={{ lineHeight: '0px' }}>Engineer</h3>
                 </div>
                 <div>
-                    <div>
-                        <NavButton buttonText="Contact Info" linkTo='/ContactInfo'/>
-                    </div>
-                    <span>
-                        <div>
-                        <NavButton buttonText="Resume" linkTo='/Resume'/>
-                        </div>
-                    </span>
+                    <NavButton buttonText="More Info" linkTo='/ContactInfo'/>
                 </div>
             </HomeDiv>
         )

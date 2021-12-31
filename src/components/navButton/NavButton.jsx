@@ -8,6 +8,7 @@ const Button = styled.button`
     color: #5FFAC5;
     padding: 0.25em 1em;
     margin: 5px;
+    font-size: 27px;
 `
 
 const NavButton = (props) => {
