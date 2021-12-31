@@ -7,6 +7,7 @@ const Button = styled.button`
     border: 2px solid #FF8C00;
     color: #FF8C00;
     padding: 0.25em 1em;
+    margin: 5px;
 `
 
 const NavButton = (props) => {
