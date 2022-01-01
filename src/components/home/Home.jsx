@@ -143,7 +143,7 @@ class Home extends Component {
                         <ul><h1 class="moger" >Moger </h1></ul>
                         <ul><h3 class="software" >Software </h3></ul>
                         <ul><h3 class="engineer" >Engineer </h3></ul>
-                        <ul style={{justifyContent: "bottom"}}><NavButton buttonText="More Info" linkTo='/ContactInfo'/></ul>
+                        <ul ><NavButton buttonText="More Info" linkTo='/ContactInfo'/></ul>
                     </list>
                 </div>
             </HomeDiv>

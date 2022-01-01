@@ -9,6 +9,11 @@ const Button = styled.button`
     padding: 0.25em 1em;
     margin: 5px;
     font-size: 27px;
+    
+   :hover {
+        cursor: pointer;
+       border: 4px solid #3BEFF5;
+    } 
 `
 
 const NavButton = (props) => {
