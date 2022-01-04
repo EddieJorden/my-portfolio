@@ -4,7 +4,7 @@ const MyResume = () => {
     return (
         <div>
             <h1>My Resume</h1>
-            <iframe src="Eddie Moger Resume.pdf" title="myResume" width="100%" height="500px">
+            <iframe src="Eddie Moger Resume.pdf#zoom=40" title="myResume" width="340px" height="468px">
             </iframe>
             <div>
                 <NavButton buttonText='Contact Info' linkTo='/ContactInfo'/>

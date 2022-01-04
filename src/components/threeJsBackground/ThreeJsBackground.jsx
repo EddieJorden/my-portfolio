@@ -32,14 +32,6 @@ const ThreeJs = () => {
     };
 
     animate();
-
-    return (
-        <div>
-            <>
-                hello there
-            </>
-        </div>
-    );
 }
 
 export default ThreeJs;

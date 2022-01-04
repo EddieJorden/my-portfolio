@@ -3,7 +3,7 @@ import ContactInfo from './components/contactInfo/ContactInfo';
 import { Routes, Route } from "react-router-dom";
 import MyResume from './components/myResume/MyResume';
 import Home from './components/home/Home';
-import ThreeJs from './components/threeJsBackground/ThreeJsBackground';
+import ThreeJs from './components/threeJsBackground/ThreeJsRoute';
 
 function App() {
 
