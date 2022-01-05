@@ -1,10 +1,11 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const HomeDiv = styled.div`
+export const MyResumeDiv = styled.div`
 max-height: 100vh;
 max-width: 100%;
 
-img {
+iframe {
+
     max-height: 100vh;
     max-width: 100%;
 }
@@ -12,7 +13,8 @@ img {
 @media (max-width: 777px) {
     grid-column-layout: 1fr;
 
-    img {
+    iframe {
+        src: "Eddie Moger Resume.pdf#zoom=40"
         max-height: 61vh;
     }
 }
@@ -21,7 +23,12 @@ img {
     display: grid;
     grid-column-layout: .62fr .38fr;
 
-    .home-div {
+    iframe {
+        min-height: 100vh;
+        min-width: 95%
+    }
+
+    .my-resume {
         grid-column-start: 2;
         text-align: left;
         margin: auto;

@@ -7,8 +7,8 @@ class Home extends Component {
     render() {
         return (
             <HomeDiv>
-                <div class="container">
-                    <img src="/EddieInTheCity.jpeg" alt="me apreciating ancient knowledge and wisdom" />
+                <img src="/EddieInTheCity.jpeg" alt="me apreciating ancient knowledge and wisdom" />
+                <div class="home-div">
                     <list>
                         <ul><h1 class="eddie" >Eddie </h1></ul>
                         <ul><h1 class="moger" >Moger </h1></ul>
