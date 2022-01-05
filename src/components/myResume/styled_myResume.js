@@ -6,15 +6,14 @@ max-width: 100%;
 
 iframe {
 
-    max-height: 100vh;
-    max-width: 100%;
+
 }
 
 @media (max-width: 777px) {
     grid-column-layout: 1fr;
 
     iframe {
-        src: "Eddie Moger Resume.pdf#zoom=40"
+        min-width: 100%;
         max-height: 61vh;
     }
 }
@@ -24,8 +23,11 @@ iframe {
     grid-column-layout: .62fr .38fr;
 
     iframe {
-        min-height: 100vh;
-        min-width: 95%
+        max-height: 98vh;
+        max-width: 98%;
+        min-height: 98vh;
+        min-width: 98%;
+
     }
 
     .my-resume {

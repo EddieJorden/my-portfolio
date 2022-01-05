@@ -4,7 +4,7 @@ import { MyResumeDiv } from './styled_myResume';
 const MyResume = () => {
     return (
         <MyResumeDiv>
-            <iframe src="Eddie Moger Resume.pdf#zoom=75" title="myResume" width="340px" height="468px"></iframe>
+            <iframe src="Eddie Moger Resume.pdf#zoom=62" title="myResume" width="340px" height="468px"></iframe>
             <div class="my-resume">
                 <h1>My Resume</h1>
                 <div>
