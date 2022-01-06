@@ -2,6 +2,33 @@
   text-align: center;
 }
 
+.App a {
+  color: #E0FFFF;
+  margin: 4px;
+  padding: 4px;
+  margin-right: 32px;
+  font-size: 2vw;
+}
+
+.App a:hover {
+  color: #33FF29;
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.App h1 {
+  font-size: 5vw;
+}
+
+.App h2 {
+  font-size: 4vw;
+}
+
+.App h3 {
+  font-size: 2vw;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,20 +64,7 @@
   }
 }
 
-a {
-  color: #E0FFFF;
-  margin: 4px;
-  padding: 4px;
-  margin-right: 32px;
-  font-size: 14px;
-}
 
-a:hover {
-  color: #33FF29;
-  font-size: 18px;
-  margin: 0px;
-  padding: 0px;
-}
 
 
 

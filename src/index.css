@@ -4,7 +4,6 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace; 
-    font-size: 12px; 
     color: var(--color-text-primary); 
     word-wrap: normal; 
     /* white-space: pre;  */
