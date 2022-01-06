@@ -11,7 +11,7 @@ img {
 }
 
 .home-div {
-    background-color: red;
+
 
 }
 
