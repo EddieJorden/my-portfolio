@@ -16,7 +16,7 @@ const ContactInfo = () => {
                     <ul><h3>phone: <span><a href="tel:650-218-6940">650-218-6940</a></span></h3></ul>
                     <ul><h3>github: <span><a href="https://github.com/EddieJorden">My Github</a></span></h3></ul>
                     <ul><h3>linkedIn: <a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/">My Linkedin</a></h3></ul>
-                    <ul><h3>resume: <Link to="/Resume">My Resume</Link></h3></ul>
+                    <ul><h3>resume: <Link to="/my-portfolio/Resume">My Resume</Link></h3></ul>
                     <ul>
                         <NavButton buttonText='home' linkTo='/'/>
                     </ul>

@@ -38,11 +38,18 @@
 }
 
 a {
-  color: #E0FFFF
+  color: #E0FFFF;
+  margin: 4px;
+  padding: 4px;
+  margin-right: 32px;
+  font-size: 14px;
 }
 
 a:hover {
-  color: #33FF29
+  color: #33FF29;
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
 }
 
 

@@ -18,9 +18,10 @@ const Button = styled.button`
 
 const NavButton = (props) => {
     console.log('props', props)
+    let buttonLink = `/my-portfolio${props.linkTo}`
     return (
         <div>
-            <Link to={props.linkTo}>
+            <Link to={buttonLink}>
                 <Button>
                     {props.buttonText}
                 </Button>
