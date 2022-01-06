@@ -1,12 +1,33 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const HomeDiv = styled.div`
 max-height: 100vh;
-max-width: 100%;
+min-width: 50%;
 
 img {
     max-height: 100vh;
     max-width: 100%;
+    align: right;
+}
+
+.home-div {
+    background-color: red;
+
+}
+
+.img-div {
+
+    margin-right: -40px;
+    padding-right: 0px;
+}
+
+ul {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.button-div {
+
 }
 
 @media (max-width: 777px) {

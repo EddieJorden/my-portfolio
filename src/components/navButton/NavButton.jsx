@@ -6,13 +6,15 @@ const Button = styled.button`
     border-radius: 6px;
     border: 2px solid #33FF29;
     color: #3BEFF5;
-    padding: 0.25em 1em;
-    margin: 5px;
+    padding: 0.5vw 1.5vw;
     font-size: 2vw;
-    
+    margin: -10px;
+
+
    :hover {
         cursor: pointer;
-       border: 4px solid #3BEFF5;
+        border: 4px solid #3BEFF5;
+        margin-left: -1px;
     } 
 `
 
