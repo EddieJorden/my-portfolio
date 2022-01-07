@@ -10,8 +10,8 @@ img {
     max-width: 100%;
 }
 
-.button-div {
-margin-left: 0px;
+ul {
+    padding-inline-start: 0px;
 }
 
 @media (max-width: 777px) {
@@ -28,7 +28,7 @@ margin-left: 0px;
 
     .home-div {
         grid-column-start: 2;
-        text-align: left;
+
         margin: auto;
         margin-left: 0px;
     }

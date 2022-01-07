@@ -9,6 +9,21 @@ img {
     max-width: 100%;
 }
 
+.a {
+    color: #E0FFFF;
+    margin: 8px;
+    padding: 8px;
+    margin-right: 38px;
+}
+
+a:hover {
+    color: #33FF29;
+  }
+
+ul {
+    padding-inline-start: 0px;
+}
+
 .button-container {
     margin-left: 100px
 }
@@ -29,7 +44,6 @@ img {
         grid-column-start: 2;
         text-align: left;
         margin: auto;
-        margin-left: 0px;
     }
 }
 `

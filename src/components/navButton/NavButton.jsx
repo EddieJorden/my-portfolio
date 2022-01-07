@@ -16,7 +16,6 @@ const Button = styled.button`
    :hover {
         cursor: pointer;
         border: 4px solid #3BEFF5;
-
     } 
 `
 

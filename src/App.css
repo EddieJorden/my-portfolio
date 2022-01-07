@@ -2,21 +2,6 @@
   text-align: center;
 }
 
-.App a {
-  color: #E0FFFF;
-  margin: 8px;
-  padding: 8px;
-  margin-right: 38px;
-  /* font-size: min(6vw); */
-}
-
-.App a:hover {
-  color: #33FF29;
-  /* font-size: min(8vw); */
-  /* margin: 0px;
-  padding: 0px; */
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

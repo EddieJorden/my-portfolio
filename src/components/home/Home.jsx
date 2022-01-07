@@ -15,9 +15,9 @@ const Home = () => {
                         <ul><h3 class="software" >Software </h3></ul>
                         <ul><h3 class="engineer" >Engineer </h3></ul>
                     </list>
-                    <div class="button-div">
+
                         <NavButton buttonText="More Info" linkTo='/ContactInfo'/>
-                    </div>
+                    
                 </div>
             </HomeDiv>
         )
