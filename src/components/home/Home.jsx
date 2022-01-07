@@ -2,14 +2,12 @@ import React, { Component } from "react";
 import NavButton from "../navButton/NavButton";
 import { HomeDiv } from "./styled_home"
 
-class Home extends Component {
+const Home = () => {
 
-    render() {
+
         return (
             <HomeDiv>
-                <div class="image-div">
-                    <img src="EddieInTheCity.jpeg" alt="Eddie in the city"/>
-                </div>
+                <img src="EddieInTheCity.jpeg" alt="Eddie in the city"/>
                 <div class="home-div">
                     <list>
                         <ul><h1 class="eddie" >Eddie </h1></ul>
@@ -23,7 +21,7 @@ class Home extends Component {
                 </div>
             </HomeDiv>
         )
-    }
+    
 };
 
 export default Home;

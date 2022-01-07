@@ -4,30 +4,14 @@ export const HomeDiv = styled.div`
 max-height: 100vh;
 min-width: 50%;
 
+
 img {
     max-height: 100vh;
     max-width: 100%;
-    align: right;
-}
-
-.home-div {
-
-
-}
-
-.img-div {
-
-    margin-right: -40px;
-    padding-right: 0px;
-}
-
-ul {
-    margin-left: 0px;
-    padding-left: 0px;
 }
 
 .button-div {
-
+margin-left: 0px;
 }
 
 @media (max-width: 777px) {
@@ -47,6 +31,7 @@ ul {
         text-align: left;
         margin: auto;
         margin-left: 0px;
+        background-color: red;
     }
 }
 `

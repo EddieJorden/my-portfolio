@@ -9,11 +9,19 @@ img {
     max-width: 100%;
 }
 
+.contact-info {
+    
+}
+
+.button-container {
+    margin-left: 100px
+}
+
 @media (max-width: 777px) {
     grid-column-layout: 1fr;
 
     img {
-        max-height: 61vh;
+        max-height: 38vh;
     }
 }
 

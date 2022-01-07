@@ -4,29 +4,17 @@
 
 .App a {
   color: #E0FFFF;
-  margin: 4px;
-  padding: 4px;
-  margin-right: 32px;
-  font-size: 2vw;
+  margin: 8px;
+  padding: 8px;
+  margin-right: 38px;
+  /* font-size: min(6vw); */
 }
 
 .App a:hover {
   color: #33FF29;
-  font-size: 2vw;
-  margin: 0px;
-  padding: 0px;
-}
-
-.App h1 {
-  font-size: 5vw;
-}
-
-.App h2 {
-  font-size: 4vw;
-}
-
-.App h3 {
-  font-size: 2vw;
+  /* font-size: min(8vw); */
+  /* margin: 0px;
+  padding: 0px; */
 }
 
 .App-logo {
@@ -63,10 +51,3 @@
     transform: rotate(360deg);
   }
 }
-
-
-
-
-
-
-
