@@ -7,15 +7,11 @@ const Button = styled.button`
     border: 2px solid #33FF29;
     color: #3BEFF5;
     padding: 0.5vw 1.5vw;
-
-
-
-    margin: -10px;
-
-
+    margin: 4px;
    :hover {
         cursor: pointer;
         border: 4px solid #3BEFF5;
+        margin: 2px;
     } 
 `
 

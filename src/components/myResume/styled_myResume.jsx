@@ -4,37 +4,44 @@ export const MyResumeDiv = styled.div`
 max-height: 100vh;
 max-width: 100%;
 
-iframe {
-
-
+.button-container {
+    min-height: 50px
 }
 
-@media (max-width: 777px) {
+.contact-info-button, .home-button {
+    min-height: 50px;
+    padding: 10px;
+}
+
+@media (max-width: 805px) {
     grid-column-layout: 1fr;
 
     iframe {
         min-width: 100%;
+        max-width: 100%;
         max-height: 61vh;
     }
 }
 
-@media (min-width: 778px) {
+@media (min-width: 550px) {
     display: grid;
     grid-column-layout: .62fr .38fr;
+
+    iframe-div {
+        text-align: right;
+    }
 
     iframe {
         max-height: 98vh;
         max-width: 98%;
         min-height: 98vh;
         min-width: 98%;
-
     }
 
     .my-resume {
         grid-column-start: 2;
-        text-align: left;
+
         margin: auto;
-        margin-left: 0px;
     }
 }
 `

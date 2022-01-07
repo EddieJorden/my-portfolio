@@ -7,10 +7,11 @@ max-width: 100%;
 img {
     max-height: 100vh;
     max-width: 100%;
+    text-align: right;
 }
 
 .a {
-    color: #E0FFFF;
+    color: white;
     margin: 8px;
     padding: 8px;
     margin-right: 38px;
@@ -22,28 +23,58 @@ a:hover {
 
 ul {
     padding-inline-start: 0px;
+    margin: 0px;
+}
+
+.contact-info, .eddie-moger {
+    margin: 0px;
+}
+
+h3 {
+    margin: 12px;
 }
 
 .button-container {
-    margin-left: 100px
+    padding: 4px;
 }
 
-@media (max-width: 777px) {
+@media (max-width: 805px) {
     grid-column-layout: 1fr;
 
+    .image-div {
+        min-width: 100%;
+    }
+
     img {
-        max-height: 38vh;
+        max-height: 62vh;
+    }
+
+    .contact-info {
+        margin-bottom:L 0px;
     }
 }
 
-@media (min-width: 778px) {
+@media (min-width: 814px) {
     display: grid;
     grid-column-layout: .62fr .38fr;
+
+    .image-div {
+        text-align: right;
+    }
+
+    .contact-div {
+        grid-column-start: 2;
+        margin: auto;
+    }
 
     .contact-info {
         grid-column-start: 2;
         text-align: left;
         margin: auto;
+    }
+
+    .button-container: {
+        text-align: center
     }
 }
 `
