@@ -9,10 +9,6 @@ img {
     max-width: 100%;
 }
 
-.contact-info {
-    
-}
-
 .button-container {
     margin-left: 100px
 }

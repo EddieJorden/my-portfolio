@@ -31,7 +31,6 @@ margin-left: 0px;
         text-align: left;
         margin: auto;
         margin-left: 0px;
-        background-color: red;
     }
 }
 `
