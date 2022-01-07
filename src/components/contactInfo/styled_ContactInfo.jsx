@@ -26,8 +26,22 @@ ul {
     margin: 0px;
 }
 
+.contact-info {
+    margin-bottom: 46px;
+}
+
 .contact-info, .eddie-moger {
     margin: 0px;
+    margin-left: 10px;
+    margin-top: 42px;
+}
+
+.eddie-moger {
+
+}
+
+.email {
+    margin-top: 0px;
 }
 
 h3 {
