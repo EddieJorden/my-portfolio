@@ -10,17 +10,6 @@ img {
     text-align: right;
 }
 
-.a {
-    color: white;
-    margin: 8px;
-    padding: 8px;
-    margin-right: 38px;
-}
-
-a:hover {
-    color: #33FF29;
-  }
-
 ul {
     padding-inline-start: 0px;
     margin: 0px;

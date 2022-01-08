@@ -2,6 +2,33 @@
   text-align: center;
 }
 
+/* .App a {
+  color: #f0f6f6;
+} */
+
+.App a {
+  color: white;
+  margin: 8px;
+  padding: 8px;
+  margin-right: 38px;
+  transition: 375ms;
+}
+
+.App a:visited {
+
+}
+
+.App a:hover {
+  color: #33FF29;
+  transition: 375ms
+}
+
+.App a:active {
+  color: rgb(0, 64, 241);
+  transition: 375ms;
+  transition: 500ms
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -25,7 +52,7 @@
 }
 
 .App-link {
-  color: #61FAF4;
+  
 }
 
 @keyframes App-logo-spin {
