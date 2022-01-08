@@ -8,10 +8,13 @@ const Button = styled.button`
     color: #3BEFF5;
     padding: 0.5vw 1.5vw;
     margin: 4px;
-   :hover {
+    :hover {
         cursor: pointer;
         border: 4px solid #3BEFF5;
+        color: #3BEFF5;
+        font-weight: bold;
         margin: 2px;
+        transition: 375ms
     } 
 `
 
