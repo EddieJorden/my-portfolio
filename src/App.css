@@ -6,21 +6,21 @@
   color: #f0f6f6;
 } */
 
-.App a {
+.App a link{
   color: white;
   margin: 8px;
   padding: 8px;
   margin-right: 38px;
-  transition: 375ms;
 }
 
 .App a:visited {
-
+  color: white;
 }
 
 .App a:hover {
   color: #33FF29;
-  transition: 375ms
+  text-decoration: none;
+  transition: .61s -10ms;
 }
 
 .App a:active {
