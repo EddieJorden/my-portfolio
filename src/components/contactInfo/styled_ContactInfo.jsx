@@ -7,7 +7,7 @@ max-width: 100%;
 img {
     max-height: 100vh;
     max-width: 100%;
-    text-align: right;
+    
 }
 
 ul {
@@ -39,6 +39,7 @@ h3 {
 
 .button-container {
     padding: 4px;
+    background-color: red;
 }
 
 @media (max-width: 805px) {
@@ -53,7 +54,7 @@ h3 {
     }
 
     .contact-info {
-        margin-bottom:L 0px;
+        margin-bottom: 0px;
     }
 }
 

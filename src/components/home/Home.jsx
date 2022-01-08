@@ -3,29 +3,28 @@ import NavButton from "../navButton/NavButton";
 import { HomeDiv } from "./styled_home"
 
 const Home = () => {
-
-
-        return (
-            <HomeDiv>
+    return (
+        <HomeDiv>
+            <div class="image-div">
                 <img src="EddieInTheCity.jpeg" alt="Eddie in the city"/>
-                <div class="home-div">
-                    <list>
-                        <ul><h1 class="eddie" >Eddie </h1></ul>
-                        <ul><h1 class="moger" >Moger </h1></ul>
-                        <ul>
-                            <div class="title">
-                                <h3 class="software" >Software </h3>
-                                <h3 class="engineer" >Engineer </h3>
-                            </div>
-                        </ul>
-                    </list>
-                    <div class="button-container">
-                        <NavButton buttonText="More Info" linkTo='/ContactInfo'/>
-                    </div>
+            </div>
+            <div class="contact-div">
+                <list>
+                    <ul><h1 class="eddie" >Eddie </h1></ul>
+                    <ul><h1 class="moger" >Moger </h1></ul>
+                    <ul>
+                        <div class="title">
+                            <h3 class="software" >Software </h3>
+                            <h3 class="engineer" >Engineer </h3>
+                        </div>
+                    </ul>
+                </list>
+                <div class="button-container">
+                    <NavButton buttonText="more" linkTo='/ContactInfo'/>
                 </div>
-            </HomeDiv>
-        )
-    
+            </div>
+        </HomeDiv>
+    )
 };
 
 export default Home;

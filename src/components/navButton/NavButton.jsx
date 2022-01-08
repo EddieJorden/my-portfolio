@@ -15,7 +15,7 @@ const Button = styled.button`
         color: #3BEFF5;
         font-weight: bold;
         margin: 2px;
-        transition: 375ms;
+        transition: 375ms
     } 
 `
 
