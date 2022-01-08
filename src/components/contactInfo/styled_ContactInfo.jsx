@@ -39,7 +39,6 @@ h3 {
 
 .button-container {
     padding: 4px;
-    background-color: red;
 }
 
 @media (max-width: 805px) {
