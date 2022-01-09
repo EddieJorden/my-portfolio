@@ -18,7 +18,7 @@ const ContactInfo = () => {
                     <ul><h3 class="phone">phone: <span><a href="tel:650-218-6940">650-218-6940</a></span></h3></ul>
                     <ul><h3 class="github">github: <span><a href="https://github.com/EddieJorden" rel="noopener">My Github</a></span></h3></ul>
                     <ul><h3 class="linkedin">linkedIn: <a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/" rel="noopener">My Linkedin</a></h3></ul>
-                    <ul><h3 class="resume">resume: <Link to="/my-portfolio/Resume" rel="noopener">My Resume</Link></h3></ul>
+                    <ul><h3 class="resume">resume: <Link to="/Resume" rel="noopener">My Resume</Link></h3></ul>
                 </list>
                 <div class="button-container">
                     <NavButton buttonText='home' linkTo='/'/>
