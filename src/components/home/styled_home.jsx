@@ -15,13 +15,7 @@ ul {
 }
 
 .eddie {
-    margin-bottom: 46px;
-}
 
-.eddie, .moger {
-    margin: 0px;
-    margin-left: 10px;
-    margin-top: 42px;
 }
 
 .eddie-moger {

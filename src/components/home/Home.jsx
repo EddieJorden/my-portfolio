@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import NavButton from "../navButton/NavButton";
 import { HomeDiv } from "./styled_home"
+import styled from "styled-components";
+
+
 
 const Home = () => {
     return (
