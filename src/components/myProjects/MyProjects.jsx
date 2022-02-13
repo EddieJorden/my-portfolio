@@ -1,3 +1,5 @@
+import NavButton from "../navButton/NavButton";
+
 const MyProjects = () => {
     return (
         <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
@@ -9,6 +11,9 @@ const MyProjects = () => {
             </div>
             <div className="more-coming-soon" style={{marginTop: "42px"}}>
                 <h3>more coming soon...</h3>
+            </div>
+            <div class="button-container">
+                <NavButton buttonText="Home" linkTo='/'/>
             </div>
         </div>
     )
