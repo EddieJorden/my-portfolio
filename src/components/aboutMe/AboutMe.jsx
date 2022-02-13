@@ -1,7 +1,10 @@
+import NavButton from "../navButton/NavButton";
+
 const AboutMe = () => {
     return (
         <div>
-            <div style={{display: 'flex', flexDirection: 'column', width: '100vw', fontSize: '18px'}}>
+            <div style={{display: 'flex', flexDirection: 'column', fontSize: '12px', marginRight: '22vw', marginLeft: '22vw'}}>
+                <h1>About Me</h1>
                 <list>
                 <ul>Recognized for my engineering mind after learning how to use the software and hidden features on my first computer (when I was barely 2 years old).</ul>
                 <ul>In first grade I learned how to use Mac terminal and was responsible for setting up the computers in the classroom for the other children and teachers.</ul>
@@ -16,6 +19,14 @@ const AboutMe = () => {
                 <ul>Hopefully we can work together in the future.</ul>
                 </list>
             </div>
+            <div class="button-container">
+                    <div class="contact-info">
+                        <NavButton buttonText='Contact Info' linkTo='/ContactInfo'/>
+                    </div>
+                    <div class="home-button">
+                        <NavButton buttonText='Home' linkTo='/'/>
+                    </div>
+                </div>
         </div>
     );
 };
