@@ -23,7 +23,13 @@ const Home = () => {
                     </ul>
                 </list>
                 <div class="button-container">
-                    <NavButton buttonText="more" linkTo='/ContactInfo'/>
+                    <NavButton buttonText="About Me" linkTo='/AboutMe'/>
+                </div>
+                <div class="button-container">
+                    <NavButton buttonText="Contact Info" linkTo='/ContactInfo'/>
+                </div>
+                <div class="button-container">
+                    <NavButton buttonText="My Projects" linkTo='/MyProjects'/>
                 </div>
             </div>
         </HomeDiv>
