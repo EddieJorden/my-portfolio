@@ -1,9 +1,10 @@
 import NavButton from "../navButton/NavButton";
+import AboutMeDiv from "./AboutMeDiv";
 
 const AboutMe = () => {
     return (
-        <div>
-            <div style={{display: 'flex', flexDirection: 'column', fontSize: '12px', marginRight: '22vw', marginLeft: '22vw'}}>
+        <AboutMeDiv>
+            <div style={{display: 'flex', flexDirection: 'column', fontSize: '12px'}}>
                 <h1>About Me</h1>
                 <list>
                 <ul>Recognized for my engineering mind after learning how to use the software and hidden features on my first computer (when I was barely 2 years old).</ul>
@@ -18,16 +19,16 @@ const AboutMe = () => {
                 <ul>With over 50 completed projects on Github ranging from HTML to Redux and experience working together with other developers, currently I am learning back end web development and looking forward to a new team and a new project.</ul>
                 <ul>Hopefully we can work together in the future.</ul>
                 </list>
-            </div>
             <div class="button-container">
-                    <div class="contact-info">
-                        <NavButton buttonText='Contact Info' linkTo='/ContactInfo'/>
-                    </div>
-                    <div class="home-button">
-                        <NavButton buttonText='Home' linkTo='/'/>
-                    </div>
+                <div class="contact-info">
+                    <NavButton buttonText='Contact Info' linkTo='/ContactInfo'/>
                 </div>
-        </div>
+                <div class="home-button">
+                    <NavButton buttonText='Home' linkTo='/'/>
+                </div>
+            </div>
+            </div>
+        </AboutMeDiv>
     );
 };
 

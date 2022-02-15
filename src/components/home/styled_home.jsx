@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HomeDiv = styled.div`
-max-height: 100vh;
+max-height: 60vh;
 max-width: 100%;
 
 img {
@@ -37,12 +37,14 @@ h3 {
 @media (max-width: 805px) {
     grid-column-layout: 1fr;
 
+
+
     .image-div {
         min-width: 100%;
     }
 
     img {
-        max-height: 62vh;
+        max-height: 41vh;
     }
 
     .eddie {
