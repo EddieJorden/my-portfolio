@@ -49,7 +49,7 @@ h3 {
     }
 
     img {
-        max-height: 62vh;
+        max-height: 41vh;
     }
 
     .contact-info {

@@ -1,12 +1,13 @@
 import NavButton from "../navButton/NavButton";
+import MyProjectsDiv from "./MyProjectsDiv";
 
 const MyProjects = () => {
     return (
-        <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+        <MyProjectsDiv>
             <div className="food.near.me">
                 <h1>food.near.me</h1>
                 <a href="https://eddiejorden.github.io/food.near.me/" rel="noopener noreferer">
-                    <img src="food.near.me.thumbnail.png" alt="homepage_thumbnail_for_food.near.me" style={{maxHeight: "161px", borderRadius: "15px"}}/>
+                    <img src="food.near.me.thumbnail.png" alt="homepage_thumbnail_for_food.near.me"/>
                 </a>
             </div>
             <div className="more-coming-soon" style={{marginTop: "42px"}}>
@@ -15,7 +16,7 @@ const MyProjects = () => {
             <div class="button-container">
                 <NavButton buttonText="Home" linkTo='/'/>
             </div>
-        </div>
+        </MyProjectsDiv>
     )
 };
 
