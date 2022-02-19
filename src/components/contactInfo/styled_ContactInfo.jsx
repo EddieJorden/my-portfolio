@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 
 export const ContactInfoDiv = styled.div`
+min-height: 100vh;
 max-height: 100vh;
 max-width: 100%;
+display: flex;
+justify-content: center;
+flex-direction: column;
 
 img {
     max-height: 80%;
@@ -28,10 +32,6 @@ ul {
 .contact-info, .eddie-moger {
     margin: 0px;
     margin-left: 10px;
-}
-
-.eddie-moger {
-
 }
 
 .email {
@@ -89,8 +89,6 @@ h3 {
 
     .contact-info {
         grid-column-start: 2;
-
-
     }
 
     .button-container: {
