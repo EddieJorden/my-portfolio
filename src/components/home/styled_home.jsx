@@ -38,14 +38,18 @@ h3 {
 }
 
 .button-container {
-    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container-container {
+    max-width: 100px;
 }
 
 .contact-div {
-    background-color: #fff;
-    max-width: 61%;
-    padding: 5%;
-    border-radius: 5px;
+
 }
 
 @media (max-width: 805px) {
@@ -81,11 +85,7 @@ h3 {
 
     .contact-div {
         grid-column-start: 2;
-        max-width: 100px;
-    }
-
-    .button-container: {
-
+        max-width: 100%;
     }
 }
 `
