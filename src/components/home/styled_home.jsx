@@ -10,7 +10,6 @@ align-items: center;
 img {
     max-height: 80vh;
     max-width: 100%;
-    border-radius: 5px;
 }
 
 ul {

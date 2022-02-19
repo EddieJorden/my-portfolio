@@ -9,7 +9,7 @@ const ContactInfo = () => {
     return (
         <ContactInfoDiv>
             <div class="image-div">
-                <img src="eddieJorden.tech-it-at-office-monday.com-crm.jpeg" alt="Eddie in the office" />
+                <img src="eddie_profile_pic.jpg" alt="Eddie in the office" />
             </div>
             <div class="contact-div">
                 <ComponentDiv>
