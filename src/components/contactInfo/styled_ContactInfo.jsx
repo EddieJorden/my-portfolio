@@ -6,12 +6,12 @@ max-width: 100%;
 
 img {
     max-height: 80%;
-    max-width: 100%;
-    margin: 5%;
+    max-width: 80%;
 }
 
 .imag-div {
     max-height: 100vh;
+    max-width: 80vw;
 }
 
 ul {
@@ -52,12 +52,11 @@ h3 {
     .image-div {
         min-width: 100%;
         min-height: 100%;
+        max-width: 100vw;
     }
 
     img {
         max-height: 41vh;
-        margin: 30px;
-
     }
 
     .contact-info {
@@ -77,6 +76,7 @@ h3 {
         text-align: right;
         text-align: right;
         max-height: 100vh;
+        max-width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;

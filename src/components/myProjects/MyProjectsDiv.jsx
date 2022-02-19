@@ -4,6 +4,7 @@ const MyProjectsDiv = styled.div`
 display: flex,
     alignItems: center,
     flexDirection: column;
+    justify-content: center;
 
 img {
     height: 161px;
