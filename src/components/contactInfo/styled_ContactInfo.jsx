@@ -5,9 +5,13 @@ max-height: 100vh;
 max-width: 100%;
 
 img {
-    max-height: 100vh;
+    max-height: 80%;
     max-width: 100%;
-    
+    margin: 5%;
+}
+
+.imag-div {
+    max-height: 100vh;
 }
 
 ul {
@@ -15,14 +19,15 @@ ul {
     margin: 0px;
 }
 
-.contact-info {
-    margin-bottom: 46px;
+.contact-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-info, .eddie-moger {
     margin: 0px;
     margin-left: 10px;
-    margin-top: 42px;
 }
 
 .eddie-moger {
@@ -46,14 +51,21 @@ h3 {
 
     .image-div {
         min-width: 100%;
+        min-height: 100%;
     }
 
     img {
         max-height: 41vh;
+        margin: 30px;
+
     }
 
     .contact-info {
         margin-bottom: 0px;
+    }
+    
+    .contact-div {
+        margin: 0px;
     }
 }
 
@@ -63,17 +75,22 @@ h3 {
 
     .image-div {
         text-align: right;
+        text-align: right;
+        max-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .contact-div {
         grid-column-start: 2;
-        margin: auto;
+        
     }
 
     .contact-info {
         grid-column-start: 2;
-        text-align: left;
-        margin: auto;
+
+
     }
 
     .button-container: {

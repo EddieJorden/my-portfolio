@@ -1,9 +1,11 @@
 import NavButton from "../navButton/NavButton";
 import AboutMeDiv from "./AboutMeDiv";
+import ComponentDiv from "../componentDiv/ComponentDiv";
 
 const AboutMe = () => {
     return (
         <AboutMeDiv>
+            <ComponentDiv>
             <div style={{display: 'flex', flexDirection: 'column', fontSize: '12px'}}>
                 <h1>About Me</h1>
                 <list>
@@ -28,6 +30,7 @@ const AboutMe = () => {
                 </div>
             </div>
             </div>
+            </ComponentDiv>
         </AboutMeDiv>
     );
 };

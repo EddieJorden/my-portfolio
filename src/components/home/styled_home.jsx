@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 export const HomeDiv = styled.div`
-max-height: 60vh;
+max-height: 100vh;
 max-width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
 
 img {
-    max-height: 100vh;
+    max-height: 80vh;
     max-width: 100%;
+    border-radius: 5px;
 }
 
 ul {
@@ -30,21 +34,31 @@ h3 {
     margin: 12px;
 }
 
+.image-div {
+
+}
+
 .button-container {
     padding: 4px;
+}
+
+.contact-div {
+    background-color: #fff;
+    max-width: 61%;
+    padding: 5%;
+    border-radius: 5px;
 }
 
 @media (max-width: 805px) {
     grid-column-layout: 1fr;
 
-
-
     .image-div {
-        min-width: 100%;
+        max-width: 61%;
+        margin: 10%;
     }
 
     img {
-        max-height: 41vh;
+        max-height: 100%;
     }
 
     .eddie {
@@ -55,14 +69,20 @@ h3 {
 @media (min-width: 814px) {
     display: grid;
     grid-column-layout: .62fr .38fr;
+    align-items: center;
+    
 
     .image-div {
         text-align: right;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .contact-div {
         grid-column-start: 2;
-        margin: auto;
+        max-width: 100px;
     }
 
     .button-container: {
@@ -70,76 +90,3 @@ h3 {
     }
 }
 `
-
-// max-height: 100vh;
-// min-width: 50vw;
-
-// img {
-//     max-height: 100vh;
-//     max-width: 100%;
-// }
-
-// ul {
-//     padding-inline-start: 0px;
-//     margin: 0px;
-// }
-
-// .eddie {
-//     margin-bottom: 9px;
-// }
-
-// .eddie, .moger, .software, .engineer {
-//     margin: 0px;
-    
-// }
-
-// .title {
-//     margin-top: 33px;
-//     margin-bottom: 12px;
-// }
-
-// .button-container {
-//     padding: 4px;
-//     margin: 20px;
-//     background-color: red;
-// }
-
-// @media (max-width: 805px) {
-//     grid-column-layout: 1fr;
-
-//     .image-div {
-//         min-width: 100%
-//     }
-
-//     img {
-//         max-height: 62vh;
-//     }
-// }
-
-// @media (min-width: 814px) {
-//     display: grid;
-//     grid-column-layout: .62fr .38fr;
-
-//     image-div {
-//         text-align: right;
-//     }
-    
-//     .home-div {
-//         grid-column-start: 2;
-//         margin: auto;
-//         display: flex;
-//         width: 100%;
-//     }
-
-//     .home-title {
-//         width: 100%;
-//         margin: auto;
-//         align-items: left;
-
-//     }
-
-//     .button-container {
-//         text-align: center;
-//         margin: auto;
-//     }
-// }
