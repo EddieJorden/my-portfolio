@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-/* .App a {
-  color: #f0f6f6;
-} */
+.App a {
+  color: #1a77f2;
+}
 
 .App a link{
   color: white;
@@ -14,7 +14,7 @@
 }
 
 .App a:visited {
-  color: white;
+  color: #1a77f2;
 }
 
 .App a:hover {
@@ -24,7 +24,7 @@
 }
 
 .App a:active {
-  color: rgb(0, 64, 241);
+  color: #1a77f2;
   transition: 375ms;
   transition: 500ms
 }
@@ -52,7 +52,7 @@
 }
 
 .App-link {
-  
+  color: #1a77f2;
 }
 
 @keyframes App-logo-spin {

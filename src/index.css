@@ -5,8 +5,9 @@ body {
     word-wrap: normal; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0F161F;
-  color: #3BEFF5;
+  background-color: #eff2f5;
+  color: #1a77f2;
+  
 }
 
 code {
