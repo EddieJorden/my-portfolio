@@ -87,9 +87,5 @@ h3 {
         grid-column-start: 2;
         max-width: 100%;
     }
-
-    .button-container: {
-
-    }
 }
 `
