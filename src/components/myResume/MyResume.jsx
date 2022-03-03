@@ -4,16 +4,16 @@ import { MyResumeDiv } from './styled_myResume';
 const MyResume = () => {
     return (
         <MyResumeDiv>
-            <div class="iframe-div">
+            <div className="iframe-div">
                 <iframe src="Eddie Moger Resume.pdf#zoom=62" title="myResume" width="340px" height="468px"></iframe>
             </div>
-            <div class="my-resume">
+            <div className="my-resume">
                 <h1>My Resume</h1>
-                <div class="button-container">
-                    <div class="contact-info">
+                <div className="button-container">
+                    <div className="contact-info">
                         <NavButton buttonText='Contact Info' linkTo='/ContactInfo'/>
                     </div>
-                    <div class="home-button">
+                    <div className="home-button">
                         <NavButton buttonText='Home' linkTo='/'/>
                     </div>
                 </div>

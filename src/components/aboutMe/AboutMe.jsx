@@ -21,11 +21,11 @@ const AboutMe = () => {
                 <ul>With over 50 completed projects on Github ranging from HTML to Redux and experience working together with other developers, currently I am learning back end web development and looking forward to a new team and a new project.</ul>
                 <ul>Hopefully we can work together in the future.</ul>
                 </list>
-            <div class="button-container">
-                <div class="contact-info">
+            <div className="button-container">
+                <div className="contact-info">
                     <NavButton buttonText='Contact Info' linkTo='/ContactInfo'/>
                 </div>
-                <div class="home-button">
+                <div className="home-button">
                     <NavButton buttonText='Home' linkTo='/'/>
                 </div>
             </div>

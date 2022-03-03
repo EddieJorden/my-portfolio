@@ -7,22 +7,23 @@ import ProjectTile from "./ProjectTile";
 
 
 const MyProjects = (props) => {
-    console.log('props', props)
-    console.log('myProjectsArray', props.myProjectsArray[0].name)
+
+    let keyValue = 0
 
     return (
         <MyProjectsDiv>
             <div>{myProjectsArray.map(((each) => {
+                keyValue = keyValue + 1
                 return (
-                    <div>
-                        <ProjectTile project={each}/>
+                    <div key={keyValue}>
+                        <ProjectTile project={each} />
                     </div>    
                 )
             }))}</div>
             <div className="more-coming-soon" style={{marginTop: "42px"}}>
                 <h3>more coming soon...</h3>
             </div>
-            <div class="button-container">
+            <div className="button-container">
                 <NavButton buttonText="Home" linkTo='/'/>
             </div>
         </MyProjectsDiv>
