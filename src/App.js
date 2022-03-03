@@ -9,8 +9,7 @@ import MyProjects from './components/myProjects/MyProjects';
 import myProjectsArray from './components/myProjects/myProjectsArray';
 
 function App() {
-  console.log('myProjectsArray', myProjectsArray)
-  console.log('myProjectsArray', myProjectsArray[0].name)
+  console.log('Thank you for showing interest in my portfolio ~Eddie Moger~')
   return (
     <div className="App">
       <div>

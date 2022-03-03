@@ -23,7 +23,7 @@ const NavButton = (props) => {
 
     let buttonLink = `${props.linkTo}`
     return (
-        <div class="nav-button">
+        <div className="nav-button">
             <Link to={buttonLink}>
                 <Button>
                     {props.buttonText}
