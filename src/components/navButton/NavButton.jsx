@@ -20,7 +20,7 @@ const Button = styled.button`
 `
 
 const NavButton = (props) => {
-    console.log('props', props)
+
     let buttonLink = `${props.linkTo}`
     return (
         <div class="nav-button">
