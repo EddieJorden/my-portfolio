@@ -23,6 +23,10 @@ ul {
     margin: 0px;
 }
 
+.contact-info-div {
+    margin: 30px
+}
+
 .contact-div {
     display: flex;
     align-items: center;
@@ -30,8 +34,12 @@ ul {
 }
 
 .contact-info, .eddie-moger {
-    margin: 0px;
+    margin: 10px;
     margin-left: 10px;
+}
+
+.eddie-moger {
+    margin: 10px;
 }
 
 .email {
@@ -44,6 +52,26 @@ h3 {
 
 .button-container {
     padding: 4px;
+}
+
+.email {
+    color: grey
+}
+
+.phone {
+    color: grey
+}
+
+.github {
+    color: grey
+}
+
+.linkedin {
+    color: grey
+}
+
+.resume {
+    color: grey
 }
 
 @media (max-width: 805px) {

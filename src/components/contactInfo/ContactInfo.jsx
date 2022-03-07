@@ -14,8 +14,10 @@ const ContactInfo = () => {
             <div className="contact-div">
                 <ComponentDiv>
                     <ul>
-                        <h1 className="contact-info">Contact Info</h1>
-                        <h2 className="eddie-moger">Eddie Moger</h2>
+                        <div className='contact-info-div'>
+                            <h1 className="contact-info">Contact Info</h1>
+                            <h2 className="eddie-moger">Eddie Moger</h2>
+                        </div>
                         <h3 className="email">email: <span><a href="mailto:emoger@gmail.com" rel="noopener">emoger@gmail.com</a></span></h3>
                         <h3 className="phone">phone: <span><a href="tel:650-218-6940">650-218-6940</a></span></h3>
                         <h3 className="github">github: <span><a href="https://github.com/EddieJorden" rel="noopener">My Github</a></span></h3>

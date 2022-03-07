@@ -17,6 +17,15 @@ const myProjectsArray = [
         notes: 'you must login with your spotify account to use this app',
         github: 'https://github.com/EddieJorden/my-jams',
     },
+    {
+        name: 'flash cards',
+        thumbnail: 'public/flashcards-thumbnail.png',
+        altText: 'alt text for thumbnail here',
+        link: 'https://eddiejorden.github.io/flashcards/',
+        linkText: 'flash cards',
+        notes: 'in this project I was responsible for setting up the redux store and app logic',
+        github: 'https://eddiejorden.github.io/flashcards/',
+    }
     // copy and paste the template below for a new project
     
     // {
