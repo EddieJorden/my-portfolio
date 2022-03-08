@@ -7,6 +7,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 
+
 img {
     max-height: 80vh;
     max-width: 100%;
@@ -21,8 +22,16 @@ ul {
 
 }
 
-.eddie-moger {
+.moger {
 
+}
+
+.software {
+    color: black;
+}
+
+.engineer {
+    color: black;
 }
 
 .email {

@@ -5,6 +5,7 @@ const AboutMeDiv = styled.div`
 
     ul {
         padding: 0px;
+        color: black
     }
 `;
 

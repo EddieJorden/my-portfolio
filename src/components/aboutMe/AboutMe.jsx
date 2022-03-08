@@ -8,7 +8,6 @@ const AboutMe = () => {
             <ComponentDiv>
             <div style={{display: 'flex', flexDirection: 'column', fontSize: '12px'}}>
                 <h1>About Me</h1>
-                <list>
                 <ul>Recognized for my engineering mind after learning how to use the software and hidden features on my first computer (when I was barely 2 years old).</ul>
                 <ul>In first grade I learned how to use Mac terminal and was responsible for setting up the computers in the classroom for the other children and teachers.</ul>
                 <ul>Interested in computers, when I was 8 years old I learned to modify Windows operating system by changing its binary code.</ul>
@@ -20,7 +19,6 @@ const AboutMe = () => {
                 <ul>Recently I conceptualized, planned, developed, released and currently maintain a fully custom built CRM where I have solved many complex business problems through technology.</ul>
                 <ul>With over 50 completed projects on Github ranging from HTML to Redux and experience working together with other developers, currently I am learning back end web development and looking forward to a new team and a new project.</ul>
                 <ul>Hopefully we can work together in the future.</ul>
-                </list>
             <div className="button-container">
                 <div className="contact-info">
                     <NavButton buttonText='Contact Info' linkTo='/ContactInfo'/>
