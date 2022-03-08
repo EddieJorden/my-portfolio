@@ -23,7 +23,7 @@ const MyProjects = (props) => {
             <div className="more-coming-soon" style={{marginTop: "42px"}}>
                 <h3>more coming soon...</h3>
             </div>
-            <div className="button-container">
+            <div className="button-container" style={{marginBottom: "42px"}}>
                 <NavButton buttonText="Home" linkTo='/'/>
             </div>
         </MyProjectsDiv>
