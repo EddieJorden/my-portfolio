@@ -24,7 +24,7 @@ const myProjectsArray = [
         link: 'https://eddiejorden.github.io/flashcards/',
         linkText: 'flash cards',
         notes: 'in this project I was responsible for setting up the redux store and app logic',
-        github: 'https://github.com/EddieJorden/my-portfolio',
+        github: 'https://github.com/EddieJorden/flashcards',
     }//,
     //
     // {
