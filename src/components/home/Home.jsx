@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <HomeDiv>
             <div className="image-div">
-                <img src="EddieinTheCity.jpeg" alt="Eddie in the city"/>
+                <img src="EddieinTheCity.jpg" alt="Eddie in the city"/>
             </div>
             <div className="contact-div" >
                 <ComponentDiv>
