@@ -12,8 +12,10 @@ const Home = () => {
             <div className="contact-div" >
                 <ComponentDiv>
                     <div>
-                    <h1 className="eddie" >Eddie </h1>
-                    <h1 className="moger" >Moger </h1>
+                    <div className="name-container">
+                        <h1 className="eddie" >Eddie </h1>
+                        <h1 className="moger" >Moger </h1>
+                    </div>
                     <div className="title">
                         <h3 className="software" >Software </h3>
                         <h3 className="engineer" >Engineer </h3>
