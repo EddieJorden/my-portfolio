@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <HomeDiv>
             <div className="image-div">
-                <img src="EddieinTheCity.jpg" alt="Eddie in the city"/>
+                <img src="EddieinTheCity.jpeg" alt="Eddie in the city"/>
             </div>
             <div className="contact-div" >
                 <ComponentDiv>
@@ -20,7 +20,7 @@ const Home = () => {
                     </div>                
                     <div className="button-container-container">
                         <div className="button-container">
-                            <NavButton buttonText="About Me" linkTo='/AboutMe'/>
+                            <NavButton buttonText="About Eddie" linkTo='/AboutMe'/>
                         </div>
                         <div className="button-container">
                             <NavButton buttonText="Contact Info" linkTo='/ContactInfo'/>

@@ -19,7 +19,7 @@ const myProjectsArray = [
     },
     {
         name: 'flash cards',
-        thumbnail: 'public/flashcards-thumbnail.png',
+        thumbnail: 'flashcards-thumbnail.png',
         altText: 'alt text for thumbnail here',
         link: 'https://eddiejorden.github.io/flashcards/',
         linkText: 'flash cards',
