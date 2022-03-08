@@ -6,10 +6,8 @@ const ProjectTileDiv = styled.div`
     img {
         height: 161px;
         border-radius: 15px
-}
+    }
 `
-
-
 
 const ProjectTile = (props) => {
 
@@ -17,7 +15,7 @@ const ProjectTile = (props) => {
         <ProjectTileDiv>
             <ComponentDiv>
                 <div className={`${props.project.name}`}>
-                    <h1 style={{fonWweight: 'bolder'}}>{props.project.name}</h1>
+                    <h1 style={{fontWeight: 'bolder'}}>{props.project.name}</h1>
                     <a href={props.project.link} target="blank" rel="noopener noreferer">
                         <div className="image-container">
                             <img src={props.project.thumbnail} alt={props.project.altText}/>

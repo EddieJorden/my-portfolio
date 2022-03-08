@@ -11,7 +11,7 @@ const Home = () => {
             </div>
             <div className="contact-div" >
                 <ComponentDiv>
-                    <ul>
+                    <div>
                     <h1 className="eddie" >Eddie </h1>
                     <h1 className="moger" >Moger </h1>
                     <div className="title">
@@ -29,7 +29,7 @@ const Home = () => {
                             <NavButton buttonText="My Projects" linkTo='/MyProjects'/>
                         </div>
                     </div>
-                    </ul>
+                    </div>
                 </ComponentDiv>
             </div>
         </HomeDiv>

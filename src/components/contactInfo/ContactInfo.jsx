@@ -13,7 +13,7 @@ const ContactInfo = () => {
             </div>
             <div className="contact-div">
                 <ComponentDiv>
-                    <ul>
+                    <div>
                         <div className='contact-info-div'>
                             <h1 className="contact-info">Contact Info</h1>
                             <h2 className="eddie-moger">Eddie Moger</h2>
@@ -26,7 +26,7 @@ const ContactInfo = () => {
                         <div className="button-container">
                             <NavButton buttonText='home' linkTo='/'/>
                         </div>
-                    </ul>
+                    </div>
                 </ComponentDiv>
             </div>
         </ContactInfoDiv>

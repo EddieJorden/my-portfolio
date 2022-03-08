@@ -25,8 +25,8 @@ const myProjectsArray = [
         linkText: 'flash cards',
         notes: 'in this project I was responsible for setting up the redux store and app logic',
         github: 'https://github.com/EddieJorden/flashcards',
-    }//,
-    //
+    }
+    
     // {
     //     name: 'name of app here',
     //     thumbnail: 'thumbnail link here',
