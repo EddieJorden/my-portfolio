@@ -7,7 +7,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 
-
 img {
     max-height: 80vh;
     max-width: 100%;
@@ -18,13 +17,7 @@ ul {
     margin: 0px;
 }
 
-.eddie {
 
-}
-
-.moger {
-
-}
 
 .software {
     color: black;
@@ -59,6 +52,7 @@ h3 {
 
 .contact-div {
 
+    padding: 42px;
 }
 
 @media (max-width: 805px) {
@@ -71,10 +65,6 @@ h3 {
 
     img {
         max-height: 100%;
-    }
-
-    .eddie {
-        margin-bottom: 0px;
     }
 }
 
@@ -94,7 +84,7 @@ h3 {
 
     .contact-div {
         grid-column-start: 2;
-        max-width: 100%;
+
     }
 }
 `

@@ -24,7 +24,8 @@ ul {
 }
 
 .contact-info-div {
-    margin: 30px
+    margin: 30px;
+    font-weight: 900;
 }
 
 .contact-div {
