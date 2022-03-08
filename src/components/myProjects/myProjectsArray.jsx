@@ -25,9 +25,8 @@ const myProjectsArray = [
         linkText: 'flash cards',
         notes: 'in this project I was responsible for setting up the redux store and app logic',
         github: 'https://github.com/EddieJorden/my-portfolio',
-    }
-    // copy and paste the template below for a new project
-    
+    }//,
+    //
     // {
     //     name: 'name of app here',
     //     thumbnail: 'thumbnail link here',
@@ -38,7 +37,5 @@ const myProjectsArray = [
     //     github: 'link to this projects github here',
     // }
 ];
-
-
 
 export default myProjectsArray;
