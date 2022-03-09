@@ -5,7 +5,7 @@ import styled from "styled-components";
 const ProjectTileDiv = styled.div`
     img {
         height: 161px;
-        border-radius: 15px
+        border-radius: 15px;
     }
 `
 

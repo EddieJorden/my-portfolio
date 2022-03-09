@@ -7,6 +7,7 @@ import ThreeJs from './components/threeJsBackground/ThreeJsRoute';
 import AboutMe from './components/aboutMe/AboutMe';
 import MyProjects from './components/myProjects/MyProjects';
 import myProjectsArray from './components/myProjects/myProjectsArray';
+import NewHome from './components/home/NewHome'
 
 function App() {
   console.log('Thank you for showing interest in my portfolio ~Eddie Moger~')
@@ -20,6 +21,7 @@ function App() {
           <Route path="/threejs" element={<ThreeJs />}/>
           <Route path="/AboutMe" element={<AboutMe />}/>
           <Route path="/MyProjects" element={<MyProjects myProjectsArray={myProjectsArray}/>}/>
+          <Route path="/newhome" element={<NewHome />}/>
         </Routes>
       </div>
     </div>

@@ -6,7 +6,7 @@ const MyProjectsDiv = styled.div`
     flexDirection: column;
     justify-content: center;
 
-
+    overflow: scroll;
 
 .more-coming-soon {
     color: black;
