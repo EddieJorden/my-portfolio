@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const ContactInfoDiv = styled.div`
-min-height: 100vh;
-max-height: 100vh;
+min-height: 100%;
+max-height: 100%;
 max-width: 100%;
 display: flex;
 justify-content: center;
@@ -104,8 +104,8 @@ h3 {
     .image-div {
         text-align: right;
         text-align: right;
-        max-height: 100vh;
-        max-width: 100vw;
+        max-height: 100%;
+        max-width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;

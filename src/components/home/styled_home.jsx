@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HomeDiv = styled.div`
-max-height: 100vh;
+max-height: 100%;
 max-width: 100%;
 display: flex;
 flex-direction: column;
@@ -76,7 +76,7 @@ h3 {
 
     .image-div {
         text-align: right;
-        min-height: 100vh;
+        max-height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
