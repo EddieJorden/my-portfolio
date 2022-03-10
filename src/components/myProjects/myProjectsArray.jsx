@@ -25,8 +25,17 @@ const myProjectsArray = [
         linkText: 'flash cards',
         notes: 'in this project I was responsible for setting up the redux store and app logic',
         github: 'https://github.com/EddieJorden/flashcards',
+  
+    },
+    {
+        name: 'Photomatic',
+        thumbnail: 'photomatic-thumbnail.png',
+        altText: 'photomatic-thumbnail',
+        link: 'https://eddiejorden.github.io/photomatic/',
+        linkText: 'Photomatic',
+        notes: `Here I was tasked with setting up all of the CSS according to exact specifications outlined by the designer's wireframe`,
+        github: 'https://github.com/EddieJorden/photomatic',
     }
-    
     // {
     //     name: 'name of app here',
     //     thumbnail: 'thumbnail link here',
