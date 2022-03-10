@@ -12,6 +12,10 @@ const MyProjectsDiv = styled.div`
     color: black;
 }
 
+.button-contiainer {
+    padding-bottom: 42px;
+}
+
 `;
 
 export default MyProjectsDiv;
