@@ -17,8 +17,6 @@ ul {
     margin: 0px;
 }
 
-
-
 .software {
     color: black;
 }

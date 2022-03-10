@@ -39,6 +39,7 @@ const NewHome = () => {
     return (
         <NewHomeDiv>
             <div className='nav-div'>
+                
                 <NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
                     contact info
                 </NewHomeButton>
