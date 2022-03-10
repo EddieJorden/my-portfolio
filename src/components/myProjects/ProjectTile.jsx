@@ -10,22 +10,23 @@ const ProjectTileDiv = styled.div`
 `
 
 const ProjectTile = (props) => {
-
+    const { name, thumbnail, altText, notes, github, link } = props.project
+    
     return (
         <ProjectTileDiv>
             <ComponentDiv>
-                <div className={`${props.project.name}`}>
-                    <h1 style={{fontWeight: 'bolder'}}>{props.project.name}</h1>
-                    <a href={props.project.link} target="blank" rel="noopener noreferer">
+                <div className={`${name}`}>
+                    <h1 style={{fontWeight: 'bolder'}}>{name}</h1>
+                    <a href={link} target="blank" rel="noopener noreferer">
                         <div className="image-container">
-                            <img src={props.project.thumbnail} alt={props.project.altText}/>
+                            <img src={thumbnail} alt={altText}/>
                         </div>
                     </a>
                     <div className='project-notes'>
-                        <p>{props.project.notes}</p>
+                        <p>{notes}</p>
                     </div>
                     <div className='github-link'>
-                        this projects <a href={props.project.github} target="blank" rel="noopener noreferer" >github</a>
+                        this projects <a href={github} target="blank" rel="noopener noreferer" >github</a>
                     </div>
                 </div>
             </ComponentDiv>
