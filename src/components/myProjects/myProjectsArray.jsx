@@ -35,6 +35,15 @@ const myProjectsArray = [
         linkText: 'Photomatic',
         notes: `Here I was tasked with setting up all of the CSS according to exact specifications outlined by the designer's wireframe`,
         github: 'https://github.com/EddieJorden/photomatic',
+    },
+        {
+        name: 'my planner',
+        thumbnail: 'appointment-planner-thumbnail.png',
+        altText: 'appointment-planner-thumbnail',
+        link: 'https://eddiejorden.github.io/react_challenge/',
+        linkText: 'my planner',
+        notes: 'here is a fully built and conceptualized contacts and appointments app using react router,',
+        github: 'https://github.com/EddieJorden/react_challenge/settings/pages',
     }
     // {
     //     name: 'name of app here',
