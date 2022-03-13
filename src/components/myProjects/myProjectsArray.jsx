@@ -5,7 +5,11 @@ const myProjectsArray = [
         altText: 'food-near-me-thumbnail',
         link: 'https://eddiejorden.github.io/food.near.me/',
         linkText: 'food near me',
-        notes: 'you must enable CORS anywhere to use this development app ',
+        // notes: 'you must enable CORS anywhere to use this development app ',
+        notes: {
+            notes: 'you must first enable cors anywhere before using this app,  click the link below and click "request temporary access to the demo server"',
+            notesLink:  <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="blank" rel="noopener noreferer">cors anywhere</a>
+        },
         github: 'https://github.com/EddieJorden/food.near.me',
     },
     {
@@ -14,7 +18,10 @@ const myProjectsArray = [
         altText: 'my-jams-thumbnail',
         link: 'https://eddiejorden.github.io/my-jams',
         linkText: 'myjams',
-        notes: 'you must login with your spotify account to use this app',
+        notes: {
+            notes: 'you must login with your spotify account to use this app',
+            
+        },
         github: 'https://github.com/EddieJorden/my-jams',
     },
     {
@@ -23,7 +30,9 @@ const myProjectsArray = [
         altText: 'alt text for thumbnail here',
         link: 'https://eddiejorden.github.io/flashcards/',
         linkText: 'flash cards',
-        notes: 'in this project I was responsible for setting up the redux store and app logic',
+        notes: {
+            notes: 'in this project I was responsible for setting up the redux store and app logic'
+        },
         github: 'https://github.com/EddieJorden/flashcards',
   
     },
@@ -33,7 +42,9 @@ const myProjectsArray = [
         altText: 'photomatic-thumbnail',
         link: 'https://eddiejorden.github.io/photomatic/',
         linkText: 'Photomatic',
-        notes: `Here I was tasked with setting up all of the CSS according to exact specifications outlined by the designer's wireframe`,
+        notes: {
+            notes: `Here I was tasked with setting up all of the CSS according to exact specifications outlined by the designer's wireframe`
+        },
         github: 'https://github.com/EddieJorden/photomatic',
     },
         {
@@ -42,7 +53,9 @@ const myProjectsArray = [
         altText: 'appointment-planner-thumbnail',
         link: 'https://eddiejorden.github.io/react_challenge/',
         linkText: 'my planner',
-        notes: 'here is a fully built and conceptualized contacts and appointments app using react router,',
+        notes: {
+            notes: 'here is a fully built and conceptualized contacts and appointments app using react router,'
+        },
         github: 'https://github.com/EddieJorden/react_challenge/settings/pages',
     }
     // {
