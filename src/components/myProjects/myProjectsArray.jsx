@@ -5,7 +5,6 @@ const myProjectsArray = [
         altText: 'food-near-me-thumbnail',
         link: 'https://eddiejorden.github.io/food.near.me/',
         linkText: 'food near me',
-        // notes: 'you must enable CORS anywhere to use this development app ',
         notes: {
             notes: 'you must first enable cors anywhere before using this app,  click the link below and click "request temporary access to the demo server"',
             notesLink:  <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="blank" rel="noopener noreferer">cors anywhere</a>
@@ -19,7 +18,7 @@ const myProjectsArray = [
         link: 'https://eddiejorden.github.io/my-jams',
         linkText: 'myjams',
         notes: {
-            notes: 'you must login with your spotify account to use this app',
+            notes: 'please login with spotify username: "test@eddiemoger.com" password: "testpassword" to use this app.',
             
         },
         github: 'https://github.com/EddieJorden/my-jams',
