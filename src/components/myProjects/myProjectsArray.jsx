@@ -36,15 +36,15 @@ const myProjectsArray = [
   
     },
     {
-        name: 'Photomatic',
-        thumbnail: 'photomatic-thumbnail.png',
-        altText: 'photomatic-thumbnail',
-        link: 'https://eddiejorden.github.io/photomatic/',
-        linkText: 'Photomatic',
+        name: 'Fotomatic',
+        thumbnail: 'fotomatic-thumbnail.png',
+        altText: 'fotomatic-thumbnail',
+        link: 'https://eddiejorden.github.io/fotomatic/',
+        linkText: 'Fotomatic',
         notes: {
             notes: `Here I was tasked with setting up all of the CSS according to exact specifications outlined by the designer's wireframe`
         },
-        github: 'https://github.com/EddieJorden/photomatic',
+        github: 'https://github.com/EddieJorden/fotomatic',
     },
         {
         name: 'my planner',
