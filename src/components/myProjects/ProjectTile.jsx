@@ -3,9 +3,17 @@ import ComponentDiv from "../componentDiv/ComponentDiv";
 import styled from "styled-components";
 
 const ProjectTileDiv = styled.div`
-    img {
+    display: flex;
+    flex-dircetion: column;
+    justify-content: center;
+    align-items: center;
+
+
+img {
         height: 161px;
-        border-radius: 15px
+        border-radius: 15px;
+        
+
     }
 `
 
