@@ -31,8 +31,8 @@ const ProjectTile = (props) => {
                     </a>
                     <div className='project-notes'>
                         {/* <p>{notes}</p> */}
-                        {/* <p>{props.project.notes.notes}</p> */}
-                        {/* <p>{props.project.notes.notesLink}</p> */}
+                        <p>{props.project.notes.notes}</p>
+                        <p>{props.project.notes.notesLink}</p>
                     </div>
                     <div className='github-link'>
                         this projects <a href={github} target="blank" rel="noopener noreferer" >github</a>

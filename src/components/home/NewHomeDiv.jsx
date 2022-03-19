@@ -1,14 +1,12 @@
 import styled from  'styled-components'
 
 const NewHomeDiv = styled.div`
-    
     height: 100vh;
-    width: 100vw;
+    max-width: 100vw;
     display: flex;
     color: white;
 
     .nav-div {
-
         color: white;
         width: 38.2vw;
         display: flex;
@@ -18,14 +16,17 @@ const NewHomeDiv = styled.div`
     }
 
     .content-div {
-
+        margin-top: 30px;
+        margin-right: 30px;
         color: white;
         width: 61.8vw;
         max-height: 100vh;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
     }
 
     .content-container {
@@ -44,7 +45,7 @@ const NewHomeDiv = styled.div`
         flex-direction: column-reverse;
 
         .nav-div {
-
+            flex-direction: row;
             height: 20vh;
             width: 100vw;
             color: white;

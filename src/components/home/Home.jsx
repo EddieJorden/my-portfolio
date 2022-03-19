@@ -1,5 +1,4 @@
 import React from "react";
-import NavButton from "../navButton/NavButton";
 import { HomeDiv } from "./styled_home";
 import ComponentDiv from "../componentDiv/ComponentDiv";
 
@@ -20,17 +19,6 @@ const Home = () => {
                         <h3 className="software" >Software </h3>
                         <h3 className="engineer" >Engineer </h3>
                     </div>                
-                    <div className="button-container-container">
-                        <div className="button-container">
-                            <NavButton buttonText="About Eddie" linkTo='/AboutMe'/>
-                        </div>
-                        <div className="button-container">
-                            <NavButton buttonText="Contact Info" linkTo='/ContactInfo'/>
-                        </div>
-                        <div className="button-container">
-                            <NavButton buttonText="My Projects" linkTo='/MyProjects'/>
-                        </div>
-                    </div>
                     </div>
                 </ComponentDiv>
             </div>

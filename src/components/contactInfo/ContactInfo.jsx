@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import NavButton from "../navButton/NavButton";
 import { ContactInfoDiv } from "./styled_ContactInfo";
 import ComponentDiv from "../componentDiv/ComponentDiv";
 
@@ -23,9 +22,6 @@ const ContactInfo = () => {
                         <h3 className="github">github: <span><a href="https://github.com/EddieJorden" rel="noopener">My Github</a></span></h3>
                         <h3 className="linkedin">linkedIn: <a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/" rel="noopener">My Linkedin</a></h3>
                         <h3 className="resume">resume: <Link to="/Resume" rel="noopener">My Resume</Link></h3>
-                        <div className="button-container">
-                            <NavButton buttonText='home' linkTo='/'/>
-                        </div>
                     </div>
                 </ComponentDiv>
             </div>

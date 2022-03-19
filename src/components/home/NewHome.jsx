@@ -1,6 +1,6 @@
 import NewHomeDiv from './NewHomeDiv';
 import ContentWindow from './ContentWindow';
-
+import MyResume from '../myResume/MyResume'
 import ContactInfo from '../contactInfo/ContactInfo';
 import { useState } from 'react'
 import MyProjects from '../myProjects/MyProjects';
@@ -9,6 +9,7 @@ import Home from '../home/Home';
 import styled from 'styled-components';
 
 import AboutMe from '../aboutMe/AboutMe'
+
 
 
 const NewHomeButton = styled.button`
@@ -39,18 +40,20 @@ const NewHome = () => {
     return (
         <NewHomeDiv>
             <div className='nav-div'>
-                
                 <NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
-                    contact info
+                    Contact
                 </NewHomeButton>
                 <NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
-                    my projects
+                    My Projects
                 </NewHomeButton>
                 <NewHomeButton onClick={() => updateDisplayedContent(<Home />)}>
-                    home
+                    Home
                 </NewHomeButton>
                 <NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
-                    about me
+                    About Me
+                </NewHomeButton>
+                <NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
+                    My Resume
                 </NewHomeButton>
             </div>
             <div className='content-div'>

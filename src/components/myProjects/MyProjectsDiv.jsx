@@ -6,7 +6,6 @@ const MyProjectsDiv = styled.div`
     flexDirection: column;
     justify-content: center;
     overflow: scroll;
-    display: flex;
     width: 100%;
     margin: auto
 
