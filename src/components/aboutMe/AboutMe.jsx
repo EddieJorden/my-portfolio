@@ -1,4 +1,3 @@
-import NavButton from "../navButton/NavButton";
 import AboutMeDiv from "./AboutMeDiv";
 import ComponentDiv from "../componentDiv/ComponentDiv";
 
@@ -19,14 +18,6 @@ const AboutMe = () => {
                 <ul>Recently I conceptualized, planned, developed, released and currently maintain a fully custom built CRM where I have solved many complex business problems through technology.</ul>
                 <ul>With over 50 completed projects on Github ranging from HTML to Redux and experience working together with other developers, currently I am learning back end web development and looking forward to a new team and a new project.</ul>
                 <ul>Hopefully we can work together in the future.</ul>
-            <div className="button-container">
-                <div className="contact-info">
-                    <NavButton buttonText='Contact Info' linkTo='/ContactInfo'/>
-                </div>
-                <div className="home-button">
-                    <NavButton buttonText='Home' linkTo='/'/>
-                </div>
-            </div>
             </div>
             </ComponentDiv>
         </AboutMeDiv>
