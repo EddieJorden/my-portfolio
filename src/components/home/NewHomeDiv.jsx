@@ -1,14 +1,14 @@
 import styled from  'styled-components'
 
 const NewHomeDiv = styled.div`
-    background-color: red;
+    
     height: 100vh;
     width: 100vw;
     display: flex;
     color: white;
 
     .nav-div {
-        background-color: green;
+
         color: white;
         width: 38.2vw;
         display: flex;
@@ -18,7 +18,7 @@ const NewHomeDiv = styled.div`
     }
 
     .content-div {
-        background-color: blue;
+
         color: white;
         width: 61.8vw;
         max-height: 100vh;
@@ -41,10 +41,10 @@ const NewHomeDiv = styled.div`
     }
 
     @media only screen and (max-width: 900px) {
-        flex-direction: column;
+        flex-direction: column-reverse;
 
         .nav-div {
-            background-color: green;
+
             height: 20vh;
             width: 100vw;
             color: white;

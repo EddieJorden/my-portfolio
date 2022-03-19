@@ -3,10 +3,7 @@ import myProjectsArray from "./myProjectsArray";
 import MyProjectsDiv from "./MyProjectsDiv";
 import ProjectTile from "./ProjectTile";
 
-
-
-
-const MyProjects = (props) => {
+const MyProjects = () => {
 
     let keyValue = 0
 
@@ -31,4 +28,3 @@ const MyProjects = (props) => {
 };
 
 export default MyProjects;
-

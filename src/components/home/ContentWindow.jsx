@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const ContentWindowDiv = styled.div`
-    background-color: yellow;
+
     width: 100%
 `
 
