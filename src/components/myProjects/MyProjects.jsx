@@ -3,7 +3,7 @@ import myProjectsArray from "./myProjectsArray";
 import MyProjectsDiv from "./MyProjectsDiv";
 import ProjectTile from "./ProjectTile";
 
-const MyProjects = () => {
+const MyProjects = (props) => {
 
     let keyValue = 0
 
@@ -12,7 +12,7 @@ const MyProjects = () => {
             <div>{myProjectsArray.map(((each) => {
                 keyValue = keyValue + 1
                 return (
-                    <div key={keyValue}>
+                    <div className="project-tile-container" key={keyValue}>
                         <ProjectTile project={each} />
                     </div>    
                 )

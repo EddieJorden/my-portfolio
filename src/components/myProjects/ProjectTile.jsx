@@ -3,10 +3,15 @@ import ComponentDiv from "../componentDiv/ComponentDiv";
 import styled from "styled-components";
 
 const ProjectTileDiv = styled.div`
-    img {
-        height: 161px;
-        border-radius: 15px;
-    }
+  display: flex;
+  flex-dircetion: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 161px;
+    border-radius: 15px;
+  }
 `
 
 const ProjectTile = (props) => {
@@ -23,7 +28,13 @@ const ProjectTile = (props) => {
                         </div>
                     </a>
                     <div className='project-notes'>
+
                         <p>{notes}</p>
+
+                        <p>{props.project.notes.notes}</p>
+                        
+                        <p>{props.project.notes.notesLink}</p>
+
                     </div>
                     <div className='github-link'>
                         this projects <a href={github} target="blank" rel="noopener noreferer" >github</a>

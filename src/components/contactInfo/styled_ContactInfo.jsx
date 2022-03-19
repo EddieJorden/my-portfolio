@@ -7,6 +7,7 @@ max-width: 100%;
 display: flex;
 justify-content: center;
 flex-direction: column;
+text-wrap: none;
 
 img {
     max-height: 80%;
