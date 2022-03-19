@@ -15,7 +15,7 @@ img {
 }
 
 .imag-div {
-    max-height: 100vh;
+    max-height: 100%;
     max-width: 80vw;
 }
 

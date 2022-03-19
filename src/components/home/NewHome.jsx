@@ -5,12 +5,8 @@ import ContactInfo from '../contactInfo/ContactInfo';
 import { useState } from 'react'
 import MyProjects from '../myProjects/MyProjects';
 import Home from '../home/Home';
-
 import styled from 'styled-components';
-
 import AboutMe from '../aboutMe/AboutMe'
-
-
 
 const NewHomeButton = styled.button`
     background: transparent;
@@ -57,7 +53,7 @@ const NewHome = () => {
                 </NewHomeButton>
             </div>
             <div className='content-div'>
-                <div className='content-container'>
+                <div className='content-window'>
                     <ContentWindow displayedContent={displayedContent}/>
                 </div>
             </div>

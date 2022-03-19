@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MyResumeDiv = styled.div`
-max-height: 100vh;
+max-height: 100%;
 max-width: 100%;
 
 .button-container {
@@ -32,7 +32,7 @@ max-width: 100%;
     }
 
     iframe {
-        max-height: 98vh;
+        max-height: 98%;
         max-width: 98%;
         min-height: 98vh;
         min-width: 98%;

@@ -20,7 +20,7 @@ const NewHomeDiv = styled.div`
         margin-right: 30px;
         color: white;
         width: 61.8vw;
-        max-height: 100vh;
+        max-height: 100%;
         max-width: 100%;
         display: flex;
         flex-direction: column;
@@ -29,7 +29,7 @@ const NewHomeDiv = styled.div`
 
     }
 
-    .content-container {
+    .content-window {
         max-width: 80vw;
         max-height: 80vh;
         background-color: white;

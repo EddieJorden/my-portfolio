@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <div>
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={<NewHome />}/>
           <Route path="/ContactInfo" element={<ContactInfo />}/>
           <Route path="/Resume" element={<MyResume />}/>
           <Route path="/threejs" element={<ThreeJs />}/>
