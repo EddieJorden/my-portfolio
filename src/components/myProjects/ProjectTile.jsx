@@ -15,7 +15,7 @@ const ProjectTileDiv = styled.div`
 `
 
 const ProjectTile = (props) => {
-    const { name, thumbnail, altText, notes, github, link } = props.project
+    const { name, thumbnail, altText, github, link } = props.project
 
     return (
         <ProjectTileDiv>
