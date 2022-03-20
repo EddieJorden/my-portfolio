@@ -9,6 +9,10 @@ const AboutMeDiv = styled.div`
     justify-content: center;
     align-items: center;
 
+    h1 {
+        color: #1a77f2;
+    }
+
     ul {
         padding: 0px;
         color: black
