@@ -17,8 +17,6 @@ const ProjectTileDiv = styled.div`
 const ProjectTile = (props) => {
     const { name, thumbnail, altText, notes, github, link } = props.project
 
-    console.log('props', props)
-    
     return (
         <ProjectTileDiv>
             <ComponentDiv>
@@ -30,7 +28,6 @@ const ProjectTile = (props) => {
                         </div>
                     </a>
                     <div className='project-notes'>
-                        {/* <p>{notes}</p> */}
                         <p>{props.project.notes.notes}</p>
                         <p>{props.project.notes.notesLink}</p>
                     </div>

@@ -1,13 +1,26 @@
 import { MyResumeDiv } from './styled_myResume';
+import NavButton from '../navButton/NavButton';
+import styled from 'styled-components';
+
+const ResumeDiv = styled.div`
+    img {
+        max-height: 100%;
+        overflow: scroll;
+    }
+`
 
 const MyResume = () => {
     return (
         <MyResumeDiv>
-            <div className="iframe-div">
-                <iframe src="Eddie Moger Resume.pdf#zoom=41" title="myResume" width="340px" height="100%"></iframe>
-            </div>
+            <ResumeDiv>
+                <img src="resume_thumbnail.png"/>
+
+            <p>click <span><a href="Eddie Moger Resume.pdf" >
+                    here
+                </a>{" "}</span>to view and download the pdf.</p>
+            </ResumeDiv>
         </MyResumeDiv>
-    )
-}
+    );
+};
 
 export default MyResume;
