@@ -4,16 +4,22 @@ const NewHomeDiv = styled.div`
     height: 100vh;
     max-width: 100vw;
     display: flex;
-    color: white;
+
 
     .nav-div {
-        color: white;
+        color: #1a77f2;
         width: 38.2vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        @media only screen and (max-width: 900px) {
+            display: none;
+        }
     }
+
+
 
     .content-div {
         margin-top: 30px;
@@ -26,7 +32,6 @@ const NewHomeDiv = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
     }
 
     .content-window {
@@ -41,21 +46,7 @@ const NewHomeDiv = styled.div`
         text-align: -webkit-center;
     }
 
-    @media only screen and (max-width: 900px) {
-        flex-direction: column-reverse;
 
-        .nav-div {
-            flex-direction: row;
-            height: 20vh;
-            width: 100vw;
-            color: white;
-        }
-
-        .content-div {
-            height: 80vh;
-            width: 100vw;
-        }
-    }
 `
 
 export default NewHomeDiv;

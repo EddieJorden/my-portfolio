@@ -6,7 +6,10 @@ import { useState } from 'react'
 import MyProjects from '../myProjects/MyProjects';
 import Home from '../home/Home';
 import styled from 'styled-components';
-import AboutMe from '../aboutMe/AboutMe'
+import AboutMe from '../aboutMe/AboutMe';
+import ProfileComponent from '../profileComponent/ProfileComponent';
+import ListRenderer from './ListRenderer';
+import ComponentDiv from '../componentDiv/ComponentDiv';
 
 const NewHomeButton = styled.button`
     background: transparent;
@@ -26,7 +29,77 @@ const NewHomeButton = styled.button`
 } 
 `
 
-const NewHome = () => {
+const NavProfileDivContainer = styled.div`
+    min-width: 100%;
+    height: 20%;
+    flex-grow: .2;
+    width: 100%;
+`
+
+const NavLinksDiv = styled.div`
+    flex-grow: 1;
+    width: 100%;
+`
+
+const NavFooterDiv = styled.div`
+    flex-grow: .2;
+    width: 100%;
+`
+
+const ProfileDiv = styled.div`
+
+    height: 61%;
+`
+
+const NavigationDiv = styled.div`
+`
+
+const NavLinksContainer = styled.div`
+
+`
+
+const NavLinksListDiv = styled.ul`
+    text-align: left;
+`
+
+const ContentDiv = styled.div`
+
+    color: white;
+    width: 61.8vw;
+    min-height: 80%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 900px) {
+
+        width: 100vw;
+    }
+`
+
+const ContentWindowDiv = styled.div`
+    max-width: 80vw;
+    max-height: 80vh;
+    background-color: white;
+    color: black;
+    overflow: scroll;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: -webkit-center;
+`
+
+const ContentWindowWrapper = styled.div`
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+const NewHome = ({ myProjectsArray }) => {
     const [displayedContent, setDisplayedContent] = useState(<Home />)
 
     const updateDisplayedContent = (target) => {
@@ -36,27 +109,49 @@ const NewHome = () => {
     return (
         <NewHomeDiv>
             <div className='nav-div'>
-                <NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
-                    Contact
-                </NewHomeButton>
-                <NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
-                    My Projects
-                </NewHomeButton>
-                <NewHomeButton onClick={() => updateDisplayedContent(<Home />)}>
-                    Home
-                </NewHomeButton>
-                <NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
-                    About Me
-                </NewHomeButton>
-                <NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
-                    My Resume
-                </NewHomeButton>
+                <NavProfileDivContainer>
+                    <ProfileDiv>
+                        <ProfileComponent/>
+                    </ProfileDiv>
+                </NavProfileDivContainer>
+                <NavLinksDiv>
+                    <NavLinksContainer>
+                        <h3>my projects</h3>
+                        <NavLinksListDiv>
+                            <ListRenderer myProjectsArray={myProjectsArray}/>
+                        </NavLinksListDiv>
+                    </NavLinksContainer>
+                </NavLinksDiv>
+                <NavFooterDiv>
+                    <h3>contact info</h3>
+                </NavFooterDiv>
             </div>
-            <div className='content-div'>
-                <div className='content-window'>
-                    <ContentWindow displayedContent={displayedContent}/>
-                </div>
-            </div>
+            <ContentDiv>
+                <ContentWindowWrapper>
+                    <ComponentDiv>
+                        <ContentWindowDiv>
+                            <ContentWindow displayedContent={displayedContent}/>
+                        </ContentWindowDiv>
+                    </ComponentDiv>
+                </ContentWindowWrapper>
+                <NavigationDiv>
+                    <NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
+                        Contact
+                    </NewHomeButton>
+                    <NewHomeButton onClick={() => updateDisplayedContent(<Home />)}>
+                        Home
+                    </NewHomeButton>
+                    <NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
+                        My Projects
+                    </NewHomeButton>
+                    <NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
+                        My Resume
+                    </NewHomeButton>
+                    <NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
+                        About Me
+                    </NewHomeButton>
+                </NavigationDiv>
+            </ContentDiv>
         </NewHomeDiv>
     )
 };
