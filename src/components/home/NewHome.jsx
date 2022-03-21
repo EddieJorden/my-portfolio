@@ -92,11 +92,18 @@ const ContentWindowDiv = styled.div`
 `
 
 const ContentWindowWrapper = styled.div`
-    height: 90%;
+    height: 95%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (max-width: 900px) {
+
+        width: 100%;
+        height: 100%;
+    }
 `
 
 const NewHome = ({ myProjectsArray }) => {
