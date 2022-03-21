@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+My Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a portfolio for Eddie Moger who is a software developer out of Sunnyvale CA.
 
-## Available Scripts
+This portfolio has been created to introduce you to Eddie Moger.
 
-In the project directory, you can run:
+This project was built using JavaScript with React.js, as well as styled components.
 
-### `npm start`
+Some of the challenges I faced building this application was the overall planning and structure.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installation:
+    you will need to have a javascript developement enviroment setup on your machine to run this locally.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    this link will take you through the steps.
+    https://create-react-app.dev/docs/getting-started/
 
-### `npm test`
+    when you are ready to run the app you will need to fork this repository from:
+    https://github.com/EddieJorden/my-portfolio
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    and clone it to your local machine using
+    git clone https://github.com/yourgithubusername/my-portfolio
 
-### `npm run build`
+    once installed on your local machine navigate to the directory you savaed it to and type
+    npm start or yarn start if you are using yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    if all has gone as expected the app should start up in a development server on your local machine
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+How To
+    This is built mostly using only flexbox,  each section of the app is a box that renders based on @media.  The structure is modular and adjusts and arranges itself with out the need for individual css changes.
+    
+    the content window displays the Component passed into updateDisplayContent
+    example:
+    updateDisplayedContent(<ReachComponentToDisplay />)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    MyProjectsArray is a mock back end api, the data is then used throughout the app.
 
-### `npm run eject`
+    NavButton is a modular button used with data being passed in throughout the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    CompenentDiv is a modular component div providing consistent css throughout the app.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+About the Team
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+I worked on this project as the project manager, architect, designer, engineer, CEO, CFO, and CTO. (I did it all baby!)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Team
 
-## Learn More
+    Eddie Moger 
+    https://github.com/EddieJorden
+    https://www.linkedin.com/in/edward-moger-1a50b21bb/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for taking the time to read this README.md as it is my first readme :)
