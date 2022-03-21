@@ -47,7 +47,6 @@ const NavFooterDiv = styled.div`
 `
 
 const ProfileDiv = styled.div`
-
     height: 61%;
 `
 
@@ -67,7 +66,6 @@ const ContentDiv = styled.div`
     color: white;
     width: 61.8vw;
     min-height: 80%;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,7 +98,6 @@ const ContentWindowWrapper = styled.div`
     align-items: center;
 
     @media only screen and (max-width: 900px) {
-
         width: 100%;
         height: 100%;
     }
@@ -108,7 +105,6 @@ const ContentWindowWrapper = styled.div`
 
 const NewHome = ({ myProjectsArray }) => {
     const [displayedContent, setDisplayedContent] = useState(<Home />)
-
     const updateDisplayedContent = (target) => {
         setDisplayedContent(target)
     }
