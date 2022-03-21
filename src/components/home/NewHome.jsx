@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import AboutMe from '../aboutMe/AboutMe';
 import ProfileComponent from '../profileComponent/ProfileComponent';
 import ListRenderer from './ListRenderer';
+import ComponentDiv from '../componentDiv/ComponentDiv';
 
 const NewHomeButton = styled.button`
     background: transparent;
@@ -28,7 +29,7 @@ const NewHomeButton = styled.button`
 } 
 `
 
-const NavProfileDiv = styled.div`
+const NavProfileDivContainer = styled.div`
     min-width: 100%;
     height: 20%;
     flex-grow: 1;
@@ -80,6 +81,36 @@ const NavLinksListDiv = styled.ul`
     text-align: left;
 `
 
+const ContendDiv = styled.div`
+    margin-top: 30px;
+    margin-right: 30px;
+    color: white;
+    width: 61.8vw;
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 900px) {
+        height: 80vh;
+        width: 100vw;
+    }
+`
+
+const ContentWindowDiv = styled.div`
+    max-width: 80vw;
+    max-height: 80vh;
+    background-color: white;
+    color: black;
+    overflow: scroll;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: -webkit-center;
+`
+
 const NewHome = ({ myProjectsArray }) => {
     const [displayedContent, setDisplayedContent] = useState(<Home />)
 
@@ -90,11 +121,11 @@ const NewHome = ({ myProjectsArray }) => {
     return (
         <NewHomeDiv>
             <div className='nav-div'>
-                <NavProfileDiv>
+                <NavProfileDivContainer>
                     <ProfileDiv>
                         <ProfileComponent/>
                     </ProfileDiv>
-                </NavProfileDiv>
+                </NavProfileDivContainer>
                 <NavigationDiv>
                     <NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
                         Contact
@@ -124,11 +155,13 @@ const NewHome = ({ myProjectsArray }) => {
                     <h3>contact info</h3>
                 </NavFooterDiv>
             </div>
-            <div className='content-div'>
-                <div className='content-window'>
-                    <ContentWindow displayedContent={displayedContent}/>
-                </div>
-            </div>
+            <ContendDiv>
+                <ComponentDiv>
+                    <ContentWindowDiv>
+                        <ContentWindow displayedContent={displayedContent}/>
+                    </ContentWindowDiv>
+                </ComponentDiv>
+            </ContendDiv>
         </NewHomeDiv>
     )
 };
