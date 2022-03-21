@@ -7,7 +7,7 @@ const NewHomeDiv = styled.div`
     color: white;
 
     .nav-div {
-        color: white;
+        color: blue;
         width: 38.2vw;
         display: flex;
         flex-direction: column;
@@ -26,7 +26,6 @@ const NewHomeDiv = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
     }
 
     .content-window {
