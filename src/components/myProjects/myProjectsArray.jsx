@@ -56,6 +56,15 @@ const myProjectsArray = [
             notes: 'Here is a fully built and conceptualized contacts and appointments app built using React.js.'
         },
         github: 'https://github.com/EddieJorden/react_challenge/settings/pages',
+    },
+        {
+        name: 'This Portfolio',
+        thumbnail: 'My_Portfolio_thumbnail.png',
+        altText: 'My_Portfolio_thumbnail',
+        link: 'https://eddiemoger.com',
+        linkText: 'This Portfolio',
+        notes: 'This portfolio was built using react, stylized components and react-router',
+        github: 'https://github.com/EddieJorden/my-portfolio',
     }
     // {
     //     name: 'name of app here',
