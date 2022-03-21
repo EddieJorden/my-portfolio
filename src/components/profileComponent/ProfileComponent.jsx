@@ -4,16 +4,11 @@ const ProfileComponentWrapper = styled.div`
 
     min-height: 100%;
     max-height: 100%;
-    color: blue;
-
-    img {
-        max-width: 27%;
-        margin: 15px;
-    }
 `
 
-const ImageDiv = styled.div`
+const ProfileDiv = styled.div`
     display: flex;
+    flex-direction: row;
 `
 
 const UserInfoDiv = styled.div`
@@ -26,12 +21,19 @@ const UserInfoDiv = styled.div`
     text-align: left;
 `
 
+const ProfileImageWrapper = styled.div`
+    max-width: 50%;
+    margin: 5%;
+`
+
 const ProfileComponent = () => {
 
     return (
         <ProfileComponentWrapper>
-            <ImageDiv>
-                <img src="eddie_profile_pic.jpg" alt="eddie_moger_profile"/>
+            <ProfileDiv>
+                <ProfileImageWrapper>
+                    <img src="eddie_profile_pic.jpg" alt="eddie_moger_profile"/>
+                </ProfileImageWrapper>
                     <span>
                         <UserInfoDiv>
                             <h3>Eddie Moger</h3>
@@ -40,7 +42,7 @@ const ProfileComponent = () => {
                             <div>Profile</div>
                         </UserInfoDiv>
                     </span>
-            </ImageDiv>
+            </ProfileDiv>
         </ProfileComponentWrapper>
     )
 };

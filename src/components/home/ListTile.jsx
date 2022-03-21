@@ -8,7 +8,7 @@ const ListTileDiv = styled.div`
 const ListTile = ({ project }) => {
     return (
         <ListTileDiv>
-            <a href={project.link}>{project.name}</a>
+            <a href={project.github} target="blank" noopener noreferer>{project.name}</a>
         </ListTileDiv>
     );
 };
