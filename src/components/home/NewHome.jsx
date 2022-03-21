@@ -72,8 +72,8 @@ const ContentDiv = styled.div`
     justify-content: center;
 
     @media only screen and (max-width: 900px) {
-
         width: 100vw;
+        max-height: 92%;
     }
 `
 
