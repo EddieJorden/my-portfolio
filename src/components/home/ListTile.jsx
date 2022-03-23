@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 const ListTileDiv = styled.div`
-
+    min-width: 100%;
 `
 
 const ListTile = ({ project }) => {

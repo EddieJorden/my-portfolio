@@ -7,6 +7,7 @@ const ProjectTileDiv = styled.div`
   flex-dircetion: column;
   justify-content: center;
   align-items: center;
+  margin: 15px;
 
   img {
     height: 161px;
