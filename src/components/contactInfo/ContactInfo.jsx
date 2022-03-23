@@ -78,15 +78,8 @@ h3 {
     color: grey
 }
 
-
-
-
-
 }
 `
-
-
-
 
 const ContactInfo = () => {
 

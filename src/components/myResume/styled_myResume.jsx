@@ -15,12 +15,6 @@ max-width: 100%;
 
 @media (max-width: 805px) {
     grid-column-layout: 1fr;
-
-    iframe {
-        min-width: 100%;
-        max-width: 100%;
-        max-height: 61vh;
-    }
 }
 
 @media (min-width: 550px) {

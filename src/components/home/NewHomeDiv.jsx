@@ -5,22 +5,6 @@ const NewHomeDiv = styled.div`
     max-width: 100vw;
     display: flex;
 
-
-    .nav-div {
-        color: #1a77f2;
-        width: 38.2vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        @media only screen and (max-width: 900px) {
-            display: none;
-        }
-    }
-
-
-
     .content-div {
         margin-top: 30px;
         margin-right: 30px;

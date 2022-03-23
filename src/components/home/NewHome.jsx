@@ -30,24 +30,28 @@ const NewHomeButton = styled.button`
 `
 
 const NavProfileDivContainer = styled.div`
-    min-width: 100%;
-    height: 20%;
-    flex-grow: .2;
-    width: 100%;
+    margin: 15px;
 `
 
 const NavLinksDiv = styled.div`
     flex-grow: 1;
-    width: 100%;
+
+    margin: 15px;
 `
 
 const NavFooterDiv = styled.div`
-    flex-grow: .2;
-    width: 100%;
+    flex-grow: 1;
+    margin: 15px;
+`
+
+const NavFooterContainer = styled.div`
+    
+
 `
 
 const ProfileDiv = styled.div`
-    height: 61%;
+
+
 `
 
 const NavigationDiv = styled.div`
@@ -58,11 +62,35 @@ const NavLinksContainer = styled.div`
 `
 
 const NavLinksListDiv = styled.ul`
-    text-align: left;
+
+`
+
+const NavDivContainer = styled.div`
+    max-width: 95%;
+    max-height: 95%;
+    min-width: 95%;
+    min-height: 95%;
+    display: flex;
+    flex-direction: column;
+    alight-items: center;
+    justify-content: center;
+`
+
+const NavDiv = styled.div`
+    color: #1a77f2;
+    width: 38%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 900px) {
+        display: none;
+    }
 `
 
 const ContentDiv = styled.div`
-
     color: white;
     width: 61.8vw;
     min-height: 80%;
@@ -90,8 +118,8 @@ const ContentWindowDiv = styled.div`
 `
 
 const ContentWindowWrapper = styled.div`
-    height: 95%;
-    width: 95%;
+    height: 90%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,24 +139,34 @@ const NewHome = ({ myProjectsArray }) => {
 
     return (
         <NewHomeDiv>
-            <div className='nav-div'>
-                <NavProfileDivContainer>
-                    <ProfileDiv>
-                        <ProfileComponent/>
-                    </ProfileDiv>
-                </NavProfileDivContainer>
-                <NavLinksDiv>
+            <NavDiv>
+                <NavDivContainer>
+                    <NavProfileDivContainer>
+                        <ComponentDiv>
+                            <ProfileDiv>
+                                <ProfileComponent/>
+                            </ProfileDiv>
+                        </ComponentDiv>
+                    </NavProfileDivContainer>
                     <NavLinksContainer>
-                        <h3>my projects</h3>
-                        <NavLinksListDiv>
-                            <ListRenderer myProjectsArray={myProjectsArray}/>
-                        </NavLinksListDiv>
+                        <NavLinksDiv>
+                            <ComponentDiv>
+                            <NavLinksListDiv>
+                                <h3>my projects</h3>
+                                <ListRenderer myProjectsArray={myProjectsArray}/>
+                            </NavLinksListDiv>
+                            </ComponentDiv>
+                        </NavLinksDiv>
                     </NavLinksContainer>
-                </NavLinksDiv>
-                <NavFooterDiv>
-                    <h3>contact info</h3>
-                </NavFooterDiv>
-            </div>
+                    <NavFooterContainer>
+                        <NavFooterDiv>
+                            <ComponentDiv>
+                                <h3>contact info</h3>
+                            </ComponentDiv>
+                        </NavFooterDiv>
+                    </NavFooterContainer>
+                </NavDivContainer>
+            </NavDiv>
             <ContentDiv>
                 <ContentWindowWrapper>
                     <ComponentDiv>
