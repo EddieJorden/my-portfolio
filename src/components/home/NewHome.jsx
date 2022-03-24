@@ -107,12 +107,11 @@ const ContentDiv = styled.div`
     justify-content: center;
 
     @media only screen and (max-width: 900px) {
-
+        width: 100%;
     }
 `
 
 const ContentWindowDiv = styled.div`
-    max-width: 80vw;
     max-height: 80vh;
     background-color: white;
     color: black;
@@ -121,15 +120,18 @@ const ContentWindowDiv = styled.div`
     display: flex;
     flex-direction: column;
     text-align: -webkit-center;
+    max-width: 100%;
 `
 
 const ContentWindowWrapper = styled.div`
-    height: 90%;
-    width: 90%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
+    min-width: 85%;
+    min-height: 95%
 
     @media only screen and (max-width: 900px) {
 
