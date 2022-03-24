@@ -13,12 +13,16 @@ text-wrap: none;
 
 img {
     max-height: 80%;
-    max-width: 80%;
+    max-width: 30%;
+
+    @media only screen and (max-width: 900px) {
+        max-width: 100%;
+    }
 }
 
 .imag-div {
     max-height: 100%;
-    max-width: 80vw;
+    max-width: 80%;
 }
 
 ul {
