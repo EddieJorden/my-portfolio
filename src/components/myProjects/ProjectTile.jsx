@@ -23,7 +23,7 @@ const ProjectTile = (props) => {
             <ComponentDiv>
                 <div className={`${name}`}>
                     <h1 style={{fontWeight: 'bolder'}}>{name}</h1>
-                    <a href={link} target="blank" rel="noopener noreferer">
+                    <a href={link} target="blank" >
                         <div className="image-container">
                             <img src={thumbnail} alt={altText}/>
                         </div>
@@ -33,7 +33,7 @@ const ProjectTile = (props) => {
                         <p>{props.project.notes.notesLink}</p>
                     </div>
                     <div className='github-link'>
-                        this projects <a href={github} target="blank" rel="noopener noreferer" >github</a>
+                        this projects <a href={github} target="blank"  >github</a>
                     </div>
                 </div>
             </ComponentDiv>

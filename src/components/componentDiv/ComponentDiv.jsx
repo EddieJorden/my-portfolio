@@ -11,8 +11,9 @@ const ComponentDiv = styled.div`
     max-width: 100%;
     max-height: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-    width: 100%;
-    height: 100%;
+
+    padding: 15px;
+    margin: 15px;
 
     .project-notes {
         color: black;

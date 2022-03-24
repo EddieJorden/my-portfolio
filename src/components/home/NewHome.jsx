@@ -8,7 +8,7 @@ import Home from '../home/Home';
 import styled from 'styled-components';
 import AboutMe from '../aboutMe/AboutMe';
 import ProfileComponent from '../profileComponent/ProfileComponent';
-import ListRenderer from './ListRenderer';
+import ProjectsRenderer from './ProjectsRenderer';
 import ComponentDiv from '../componentDiv/ComponentDiv';
 
 const NewHomeButton = styled.button`
@@ -19,6 +19,7 @@ const NewHomeButton = styled.button`
     padding: 0.5vw 1.5vw;
     margin: 4px;
     transition: 375ms;
+
     :hover {
         cursor: pointer;
         border: 4px solid #1a77f2;
@@ -29,43 +30,49 @@ const NewHomeButton = styled.button`
 } 
 `
 
-const NavProfileDivContainer = styled.div`
+const SideBarProfileDivContainer = styled.div`
     margin: 15px;
+
+    @media only screen and (max-width: 900px) {
+        display: none;
+    }
+
 `
 
-const NavLinksDiv = styled.div`
+const ProjectLinksDiv = styled.div`
     flex-grow: 1;
-
     margin: 15px;
 `
 
-const NavFooterDiv = styled.div`
+const SideBarFooterDiv = styled.div`
     flex-grow: 1;
-    margin: 15px;
+    min-width: 100%;
 `
 
-const NavFooterContainer = styled.div`
-    
-
+const SideBarFooterContainer = styled.div`
+    min-width: 100%;
 `
 
 const ProfileDiv = styled.div`
 
-
 `
 
 const NavigationDiv = styled.div`
+    min-width: 100%;
 `
 
-const NavLinksContainer = styled.div`
-
+const SideBarLinksContainer = styled.div`
+    @media only screen and (max-width: 900px) {
+        display: none;
+    }
 `
 
-const NavLinksListDiv = styled.ul`
+const ProjectLinksListDiv = styled.div`
 
+    margin-left: none;
 `
 
-const NavDivContainer = styled.div`
+const SideBarDivContainer = styled.div`
     max-width: 95%;
     max-height: 95%;
     min-width: 95%;
@@ -76,7 +83,7 @@ const NavDivContainer = styled.div`
     justify-content: center;
 `
 
-const NavDiv = styled.div`
+const SideBarDiv = styled.div`
     color: #1a77f2;
     width: 38%;
     height: 100%;
@@ -86,7 +93,7 @@ const NavDiv = styled.div`
     justify-content: center;
 
     @media only screen and (max-width: 900px) {
-        display: none;
+        min-width: 100%;
     }
 `
 
@@ -100,8 +107,7 @@ const ContentDiv = styled.div`
     justify-content: center;
 
     @media only screen and (max-width: 900px) {
-        width: 100vw;
-        max-height: 92%;
+
     }
 `
 
@@ -126,8 +132,7 @@ const ContentWindowWrapper = styled.div`
     align-items: center;
 
     @media only screen and (max-width: 900px) {
-        width: 100%;
-        height: 100%;
+
     }
 `
 
@@ -139,34 +144,53 @@ const NewHome = ({ myProjectsArray }) => {
 
     return (
         <NewHomeDiv>
-            <NavDiv>
-                <NavDivContainer>
-                    <NavProfileDivContainer>
+            <SideBarDiv>
+                <SideBarDivContainer>
+
+                    <SideBarProfileDivContainer>
                         <ComponentDiv>
                             <ProfileDiv>
                                 <ProfileComponent/>
                             </ProfileDiv>
                         </ComponentDiv>
-                    </NavProfileDivContainer>
-                    <NavLinksContainer>
-                        <NavLinksDiv>
+                    </SideBarProfileDivContainer>
+
+                    <SideBarLinksContainer>
+                        <ProjectLinksDiv>
                             <ComponentDiv>
-                            <NavLinksListDiv>
-                                <h3>my projects</h3>
-                                <ListRenderer myProjectsArray={myProjectsArray}/>
-                            </NavLinksListDiv>
+                                <ProjectLinksListDiv>
+                                    <h3>my projects</h3>
+                                    <ProjectsRenderer myProjectsArray={myProjectsArray}/>
+                                </ProjectLinksListDiv>
                             </ComponentDiv>
-                        </NavLinksDiv>
-                    </NavLinksContainer>
-                    <NavFooterContainer>
-                        <NavFooterDiv>
-                            <ComponentDiv>
-                                <h3>contact info</h3>
-                            </ComponentDiv>
-                        </NavFooterDiv>
-                    </NavFooterContainer>
-                </NavDivContainer>
-            </NavDiv>
+                        </ProjectLinksDiv>
+                    </SideBarLinksContainer>
+
+                    <SideBarFooterContainer>
+                        <SideBarFooterDiv>
+                            <NavigationDiv>
+                                <NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
+                                    Contact
+                                </NewHomeButton>
+                                <NewHomeButton onClick={() => updateDisplayedContent(<Home />)}>
+                                    Home
+                                </NewHomeButton>
+                                <NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
+                                    My Projects
+                                </NewHomeButton>
+                                <NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
+                                    My Resume
+                                </NewHomeButton>
+                                <NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
+                                    About Me
+                                </NewHomeButton>
+                            </NavigationDiv>
+                        </SideBarFooterDiv>
+                    </SideBarFooterContainer>
+
+                </SideBarDivContainer>
+            </SideBarDiv>
+
             <ContentDiv>
                 <ContentWindowWrapper>
                     <ComponentDiv>
@@ -175,23 +199,6 @@ const NewHome = ({ myProjectsArray }) => {
                         </ContentWindowDiv>
                     </ComponentDiv>
                 </ContentWindowWrapper>
-                <NavigationDiv>
-                    <NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
-                        Contact
-                    </NewHomeButton>
-                    <NewHomeButton onClick={() => updateDisplayedContent(<Home />)}>
-                        Home
-                    </NewHomeButton>
-                    <NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
-                        My Projects
-                    </NewHomeButton>
-                    <NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
-                        My Resume
-                    </NewHomeButton>
-                    <NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
-                        About Me
-                    </NewHomeButton>
-                </NavigationDiv>
             </ContentDiv>
         </NewHomeDiv>
     )
