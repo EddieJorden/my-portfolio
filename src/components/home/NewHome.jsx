@@ -152,7 +152,7 @@ const NewHome = ({ myProjectsArray }) => {
                     <SideBarProfileDivContainer>
                         <ComponentDiv>
                             <ProfileDiv>
-                                <ProfileComponent/>
+                                <ProfileComponent updateDisplayedContent={updateDisplayedContent}/>
                             </ProfileDiv>
                         </ComponentDiv>
                     </SideBarProfileDivContainer>

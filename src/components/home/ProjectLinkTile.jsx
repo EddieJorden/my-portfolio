@@ -15,7 +15,7 @@ const ProjectLinkTileDiv = styled.div`
 const ProjectLinkTile = ({ project }) => {
     return (
         <ProjectLinkTileDiv>
-            <a href={project.link} target="blank" noopener="true" noreferer="true"><span><img src={project.thumbnail}/></span>{project.name}</a>
+            <a href={project.link} target="blank" noopener="true" noreferer="true"><span><img src={project.thumbnail} alt={project.name}/></span>{project.name}</a>
         </ProjectLinkTileDiv>
     );
 };

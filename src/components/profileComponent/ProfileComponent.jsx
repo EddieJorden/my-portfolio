@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ContactInfo from '../contactInfo/ContactInfo';
 
 const ProfileComponentWrapper = styled.div`
 
@@ -26,7 +27,23 @@ const ProfileImageWrapper = styled.div`
     margin: 5%;
 `
 
-const ProfileComponent = () => {
+const CallToActionButton = styled.button`
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    min-width: 100%;
+    min-height: 34px;
+    margin: 10px 0px;
+    font-weight: bold;
+    font-size: 18px;
+
+    :hover {
+        cursor: pointer;
+    }
+`
+
+const ProfileComponent = ({ updateDisplayedContent,  }) => {
 
     return (
         <ProfileComponentWrapper>
@@ -39,7 +56,9 @@ const ProfileComponent = () => {
                             <h3>Eddie Moger</h3>
                             <div>Software Developer</div>
                             <div>Out of Silicon Valley CA</div>
-                            <div>Profile</div>
+                            <CallToActionButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
+                                Contact
+                            </CallToActionButton>
                         </UserInfoDiv>
                     </span>
             </ProfileDiv>
