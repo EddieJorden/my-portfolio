@@ -68,8 +68,11 @@ const SideBarLinksContainer = styled.div`
 `
 
 const ProjectLinksListDiv = styled.div`
-
+    display: flex;
+    flex-direction: row;
     margin-left: none;
+    justif-content: center;
+    align-items: flex-start;
 `
 
 const SideBarDivContainer = styled.div`
@@ -160,8 +163,8 @@ const NewHome = ({ myProjectsArray }) => {
                     <SideBarLinksContainer>
                         <ProjectLinksDiv>
                             <ComponentDiv>
-                                <ProjectLinksListDiv>
                                     <h3>my projects</h3>
+                                <ProjectLinksListDiv>
                                     <ProjectsRenderer myProjectsArray={myProjectsArray}/>
                                 </ProjectLinksListDiv>
                             </ComponentDiv>
