@@ -1,5 +1,16 @@
 const myProjectsArray = [
     {
+        name: 'CTW Project',
+        thumbnail: 'ctw-project-humbnail.png',
+        altText: 'ctw-project',
+        link: 'https://eddiejorden.github.io/ctw-project/',
+        linkText: 'CTW Project',
+        notes: {
+            notes: 'The challenge presented to create a React Redux application,  that renders 1000 input fields in an array, all with the ability to update the state, as well as filters.'
+        },
+        github: 'https://github.com/EddieJorden/ctw-project',
+    },
+    {
         name: 'Flash Cards',
         thumbnail: 'flashcards-thumbnail.png',
         altText: 'alt text for thumbnail here',
@@ -65,7 +76,8 @@ const myProjectsArray = [
         linkText: 'This Portfolio',
         notes: 'This portfolio was built using react, stylized components and react-router',
         github: 'https://github.com/EddieJorden/my-portfolio',
-    },
+    }
+
     // {
     //     name: 'name of app here',
     //     thumbnail: 'thumbnail link here',
