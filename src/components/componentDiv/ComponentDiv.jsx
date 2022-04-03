@@ -5,7 +5,7 @@ const ComponentDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     border-radius: 5px;
     text-align: center;
     max-width: 100%;

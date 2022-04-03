@@ -52,7 +52,7 @@ const SideBarFooterDiv = styled.div`
 `;
 
 const SideBarFooterContainer = styled.div`
-    min-width: 100%;
+margin: 15px
 `;
 
 const ProfileDiv = styled.div`
@@ -143,6 +143,10 @@ const ContentWindowWrapper = styled.div`
     }
 `;
 
+const ButtonContainer = styled.div`
+    
+`;
+
 const NewHome = ({ myProjectsArray }) => {
 	const [displayedContent, setDisplayedContent] = useState(<Home />);
 	const updateDisplayedContent = (target) => {
@@ -176,21 +180,25 @@ const NewHome = ({ myProjectsArray }) => {
 					<SideBarFooterContainer>
 						<SideBarFooterDiv>
 							<NavigationDiv>
-								<NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
+								<ComponentDiv>
+									<ButtonContainer>
+										<NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
                                     Contact
-								</NewHomeButton>
-								<NewHomeButton onClick={() => updateDisplayedContent(<Home />)}>
+										</NewHomeButton>
+										<NewHomeButton onClick={() => updateDisplayedContent(<Home />)}>
                                     Home
-								</NewHomeButton>
-								<NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
+										</NewHomeButton>
+										<NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
                                     My Projects
-								</NewHomeButton>
-								<NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
+										</NewHomeButton>
+										<NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
                                     My Resume
-								</NewHomeButton>
-								<NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
+										</NewHomeButton>
+										<NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
                                     About Me
-								</NewHomeButton>
+										</NewHomeButton>
+									</ButtonContainer>
+								</ComponentDiv>
 							</NavigationDiv>
 						</SideBarFooterDiv>
 					</SideBarFooterContainer>
