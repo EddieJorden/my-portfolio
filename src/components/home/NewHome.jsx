@@ -1,8 +1,10 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/prop-types */
 import NewHomeDiv from './NewHomeDiv';
 import ContentWindow from './ContentWindow';
-import MyResume from '../myResume/MyResume'
+import MyResume from '../myResume/MyResume';
 import ContactInfo from '../contactInfo/ContactInfo';
-import { useState } from 'react'
+import { useState } from 'react';
 import MyProjects from '../myProjects/MyProjects';
 import Home from '../home/Home';
 import styled from 'styled-components';
@@ -28,7 +30,7 @@ const NewHomeButton = styled.button`
         margin: 2px;
         transition: 375ms
 } 
-`
+`;
 
 const SideBarProfileDivContainer = styled.div`
     margin: 15px;
@@ -37,35 +39,35 @@ const SideBarProfileDivContainer = styled.div`
         display: none;
     }
 
-`
+`;
 
 const ProjectLinksDiv = styled.div`
     flex-grow: 1;
     margin: 15px;
-`
+`;
 
 const SideBarFooterDiv = styled.div`
     flex-grow: 1;
     min-width: 100%;
-`
+`;
 
 const SideBarFooterContainer = styled.div`
     min-width: 100%;
-`
+`;
 
 const ProfileDiv = styled.div`
 
-`
+`;
 
 const NavigationDiv = styled.div`
     min-width: 100%;
-`
+`;
 
 const SideBarLinksContainer = styled.div`
     @media only screen and (max-width: 900px) {
         display: none;
     }
-`
+`;
 
 const ProjectLinksListDiv = styled.div`
     display: flex;
@@ -73,7 +75,7 @@ const ProjectLinksListDiv = styled.div`
     margin-left: none;
     justif-content: center;
     align-items: flex-start;
-`
+`;
 
 const SideBarDivContainer = styled.div`
     max-width: 95%;
@@ -84,7 +86,7 @@ const SideBarDivContainer = styled.div`
     flex-direction: column;
     alight-items: center;
     justify-content: center;
-`
+`;
 
 const SideBarDiv = styled.div`
     color: #1a77f2;
@@ -98,7 +100,7 @@ const SideBarDiv = styled.div`
     @media only screen and (max-width: 900px) {
         min-width: 100%;
     }
-`
+`;
 
 const ContentDiv = styled.div`
     color: white;
@@ -112,7 +114,7 @@ const ContentDiv = styled.div`
     @media only screen and (max-width: 900px) {
         width: 100%;
     }
-`
+`;
 
 const ContentWindowDiv = styled.div`
     max-height: 80vh;
@@ -124,7 +126,7 @@ const ContentWindowDiv = styled.div`
     flex-direction: column;
     text-align: -webkit-center;
     max-width: 100%;
-`
+`;
 
 const ContentWindowWrapper = styled.div`
 
@@ -139,74 +141,74 @@ const ContentWindowWrapper = styled.div`
     @media only screen and (max-width: 900px) {
 
     }
-`
+`;
 
 const NewHome = ({ myProjectsArray }) => {
-    const [displayedContent, setDisplayedContent] = useState(<Home />)
-    const updateDisplayedContent = (target) => {
-        setDisplayedContent(target)
-    }
+	const [displayedContent, setDisplayedContent] = useState(<Home />);
+	const updateDisplayedContent = (target) => {
+		setDisplayedContent(target);
+	};
 
-    return (
-        <NewHomeDiv>
-            <SideBarDiv>
-                <SideBarDivContainer>
+	return (
+		<NewHomeDiv>
+			<SideBarDiv>
+				<SideBarDivContainer>
 
-                    <SideBarProfileDivContainer>
-                        <ComponentDiv>
-                            <ProfileDiv>
-                                <ProfileComponent updateDisplayedContent={updateDisplayedContent}/>
-                            </ProfileDiv>
-                        </ComponentDiv>
-                    </SideBarProfileDivContainer>
+					<SideBarProfileDivContainer>
+						<ComponentDiv>
+							<ProfileDiv>
+								<ProfileComponent updateDisplayedContent={updateDisplayedContent}/>
+							</ProfileDiv>
+						</ComponentDiv>
+					</SideBarProfileDivContainer>
 
-                    <SideBarLinksContainer>
-                        <ProjectLinksDiv>
-                            <ComponentDiv>
-                                    <h3>my projects</h3>
-                                <ProjectLinksListDiv>
-                                    <ProjectsRenderer myProjectsArray={myProjectsArray}/>
-                                </ProjectLinksListDiv>
-                            </ComponentDiv>
-                        </ProjectLinksDiv>
-                    </SideBarLinksContainer>
+					<SideBarLinksContainer>
+						<ProjectLinksDiv>
+							<ComponentDiv>
+								<h3>my projects</h3>
+								<ProjectLinksListDiv>
+									<ProjectsRenderer myProjectsArray={myProjectsArray}/>
+								</ProjectLinksListDiv>
+							</ComponentDiv>
+						</ProjectLinksDiv>
+					</SideBarLinksContainer>
 
-                    <SideBarFooterContainer>
-                        <SideBarFooterDiv>
-                            <NavigationDiv>
-                                <NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
+					<SideBarFooterContainer>
+						<SideBarFooterDiv>
+							<NavigationDiv>
+								<NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
                                     Contact
-                                </NewHomeButton>
-                                <NewHomeButton onClick={() => updateDisplayedContent(<Home />)}>
+								</NewHomeButton>
+								<NewHomeButton onClick={() => updateDisplayedContent(<Home />)}>
                                     Home
-                                </NewHomeButton>
-                                <NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
+								</NewHomeButton>
+								<NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
                                     My Projects
-                                </NewHomeButton>
-                                <NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
+								</NewHomeButton>
+								<NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
                                     My Resume
-                                </NewHomeButton>
-                                <NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
+								</NewHomeButton>
+								<NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
                                     About Me
-                                </NewHomeButton>
-                            </NavigationDiv>
-                        </SideBarFooterDiv>
-                    </SideBarFooterContainer>
+								</NewHomeButton>
+							</NavigationDiv>
+						</SideBarFooterDiv>
+					</SideBarFooterContainer>
 
-                </SideBarDivContainer>
-            </SideBarDiv>
+				</SideBarDivContainer>
+			</SideBarDiv>
 
-            <ContentDiv>
-                <ContentWindowWrapper>
-                    <ComponentDiv>
-                        <ContentWindowDiv>
-                            <ContentWindow displayedContent={displayedContent}/>
-                        </ContentWindowDiv>
-                    </ComponentDiv>
-                </ContentWindowWrapper>
-            </ContentDiv>
-        </NewHomeDiv>
-    )
+			<ContentDiv>
+				<ContentWindowWrapper>
+					<ComponentDiv>
+						<ContentWindowDiv>
+							<ContentWindow displayedContent={displayedContent}/>
+						</ContentWindowDiv>
+					</ComponentDiv>
+				</ContentWindowWrapper>
+			</ContentDiv>
+		</NewHomeDiv>
+	);
 };
 
 export default NewHome;

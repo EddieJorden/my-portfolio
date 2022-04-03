@@ -1,22 +1,20 @@
-import ProjectLinkTile from "./ProjectLinkTile";
-import styled from 'styled-components';
-
-const ProjectTileContainer = styled.div`
-
-`
+/* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
+import ProjectLinkTile from './ProjectLinkTile';
 
 const ProjectsRenderer = ({ myProjectsArray }) => {
+	let keyGenerator = 1;
 
-    let keyGenerator = 1
-
-    return (
-        <ProjectTileContainer>
-            {myProjectsArray.map((each, i) => {
-                keyGenerator = keyGenerator + 1
-                return <ProjectLinkTile project={each} key={i}/>
-            })}
-        </ProjectTileContainer>
-    )
+	return (
+		<div>
+			{myProjectsArray.map((each, i) => {
+				if(i < 5) {
+					keyGenerator = keyGenerator + 1;
+					return <ProjectLinkTile project={each} key={i}/>;
+				} return null;  
+			})}
+		</div>
+	);
 };
 
 export default ProjectsRenderer;

@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import styled from 'styled-components';
 
 const HomeDiv = styled.div`
     max-height: 100%;
     overflow: none;
     object-fit: contain;
-`
+`;
 
 const ImageDiv = styled.div`
     max-hegiht: 100%;
@@ -18,17 +18,17 @@ const ImageDiv = styled.div`
         overflow: hidden;
         width: 500px
     }
-`
+`;
 
 
 const Home = () => {
-    return (
-        <HomeDiv>
-            <ImageDiv>
-                <img src="EddieInTheCity.jpg" alt="Eddie in the city"/>
-            </ImageDiv>
-        </HomeDiv>
-    )
+	return (
+		<HomeDiv>
+			<ImageDiv>
+				<img src="EddieInTheCity.jpg" alt="Eddie in the city"/>
+			</ImageDiv>
+		</HomeDiv>
+	);
 };
 
 export default Home;
