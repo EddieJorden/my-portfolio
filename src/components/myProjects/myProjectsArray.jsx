@@ -6,7 +6,9 @@ const myProjectsArray = [
 		altText: 'reddit-clone',
 		link: 'https://eddiejorden.github.io/reddit-clone/',
 		linkText: 'Reddit Clone',
-		notes: 'This project was built using React.js with Redux, as well as styled-components and lodash',
+		notes: {
+			notes: 'This project was built using React.js with Redux, as well as styled-components and lodash'
+		},
 		github: 'https://github.com/EddieJorden/reddit-clone',
 	},
 	{
@@ -27,7 +29,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/flashcards/',
 		linkText: 'Flash Cards',
 		notes: {
-			notes: 'This custom Flash Cards app was built using React.js with Redux. It allows you to make flashcard quizzes for topics you decied,  you can name the quizzes and add custom created flashcards.'
+			notes: 'This custom Flash Cards app was built using React with Redux. It allows you to make flashcard quizzes for topics you decied,  you can name the quizzes and add custom created flashcards.'
 		},
 		github: 'https://github.com/EddieJorden/flashcards',
   
@@ -50,7 +52,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/react_challenge/',
 		linkText: 'My Planner',
 		notes: {
-			notes: 'Here is a fully built and conceptualized contacts and appointments app built using React.js.'
+			notes: 'Here is a fully built and conceptualized contacts and appointments app built using React.'
 		},
 		github: 'https://github.com/EddieJorden/react_challenge/settings/pages',
 	},
@@ -61,7 +63,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/food.near.me/',
 		linkText: 'Food Near Me',
 		notes: {
-			notes: 'This is a Reactjs app built using the Yelp api, since it is in developent you must first enable cors anywhere before using this app,  click the link below and click "request temporary access to the demo server" then return to the app.',
+			notes: 'This is a React app built using the Yelp api, since it is in developent you must first enable cors anywhere before using this app,  click the link below and click "request temporary access to the demo server" then return to the app.',
 			notesLink:  <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="blank" rel="noopener noreferer">cors anywhere</a>
 		},
 		github: 'https://github.com/EddieJorden/food.near.me',
@@ -73,7 +75,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/my-jams',
 		linkText: 'My Jams',
 		notes: {
-			notes: 'Using the Spotify api I have built this React.js app to allow me to create playlists, and add tracks to esisting playslists. Please login with spotify username: "test@eddiemoger.com" password: "testpassword" to use this app.',
+			notes: 'Using the Spotify api I have built this React app to allow me to create playlists, and add tracks to existing playslists. Please login with spotify username: "test@eddiemoger.com" password: "testpassword" to use this app.',
             
 		},
 		github: 'https://github.com/EddieJorden/my-jams',
@@ -84,7 +86,9 @@ const myProjectsArray = [
 		altText: 'My_Portfolio_thumbnail',
 		link: 'https://eddiemoger.com',
 		linkText: 'This Portfolio',
-		notes: 'This portfolio was built using react, stylized components and react-router',
+		notes: {
+			notes: 'This portfolio was built using react and styled-components.'
+		},
 		github: 'https://github.com/EddieJorden/my-portfolio',
 	}
 
@@ -94,7 +98,9 @@ const myProjectsArray = [
 	//     altText: 'alt text for thumbnail here',
 	//     link: 'link to project here',
 	//     linkText: 'project link text here',
-	//     notes: 'notes here',
+	//     notes: {
+	// notes: 'notes here',
+	// }
 	//     github: 'link to this projects github here',
 	// }
 ];
