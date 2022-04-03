@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MyResumeDiv = styled.div`
 max-height: 100%;
@@ -38,4 +38,4 @@ max-width: 100%;
         margin: auto;
     }
 }
-`
+`;
