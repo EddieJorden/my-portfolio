@@ -13,7 +13,7 @@ const myProjectsArray = [
 	},
 	{
 		name: 'React Redux Challenge',
-		thumbnail: 'ctw-project-humbnail.png',
+		thumbnail: 'React-Reudx-Challenge-thumbnail.png',
 		altText: 'React-Redux-Challenge-project',
 		link: 'https://eddiejorden.github.io/ctw-project/',
 		linkText: 'React Redux Challenge Project',
