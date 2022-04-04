@@ -12,11 +12,11 @@ const myProjectsArray = [
 		github: 'https://github.com/EddieJorden/reddit-clone',
 	},
 	{
-		name: 'CTW Project',
+		name: 'React Redux Challenge',
 		thumbnail: 'ctw-project-humbnail.png',
-		altText: 'ctw-project',
+		altText: 'React-Redux-Challenge-project',
 		link: 'https://eddiejorden.github.io/ctw-project/',
-		linkText: 'CTW Project',
+		linkText: 'React Redux Challenge Project',
 		notes: {
 			notes: 'The challenge presented to create a React Redux application,  that renders 1000 input fields in an array, all with the ability to update the state, as well as filters.'
 		},
