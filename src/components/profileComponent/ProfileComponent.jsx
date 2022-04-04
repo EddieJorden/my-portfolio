@@ -57,7 +57,6 @@ const ProfileComponent = ({ updateDisplayedContent,  }) => {
 					<UserInfoDiv>
 						<h3>Eddie Moger</h3>
 						<div>Software Developer</div>
-						<div>Out of Silicon Valley CA</div>
 						<CallToActionButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
                                 Contact
 						</CallToActionButton>

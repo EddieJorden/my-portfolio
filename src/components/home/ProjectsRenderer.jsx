@@ -8,7 +8,7 @@ const ProjectsRenderer = ({ myProjectsArray }) => {
 	return (
 		<div>
 			{myProjectsArray.map((each, i) => {
-				if(i < 5) {
+				if(i < 3) {
 					keyGenerator = keyGenerator + 1;
 					return <ProjectLinkTile project={each} key={i}/>;
 				} return null;  
