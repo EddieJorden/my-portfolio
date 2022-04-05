@@ -170,7 +170,7 @@ const NewHome = ({ myProjectsArray }) => {
 					<SideBarLinksContainer>
 						<ProjectLinksDiv>
 							<ComponentDiv>
-								<h3>my projects</h3>
+								<div style={{fontSize: '22px', fontWeight: 'bold'}}>My Projects</div>
 								<ProjectLinksListDiv>
 									<ProjectsRenderer myProjectsArray={myProjectsArray}/>
 								</ProjectLinksListDiv>
@@ -190,13 +190,13 @@ const NewHome = ({ myProjectsArray }) => {
                                     Home
 										</NewHomeButton>
 										<NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
-                                    My Projects
+                                    Projects
 										</NewHomeButton>
 										<NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
-                                    My Resume
+                                    Resume
 										</NewHomeButton>
 										<NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
-                                    About Me
+                                    About
 										</NewHomeButton>
 									</ButtonContainer>
 								</ComponentDiv>

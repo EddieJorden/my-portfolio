@@ -30,19 +30,24 @@ const ProfileImageWrapper = styled.div`
 `;
 
 const CallToActionButton = styled.button`
-    background-color: orange;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    min-width: 100%;
-    min-height: 34px;
-    margin: 10px 0px;
-    font-weight: bold;
-    font-size: 18px;
+background-color: orange;
+border-radius: 6px;
+border: 2px solid orange;
+color: #ffffff;
+font-weight: bold;
+padding: 0.5vw 1.5vw;
+margin: 4px;
+transition: 375ms;
+font-size: 18px;
 
-    :hover {
-        cursor: pointer;
-    }
+:hover {
+    cursor: pointer;
+    border: 4px solid orange;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 2px;
+    transition: 375ms
+} 
 `;
 
 const ProfileComponent = ({ updateDisplayedContent,  }) => {
@@ -55,11 +60,13 @@ const ProfileComponent = ({ updateDisplayedContent,  }) => {
 				</ProfileImageWrapper>
 				<span>
 					<UserInfoDiv>
-						<h3>Eddie Moger</h3>
-						<div>Software Developer</div>
-						<CallToActionButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
+						<div style={{fontSize: '22px', fontWeight: 'bold'}}>Eddie Moger</div>
+						<div>Software Engineer</div>
+						<div style={{width: '125px', height: '40px', margin: '10px 0'}}>
+							<CallToActionButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
                                 Contact
-						</CallToActionButton>
+							</CallToActionButton>
+						</div>
 					</UserInfoDiv>
 				</span>
 			</ProfileDiv>

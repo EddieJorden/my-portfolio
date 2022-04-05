@@ -9,7 +9,7 @@ const ProjectLinkTileDiv = styled.div`
     min-width: 100%;
     margin-left: 0px;
     text-align: left;
-    background-color: #1a77f2;
+
     color: white;
     margin: 7px 0px;
     border-radius: 10px;
@@ -28,8 +28,8 @@ const ProjectLinkTile = ({ project }) => {
 				<div><img src={project.thumbnail} alt={project.name}/></div>
 			</a>
 			<div style={{margin: '5px'}}>
-				<a href='{project.github}' style={{textDecoration: 'none', color: 'white', fontWeight: 'heavy'}}><div>{project.name}</div></a>
-				<a href='{project.github}' style={{textDecoration: 'none', color: 'white'}}><div><div>github</div></div></a>
+				<a href='{project.github}' style={{textDecoration: 'none', color: '#1a77f2', fontWeight: 'bold'}}><div>{project.name}</div></a>
+				<a href='{project.github}' ><div><div>github</div></div></a>
 			</div>
 		</ProjectLinkTileDiv>
 	);
