@@ -12,7 +12,7 @@ const MyResume = () => {
 	return (
 		<MyResumeDiv>
 			<ResumeDiv>
-				<img src="resume_thumbnail.png" alt="my-resume-thumbnail"/>
+				<img src="My-Resume-Thumbnail.png" alt="my-resume-thumbnail"/>
 				<p>click <span><a href="Eddie Moger Resume.pdf" target="blank">here</a>{' '}</span>to view and download the pdf.</p>
 			</ResumeDiv>
 		</MyResumeDiv>
