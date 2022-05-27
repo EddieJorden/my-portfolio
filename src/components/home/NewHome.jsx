@@ -186,9 +186,6 @@ const NewHome = ({ myProjectsArray }) => {
 										<NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
                                     Contact
 										</NewHomeButton>
-										<NewHomeButton onClick={() => updateDisplayedContent(<Home />)}>
-                                    Home
-										</NewHomeButton>
 										<NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
                                     Projects
 										</NewHomeButton>
