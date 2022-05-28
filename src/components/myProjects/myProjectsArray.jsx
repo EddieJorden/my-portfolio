@@ -1,6 +1,17 @@
 /* eslint-disable react/react-in-jsx-scope */
 const myProjectsArray = [
 	{
+		name: 'Data Visualization',
+		thumbnail: 'Data Visualization with D3 thumbnail.png',
+		altText: 'Data Visualization with D3 thumbnail',
+		link: 'https://eddiejorden.github.io/ui-ux-project/',
+		linkText: 'Data Visualization',
+		notes: {
+			notes: 'A data visualization app built using D3.js with React and Redux.  Backend built using Node.js.'
+		},
+		github: 'https://github.com/EddieJorden/ui-ux-project',
+	},
+	{
 		name: 'Reddit Clone',
 		thumbnail: 'reddit_clone_thumbnail.png',
 		altText: 'reddit-clone',
