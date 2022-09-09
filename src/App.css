@@ -1,65 +1,65 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .App a {
-  color: #1a77f2;
+	color: #1a77f2;
 }
 
-.App a link{
-  color: white;
-  margin: 8px;
-  padding: 8px;
-  margin-right: 38px;
+.App a link {
+	color: white;
+	margin: 8px;
+	padding: 8px;
+	margin-right: 38px;
 }
 
 .App a:visited {
-  color: #1a77f2;
+	color: #1a77f2;
 }
 
 .App a:hover {
-  color: #33FF29;
-  text-decoration: none;
-  transition: .61s -10ms;
+	color: #33ff29;
+	text-decoration: none;
+	transition: 0.61s -10ms;
 }
 
 .App a:active {
-  color: #1a77f2;
-  transition: 375ms;
-  transition: 500ms
+	color: #1a77f2;
+	transition: 375ms;
+	transition: 500ms;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #1a77f2;
+	color: #1a77f2;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
