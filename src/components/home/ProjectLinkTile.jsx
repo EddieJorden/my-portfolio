@@ -21,6 +21,25 @@ const ProjectLinkTileDiv = styled.div`
 	}
 `;
 
+const StyledButton = styled.button`
+	background-color: #1a77f2;
+	border-radius: 6px;
+	border: 2px solid #1a77f2;
+	color: white;
+	padding: 0.5vw 1.5vw;
+	margin: 4px;
+	transition: 375ms;
+	font-weight: bold;
+	:hover {
+		cursor: pointer;
+		border: 4px solid #1a77f2;
+		color: white;
+		font-weight: bold;
+		margin: 2px;
+		transition: 375ms;
+	}
+`;
+
 const ProjectLinkTile = ({ project }) => {
 	console.log(project);
 	return (
@@ -46,7 +65,7 @@ const ProjectLinkTile = ({ project }) => {
 				</a>
 				<a href={project.github}>
 					<div>
-						<div>github</div>
+						<StyledButton>github</StyledButton>
 					</div>
 				</a>
 			</div>
