@@ -1,15 +1,12 @@
 My Portfolio
+author: Eddie Moger
 
-This is a portfolio for Eddie Moger who is a software developer out of Sunnyvale CA.
-
-This portfolio has been created to introduce you to Eddie Moger.
+This portfolio has been created to introduce you to Eddie Moger a software engineer operating out of Silicon Valley CA.
 
 This project was built using JavaScript with React.js, as well as styled components.
 
-Some of the challenges I faced building this application was the overall planning and structure.
-
 Installation:
-    you will need to have a javascript developement enviroment setup on your machine to run this locally.
+you will need to have a javascript developement enviroment setup on your machine to run this locally.
 
     this link will take you through the steps.
     https://create-react-app.dev/docs/getting-started/
@@ -26,8 +23,8 @@ Installation:
     if all has gone as expected the app should start up in a development server on your local machine
 
 How To
-    This is built mostly using only flexbox,  each section of the app is a box that renders based on @media.  The structure is modular and adjusts and arranges itself with out the need for individual css changes.
-    
+This is built mostly using only flexbox, each section of the app is a box that renders based on @media. The structure is modular and adjusts and arranges itself with out the need for individual css changes.
+
     the content window displays the Component passed into updateDisplayContent
     example:
     updateDisplayedContent(<ReachComponentToDisplay />)
@@ -44,7 +41,7 @@ I worked on this project as the project manager, architect, designer, engineer, 
 
 Team
 
-    Eddie Moger 
+    Eddie Moger
     https://github.com/EddieJorden
     https://www.linkedin.com/in/edward-moger-1a50b21bb/
 

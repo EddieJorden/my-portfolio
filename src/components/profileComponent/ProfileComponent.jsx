@@ -26,6 +26,8 @@ const UserInfoDiv = styled.div`
 const ProfileImageWrapper = styled.div`
 	max-width: 50%;
 	margin: 5%;
+	border-right: 1px solid #dadde1;
+	padding-right: 42px;
 `;
 
 const CallToActionButton = styled.button`
@@ -76,23 +78,23 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 						src="eddie_profile_pic.jpg"
 						alt="eddie_moger_profile"
 					/>
-					<div style={{ marginTop: '15px' }}>
-						{' '}
-						<a href="https://github.com/EddieJorden">
-							<GithubButton>My Github</GithubButton>
-						</a>
-					</div>
 				</ProfileImageWrapper>
 				<span>
 					<UserInfoDiv>
-						<div style={{ fontSize: '22px', fontWeight: 'bold' }}>
+						<div
+							style={{
+								fontSize: '34px',
+								fontWeight: 'bold',
+								marginTop: '42px',
+							}}>
 							Eddie Moger
 						</div>
-						<div>Software Engineer</div>
+						<div style={{ margin: '5px 0px' }}>
+							Software Engineer
+						</div>
 						<div
 							style={{
 								width: '125px',
-								height: '40px',
 								margin: '10px 0',
 							}}>
 							<CallToActionButton
@@ -101,6 +103,12 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 								}>
 								Contact
 							</CallToActionButton>
+							<div style={{ margin: '25px 0px' }}>
+								{' '}
+								<a href="https://github.com/EddieJorden">
+									<GithubButton>My Github</GithubButton>
+								</a>
+							</div>
 						</div>
 					</UserInfoDiv>
 				</span>

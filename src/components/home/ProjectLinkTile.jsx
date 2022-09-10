@@ -19,6 +19,36 @@ const ProjectLinkTileDiv = styled.div`
 		max-width: 78px;
 		margin: 5px;
 	}
+
+	.divider {
+		border-right: 1px solid #dadde1;
+		padding: 0px 26px;
+	}
+
+	.title {
+		margin: 12px;
+		color: #1a77f2;
+		font-weight: bold;
+		font-size: 22px;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	@media screen and (max-width: 1104px) {
+		.divider {
+			border-right: 0px;
+			padding: 0px 5px;
+			border: 0px;
+		}
+
+		.title {
+			font-size: 16px;
+			margin: 5px;
+			padding: 0px 5px;
+		}
+	}
 `;
 
 const StyledButton = styled.button`
@@ -26,7 +56,7 @@ const StyledButton = styled.button`
 	border-radius: 6px;
 	border: 2px solid #1a77f2;
 	color: white;
-	padding: 0.5vw 1.5vw;
+	padding: 0.2vw 0.2vw;
 	margin: 4px;
 	transition: 375ms;
 	font-weight: bold;
@@ -49,25 +79,26 @@ const ProjectLinkTile = ({ project }) => {
 				target="blank"
 				noopener="true"
 				noreferer="true">
-				<div>
+				<div className="divider" style={{}}>
 					<img src={project.thumbnail} alt={project.name} />
 				</div>
 			</a>
-			<div style={{ margin: '5px' }}>
-				<a
-					href="{project.github}"
-					style={{
-						textDecoration: 'none',
-						color: '#1a77f2',
-						fontWeight: 'bold',
-					}}>
-					<div>{project.name}</div>
+			<div>
+				<a href="{project.github}">
+					<div className="title">{project.name}</div>
 				</a>
-				<a href={project.github}>
-					<div>
-						<StyledButton>github</StyledButton>
-					</div>
-				</a>
+				<div style={{ display: 'flex', margin: '0px 30px' }}>
+					<a href={project.github}>
+						<div>
+							<StyledButton>github</StyledButton>
+						</div>
+					</a>
+					<a href={project.link}>
+						<div>
+							<StyledButton>project</StyledButton>
+						</div>
+					</a>
+				</div>
 			</div>
 		</ProjectLinkTileDiv>
 	);
