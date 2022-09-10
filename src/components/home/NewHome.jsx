@@ -14,139 +14,131 @@ import ProjectsRenderer from './ProjectsRenderer';
 import ComponentDiv from '../componentDiv/ComponentDiv';
 
 const NewHomeButton = styled.button`
-    background-color: #1a77f2;
-    border-radius: 6px;
-    border: 2px solid #1a77f2;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 0.5vw 1.5vw;
-    margin: 4px;
-    transition: 375ms;
+	background-color: #1a77f2;
+	border-radius: 6px;
+	border: 2px solid #1a77f2;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 0.5vw 1.5vw;
+	margin: 4px;
+	transition: 375ms;
 
-    :hover {
-        cursor: pointer;
-        border: 4px solid #1a77f2;
-        color: #ffffff;
-        font-weight: bold;
-        margin: 2px;
-        transition: 375ms
-} 
+	:hover {
+		cursor: pointer;
+		border: 4px solid #1a77f2;
+		color: #ffffff;
+		font-weight: bold;
+		margin: 2px;
+		transition: 375ms;
+	}
 `;
 
 const SideBarProfileDivContainer = styled.div`
-    margin: 15px;
+	margin: 15px;
 
-    @media only screen and (max-width: 900px) {
-        display: none;
-    }
-
+	@media only screen and (max-width: 900px) {
+		display: none;
+	}
 `;
 
 const ProjectLinksDiv = styled.div`
-    flex-grow: 1;
-    margin: 15px;
+	flex-grow: 1;
+	margin: 15px;
 `;
 
 const SideBarFooterDiv = styled.div`
-    flex-grow: 1;
-    min-width: 100%;
+	flex-grow: 1;
+	min-width: 100%;
 `;
 
 const SideBarFooterContainer = styled.div`
-margin: 15px
+	margin: 15px;
 `;
 
-const ProfileDiv = styled.div`
-
-`;
+const ProfileDiv = styled.div``;
 
 const NavigationDiv = styled.div`
-    min-width: 100%;
+	min-width: 100%;
 `;
 
 const SideBarLinksContainer = styled.div`
-    @media only screen and (max-width: 900px) {
-        display: none;
-    }
+	@media only screen and (max-width: 900px) {
+		display: none;
+	}
 `;
 
 const ProjectLinksListDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin-left: none;
-    justif-content: center;
-    align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	margin-left: none;
+	justif-content: center;
+	align-items: flex-start;
 `;
 
 const SideBarDivContainer = styled.div`
-    max-width: 95%;
-    max-height: 95%;
-    min-width: 95%;
-    min-height: 95%;
-    display: flex;
-    flex-direction: column;
-    alight-items: center;
-    justify-content: center;
+	max-width: 95%;
+	max-height: 95%;
+	min-width: 95%;
+	min-height: 95%;
+	display: flex;
+	flex-direction: column;
+	alight-items: center;
+	justify-content: center;
 `;
 
 const SideBarDiv = styled.div`
-    color: #1a77f2;
-    width: 38%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	color: #1a77f2;
+	width: 38%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
-    @media only screen and (max-width: 900px) {
-        min-width: 100%;
-    }
+	@media only screen and (max-width: 900px) {
+		min-width: 100%;
+	}
 `;
 
 const ContentDiv = styled.div`
-    color: white;
-    width: 61.8vw;
-    min-height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	color: white;
+	width: 61.8vw;
+	min-height: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
-    @media only screen and (max-width: 900px) {
-        width: 100%;
-    }
+	@media only screen and (max-width: 900px) {
+		width: 100%;
+	}
 `;
 
 const ContentWindowDiv = styled.div`
-    max-height: 80vh;
-    background-color: white;
-    color: black;
-    overflow: scroll;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    text-align: -webkit-center;
-    max-width: 100%;
+	max-height: 80vh;
+	background-color: white;
+	color: black;
+	overflow: scroll;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	text-align: -webkit-center;
+	max-width: 100%;
 `;
 
 const ContentWindowWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	min-width: 85%;
+	min-height: 95% @media only screen and (max-width: 900px) {
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    min-width: 85%;
-    min-height: 95%
-
-    @media only screen and (max-width: 900px) {
-
-    }
+	}
 `;
 
-const ButtonContainer = styled.div`
-    
-`;
+const ButtonContainer = styled.div``;
 
 const NewHome = ({ myProjectsArray }) => {
 	const [displayedContent, setDisplayedContent] = useState(<Home />);
@@ -158,11 +150,14 @@ const NewHome = ({ myProjectsArray }) => {
 		<NewHomeDiv>
 			<SideBarDiv>
 				<SideBarDivContainer>
-
 					<SideBarProfileDivContainer>
 						<ComponentDiv>
 							<ProfileDiv>
-								<ProfileComponent updateDisplayedContent={updateDisplayedContent}/>
+								<ProfileComponent
+									updateDisplayedContent={
+										updateDisplayedContent
+									}
+								/>
 							</ProfileDiv>
 						</ComponentDiv>
 					</SideBarProfileDivContainer>
@@ -170,9 +165,17 @@ const NewHome = ({ myProjectsArray }) => {
 					<SideBarLinksContainer>
 						<ProjectLinksDiv>
 							<ComponentDiv>
-								<div style={{fontSize: '22px', fontWeight: 'bold'}}>My Projects</div>
+								<div
+									style={{
+										fontSize: '27px',
+										fontWeight: 'bold',
+									}}>
+									My Recent Projects
+								</div>
 								<ProjectLinksListDiv>
-									<ProjectsRenderer myProjectsArray={myProjectsArray}/>
+									<ProjectsRenderer
+										myProjectsArray={myProjectsArray}
+									/>
 								</ProjectLinksListDiv>
 							</ComponentDiv>
 						</ProjectLinksDiv>
@@ -183,24 +186,43 @@ const NewHome = ({ myProjectsArray }) => {
 							<NavigationDiv>
 								<ComponentDiv>
 									<ButtonContainer>
-										<NewHomeButton onClick={() => updateDisplayedContent(<ContactInfo />)}>
-                                    Contact
+										<NewHomeButton
+											onClick={() =>
+												updateDisplayedContent(
+													<ContactInfo />,
+												)
+											}>
+											Contact
 										</NewHomeButton>
-										<NewHomeButton onClick={() => updateDisplayedContent(<MyProjects />)}>
-                                    Projects
+										<NewHomeButton
+											onClick={() =>
+												updateDisplayedContent(
+													<MyProjects />,
+												)
+											}>
+											Projects
 										</NewHomeButton>
-										<NewHomeButton onClick={() => updateDisplayedContent(<MyResume />)}>
-                                    Resume
+										<NewHomeButton
+											onClick={() =>
+												updateDisplayedContent(
+													<MyResume />,
+												)
+											}>
+											Resume
 										</NewHomeButton>
-										<NewHomeButton onClick={() => updateDisplayedContent(<AboutMe />)}>
-                                    About
+										<NewHomeButton
+											onClick={() =>
+												updateDisplayedContent(
+													<AboutMe />,
+												)
+											}>
+											About
 										</NewHomeButton>
 									</ButtonContainer>
 								</ComponentDiv>
 							</NavigationDiv>
 						</SideBarFooterDiv>
 					</SideBarFooterContainer>
-
 				</SideBarDivContainer>
 			</SideBarDiv>
 
@@ -208,7 +230,9 @@ const NewHome = ({ myProjectsArray }) => {
 				<ContentWindowWrapper>
 					<ComponentDiv>
 						<ContentWindowDiv>
-							<ContentWindow displayedContent={displayedContent}/>
+							<ContentWindow
+								displayedContent={displayedContent}
+							/>
 						</ContentWindowDiv>
 					</ComponentDiv>
 				</ContentWindowWrapper>
