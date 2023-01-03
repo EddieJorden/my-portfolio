@@ -146,6 +146,15 @@ const NewHome = ({ myProjectsArray }) => {
 		setDisplayedContent(target);
 	};
 
+	const title = 'Eddie\'s developer portfolio';
+
+	const TitleDiv = styled.div`
+	color: #1a77f2;
+	font-weight: bold;
+	font-size: 38px;
+	margin: 10px
+`;
+
 	return (
 		<NewHomeDiv>
 			<SideBarDiv>
@@ -228,6 +237,7 @@ const NewHome = ({ myProjectsArray }) => {
 
 			<ContentDiv>
 				<ContentWindowWrapper>
+					<TitleDiv>{title}</TitleDiv>
 					<ComponentDiv>
 						<ContentWindowDiv>
 							<ContentWindow
