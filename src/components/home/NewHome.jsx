@@ -34,7 +34,7 @@ const NewHomeButton = styled.button`
 `;
 
 const SideBarProfileDivContainer = styled.div`
-	margin: 15px;
+
 
 	@media only screen and (max-width: 900px) {
 		display: none;
@@ -43,7 +43,7 @@ const SideBarProfileDivContainer = styled.div`
 
 const ProjectLinksDiv = styled.div`
 	flex-grow: 1;
-	margin: 15px;
+
 `;
 
 const SideBarFooterDiv = styled.div`
@@ -52,7 +52,7 @@ const SideBarFooterDiv = styled.div`
 `;
 
 const SideBarFooterContainer = styled.div`
-	margin: 15px;
+
 `;
 
 const ProfileDiv = styled.div``;
