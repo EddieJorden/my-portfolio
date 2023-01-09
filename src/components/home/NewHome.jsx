@@ -146,7 +146,7 @@ const NewHome = ({ myProjectsArray }) => {
 		setDisplayedContent(target);
 	};
 
-	const title = 'Eddie\'s developer portfolio';
+	const title = 'EddieMoger.com';
 
 	const TitleDiv = styled.div`
 	color: #1a77f2;
@@ -237,9 +237,9 @@ const NewHome = ({ myProjectsArray }) => {
 
 			<ContentDiv>
 				<ContentWindowWrapper>
-					<TitleDiv>{title}</TitleDiv>
 					<ComponentDiv>
 						<ContentWindowDiv>
+							<TitleDiv>{title}</TitleDiv>
 							<ContentWindow
 								displayedContent={displayedContent}
 							/>

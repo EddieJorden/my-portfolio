@@ -12,13 +12,12 @@ const MyResume = () => {
 	return (
 		<MyResumeDiv>
 			<ResumeDiv>
-				<img src="Resume_p1_thumb.png" alt="my-resume-thumbnail" />
-				<img src="Resume_p2_thumb.png" alt="my-resume-thumbnail" />
+				<img src="Eddie_Moger_Software_Engineer_resume.png" alt="Eddie_Moger_Software_Engineer_Resume" />
 				<p>
 					click{' '}
 					<span>
 						<a
-							href="SEP_2022_Software_Engineer_Resume.pdf"
+							href="Eddie Moger Software Engineer Resume.pdf"
 							target="blank">
 							here
 						</a>{' '}
