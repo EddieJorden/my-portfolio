@@ -83,7 +83,7 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 						alt="eddie_moger_profile"
 					/>
 					<div>Technologies
-						<div className='technoldogies-div' style={{display: 'flex', flexWrap: 'wrap'}}>
+						<div className='technoldogies-div' style={{display: 'flex', flexWrap: 'wrap', fontSize: '12px'}}>
 							<TechDiv>Javascript</TechDiv>
 							<TechDiv>React</TechDiv>
 							<TechDiv>Typescript</TechDiv>
