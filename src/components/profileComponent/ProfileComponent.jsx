@@ -69,6 +69,10 @@ const GithubButton = styled.button`
 	}
 `;
 
+const TechDiv = styled.div`
+	margin: 5px
+`;
+
 const ProfileComponent = ({ updateDisplayedContent }) => {
 	return (
 		<ProfileComponentWrapper>
@@ -78,7 +82,25 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 						src="eddie_profile_pic.jpg"
 						alt="eddie_moger_profile"
 					/>
+					<div>Technologies
+						<div className='technoldogies-div' style={{display: 'flex', flexWrap: 'wrap'}}>
+							<TechDiv>Javascript</TechDiv>
+							<TechDiv>React</TechDiv>
+							<TechDiv>Typescript</TechDiv>
+							<TechDiv>Redux</TechDiv>
+							<TechDiv>Nodejs</TechDiv>
+							<TechDiv>Express</TechDiv>
+							<TechDiv>Postrgres</TechDiv>
+							<TechDiv>Html</TechDiv>
+							<TechDiv>CSS</TechDiv>
+							<TechDiv>Ajax</TechDiv>
+							<TechDiv></TechDiv>
+							<TechDiv></TechDiv>
+							<TechDiv></TechDiv>
+						</div>
+					</div>
 				</ProfileImageWrapper>
+				
 				<span>
 					<UserInfoDiv>
 						<div
