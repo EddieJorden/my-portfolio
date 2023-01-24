@@ -178,6 +178,7 @@ const NewHome = ({ myProjectsArray }) => {
 									style={{
 										fontSize: '27px',
 										fontWeight: 'bold',
+										margin: '10px'
 									}}>
 									My Recent Projects
 								</div>

@@ -21,7 +21,6 @@ const ComponentDiv = styled.div`
 
     .github-link {
         color: grey;
-
         a {
             color: grey;
         }

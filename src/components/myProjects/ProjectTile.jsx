@@ -24,17 +24,16 @@ const ProjectTile = (props) => {
 		<ProjectTileDiv>
 			<ComponentDiv>
 				<div className={`${name}`}>
-					<h1 style={{fontWeight: 'bolder'}}>{name}</h1>
+					<h3 style={{fontWeight: 'bolder'}}>{name}</h3>
 					<a href={link} target="blank" >
 						<div className="image-container">
 							<img src={thumbnail} alt={altText}/>
 						</div>
 					</a>
 					<div className='project-notes'>
-						<p>{props.project.notes.notes}</p>
-						<p>{props.project.notes.notesLink}</p>
+						<p style={{margin: '10px'}}>{props.project.notes.notes}</p>
 					</div>
-					<div className='github-link'>
+					<div style={{margin: '10px'}} className='github-link'>
                         this projects <a href={github} target="blank"  >github</a>
 					</div>
 				</div>

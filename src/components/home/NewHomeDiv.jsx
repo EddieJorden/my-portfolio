@@ -1,7 +1,7 @@
 import styled from  'styled-components';
 
 const NewHomeDiv = styled.div`
-    height: 100vh;
+    height: 98vh;
     max-width: 100vw;
     display: flex;
     align-items: center;

@@ -7,7 +7,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/ui-ux-project/',
 		linkText: 'Data Visualization',
 		notes: {
-			notes: 'A data visualization app built using D3.js with React and Redux.  Backend built using Node.js.'
+			notes: 'A data visualization component built using D3.js with React and Redux.  Backend built using Node.js and Express.'
 		},
 		github: 'https://github.com/EddieJorden/ui-ux-project',
 	},
@@ -18,23 +18,23 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/reddit-clone/',
 		linkText: 'Reddit Clone',
 		notes: {
-			notes: 'This project was built using React.js with Redux, as well as styled-components and lodash'
+			notes: 'A Simple Reddit Clone using reddit API in a React, Redux app.'
 		},
 		github: 'https://github.com/EddieJorden/reddit-clone',
 	},
 	{
-		name: 'React Redux Challenge',
+		name: 'Editable Fields With Filter',
 		thumbnail: 'React-Reudx-Challenge-thumbnail.png',
 		altText: 'React-Redux-Challenge-project',
 		link: 'https://eddiejorden.github.io/ctw-project/',
 		linkText: 'React Redux Challenge Project',
 		notes: {
-			notes: 'The challenge presented to create a React Redux application,  that renders 1000 input fields in an array, all with the ability to update the state, as well as filters.'
+			notes: 'A React Redux application,  that renders 1000 input fields in an array, all with the ability to update the state, as well as filters.'
 		},
 		github: 'https://github.com/EddieJorden/ctw-project',
 	},
 	{
-		name: 'Flash Cards',
+		name: 'Flash Card Tests',
 		thumbnail: 'flashcards-thumbnail.png',
 		altText: 'alt text for thumbnail here',
 		link: 'https://eddiejorden.github.io/flashcards/',
@@ -63,7 +63,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/react_challenge/',
 		linkText: 'My Planner',
 		notes: {
-			notes: 'Here is a fully built and conceptualized contacts and appointments app built using React.'
+			notes: 'Here is a fully built and conceptualized contacts and appointments component built using React.'
 		},
 		github: 'https://github.com/EddieJorden/react_challenge/settings/pages',
 	},
