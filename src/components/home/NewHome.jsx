@@ -103,7 +103,6 @@ const SideBarDiv = styled.div`
 const ContentDiv = styled.div`
 	color: white;
 	width: 61.8vw;
-	min-height: 80%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -138,7 +137,9 @@ const ContentWindowWrapper = styled.div`
 	}
 `;
 
-const ButtonContainer = styled.div``;
+const ButtonContainer = styled.div`
+	padding: 10px
+`;
 
 const NewHome = ({ myProjectsArray }) => {
 	const [displayedContent, setDisplayedContent] = useState(<Home />);
@@ -152,7 +153,10 @@ const NewHome = ({ myProjectsArray }) => {
 	color: #1a77f2;
 	font-weight: bold;
 	font-size: 38px;
-	margin: 10px
+	margin: 10px;
+	padding: 8px;
+	border-radius: 5px;
+	background-color: white;
 `;
 
 	return (
@@ -237,10 +241,10 @@ const NewHome = ({ myProjectsArray }) => {
 			</SideBarDiv>
 
 			<ContentDiv>
+				<TitleDiv>{title}</TitleDiv>
 				<ContentWindowWrapper>
 					<ComponentDiv>
 						<ContentWindowDiv>
-							<TitleDiv>{title}</TitleDiv>
 							<ContentWindow
 								displayedContent={displayedContent}
 							/>

@@ -89,13 +89,13 @@ const ContactInfo = () => {
 
 	return (
 		<ContactInfoDiv>
-			<div className="image-div">
-				<img src="eddie_profile_pic.jpg" alt="Eddie in the office" />
+			<div className="image-div" style={{margin: '15px 0px 0px 0px'}}>
+				<img src="eddie_profile_pic.jpg" alt="Eddie Profile Picture" />
 			</div>
 			<div className="contact-div">
 				<ComponentDiv>
 					<div>
-						<div className='contact-info-div'>
+						<div className='contact-info-div' style={{margin: '3px 30px 30px 30px'}}>
 							<h1 className="contact-info">Contact Info</h1>
 							<h2 className="eddie-moger">Eddie Moger</h2>
 						</div>

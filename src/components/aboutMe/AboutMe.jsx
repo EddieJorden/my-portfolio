@@ -27,26 +27,31 @@ const AboutMeDiv = styled.div`
     }
 `;
 
+const TextDiv = styled.div`
+	padding: 0px 15px;
+	margin: 0px 10px;
+`;
+
 const AboutMe = () => {
 	return (
 		<AboutMeDiv>
 			<ComponentDiv>
-				<div >
-					<img src="gt86nurburgring.jpeg" alt="racing gt86 at nurburgring"/>
+				<div style={{padding: '5px'}}>
+					<img src="gt86nurburgring.jpeg" alt="racing gt86 at nurburgring" style={{margin: '15px'}}/>
 					<h1>About Me</h1>
-					<div>I have always been interested in computers and have been recognized for my engineering mind from a young age.</div>
-					<div>When I was just two years old, I learned how to use the software and hidden features on my first computer.</div>
-					<div>In first grade, I learned how to use Mac terminal and was responsible for setting up the computers in the classroom for my classmates and teachers.</div>
-					<div>At eight years old, I modified the Windows operating system by changing its binary code.</div>
-					<div>In high school, I quickly learned Windows admin scripting and other technologies to create automations for software used by my peers.</div>
-					<div>I have also created multiple Wordpress and SquareSpace websites and set up various online businesses and services, such as communication and payment automation.</div>
-					<div>My passion for software engineering was solidified after completing two courses in Ruby.</div>
-					<img src="me_in_hungary.jpeg" alt="Eddie in Hungary"/>
-					<div>Seeking a career change, I decided to learn front-end web development and have since worked with many software technologies, including HTML, CSS, JavaScript, Node.js, React.js, Redux, TypeScript, Express, PostgreSQL, Jest, Enzyme, and more.</div>
-					<div>I recently conceptualized, planned, developed, released, and currently maintain a fully custom-built CRM where I have used technology to solve complex business problems.</div>
-					<div>I have over 50 completed projects on GitHub and experience working with other developers.</div>
-					<div>Currently, I am learning back-end web development and am excited to join a new team and work on a new project.</div>
-					<div>Hopefully, we can work together in the future.</div>
+					<TextDiv>I have always been interested in computers and have been recognized for my engineering mind from a young age.</TextDiv>
+					<TextDiv>When I was just two years old, I learned how to use the software and hidden features on my first computer.</TextDiv>
+					<TextDiv>In first grade, I learned how to use Mac terminal and was responsible for setting up the computers in the classroom for my classmates and teachers.</TextDiv>
+					<TextDiv>At eight years old, I modified the Windows operating system by changing its binary code.</TextDiv>
+					<TextDiv>In high school, I quickly learned Windows admin scripting and other technologies to create automations for software used by my peers.</TextDiv>
+					<TextDiv>I have also created multiple Wordpress and SquareSpace websites and set up various online businesses and services, such as communication and payment automation.</TextDiv>
+					<TextDiv>My passion for software engineering was solidified after completing two courses in Ruby.</TextDiv>
+					<img src="me_in_hungary.jpeg" alt="Eddie in Hungary" style={{margin: '15px'}}/>
+					<TextDiv>Seeking a career change, I decided to learn front-end web development and have since worked with many software technologies, including HTML, CSS, JavaScript, Node.js, React.js, Redux, TypeScript, Express, PostgreSQL, Jest, Enzyme, and more.</TextDiv>
+					<TextDiv>I recently conceptualized, planned, developed, released, and currently maintain a fully custom-built CRM where I have used technology to solve complex business problems.</TextDiv>
+					<TextDiv>I have over 50 completed projects on GitHub and experience working with other developers.</TextDiv>
+					<TextDiv>Currently, I am learning back-end web development and am excited to join a new team and work on a new project.</TextDiv>
+					<TextDiv>Hopefully, we can work together in the future.</TextDiv>
 				</div>
 			</ComponentDiv>
 		</AboutMeDiv>
