@@ -12,7 +12,6 @@ const NewHomeDiv = styled.div`
 		background-attachment: fixed;
 		background-size: cover;
 
-
     @media only screen and (max-width: 900px) {
         flex-direction: column-reverse;
     }
