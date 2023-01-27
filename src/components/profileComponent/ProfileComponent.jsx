@@ -82,8 +82,9 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 						src="eddie_profile_pic.jpg"
 						alt="eddie_moger_profile"
 					/>
-					<div>Technologies
-						<div className='technoldogies-div' style={{display: 'flex', flexWrap: 'wrap', fontSize: '12px'}}>
+					<div >
+						<div style={{fontWeight: 'bold'}}>Technologies</div>
+						<div className='technoldogies-div' style={{display: 'flex', flexWrap: 'wrap', fontSize: '12px', color: 'black'}}>
 							<TechDiv>Javascript</TechDiv>
 							<TechDiv>React</TechDiv>
 							<TechDiv>Typescript</TechDiv>
