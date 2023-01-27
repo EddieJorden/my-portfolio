@@ -29,7 +29,6 @@ const ProjectLinkTileDiv = styled.div`
 		margin: 12px;
 		color: #1a77f2;
 		font-weight: bold;
-		font-size: 22px;
 	}
 
 	a {
