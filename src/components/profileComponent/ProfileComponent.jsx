@@ -70,7 +70,7 @@ const GithubButton = styled.button`
 `;
 
 const TechDiv = styled.div`
-	margin: 5px
+	margin: 2px 5px
 `;
 
 const ProfileComponent = ({ updateDisplayedContent }) => {
@@ -86,18 +86,14 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 						<div style={{fontWeight: 'bold'}}>Technologies</div>
 						<div className='technoldogies-div' style={{display: 'flex', flexWrap: 'wrap', fontSize: '12px', color: 'black'}}>
 							<TechDiv>Javascript</TechDiv>
-							<TechDiv>React</TechDiv>
 							<TechDiv>Typescript</TechDiv>
+							<TechDiv>React</TechDiv>
 							<TechDiv>Redux</TechDiv>
 							<TechDiv>Nodejs</TechDiv>
 							<TechDiv>Express</TechDiv>
 							<TechDiv>Postrgres</TechDiv>
 							<TechDiv>Html</TechDiv>
 							<TechDiv>CSS</TechDiv>
-							<TechDiv>Ajax</TechDiv>
-							<TechDiv></TechDiv>
-							<TechDiv></TechDiv>
-							<TechDiv></TechDiv>
 						</div>
 					</div>
 				</ProfileImageWrapper>
@@ -112,8 +108,8 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 							}}>
 							Eddie Moger
 						</div>
-						<div style={{ margin: '5px 0px' }}>
-							Software Engineer
+						<div style={{ margin: '5px 0px', color: 'black' }}>
+							Full Stack Developer
 						</div>
 						<div
 							style={{
@@ -126,7 +122,7 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 								}>
 								Contact
 							</CallToActionButton>
-							<div style={{ margin: '25px 0px' }}>
+							<div style={{ margin: '5px 0px' }}>
 								{' '}
 								<a href="https://github.com/EddieJorden">
 									<GithubButton>My Github</GithubButton>

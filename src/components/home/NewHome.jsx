@@ -14,6 +14,7 @@ import ProjectsRenderer from './ProjectsRenderer';
 import ComponentDiv from '../componentDiv/ComponentDiv';
 
 const NewHomeButton = styled.button`
+	font-size: 10px;
 	background-color: #1a77f2;
 	border-radius: 6px;
 	border: 2px solid #1a77f2;
@@ -180,7 +181,7 @@ const NewHome = ({ myProjectsArray }) => {
 							<ComponentDiv>
 								<div
 									style={{
-										fontSize: '27px',
+										fontSize: '18px',
 										fontWeight: 'bold',
 										margin: '10px'
 									}}>
@@ -231,6 +232,14 @@ const NewHome = ({ myProjectsArray }) => {
 												)
 											}>
 											About
+										</NewHomeButton>
+										<NewHomeButton
+											onClick={() =>
+												updateDisplayedContent(
+													<Home />,
+												)
+											}>
+											Home
 										</NewHomeButton>
 									</ButtonContainer>
 								</ComponentDiv>
