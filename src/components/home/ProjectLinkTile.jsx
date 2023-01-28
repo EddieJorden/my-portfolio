@@ -11,7 +11,7 @@ const ProjectLinkTileDiv = styled.div`
 	text-align: left;
 
 	color: white;
-	margin: 7px 0px;
+	margin: 0px 0px;
 	border-radius: 10px;
 	padding: 5px;
 
@@ -71,7 +71,6 @@ const StyledButton = styled.button`
 `;
 
 const ProjectLinkTile = ({ project }) => {
-	console.log(project);
 	return (
 		<ProjectLinkTileDiv>
 			<a
