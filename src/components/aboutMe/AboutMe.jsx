@@ -39,19 +39,13 @@ const AboutMe = () => {
 				<div style={{padding: '5px'}}>
 					<img src="gt86nurburgring.jpeg" alt="racing gt86 at nurburgring" style={{margin: '15px'}}/>
 					<h1>About Me</h1>
-					<TextDiv>I have always been interested in computers and have been recognized for my engineering mind from a young age.</TextDiv>
-					<TextDiv>When I was just two years old, I learned how to use the software and hidden features on my first computer.</TextDiv>
-					<TextDiv>In first grade, I learned how to use Mac terminal and was responsible for setting up the computers in the classroom for my classmates and teachers.</TextDiv>
-					<TextDiv>At eight years old, I modified the Windows operating system by changing its binary code.</TextDiv>
-					<TextDiv>In high school, I quickly learned Windows admin scripting and other technologies to create automations for software used by my peers.</TextDiv>
-					<TextDiv>I have also created multiple Wordpress and SquareSpace websites and set up various online businesses and services, such as communication and payment automation.</TextDiv>
-					<TextDiv>My passion for software engineering was solidified after completing two courses in Ruby.</TextDiv>
+					<TextDiv>Welcome to my corner of the internet! My name is Eddie Moger and I am a software developer and entrepreneur with a passion for building innovative solutions.</TextDiv>
+					<TextDiv>Let&apos;s start with the boring stuff first - I have an extensive background in automotive racing, specializing in chassis tuning, and a background in PC building, including hardware assembly, overclocking, and using aftermarket software. But that&apos;s just the tip of the iceberg. My true passion lies in software development, where I have been known to modify original Windows binary code to change the UI, unlock hardware and use aftermarket software, building solutions for small businesses including websites, CRMs, internal communications, SEO, e-commerce, custom backend software, integrating AI/machine learning, financial simulations, data visualization, encryption and much more.</TextDiv>
+					<TextDiv>I have a passion for dynamic programming and problem-solving. I spent 8 years in corporate management before starting my own business, which I ran with great success for 15 years before deciding to switch to something I am more passionate about - software development.</TextDiv>
 					<img src="me_in_hungary.jpeg" alt="Eddie in Hungary" style={{margin: '15px'}}/>
-					<TextDiv>Seeking a career change, I decided to learn front-end web development and have since worked with many software technologies, including HTML, CSS, JavaScript, Node.js, React.js, Redux, TypeScript, Express, PostgreSQL, Jest, Enzyme, and more.</TextDiv>
-					<TextDiv>I recently conceptualized, planned, developed, released, and currently maintain a fully custom-built CRM where I have used technology to solve complex business problems.</TextDiv>
-					<TextDiv>I have over 50 completed projects on GitHub and experience working with other developers.</TextDiv>
-					<TextDiv>Currently, I am learning back-end web development and am excited to join a new team and work on a new project.</TextDiv>
-					<TextDiv>Hopefully, we can work together in the future.</TextDiv>
+					<TextDiv>Now, let&apos;s talk about the fun stuff. I am a huge enthusiast of Muay Thai kickboxing, rock climbing, downhill mountain bike racing, auto racing, and motorcycle racing. I believe that my passion for these sports translates into my work ethic - I am always pushing myself to be the best and constantly seeking new challenges.</TextDiv>
+					<TextDiv>So, why should you choose me for your next project? Well, I am a nerd at heart and love solving problems. My skills are not just tools, they are the tools I use for success. I am excited to work on new projects and help build your dreams. So, whether you&apos;re looking for a new website, custom software, or just someone to bounce ideas off of, I am here for you. Let&apos;s make something great together!</TextDiv>
+					<TextDiv>Oh, and one last thing, I promise to keep the nerdy jokes to a minimum, but I can&apos;t guarantee I won&apos;t throw in a Star Wars reference or two.</TextDiv>
 				</div>
 			</ComponentDiv>
 		</AboutMeDiv>

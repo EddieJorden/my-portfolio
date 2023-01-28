@@ -71,7 +71,6 @@ const StyledButton = styled.button`
 `;
 
 const ProjectLinkTile = ({ project }) => {
-	console.log(project);
 	return (
 		<ProjectLinkTileDiv>
 			<a
