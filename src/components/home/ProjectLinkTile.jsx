@@ -16,7 +16,7 @@ const ProjectLinkTileDiv = styled.div`
 	padding: 5px;
 
 	img {
-		max-width: 78px;
+		max-width: 60px;
 		margin: 5px;
 	}
 
@@ -51,6 +51,7 @@ const ProjectLinkTileDiv = styled.div`
 `;
 
 const StyledButton = styled.button`
+	font-size: 10px;
 	background-color: #1a77f2;
 	border-radius: 6px;
 	border: 2px solid #1a77f2;
