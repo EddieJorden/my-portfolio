@@ -52,9 +52,9 @@ const ProjectLinkTileDiv = styled.div`
 
 const StyledButton = styled.button`
 	font-size: 10px;
-	background-color: #1a77f2;
+	background-color: #89D943;
 	border-radius: 6px;
-	border: 2px solid #1a77f2;
+	border: 2px solid #89D943;
 	color: white;
 	padding: 0.2vw 0.2vw;
 	margin: 4px;
@@ -62,7 +62,7 @@ const StyledButton = styled.button`
 	font-weight: bold;
 	:hover {
 		cursor: pointer;
-		border: 4px solid #1a77f2;
+		border: 4px solid #89D943;
 		color: white;
 		font-weight: bold;
 		margin: 2px;
