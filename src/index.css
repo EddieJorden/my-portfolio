@@ -1,6 +1,6 @@
 body {
   margin: 0;    
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace; 
+	Font-Family: 'Cabin', Sans-Serif;
     color: var(--color-text-primary); 
     word-wrap: normal; 
   -webkit-font-smoothing: antialiased;
@@ -9,6 +9,10 @@ body {
   color: #1a77f2;
   max-width: 100vw;
   max-height: 100vh;
+}
+
+h1, h2, h3 {
+	Font-Family: 'Roboto Condensed', Sans-Serif;
 }
 
 img {

@@ -83,17 +83,15 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 						alt="eddie_moger_profile"
 					/>
 					<div >
-						<div style={{fontWeight: 'bold'}}>Technologies</div>
-						<div className='technoldogies-div' style={{display: 'flex', flexWrap: 'wrap', fontSize: '12px', color: 'black'}}>
-							<TechDiv>Javascript</TechDiv>
-							<TechDiv>Typescript</TechDiv>
-							<TechDiv>React</TechDiv>
-							<TechDiv>Redux</TechDiv>
-							<TechDiv>Nodejs</TechDiv>
-							<TechDiv>Express</TechDiv>
-							<TechDiv>Postrgres</TechDiv>
-							<TechDiv>Html</TechDiv>
-							<TechDiv>CSS</TechDiv>
+						<div style={{fontWeight: 'bold'}}>Services</div>
+						<div className='technoldogies-div' style={{fontSize: '12px', color: 'black'}}>
+							<TechDiv>Full Stack Web Development</TechDiv>
+							<TechDiv>CRM</TechDiv>
+							<TechDiv>SEO</TechDiv>
+							<TechDiv>AI/Machine Learning</TechDiv>
+							<TechDiv>Dynamic Programming</TechDiv>
+							<TechDiv>Problem Solving</TechDiv>
+							<TechDiv>Consulting</TechDiv>
 						</div>
 					</div>
 				</ProfileImageWrapper>

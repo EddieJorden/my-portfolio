@@ -99,7 +99,7 @@ const ContactInfo = () => {
 							<h1 className="contact-info">Contact Info</h1>
 							<h2 className="eddie-moger">Eddie Moger</h2>
 						</div>
-						<h3 className="email"><span><a href="mailto:eddie@eddiemoger.com" rel="noopener">Email</a></span></h3>
+						<h3 className="email"><span><a href="mailto:eddie@eddiemoger.com" rel="noopener">Eddie@EddieMoger.com</a></span></h3>
 						<h3 className="github"><span><a href="https://github.com/EddieJorden" rel="noopener">Github</a></span></h3>
 						<h3 className="linkedin"><a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/" rel="noopener">Linkedin</a></h3>
 						<h3 className="resume"><a href="Eddie Moger Software Engineer Resume.pdf" rel="noopener">Resume</a></h3>

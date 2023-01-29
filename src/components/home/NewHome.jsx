@@ -153,7 +153,7 @@ const NewHome = ({ myProjectsArray }) => {
 	const TitleDiv = styled.div`
 	color: #1a77f2;
 	font-weight: bold;
-	font-size: 38px;
+	font-size: 34px;
 	margin: 10px;
 	padding: 8px;
 	border-radius: 5px;

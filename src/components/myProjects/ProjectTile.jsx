@@ -10,6 +10,7 @@ const ProjectTileDiv = styled.div`
   justify-content: center;
   align-items: center;
   margin: 15px;
+	height 100%;
 
   img {
     height: 161px;
@@ -35,7 +36,7 @@ const ProjectTile = (props) => {
 						<a style={{margin: '10px'}}>{props.project.notes.notesLink}</a>
 					</div>
 					<div style={{margin: '10px'}} className='github-link'>
-                        this projects <a href={github} target="blank"  >github</a>
+                        this projects <a href={github} target="blank">github</a>
 					</div>
 				</div>
 			</ComponentDiv>
