@@ -7,7 +7,7 @@ const NewHomeDiv = styled.div`
     max-width: 100vw;
     display: flex;
     align-items: center;
-		background-image: url(/Portfolio-Background.png);
+		background-image: url(EddieMoger.com-background-image-detail-upscalse.png);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
