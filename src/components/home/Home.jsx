@@ -30,7 +30,7 @@ const Home = () => {
 		<HomeDiv>
 			<h3>Welcome to EddieMoger.com</h3>
 			<TextDiv>
-					your one-stop destination for all your custom software needs. 
+					Your one-stop destination for all your custom software needs. 
 			</TextDiv>
 			<ImageDiv>
 				<img src="EddieInTheCity.jpg" alt="Eddie in the city" />
