@@ -92,6 +92,7 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 							<TechDiv>Dynamic Programming</TechDiv>
 							<TechDiv>Problem Solving</TechDiv>
 							<TechDiv>Consulting</TechDiv>
+							<TechDiv>Contact for more information</TechDiv>
 						</div>
 					</div>
 				</ProfileImageWrapper>

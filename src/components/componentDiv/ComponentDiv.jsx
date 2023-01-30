@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ComponentDiv = styled.div`
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.95);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,7 +11,6 @@ const ComponentDiv = styled.div`
     max-width: 100%;
     max-height: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
-
     margin: 10px;
 
     .project-notes {

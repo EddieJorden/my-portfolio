@@ -116,7 +116,7 @@ const ContentDiv = styled.div`
 
 const ContentWindowDiv = styled.div`
 	max-height: 80vh;
-	background-color: white;
+
 	color: black;
 	overflow: scroll;
 	border-radius: 5px;
@@ -133,7 +133,9 @@ const ContentWindowWrapper = styled.div`
 	align-items: center;
 	max-width: 100%;
 	min-width: 85%;
-	min-height: 95% @media only screen and (max-width: 900px) {
+	min-height: 95%;
+	
+	@media only screen and (max-width: 900px) {
 
 	}
 `;
@@ -157,7 +159,7 @@ const NewHome = ({ myProjectsArray }) => {
 	margin: 10px;
 	padding: 8px;
 	border-radius: 5px;
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.95);
 `;
 
 	return (
