@@ -6,6 +6,7 @@ const NewHomeDiv = styled.div`
 		max-height: 100vh;
     max-width: 100vw;
     display: flex;
+		justify-content: space-between;
     align-items: center;
 		background-image: url(EddieMoger.com-background.png);
 		background-position: center;

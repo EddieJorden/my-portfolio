@@ -16,8 +16,14 @@ const ImageDiv = styled.div`
 	img {
 		object-fit: contain;
 		overflow: hidden;
-		height: 400px;
+		height: 333px;
 		margin: 20px
+	}
+	@media screen and (max-width: 390px) {
+		img {
+			height: 250px;
+			width: 320px;
+		}
 	}
 `;
 
@@ -28,12 +34,15 @@ const TextDiv = styled.div`
 const Home = () => {
 	return (
 		<HomeDiv>
-			<h3>Welcome to EddieMoger.com</h3>
-			<TextDiv>
+			<h3 style={{color: '#1a77f2'}}>Welcome to EddieMoger.com</h3>
+			<TextDiv >
 					Your one-stop destination for all your custom software needs. 
 			</TextDiv>
 			<ImageDiv>
-				<img src="EddieInTheCity.jpg" alt="Eddie in the city" />
+				<img
+					src="EddieInTheCity.jpg"
+					alt="Eddie in San Francisco CA, enjoying the beautiful art"
+				/>
 			</ImageDiv>
 			<TextDiv>
 					I am Eddie Moger, a software developer and entrepreneur with a passion for building innovative solutions. 

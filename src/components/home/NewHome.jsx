@@ -90,11 +90,11 @@ const SideBarDivContainer = styled.div`
 const SideBarDiv = styled.div`
 	color: #1a77f2;
 	width: 38%;
-	height: 100%;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 
 	@media only screen and (max-width: 900px) {
 		min-width: 100%;
@@ -115,8 +115,8 @@ const ContentDiv = styled.div`
 `;
 
 const ContentWindowDiv = styled.div`
-	max-height: 80vh;
-	background-color: white;
+	max-height: 75vh;
+
 	color: black;
 	overflow: scroll;
 	border-radius: 5px;
@@ -133,7 +133,9 @@ const ContentWindowWrapper = styled.div`
 	align-items: center;
 	max-width: 100%;
 	min-width: 85%;
-	min-height: 95% @media only screen and (max-width: 900px) {
+
+	
+	@media only screen and (max-width: 900px) {
 
 	}
 `;
@@ -157,7 +159,16 @@ const NewHome = ({ myProjectsArray }) => {
 	margin: 10px;
 	padding: 8px;
 	border-radius: 5px;
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.95);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		margin: 5px;
+		width: 66px;
+	}
 `;
 
 	return (
@@ -250,7 +261,7 @@ const NewHome = ({ myProjectsArray }) => {
 			</SideBarDiv>
 
 			<ContentDiv>
-				<TitleDiv>{title}</TitleDiv>
+				<TitleDiv><img src='detailed-upscaled-logo.png' alt='EddieMoger.com high resolution logo'/><span>{title}</span></TitleDiv>
 				<ContentWindowWrapper>
 					<ComponentDiv>
 						<ContentWindowDiv>
