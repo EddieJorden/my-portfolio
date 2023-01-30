@@ -40,8 +40,8 @@ const Home = () => {
 			</TextDiv>
 			<ImageDiv>
 				<img
-					src="eddie_profile_pic.jpg"
-					alt="eddie_moger_profile"
+					src="EddieInTheCity.jpg"
+					alt="Eddie in San Francisco CA, enjoying the beautiful art"
 				/>
 			</ImageDiv>
 			<TextDiv>

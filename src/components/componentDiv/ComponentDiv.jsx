@@ -13,6 +13,10 @@ const ComponentDiv = styled.div`
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
     margin: 10px;
 
+		@media only screen and(max-width: 390px) {
+			margin: 0px;
+		}
+
     .project-notes {
         color: black;
         font-weight: bold;
