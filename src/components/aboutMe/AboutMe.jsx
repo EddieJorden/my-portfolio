@@ -24,6 +24,7 @@ const AboutMeDiv = styled.div`
 
     h1 {
         color: #1a77f2;
+				margin: 0px 5px;
     }
 
     ul {
@@ -35,6 +36,11 @@ const AboutMeDiv = styled.div`
 const TextDiv = styled.div`
 	padding: 0px 15px;
 	margin: 0px 10px;
+
+	@media screen and (max-width: 390px) {
+		padding: 0px;
+		maring: 0px 5px;
+	}
 `;
 
 const AboutMe = () => {

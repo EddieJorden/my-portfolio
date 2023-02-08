@@ -5,6 +5,14 @@ const HomeDiv = styled.div`
 	max-height: 100%;
 	overflow: none;
 	object-fit: contain;
+
+	@media screen and (max-width: 390px) {
+		margin: 0px;
+
+		h3 {
+			margin: 5px 0px;
+		}
+	}
 `;
 
 const ImageDiv = styled.div`
@@ -17,18 +25,21 @@ const ImageDiv = styled.div`
 		object-fit: contain;
 		overflow: hidden;
 		height: 333px;
-		margin: 20px
+
 	}
 	@media screen and (max-width: 390px) {
 		img {
-			height: 250px;
-			width: 320px;
+			margin: 0px;
 		}
 	}
 `;
 
 const TextDiv = styled.div`
 	margin: 18px;
+
+	@media screen and (max-width: 390px) {
+		margin: 5px;
+	}
 `;
 
 const Home = () => {
