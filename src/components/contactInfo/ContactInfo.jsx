@@ -16,7 +16,7 @@ img {
     max-width: 30%;
 
     @media only screen and (max-width: 900px) {
-        max-width: 100%;
+        max-width: 80%;
     }
 }
 
