@@ -1,6 +1,16 @@
 /* eslint-disable react/react-in-jsx-scope */
 const myProjectsArray = [
 	{
+		name: 'SimpleSpectra.com',
+		thumbnail: 'SimpleSpectra.com-thumbnail.png',
+		altText: 'SimpleSpectra.com thumbnail',
+		link: 'https://testspectra.wpengine.com/',
+		linkText: '',
+		notes: {
+			notes: 'Fully built E-commerce site with animations and optimized SEO(currently in development)'
+		}
+	},
+	{
 		name: 'Data Visualization',
 		thumbnail: 'Data Visualization with D3 thumbnail.png',
 		altText: 'Data Visualization with D3 thumbnail',
@@ -12,17 +22,6 @@ const myProjectsArray = [
 		github: 'https://github.com/EddieJorden/ui-ux-project',
 	},
 	{
-		name: 'Reddit Clone',
-		thumbnail: 'reddit_clone_thumbnail.png',
-		altText: 'reddit-clone',
-		link: 'https://eddiejorden.github.io/reddit-clone/',
-		linkText: 'Reddit Clone',
-		notes: {
-			notes: 'A Simple Reddit Clone using reddit API in a React, Redux app.'
-		},
-		github: 'https://github.com/EddieJorden/reddit-clone',
-	},
-	{
 		name: 'Editable Fields With Filter',
 		thumbnail: 'React-Reudx-Challenge-thumbnail.png',
 		altText: 'React-Redux-Challenge-project',
@@ -32,6 +31,17 @@ const myProjectsArray = [
 			notes: 'A React Redux application,  that renders 1000 input fields in an array, all with the ability to update the state, as well as filters.'
 		},
 		github: 'https://github.com/EddieJorden/ctw-project',
+	},
+	{
+		name: 'Reddit Clone',
+		thumbnail: 'reddit_clone_thumbnail.png',
+		altText: 'reddit-clone',
+		link: 'https://eddiejorden.github.io/reddit-clone/',
+		linkText: 'Reddit Clone',
+		notes: {
+			notes: 'A Simple Reddit Clone using reddit API in a React, Redux app.'
+		},
+		github: 'https://github.com/EddieJorden/reddit-clone',
 	},
 	{
 		name: 'Flash Card Tests',
@@ -101,7 +111,9 @@ const myProjectsArray = [
 			notes: 'This portfolio was built using react and styled-components.'
 		},
 		github: 'https://github.com/EddieJorden/my-portfolio',
-	}
+	},
+
+
 
 	// {
 	//     name: 'name of app here',
