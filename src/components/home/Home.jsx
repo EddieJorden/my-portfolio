@@ -57,8 +57,7 @@ const Home = () => {
 			</ImageDiv>
 			<TextDiv>
 					I am Eddie Moger, a software developer and entrepreneur with a passion for building innovative solutions. 
-					My expertise includes AI, custom CRM, accounting software, management solutions, web development, SEO, startup incubation, 
-					e-commerce and much more. Whether you&apos;re a small business looking to boost your online presence 
+					My expertise includes custome software, web development, SEO, AI and much more. Whether you&apos;re a small business looking to boost your online presence 
 					or a startup looking for a partner to bring your idea to life, I&apos;m here to help. 
 					Browse my portfolio and let&apos;s work together to turn your vision into a reality.
 			</TextDiv>
