@@ -7,7 +7,7 @@ const myProjectsArray = [
 		link: 'https://testspectra.wpengine.com/',
 		linkText: '',
 		notes: {
-			notes: 'Fully built E-commerce site with animations and optimized SEO(currently in development)'
+			notes: 'E-commerce site(currently in development)'
 		}
 	},
 	{
@@ -17,7 +17,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/ui-ux-project/',
 		linkText: 'Data Visualization',
 		notes: {
-			notes: 'A data visualization component built using D3.js with React and Redux.  Backend built using Node.js and Express.'
+			notes: 'A data visualization component built using D3.js with React, Redux and Express.js.'
 		},
 		github: 'https://github.com/EddieJorden/ui-ux-project',
 	},
@@ -28,7 +28,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/ctw-project/',
 		linkText: 'React Redux Challenge Project',
 		notes: {
-			notes: 'A React Redux application,  that renders 1000 input fields in an array, all with the ability to update the state, as well as filters.'
+			notes: 'A React Redux application,  that renders 1000 input fields, all with the ability to update the state, as well as filters.'
 		},
 		github: 'https://github.com/EddieJorden/ctw-project',
 	},
@@ -50,7 +50,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/flashcards/',
 		linkText: 'Flash Cards',
 		notes: {
-			notes: 'This custom Flash Cards app was built using React with Redux. It allows you to make flashcard quizzes for topics you decied,  you can name the quizzes and add custom created flashcards.'
+			notes: 'This custom Flash Cards app was built using React with Redux. It allows you to make flashcard quizzes for topics you decide,  you can name the quizzes and add custom created flashcards.'
 		},
 		github: 'https://github.com/EddieJorden/flashcards',
   
@@ -62,7 +62,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/fotomatic/',
 		linkText: 'Fotomatic',
 		notes: {
-			notes: 'Here I was tasked with creating the CSS according to exact specifications outlined by the designer.'
+			notes: 'Responsive CSS using flexbox created to exact designer specifications'
 		},
 		github: 'https://github.com/EddieJorden/fotomatic',
 	},
@@ -73,7 +73,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/react_challenge/',
 		linkText: 'My Planner',
 		notes: {
-			notes: 'Here is a fully built and conceptualized contacts and appointments component built using React.'
+			notes: 'Contacts and appointments component built using React.'
 		},
 		github: 'https://github.com/EddieJorden/react_challenge/settings/pages',
 	},
@@ -108,12 +108,10 @@ const myProjectsArray = [
 		link: 'https://eddiemoger.com',
 		linkText: 'This Portfolio',
 		notes: {
-			notes: 'This portfolio was built using react and styled-components.'
+			notes: 'This responsive portfolio was built from scratch using React.js and Express.'
 		},
 		github: 'https://github.com/EddieJorden/my-portfolio',
 	},
-
-
 
 	// {
 	//     name: 'name of app here',
