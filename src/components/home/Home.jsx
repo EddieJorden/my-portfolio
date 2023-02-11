@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ImageDescription } from '../../utils';
+import { ImageDescription, ImageDiv } from '../../utils';
 
 const HomeDiv = styled.div`
 	max-height: 100%;
@@ -12,25 +12,6 @@ const HomeDiv = styled.div`
 
 		h3 {
 			margin: 5px 0px;
-		}
-	}
-`;
-
-const ImageDiv = styled.div`
-	max-hegiht: 100%;
-	max-width: 100%;
-	object-fit: contain;
-	overflow: none;
-
-	img {
-		object-fit: contain;
-		overflow: hidden;
-		height: 333px;
-
-	}
-	@media screen and (max-width: 390px) {
-		img {
-			margin: 0px;
 		}
 	}
 `;
@@ -53,7 +34,8 @@ const Home = () => {
 			<ImageDiv>
 				<img
 					src="EddieInTheCity.jpg"
-					alt="Eddie in San Francisco CA, enjoying the beautiful art"
+					alt="Eddie Moger in San Francisco CA, enjoying the beautiful art"
+					
 				/>
 				<ImageDescription style={{fontSize: '10px'}}>Eddie in San Francisco CA enjoying some street art</ImageDescription>
 			</ImageDiv>

@@ -54,8 +54,9 @@ export const ImageDiv = styled.div`
 	img {
 		object-fit: contain;
 		overflow: hidden;
-
+		max-height: 333px
 	}
+
 	@media screen and (max-width: 390px) {
 		img {
 			margin: 0px;
