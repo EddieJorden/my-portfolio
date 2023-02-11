@@ -22,7 +22,6 @@ export const AboutMeDiv = styled.div`
 
     img {
         width: 30%;
-				margin: 10px;
     }
 
 		@media screen and (max-width: 390px) {

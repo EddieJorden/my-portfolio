@@ -53,17 +53,28 @@ const AboutMe = () => {
 						where I have been known to create solutions for small businesses including integrating AI and machine learning, 
 						fully custom CRMs, internal communications, websites, SEO, e-commerce, custom back-end software, 
 						financial simulations, data visualization, encryption and much more.</TextDiv>
-					<img src='New-startup-office.jpeg' alt='New startup New office' style={{margin: '15px'}}/>
+					<ImageDiv>
+						<img src='New-startup-office.jpeg' alt='New startup New office' />
+						<ImageDescription>Eddie Moger in new office at Biirdee Travel</ImageDescription>
+					</ImageDiv>
+					
 					
 					<TextDiv>I have a passion for dynamic programming and problem-solving. I spent 8 years in corporate management 
 						before starting my own business, which I ran with great success for 15 years before deciding to switch to something 
 						I am more passionate about - software development.</TextDiv>
-					<img src='Monday-Meeting-Biirdee.com-office-burlingame-ca.jpeg' alt='Monday meeting at startup' style={{margin: '15px'}}/>
+					<ImageDiv>
+						<img src='Monday-Meeting-Biirdee.com-office-burlingame-ca.jpeg' alt='Monday meeting at startup' />
+						<ImageDescription>Eddie Moger enjoying a monday morning brainstorming session at Biirdee Travel</ImageDescription>
+					</ImageDiv>
 					
 					<TextDiv>Now, let&apos;s talk about the fun stuff. I have competed in auto racing, motorcycle racing, 
 						rock climbing, downhill mountain bike racing, Muay Thai Kickboxing and much more. I believe that my passion 
 						for these activites translates into my work ethic - I am always pushing myself to be the best and constantly seeking new challenges.</TextDiv>
-					<img src="New-York-Xeni-app-office-.jpeg" alt="Eddie at Xeni App office in New York City" style={{margin: '15px'}}/>
+					<ImageDiv>
+						<img src="New-York-Xeni-app-office-.jpeg" alt="Eddie at Xeni App office in New York City" />
+						<ImageDescription>Eddie Moger at Xeni app office in New York</ImageDescription>
+					</ImageDiv>
+					
 					<TextDiv>So, why should you choose me for your next project? Well, I am a nerd at heart and love solving problems. 
 						My skills are not just tools, they are the tools I use for success. I am excited to work on new projects and 
 						help build your dreams. So, whether you&apos;re looking for a new website, custom software, or just someone to 
