@@ -51,7 +51,7 @@ const ProjectLinkTileDiv = styled.div`
 `;
 
 const StyledButton = styled.button`
-	font-size: 10px;
+	font-size: 8px;
 	background-color: #89D943;
 	border-radius: 6px;
 	border: 2px solid #89D943;
@@ -86,7 +86,7 @@ const ProjectLinkTile = ({ project }) => {
 				<a href="{project.github}">
 					<div className="title">{project.name}</div>
 				</a>
-				<div style={{ display: 'flex', margin: '0px 30px' }}>
+				<div style={{ display: 'flex', margin: '0px 10px' }}>
 					<a href={project.github}>
 						<div>
 							<StyledButton>github</StyledButton>
