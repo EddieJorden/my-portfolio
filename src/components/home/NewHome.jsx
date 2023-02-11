@@ -12,6 +12,7 @@ import AboutMe from '../aboutMe/AboutMe';
 import ProfileComponent from '../profileComponent/ProfileComponent';
 import ProjectsRenderer from './ProjectsRenderer';
 import ComponentDiv from '../componentDiv/ComponentDiv';
+import Certifications from '../certifications/Certifications';
 
 const NewHomeButton = styled.button`
 	font-size: 10px;
@@ -251,6 +252,14 @@ const NewHome = ({ myProjectsArray }) => {
 												)
 											}>
 											Home
+										</NewHomeButton>
+										<NewHomeButton
+											onClick={() =>
+												updateDisplayedContent(
+													<Certifications />,
+												)
+											}>
+											Certifications
 										</NewHomeButton>
 									</ButtonContainer>
 								</ComponentDiv>

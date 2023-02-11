@@ -1,5 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
-
+import { TextDiv } from '../../utils';
+import { ImageDescription, ImageDiv } from '../../utils';
 
 import styled from 'styled-components';
 
@@ -33,23 +34,17 @@ const AboutMeDiv = styled.div`
     }
 `;
 
-const TextDiv = styled.div`
-	padding: 0px 15px;
-	margin: 0px 10px;
-
-	@media screen and (max-width: 390px) {
-		padding: 0px;
-		maring: 0px 5px;
-	}
-`;
-
 const AboutMe = () => {
 	return (
 		<AboutMeDiv>
 			<div>
 				<div style={{padding: '5px'}}>
 					<h1>Welcome to my corner of the internet!</h1>
-					<img src="gt86nurburgring.jpeg" alt="racing gt86 at nurburgring" style={{margin: '15px'}}/>
+					<ImageDiv>
+						<img src="gt86nurburgring.jpeg" alt="racing gt86 at nurburgring" />
+						<ImageDescription>Eddie Moger racing cars on the world famous Nurburgring in Germany</ImageDescription>
+					</ImageDiv>
+					
 					<TextDiv>My name is Eddie and I am a software developer and 
 						entrepreneur with a passion for building innovative solutions.</TextDiv>
 					<TextDiv>Let&apos;s start with the boring stuff first - I have an extensive background in automotive racing, 

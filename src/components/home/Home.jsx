@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ImageDescription } from '../../utils';
 
 const HomeDiv = styled.div`
 	max-height: 100%;
@@ -54,10 +55,11 @@ const Home = () => {
 					src="EddieInTheCity.jpg"
 					alt="Eddie in San Francisco CA, enjoying the beautiful art"
 				/>
+				<ImageDescription style={{fontSize: '10px'}}>Eddie in San Francisco CA enjoying some street art</ImageDescription>
 			</ImageDiv>
 			<TextDiv>
 					I am Eddie Moger, a software developer and entrepreneur with a passion for building innovative solutions. 
-					My expertise includes custome software, web development, SEO, AI and much more. Whether you&apos;re a small business looking to boost your online presence 
+					My expertise includes custom software, web development, SEO, AI and much more. Whether you&apos;re a small business looking to boost your online presence 
 					or a startup looking for a partner to bring your idea to life, I&apos;m here to help. 
 					Browse my portfolio and let&apos;s work together to turn your vision into a reality.
 			</TextDiv>
