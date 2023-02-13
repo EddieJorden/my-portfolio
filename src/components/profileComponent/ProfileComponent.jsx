@@ -38,16 +38,17 @@ const CallToActionButton = styled.button`
 	font-weight: bold;
 	padding: 0.5vw 1.5vw;
 	margin: 4px;
-	transition: 375ms;
 	font-size: 18px;
+	transform: scale(1);
+  transition: transform 0.2s ease-in-out;
 
 	:hover {
 		cursor: pointer;
-		border: 4px solid orange;
 		color: #ffffff;
 		font-weight: bold;
-		margin: 2px;
 		transition: 375ms;
+		transform: scale(1.05);
+
 	}
 `;
 const GithubButton = styled.button`
@@ -59,13 +60,16 @@ const GithubButton = styled.button`
 	margin: 4px;
 	transition: 375ms;
 	font-weight: bold;
+
+	transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+
 	:hover {
 		cursor: pointer;
-		border: 4px solid #1a77f2;
 		color: white;
 		font-weight: bold;
-		margin: 2px;
 		transition: 375ms;
+		transform: scale(1.05);
 	}
 `;
 
@@ -110,7 +114,7 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 						<div
 							style={{
 								width: '125px',
-								margin: '10px 0',
+								margin: '10px 0'
 							}}>
 							<CallToActionButton
 								onClick={() =>

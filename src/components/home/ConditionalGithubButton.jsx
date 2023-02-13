@@ -2,7 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { StyledButton } from '../../utils';
 
-export const ConditionalGithubButton = ({github}) => {
+const ConditionalGithubButton = ({github}) => {
 	if(github !== undefined) {
 		return (
 			<div>
