@@ -63,3 +63,23 @@ export const ImageDiv = styled.div`
 		}
 	}
 `;
+
+export const StyledButton = styled.button`
+	font-size: 8px;
+	background-color: #89D943;
+	border-radius: 6px;
+	border: 2px solid #89D943;
+	color: white;
+	padding: 0.2vw 0.2vw;
+	margin: 4px;
+	transition: 375ms;
+	font-weight: bold;
+	:hover {
+		cursor: pointer;
+		border: 4px solid #89D943;
+		color: white;
+		font-weight: bold;
+		margin: 2px;
+		transition: 375ms;
+	}
+`;
