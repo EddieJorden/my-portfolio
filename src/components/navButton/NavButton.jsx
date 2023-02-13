@@ -11,13 +11,18 @@ const Button = styled.button`
 	padding: 0.5vw 1.5vw;
 	margin: 4px;
 	transition: 375ms;
+	transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+
+
 	:hover {
 		cursor: pointer;
-		border: 4px solid #1a77f2;
+
 		color: #1a77f2;
 		font-weight: bold;
-		margin: 2px;
+
 		transition: 375ms;
+		transform: scale(1.05);
 	}
 `;
 
