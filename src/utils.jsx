@@ -74,12 +74,16 @@ export const StyledButton = styled.button`
 	margin: 4px;
 	transition: 375ms;
 	font-weight: bold;
+	transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+
 	:hover {
 		cursor: pointer;
-		border: 4px solid #89D943;
+
 		color: white;
 		font-weight: bold;
-		margin: 2px;
+
 		transition: 375ms;
+		transform: scale(1.1);
 	}
 `;
