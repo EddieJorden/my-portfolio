@@ -24,7 +24,7 @@ const UserInfoDiv = styled.div`
 `;
 
 const ProfileImageWrapper = styled.div`
-	max-width: 50%;
+	max-width: 30%;
 	margin: 5%;
 	border-right: 1px solid #dadde1;
 	padding-right: 42px;
