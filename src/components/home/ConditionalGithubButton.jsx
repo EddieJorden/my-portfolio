@@ -3,7 +3,6 @@
 import { StyledButton } from '../../utils';
 
 export const ConditionalGithubButton = ({github}) => {
-	console.log(github);
 	if(github !== undefined) {
 		return (
 			<div>
