@@ -17,10 +17,8 @@ const Button = styled.button`
 
 	:hover {
 		cursor: pointer;
-
 		color: #1a77f2;
 		font-weight: bold;
-
 		transition: 375ms;
 		transform: scale(1.05);
 	}
