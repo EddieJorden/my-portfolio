@@ -145,6 +145,25 @@ const ButtonContainer = styled.div`
 	padding: 10px
 `;
 
+const TitleDiv = styled.div`
+color: #1a77f2;
+font-weight: bold;
+font-size: 34px;
+margin: 10px;
+padding: 8px;
+border-radius: 5px;
+background-color: rgba(255, 255, 255, 0.95);
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+img {
+	margin: 5px;
+	width: 66px;
+}
+`;
+
 const NewHome = ({ myProjectsArray }) => {
 	const [displayedContent, setDisplayedContent] = useState(<Home />);
 	const updateDisplayedContent = (target) => {
@@ -152,25 +171,6 @@ const NewHome = ({ myProjectsArray }) => {
 	};
 
 	const title = 'EddieMoger.com';
-
-	const TitleDiv = styled.div`
-	color: #1a77f2;
-	font-weight: bold;
-	font-size: 34px;
-	margin: 10px;
-	padding: 8px;
-	border-radius: 5px;
-	background-color: rgba(255, 255, 255, 0.95);
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	img {
-		margin: 5px;
-		width: 66px;
-	}
-`;
 
 	return (
 		<NewHomeDiv>
