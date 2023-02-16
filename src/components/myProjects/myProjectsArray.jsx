@@ -1,13 +1,13 @@
 /* eslint-disable react/react-in-jsx-scope */
 const myProjectsArray = [
 	{
-		name: 'custom AI chat bot',
+		name: 'Custom AI chat bot',
 		thumbnail: 'AI-chatbot-thumbnail.png',
-		altText: 'Here is a custom AI chat bot that can answer questions and produce text.',
+		altText: 'custom AI chatbot',
 		link: 'https://eddies-balance-app.netlify.app/',
 		linkText: '',
 		notes: {
-			notes: 'more tools coming soon',
+			notes: 'Here is a custom AI chat bot that can answer questions and produce text.',
 		},
 		github: 'https://github.com/EddieJorden/balance-app',
 	},
@@ -96,7 +96,7 @@ const myProjectsArray = [
 		linkText: 'Food Near Me',
 		notes: {
 			notes: 'This is a React app built using the Yelp api, since it is in developent you must first enable cors anywhere before using this app,  click the link below and click "request temporary access to the demo server" then return to the app.',
-			notesLink:  <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="blank" rel="noopener noreferer">cors anywhere</a>
+			notesLink:  <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank" rel="noopener noreferrer" title="link to cors anywhere">cors anywhere</a>
 		},
 		github: 'https://github.com/EddieJorden/food.near.me',
 	},

@@ -99,10 +99,10 @@ const ContactInfo = () => {
 							<h1 className="contact-info">Contact Info</h1>
 							<h2 className="eddie-moger">Eddie Moger</h2>
 						</div>
-						<h3 className="email"><span><a href="mailto:eddie@eddiemoger.com" rel="noopener">Eddie@EddieMoger.com</a></span></h3>
-						<h3 className="github"><span><a href="https://github.com/EddieJorden" rel="noopener">Github</a></span></h3>
-						<h3 className="linkedin"><a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/" rel="noopener">Linkedin</a></h3>
-						<h3 className="resume"><a href="Eddie Moger Software Engineer Resume.pdf" rel="noopener">Resume</a></h3>
+						<h3 className="email"><span><a href="mailto:eddie@eddiemoger.com" rel="noopener" title="email Eddie@EddieMoger.com">Eddie@EddieMoger.com</a></span></h3>
+						<h3 className="github"><span><a href="https://github.com/EddieJorden" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Github">Github</a></span></h3>
+						<h3 className="linkedin"><a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Linkedin">Linkedin</a></h3>
+						<h3 className="resume"><a href="Eddie Moger Software Engineer Resume.pdf" rel="noopener" title="Eddie Moger's Resume">Resume</a></h3>
 					</div>
 				</ComponentDiv>
 			</div>

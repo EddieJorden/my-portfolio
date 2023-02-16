@@ -63,18 +63,20 @@ const ProjectLinkTile = ({ project }) => {
 				href={project.link}
 				target="_blank"
 				noopener="true"
-				noreferer="true" rel="noreferrer">
+				noreferer="true" rel="noreferrer"
+				title="Link to this project"
+			>
 				<div className="divider" style={{}}>
 					<img src={project.thumbnail} alt={project.name} />
 				</div>
 			</a>
 			<div>
-				<a href="{project.github}" target="_blank" noreferer="true" noopener="true">
+				<a href={project.github} target="_blank" rel="noopener noreferrer" title="This projects Github repository">
 					<div className="title">{project.name}</div>
 				</a>
 				<div style={{ display: 'flex', margin: '0px 10px' }}>
 					<ConditionalGithubButton github={project.github}/>
-					<a href={project.link} target="_blank" noreferer="true" noopener="true" rel="noreferrer">
+					<a href={project.link} target="_blank" rel="noreferrer" title="This projects live link">
 						<div>
 							<StyledButton>project</StyledButton>
 						</div>

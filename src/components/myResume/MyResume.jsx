@@ -18,7 +18,10 @@ const MyResume = () => {
 					<span>
 						<a
 							href="Eddie Moger Software Engineer Resume.pdf"
-							target="blank">
+							target="_blank"
+							rel="noreferrer"
+							title="Eddie Moger's resume"
+						>
 							here
 						</a>{' '}
 					</span>
