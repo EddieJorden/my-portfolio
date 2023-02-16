@@ -6,7 +6,9 @@ const ConditionalGithubButton = ({github}) => {
 	if(github !== undefined) {
 		return (
 			<div>
-				<a href={github}>
+				<a href={github}
+					target="_blank" noreferer="true" noopener="true" rel="noreferrer"
+				>
 					<div>
 						<StyledButton>github</StyledButton>
 					</div>

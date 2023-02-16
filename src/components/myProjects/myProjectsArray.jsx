@@ -1,6 +1,17 @@
 /* eslint-disable react/react-in-jsx-scope */
 const myProjectsArray = [
 	{
+		name: 'custom AI chat bot',
+		thumbnail: 'AI-chatbot-thumbnail.png',
+		altText: 'Here is a custom AI chat bot that can answer questions and produce text.',
+		link: 'https://eddies-balance-app.netlify.app/',
+		linkText: '',
+		notes: {
+			notes: 'more tools coming soon',
+		},
+		github: 'https://github.com/EddieJorden/balance-app',
+	},
+	{
 		name: 'SimpleSpectra.com',
 		thumbnail: 'SimpleSpectra.com-thumbnail.png',
 		altText: 'SimpleSpectra.com thumbnail',

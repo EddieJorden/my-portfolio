@@ -26,7 +26,7 @@ const ProjectTile = (props) => {
 			<ComponentDiv>
 				<div className={`${name}`}>
 					<h3 style={{fontWeight: 'bolder'}}>{name}</h3>
-					<a href={link} target="blank" >
+					<a href={link} target="_blank" rel="noreferrer" >
 						<div className="image-container">
 							<img src={thumbnail} alt={altText}/>
 						</div>
@@ -37,7 +37,7 @@ const ProjectTile = (props) => {
 					</div>
 					<div>
 						{			github !== undefined	?	<div style={{margin: '10px'}} className='github-link'>
-                        this projects <a href={github} target="blank">github</a></div> : ''}
+                        this projects <a href={github} target="_blank" rel="noreferrer">github</a></div> : ''}
 					</div>
 
 				</div>
