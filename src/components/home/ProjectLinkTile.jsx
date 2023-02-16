@@ -61,20 +61,20 @@ const ProjectLinkTile = ({ project }) => {
 		<ProjectLinkTileDiv>
 			<a
 				href={project.link}
-				target="blank"
+				target="_blank"
 				noopener="true"
-				noreferer="true">
+				noreferer="true" rel="noreferrer">
 				<div className="divider" style={{}}>
 					<img src={project.thumbnail} alt={project.name} />
 				</div>
 			</a>
 			<div>
-				<a href="{project.github}">
+				<a href="{project.github}" target="_blank" noreferer="true" noopener="true">
 					<div className="title">{project.name}</div>
 				</a>
 				<div style={{ display: 'flex', margin: '0px 10px' }}>
 					<ConditionalGithubButton github={project.github}/>
-					<a href={project.link}>
+					<a href={project.link} target="_blank" noreferer="true" noopener="true" rel="noreferrer">
 						<div>
 							<StyledButton>project</StyledButton>
 						</div>

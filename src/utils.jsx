@@ -79,10 +79,8 @@ export const StyledButton = styled.button`
 
 	:hover {
 		cursor: pointer;
-
 		color: white;
 		font-weight: bold;
-
 		transition: 375ms;
 		transform: scale(1.1);
 	}
