@@ -124,7 +124,7 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 							</CallToActionButton>
 							<div style={{ margin: '5px 0px' }}>
 								{' '}
-								<a href="https://github.com/EddieJorden">
+								<a href="https://github.com/EddieJorden" target="_blank" rel="noreferrer" title="Eddie Moger's Github">
 									<GithubButton>My Github</GithubButton>
 								</a>
 							</div>

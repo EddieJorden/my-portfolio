@@ -117,7 +117,7 @@ const ContentDiv = styled.div`
 `;
 
 const ContentWindowDiv = styled.div`
-	max-height: 75vh;
+	max-height: 70vh;
 
 	color: black;
 	overflow: scroll;

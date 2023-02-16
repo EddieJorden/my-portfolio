@@ -7,7 +7,9 @@ const ConditionalGithubButton = ({github}) => {
 		return (
 			<div>
 				<a href={github}
-					target="_blank" noreferer="true" noopener="true" rel="noreferrer"
+					target="_blank"
+					rel="noreferrer"
+					title="Github.com"
 				>
 					<div>
 						<StyledButton>github</StyledButton>

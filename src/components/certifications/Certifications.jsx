@@ -6,10 +6,10 @@ const Certifications = () => {
 	return (
 		<AboutMeDiv>
 			<ImageDiv>
-				<img src={'Eddie-Moger-Front-End-Web-Development-Certificate.png'}/>
+				<a href={'https://www.codecademy.com/profiles/eddieJorden.tech'} target="_blank" rel="noopener noreferrer" title="My profile on Codecademy.com" aria-label="Codecademy profile and certificates"><img src={'Eddie-Moger-Front-End-Web-Development-Certificate.png'}/></a>
 				<ImageDescription>Front End Web Development certificate of completion with Codecademy.com</ImageDescription>
 			</ImageDiv>
-			<TextDiv>I am a web development professional with a passion for software development. I have completed numerous courses and have obtained numerous certifications from codecademy.com in various technologies and disciplines such as Typescript, Node.js, CSS in JS, Color Design, Git and Github, Website Development, intermediate JavaScript, Front-End Engineering, React, CSS, Javascript, and HTML. These certifications showcase my commitment and dedication to the field of web development. My enthusiasm for the subject is evident in the fact that I am continuously seeking to expand my knowledge, and I am currently exploring the back-end aspect of web development and working with Postgres. I am confident in my ability to bring my passion, excitement, and expertise to any project.</TextDiv>
+			<TextDiv>I am a web development professional with a passion for software development. I have completed numerous courses and have obtained numerous certifications from Codecademy.com in various technologies and disciplines such as React, Redux, Typescript and much more. These certifications showcase my commitment and dedication to the field of web development. My enthusiasm for the subject is evident in the fact that I am continuously seeking to expand my knowledge, and I am currently exploring the back-end aspect of web development and machine learning. I am confident in my ability to bring my passion, excitement, and expertise to any project.</TextDiv>
 			<h3 >Certifications inlcude</h3>
 			<div style={{display: 'flex', flexWrap: 'wrap'}}>
 				<ul>Learn HTML</ul>
@@ -30,13 +30,12 @@ const Certifications = () => {
 				</ul>
 				<ul>Build a Website with HTML, CSS, and GitHub Pages
 				</ul>
-				
 				<ul>Learn Navigation Design</ul>
 				<ul>Learn Color Design</ul>
 				<ul>Learn CSS: Responsive Design</ul>
 				<ul>Learn Git & GitHub</ul>
 			</div>
-			<a href={'https://www.codecademy.com/profiles/eddieJorden.tech'}>Codecademy Certifications</a>
+			<a href={'https://www.codecademy.com/profiles/eddieJorden.tech'} target="_blank" rel="noopener noreferrer" title="My profile on Codecademy.com" aria-label="Codecademy profile and certificates">Codecademy Certifications</a>
 		</AboutMeDiv>
 	);
 };
