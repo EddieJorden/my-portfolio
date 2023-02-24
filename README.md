@@ -1,48 +1,46 @@
-My Portfolio
-author: Eddie Moger
+# Eddie Moger - Software Engineer
+I am a self-taught software engineer based in Silicon Valley, CA. I am passionate about building custom software for small and large companies.
 
-This portfolio has been created to introduce you to Eddie Moger a software engineer operating out of Silicon Valley CA.
+## Technologies
+- React
+- Redux
+- JavaScript
+- TypeScript
+- Node.js
+- Express
+- SQL
+- HTML
+- CSS
 
-This project was built using JavaScript with React.js, as well as styled components.
+## Skills
+- Dynamic programming
+- Data structures
+- Algorithms
+- Problem solving
 
-Installation:
-you will need to have a javascript developement enviroment setup on your machine to run this locally.
+## Hobbies and Interests
+In addition to software development, I am interested in:
 
-    this link will take you through the steps.
-    https://create-react-app.dev/docs/getting-started/
+- Entrepreneurship
+- Car racing
+- Art
+- Sci-fi
+- Music
+- Philosophy
+- Space
+- Science
+- Math
+- And much more!
 
-    when you are ready to run the app you will need to fork this repository from:
-    https://github.com/EddieJorden/my-portfolio
+## Services
+I am currently looking to build custom software for small, medium or large companies. I have a passion for developing high-quality software that solves real-world problems and helps businesses achieve their goals.
 
-    and clone it to your local machine using
-    git clone https://github.com/yourgithubusername/my-portfolio
+## Let's Work Together
+I am very excited about software development and I am always looking for new opportunities to collaborate and work on exciting projects. I would be thrilled to help bring your dreams to reality and build custom software that meets your specific needs.
 
-    once installed on your local machine navigate to the directory you savaed it to and type
-    npm start or yarn start if you are using yarn
+I am excited to start new projects and help bring your dreams to reality. If you're interested in working together, feel free to contact me at [Eddie@EddieMoger.com](Eddie@EddieMoger.com).
 
-    if all has gone as expected the app should start up in a development server on your local machine
+Eddie Moger
+[Eddie@EddieMoger.com](Eddie@EddieMoger.com)
+[LinkedIn](https://www.linkedin.com/in/eddie-moger/)
 
-How To
-This is built mostly using only flexbox, each section of the app is a box that renders based on @media. The structure is modular and adjusts and arranges itself with out the need for individual css changes.
-
-    the content window displays the Component passed into updateDisplayContent
-    example:
-    updateDisplayedContent(<ReachComponentToDisplay />)
-
-    MyProjectsArray is a mock back end api, the data is then used throughout the app.
-
-    NavButton is a modular button used with data being passed in throughout the app.
-
-    CompenentDiv is a modular component div providing consistent css throughout the app.
-
-About the Team
-
-I worked on this project as the project manager, architect, designer, engineer, CEO, CFO, and CTO. (I did it all baby!)
-
-Team
-
-    Eddie Moger
-    https://github.com/EddieJorden
-    https://www.linkedin.com/in/edward-moger-1a50b21bb/
-
-Thank you for taking the time to read this README.md as it is my first readme :)
