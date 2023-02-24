@@ -38,9 +38,10 @@ I am currently looking to build custom software for small, medium or large compa
 ## Let's Work Together
 I am very excited about software development and I am always looking for new opportunities to collaborate and work on exciting projects. I would be thrilled to help bring your dreams to reality and build custom software that meets your specific needs.
 
-I am excited to start new projects and help bring your dreams to reality. If you're interested in working together, feel free to contact me at [Eddie@EddieMoger.com](Eddie@EddieMoger.com).
+I am excited to start new projects and help bring your dreams to reality. If you're interested in working together, feel free to contact me.
 
 Eddie Moger
+
 [Eddie@EddieMoger.com](Eddie@EddieMoger.com)
 
 [LinkedIn](https://www.linkedin.com/in/eddie-moger/)
