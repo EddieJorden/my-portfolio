@@ -1,11 +1,22 @@
 /* eslint-disable react/react-in-jsx-scope */
 const myProjectsArray = [
 	{
+		name: 'Full Stack Task Manager App',
+		thumbnail: 'Task-app-thumbnail.png',
+		altText: 'Full Stack Task Manager App',
+		link: 'https://eddies-balance-app.netlify.app/',
+		linkText: 'Full Stack Task Manager App',
+		notes: {
+			notes: 'This is a full stack task manager app built using React, Redux, Typescript, Node.js, Express.js, and MySQL.',
+		},
+		github: 'https://github.com/EddieJorden/balance-app',
+	},
+	{
 		name: 'Custom AI chat bot',
 		thumbnail: 'AI-chatbot-thumbnail.png',
 		altText: 'custom AI chatbot',
 		link: 'https://eddies-balance-app.netlify.app/',
-		linkText: '',
+		linkText: 'custom AI chatbot',
 		notes: {
 			notes: 'Here is a custom AI chat bot that can answer questions and produce text.',
 		},
@@ -16,7 +27,7 @@ const myProjectsArray = [
 		thumbnail: 'SimpleSpectra.com-thumbnail.png',
 		altText: 'SimpleSpectra.com thumbnail',
 		link: 'https://testspectra.wpengine.com/',
-		linkText: '',
+		linkText: 'SimpleSpectra.com',
 		notes: {
 			notes: 'E-commerce site(currently in development)'
 		}
