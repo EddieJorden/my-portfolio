@@ -42,5 +42,6 @@ I am excited to start new projects and help bring your dreams to reality. If you
 
 Eddie Moger
 [Eddie@EddieMoger.com](Eddie@EddieMoger.com)
+
 [LinkedIn](https://www.linkedin.com/in/eddie-moger/)
 
