@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
 import styled from 'styled-components';
-import ContactInfo from '../contactInfo/ContactInfo';
 
 const ProfileComponentWrapper = styled.div`
 	min-height: 100%;
@@ -118,7 +117,7 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 							}}>
 							<CallToActionButton
 								onClick={() =>
-									updateDisplayedContent(<ContactInfo />)
+									updateDisplayedContent('contactinfo')
 								}>
 								Contact
 							</CallToActionButton>
