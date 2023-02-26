@@ -14,6 +14,7 @@ import ProjectsRenderer from './ProjectsRenderer';
 import ComponentDiv from '../componentDiv/ComponentDiv';
 import Certifications from '../certifications/Certifications';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const NewHomeButton = styled.button`
 	font-size: 10px;
@@ -162,6 +163,11 @@ img {
 
 const NewHome = ({ myProjectsArray }) => {
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		navigate('/home');
+	}, []);
+
 	const updateDisplayedContent = (path) => {
 		navigate(path);
 	};
