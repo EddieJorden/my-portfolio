@@ -4,7 +4,7 @@ import NewHomeDiv from './NewHomeDiv';
 import ContentWindow from './ContentWindow';
 import MyResume from '../myResume/MyResume';
 import ContactInfo from '../contactInfo/ContactInfo';
-import { useState } from 'react';
+
 import MyProjects from '../myProjects/MyProjects';
 import Home from '../home/Home';
 import styled from 'styled-components';
@@ -13,6 +13,7 @@ import ProfileComponent from '../profileComponent/ProfileComponent';
 import ProjectsRenderer from './ProjectsRenderer';
 import ComponentDiv from '../componentDiv/ComponentDiv';
 import Certifications from '../certifications/Certifications';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 const NewHomeButton = styled.button`
 	font-size: 10px;
@@ -37,8 +38,6 @@ const NewHomeButton = styled.button`
 `;
 
 const SideBarProfileDivContainer = styled.div`
-
-
 	@media only screen and (max-width: 900px) {
 		display: none;
 	}
@@ -46,7 +45,6 @@ const SideBarProfileDivContainer = styled.div`
 
 const ProjectLinksDiv = styled.div`
 	flex-grow: 1;
-
 `;
 
 const SideBarFooterDiv = styled.div`
@@ -118,7 +116,6 @@ const ContentDiv = styled.div`
 
 const ContentWindowDiv = styled.div`
 	max-height: 70vh;
-
 	color: black;
 	overflow: scroll;
 	border-radius: 5px;
@@ -136,7 +133,6 @@ const ContentWindowWrapper = styled.div`
 	max-width: 100%;
 	min-width: 85%;
 
-	
 	@media only screen and (max-width: 900px) {
 
 	}
@@ -154,7 +150,6 @@ margin: 10px;
 padding: 8px;
 border-radius: 5px;
 background-color: rgba(255, 255, 255, 0.95);
-
 display: flex;
 justify-content: center;
 align-items: center;
@@ -166,9 +161,9 @@ img {
 `;
 
 const NewHome = ({ myProjectsArray }) => {
-	const [displayedContent, setDisplayedContent] = useState(<Home />);
-	const updateDisplayedContent = (target) => {
-		setDisplayedContent(target);
+	const navigate = useNavigate();
+	const updateDisplayedContent = (path) => {
+		navigate(path);
 	};
 
 	const title = 'EddieMoger.com';
@@ -217,7 +212,7 @@ const NewHome = ({ myProjectsArray }) => {
 										<NewHomeButton
 											onClick={() =>
 												updateDisplayedContent(
-													<ContactInfo />,
+													'/contactInfo',
 												)
 											}>
 											Contact
@@ -225,7 +220,7 @@ const NewHome = ({ myProjectsArray }) => {
 										<NewHomeButton
 											onClick={() =>
 												updateDisplayedContent(
-													<MyProjects />,
+													'/myProjects',
 												)
 											}>
 											Projects
@@ -233,7 +228,7 @@ const NewHome = ({ myProjectsArray }) => {
 										<NewHomeButton
 											onClick={() =>
 												updateDisplayedContent(
-													<MyResume />,
+													'/resume',
 												)
 											}>
 											Resume
@@ -241,7 +236,7 @@ const NewHome = ({ myProjectsArray }) => {
 										<NewHomeButton
 											onClick={() =>
 												updateDisplayedContent(
-													<AboutMe />,
+													'/aboutme',
 												)
 											}>
 											About
@@ -249,7 +244,7 @@ const NewHome = ({ myProjectsArray }) => {
 										<NewHomeButton
 											onClick={() =>
 												updateDisplayedContent(
-													<Home />,
+													'/Home',
 												)
 											}>
 											Home
@@ -257,7 +252,7 @@ const NewHome = ({ myProjectsArray }) => {
 										<NewHomeButton
 											onClick={() =>
 												updateDisplayedContent(
-													<Certifications />,
+													'/certifications',
 												)
 											}>
 											Certifications
@@ -276,8 +271,27 @@ const NewHome = ({ myProjectsArray }) => {
 					<ComponentDiv>
 						<ContentWindowDiv>
 							<ContentWindow
-								displayedContent={displayedContent}
 							/>
+							<Routes>
+								<Route
+									path={'/contactInfo'}
+									element={<ContactInfo/>} />
+								<Route
+									path={'/myProjects'}
+									element={<MyProjects/>} />
+								<Route
+									path={'/resume'}
+									element={<MyResume/>} />
+								<Route
+									path={'/aboutMe'}
+									element={<AboutMe/>} />
+								<Route
+									path={'/certifications'}
+									element={<Certifications/>} />
+								<Route
+									path={'/home'} 
+									element={<Home/>} />
+							</Routes>
 						</ContentWindowDiv>
 					</ComponentDiv>
 				</ContentWindowWrapper>
