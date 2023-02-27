@@ -3,7 +3,7 @@ import ComponentDiv from '../componentDiv/ComponentDiv';
 import styled from 'styled-components';
 
 export const ContactInfoDiv = styled.div`
-max-height: 100%;
+max-height: 10%;
 max-width: 100%;
 display: flex;
 justify-content: center;

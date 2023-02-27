@@ -116,7 +116,7 @@ const ContentDiv = styled.div`
 `;
 
 const ContentWindowDiv = styled.div`
-	max-height: 70vh;
+
 	color: black;
 	overflow: scroll;
 	border-radius: 5px;
@@ -124,6 +124,10 @@ const ContentWindowDiv = styled.div`
 	flex-direction: column;
 	text-align: -webkit-center;
 	max-width: 100%;
+
+	@media only screen and (max-width: 900px) {
+		max-height: 66vh
+		};
 `;
 
 const ContentWindowWrapper = styled.div`
@@ -138,6 +142,14 @@ const ContentWindowWrapper = styled.div`
 
 	}
 `;
+
+// const Footer = styled.div`
+// 	display: flex;
+// 	flex-direction: row;
+// 	justify-content: center;
+// 	align-items: center;
+// 	margin: 10px;
+// `;
 
 const ButtonContainer = styled.div`
 	padding: 10px
@@ -175,134 +187,140 @@ const NewHome = ({ myProjectsArray }) => {
 	const title = 'EddieMoger.com';
 
 	return (
-		<NewHomeDiv>
-			<SideBarDiv>
-				<SideBarDivContainer>
-					<SideBarProfileDivContainer>
-						<ComponentDiv>
-							<ProfileDiv>
-								<ProfileComponent
-									updateDisplayedContent={
-										updateDisplayedContent
-									}
-								/>
-							</ProfileDiv>
-						</ComponentDiv>
-					</SideBarProfileDivContainer>
-
-					<SideBarLinksContainer>
-						<ProjectLinksDiv>
+		<div>
+			<NewHomeDiv>
+				<SideBarDiv>
+					<SideBarDivContainer>
+						<SideBarProfileDivContainer>
 							<ComponentDiv>
-								<div
-									style={{
-										fontSize: '18px',
-										fontWeight: 'bold',
-										margin: '10px'
-									}}>
-									My Recent Projects
-								</div>
-								<ProjectLinksListDiv>
-									<ProjectsRenderer
-										myProjectsArray={myProjectsArray}
+								<ProfileDiv>
+									<ProfileComponent
+										updateDisplayedContent={
+											updateDisplayedContent
+										}
 									/>
-								</ProjectLinksListDiv>
+								</ProfileDiv>
 							</ComponentDiv>
-						</ProjectLinksDiv>
-					</SideBarLinksContainer>
+						</SideBarProfileDivContainer>
 
-					<SideBarFooterContainer>
-						<SideBarFooterDiv>
-							<NavigationDiv>
+						<SideBarLinksContainer>
+							<ProjectLinksDiv>
 								<ComponentDiv>
-									<ButtonContainer>
-										<NewHomeButton
-											onClick={() =>
-												updateDisplayedContent(
-													'/contactInfo',
-												)
-											}>
-											Contact
-										</NewHomeButton>
-										<NewHomeButton
-											onClick={() =>
-												updateDisplayedContent(
-													'/myProjects',
-												)
-											}>
-											Projects
-										</NewHomeButton>
-										<NewHomeButton
-											onClick={() =>
-												updateDisplayedContent(
-													'/resume',
-												)
-											}>
-											Resume
-										</NewHomeButton>
-										<NewHomeButton
-											onClick={() =>
-												updateDisplayedContent(
-													'/aboutme',
-												)
-											}>
-											About
-										</NewHomeButton>
-										<NewHomeButton
-											onClick={() =>
-												updateDisplayedContent(
-													'/Home',
-												)
-											}>
-											Home
-										</NewHomeButton>
-										<NewHomeButton
-											onClick={() =>
-												updateDisplayedContent(
-													'/certifications',
-												)
-											}>
-											Certifications
-										</NewHomeButton>
-									</ButtonContainer>
+									<div
+										style={{
+											fontSize: '18px',
+											fontWeight: 'bold',
+											margin: '10px'
+										}}>
+									My Recent Projects
+									</div>
+									<ProjectLinksListDiv>
+										<ProjectsRenderer
+											myProjectsArray={myProjectsArray}
+										/>
+									</ProjectLinksListDiv>
 								</ComponentDiv>
-							</NavigationDiv>
-						</SideBarFooterDiv>
-					</SideBarFooterContainer>
-				</SideBarDivContainer>
-			</SideBarDiv>
+							</ProjectLinksDiv>
+						</SideBarLinksContainer>
 
-			<ContentDiv>
-				<TitleDiv><img src='detailed-upscaled-logo.png' alt='EddieMoger.com high resolution logo'/><span>{title}</span></TitleDiv>
-				<ContentWindowWrapper>
-					<ComponentDiv>
-						<ContentWindowDiv>
-							<ContentWindow
-							/>
-							<Routes>
-								<Route
-									path={'/contactInfo'}
-									element={<ContactInfo/>} />
-								<Route
-									path={'/myProjects'}
-									element={<MyProjects/>} />
-								<Route
-									path={'/resume'}
-									element={<MyResume/>} />
-								<Route
-									path={'/aboutMe'}
-									element={<AboutMe/>} />
-								<Route
-									path={'/certifications'}
-									element={<Certifications/>} />
-								<Route
-									path={'/home'} 
-									element={<Home/>} />
-							</Routes>
-						</ContentWindowDiv>
-					</ComponentDiv>
-				</ContentWindowWrapper>
-			</ContentDiv>
-		</NewHomeDiv>
+						<SideBarFooterContainer>
+							<SideBarFooterDiv>
+								<NavigationDiv>
+									<ComponentDiv>
+										<ButtonContainer>
+											<NewHomeButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/contactInfo',
+													)
+												}>
+											Contact
+											</NewHomeButton>
+											<NewHomeButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/myProjects',
+													)
+												}>
+											Projects
+											</NewHomeButton>
+											<NewHomeButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/resume',
+													)
+												}>
+											Resume
+											</NewHomeButton>
+											<NewHomeButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/aboutme',
+													)
+												}>
+											About
+											</NewHomeButton>
+											<NewHomeButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/Home',
+													)
+												}>
+											Home
+											</NewHomeButton>
+											<NewHomeButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/certifications',
+													)
+												}>
+											Certifications
+											</NewHomeButton>
+										</ButtonContainer>
+									</ComponentDiv>
+								</NavigationDiv>
+							</SideBarFooterDiv>
+						</SideBarFooterContainer>
+					</SideBarDivContainer>
+				</SideBarDiv>
+
+				<ContentDiv>
+					<TitleDiv><img src='detailed-upscaled-logo.png' alt='EddieMoger.com high resolution logo'/><span>{title}</span></TitleDiv>
+					<ContentWindowWrapper>
+						<ComponentDiv>
+							<ContentWindowDiv>
+								<ContentWindow
+								/>
+								<Routes>
+									<Route
+										path={'/contactInfo'}
+										element={<ContactInfo/>} />
+									<Route
+										path={'/myProjects'}
+										element={<MyProjects/>} />
+									<Route
+										path={'/resume'}
+										element={<MyResume/>} />
+									<Route
+										path={'/aboutMe'}
+										element={<AboutMe/>} />
+									<Route
+										path={'/certifications'}
+										element={<Certifications/>} />
+									<Route
+										path={'/home'} 
+										element={<Home/>} />
+								</Routes>
+							</ContentWindowDiv>
+						</ComponentDiv>
+					</ContentWindowWrapper>
+				</ContentDiv>
+			</NewHomeDiv>
+			<footer>
+			© 2019 Eddie Moger. All rights reserved.
+
+			</footer>
+		</div>
 	);
 };
 
