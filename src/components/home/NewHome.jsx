@@ -9,6 +9,7 @@ import MyProjects from '../myProjects/MyProjects';
 import Home from '../home/Home';
 import styled from 'styled-components';
 import AboutMe from '../aboutMe/AboutMe';
+import Services from '../services/Services';
 import ProfileComponent from '../profileComponent/ProfileComponent';
 import ProjectsRenderer from './ProjectsRenderer';
 import ComponentDiv from '../componentDiv/ComponentDiv';
@@ -124,6 +125,7 @@ const ContentWindowDiv = styled.div`
 	flex-direction: column;
 	text-align: -webkit-center;
 	max-width: 100%;
+	max-height: 75vh;
 
 	@media only screen and (max-width: 900px) {
 		max-height: 66vh
@@ -142,14 +144,6 @@ const ContentWindowWrapper = styled.div`
 
 	}
 `;
-
-// const Footer = styled.div`
-// 	display: flex;
-// 	flex-direction: row;
-// 	justify-content: center;
-// 	align-items: center;
-// 	margin: 10px;
-// `;
 
 const ButtonContainer = styled.div`
 	padding: 10px
@@ -276,6 +270,14 @@ const NewHome = ({ myProjectsArray }) => {
 												}>
 											Certifications
 											</NewHomeButton>
+											<NewHomeButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/services',
+													)
+												}>
+											Services
+											</NewHomeButton>
 										</ButtonContainer>
 									</ComponentDiv>
 								</NavigationDiv>
@@ -310,6 +312,9 @@ const NewHome = ({ myProjectsArray }) => {
 									<Route
 										path={'/home'} 
 										element={<Home/>} />
+									<Route
+										path={'/services'} 
+										element={<Services/>} />
 								</Routes>
 							</ContentWindowDiv>
 						</ComponentDiv>

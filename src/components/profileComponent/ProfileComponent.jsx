@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
 import styled from 'styled-components';
+import { CallToActionButton } from '../../utils';
 
 const ProfileComponentWrapper = styled.div`
 	min-height: 100%;
@@ -29,27 +30,6 @@ const ProfileImageWrapper = styled.div`
 	padding-right: 42px;
 `;
 
-const CallToActionButton = styled.button`
-	background-color: orange;
-	border-radius: 6px;
-	border: 2px solid orange;
-	color: #ffffff;
-	font-weight: bold;
-	padding: 0.5vw 1.5vw;
-	margin: 4px;
-	font-size: 18px;
-	transform: scale(1);
-  transition: transform 0.2s ease-in-out;
-
-	:hover {
-		cursor: pointer;
-		color: #ffffff;
-		font-weight: bold;
-		transition: 375ms;
-		transform: scale(1.05);
-
-	}
-`;
 const GithubButton = styled.button`
 	background-color: #1a77f2;
 	border-radius: 6px;
