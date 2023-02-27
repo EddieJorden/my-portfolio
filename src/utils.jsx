@@ -10,6 +10,28 @@ export const TextDiv = styled.div`
 	}
 `;
 
+export const CallToActionButton = styled.button`
+	background-color: orange;
+	border-radius: 6px;
+	border: 2px solid orange;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 0.5vw 1.5vw;
+	margin: 4px;
+	font-size: 18px;
+	transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+
+	:hover {
+		cursor: pointer;
+		color: #ffffff;
+		font-weight: bold;
+		transition: 375ms;
+		transform: scale(1.05);
+
+	}
+`;
+
 export const AboutMeDiv = styled.div`
     margin: 22px;
     max-height: 100%

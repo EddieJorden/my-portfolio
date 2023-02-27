@@ -11,8 +11,19 @@ body {
   max-height: 100vh;
 }
 
+h1 {
+  color: #1a77f2;
+}
+
 h1, h2, h3 {
 	Font-Family: 'Roboto Condensed', Sans-Serif;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #eff2f5;
+  color: #1a77f2;
 }
 
 img {
