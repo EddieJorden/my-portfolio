@@ -3,7 +3,6 @@ import ComponentDiv from '../componentDiv/ComponentDiv';
 import styled from 'styled-components';
 
 export const ContactInfoDiv = styled.div`
-min-height: 100%;
 max-height: 100%;
 max-width: 100%;
 display: flex;
@@ -14,6 +13,7 @@ text-wrap: none;
 img {
     max-height: 80%;
     max-width: 30%;
+    margin: 10px;
 
     @media only screen and (max-width: 900px) {
         max-width: 80%;
@@ -22,7 +22,7 @@ img {
 
 .imag-div {
     max-height: 100%;
-    max-width: 80%;
+    max-width: 66%;
 }
 
 ul {
@@ -62,26 +62,6 @@ h3 {
     padding: 4px;
 }
 
-.email {
-    color: grey
-}
-
-.phone {
-    color: grey
-}
-
-.github {
-    color: grey
-}
-
-.linkedin {
-    color: grey
-}
-
-.resume {
-    color: grey
-}
-
 }
 `;
 
@@ -89,7 +69,7 @@ const ContactInfo = () => {
 
 	return (
 		<ContactInfoDiv>
-			<div className="image-div" style={{margin: '15px 0px 0px 0px'}}>
+			<div className="image-div" >
 				<img src="eddie_profile_pic.jpg" alt="Eddie Profile Picture" />
 			</div>
 			<div className="contact-div">
