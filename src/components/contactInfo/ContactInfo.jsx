@@ -12,7 +12,7 @@ text-wrap: none;
 
 img {
     max-height: 80%;
-    max-width: 30%;
+    width: 230px;
     margin: 10px;
 
     @media only screen and (max-width: 900px) {
