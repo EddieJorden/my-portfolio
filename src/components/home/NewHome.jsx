@@ -125,10 +125,10 @@ const ContentWindowDiv = styled.div`
 	flex-direction: column;
 	text-align: -webkit-center;
 	max-width: 100%;
-	max-height: 75vh;
+	height: 75vh;
 
 	@media only screen and (max-width: 900px) {
-		max-height: 66vh
+		height: 66vh
 		};
 `;
 
