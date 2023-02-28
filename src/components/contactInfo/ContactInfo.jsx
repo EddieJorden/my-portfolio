@@ -3,8 +3,8 @@ import ComponentDiv from '../componentDiv/ComponentDiv';
 import styled from 'styled-components';
 
 export const ContactInfoDiv = styled.div`
-max-height: 10%;
 max-width: 100%;
+height: 100%;
 display: flex;
 justify-content: center;
 flex-direction: column;
@@ -12,7 +12,7 @@ text-wrap: none;
 
 img {
     max-height: 80%;
-    max-width: 30%;
+    width: 230px;
     margin: 10px;
 
     @media only screen and (max-width: 900px) {
