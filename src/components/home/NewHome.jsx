@@ -14,8 +14,8 @@ import ProfileComponent from '../profileComponent/ProfileComponent';
 import ProjectsRenderer from './ProjectsRenderer';
 import ComponentDiv from '../componentDiv/ComponentDiv';
 import Certifications from '../certifications/Certifications';
+// import Blog from '../blog/Blog';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const NewHomeButton = styled.button`
 	font-size: 10px;
@@ -170,10 +170,6 @@ img {
 const NewHome = ({ myProjectsArray }) => {
 	const navigate = useNavigate();
 
-	useEffect(() => {
-		navigate('/home');
-	}, []);
-
 	const updateDisplayedContent = (path) => {
 		navigate(path);
 	};
@@ -257,7 +253,7 @@ const NewHome = ({ myProjectsArray }) => {
 											<NewHomeButton
 												onClick={() =>
 													updateDisplayedContent(
-														'/Home',
+														'/',
 													)
 												}>
 											Home
@@ -278,6 +274,14 @@ const NewHome = ({ myProjectsArray }) => {
 												}>
 											Services
 											</NewHomeButton>
+											{/* <NewHomeButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/blog',
+													)
+												}>
+											Blog
+											</NewHomeButton> */}
 										</ButtonContainer>
 									</ComponentDiv>
 								</NavigationDiv>
@@ -310,11 +314,14 @@ const NewHome = ({ myProjectsArray }) => {
 										path={'/certifications'}
 										element={<Certifications/>} />
 									<Route
-										path={'/home'} 
+										path={'/'} 
 										element={<Home/>} />
 									<Route
 										path={'/services'} 
 										element={<Services/>} />
+									{/* <Route
+										path={'/blog'} 
+										element={<Blog/>} /> */}
 								</Routes>
 							</ContentWindowDiv>
 						</ComponentDiv>
