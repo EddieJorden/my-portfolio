@@ -14,6 +14,7 @@ import ProfileComponent from '../profileComponent/ProfileComponent';
 import ProjectsRenderer from './ProjectsRenderer';
 import ComponentDiv from '../componentDiv/ComponentDiv';
 import Certifications from '../certifications/Certifications';
+import Blog from '../blog/Blog';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 const NewHomeButton = styled.button`
@@ -273,6 +274,14 @@ const NewHome = ({ myProjectsArray }) => {
 												}>
 											Services
 											</NewHomeButton>
+											<NewHomeButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/blog',
+													)
+												}>
+											Blog
+											</NewHomeButton>
 										</ButtonContainer>
 									</ComponentDiv>
 								</NavigationDiv>
@@ -310,6 +319,9 @@ const NewHome = ({ myProjectsArray }) => {
 									<Route
 										path={'/services'} 
 										element={<Services/>} />
+									<Route
+										path={'/blog'} 
+										element={<Blog/>} />
 								</Routes>
 							</ContentWindowDiv>
 						</ComponentDiv>
