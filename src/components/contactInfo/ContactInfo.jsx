@@ -83,6 +83,7 @@ const ContactInfo = () => {
 						<h3 className="github"><span><a href="https://github.com/EddieJorden" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Github">Github</a></span></h3>
 						<h3 className="linkedin"><a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Linkedin">Linkedin</a></h3>
 						<h3 className="twitter"><a href="https://twitter.com/eddiemoger_com" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Twitter">Twitter</a></h3>
+						<h3 className="instagram"><a href="https://www.instagram.com/eddiemoger_com/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Instagram">Instagram</a></h3>
 						<h3 className="resume"><a href="Eddie Moger Software Engineer Resume.pdf" rel="noopener" title="Eddie Moger's Resume">Resume</a></h3>
 					</div>
 				</ComponentDiv>
