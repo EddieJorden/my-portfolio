@@ -12,7 +12,8 @@ const MyResume = () => {
 	return (
 		<MyResumeDiv>
 			<ResumeDiv>
-				<img src="Eddie_Moger_Software_Engineer_resume.png" alt="Eddie_Moger_Software_Engineer_Resume" />
+				<img src="Eddie-Moger-Resume-Image-1.png" alt="Eddie_Moger_Software_Engineer_Resume_page_one" />
+				<img src="Eddie-Moger-Resume-Image-2.png" alt="Eddie_Moger_Software_Engineer_Resume_page_two" />
 				<p>
 					click{' '}
 					<span>
