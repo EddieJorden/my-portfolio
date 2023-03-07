@@ -70,8 +70,6 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 						<div className='technoldogies-div' style={{fontSize: '12px', color: 'black'}}>
 							<TechDiv>Full Stack Web Development</TechDiv>
 							<TechDiv>SEO</TechDiv>
-							<TechDiv>Dynamic Programming</TechDiv>
-							<TechDiv>Problem Solving</TechDiv>
 							<TechDiv>Consulting</TechDiv>
 						</div>
 					</div>
