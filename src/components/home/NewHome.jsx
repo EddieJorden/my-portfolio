@@ -224,6 +224,7 @@ const NewHome = ({ myProjectsArray }) => {
 													)
 												}
 												href="/contactInfo"
+												aria-label="Contact"
 											>
 											Contact
 											</NewHomeButton>
@@ -234,6 +235,7 @@ const NewHome = ({ myProjectsArray }) => {
 													)
 												}
 												href="/myProjects"
+												aria-label="Projects"
 											>
 											Projects
 											</NewHomeButton>
@@ -244,6 +246,7 @@ const NewHome = ({ myProjectsArray }) => {
 													)
 												}
 												href="/resume"
+												aria-label="Resume"
 											>
 											Resume
 											</NewHomeButton>
@@ -254,6 +257,7 @@ const NewHome = ({ myProjectsArray }) => {
 													)
 												}
 												href="/aboutme"
+												aria-label="About"
 											>
 											About
 											</NewHomeButton>
@@ -264,6 +268,7 @@ const NewHome = ({ myProjectsArray }) => {
 													)
 												}
 												href="/"
+												aria-label="Home"
 											>
 											Home
 											</NewHomeButton>
@@ -274,6 +279,7 @@ const NewHome = ({ myProjectsArray }) => {
 													)
 												}
 												href="/certifications"
+												aria-label="Certifications"
 											>
 											Certifications
 											</NewHomeButton>
@@ -284,6 +290,7 @@ const NewHome = ({ myProjectsArray }) => {
 													)
 												}
 												href="/services"
+												aria-label="Services"
 											>
 											Services
 											</NewHomeButton>
@@ -313,28 +320,44 @@ const NewHome = ({ myProjectsArray }) => {
 								<Routes>
 									<Route
 										path={'/contactInfo'}
-										element={<ContactInfo/>} />
+										element={<ContactInfo/>}
+										title='Contact Info'
+									/>
 									<Route
 										path={'/myProjects'}
-										element={<MyProjects/>} />
+										element={<MyProjects/>}
+										title='My Projects'
+									/>
 									<Route
 										path={'/resume'}
-										element={<MyResume/>} />
+										element={<MyResume/>}
+										title='My Resume'
+									/>
 									<Route
 										path={'/aboutMe'}
-										element={<AboutMe/>} />
+										element={<AboutMe/>}
+										title='About Me'
+									/>
 									<Route
 										path={'/certifications'}
-										element={<Certifications/>} />
+										element={<Certifications/>}
+										title='Certifications'
+									/>
 									<Route
 										path={'/'} 
-										element={<Home/>} />
+										element={<Home/>}
+										title='Home'
+									/>
 									<Route
 										path={'/services'} 
-										element={<Services/>} />
+										element={<Services/>}
+										title='Services'
+									/>
 									{/* <Route
 										path={'/blog'} 
-										element={<Blog/>} /> */}
+										element={<Blog/>} 
+										title='Blog'
+										/> */}
 								</Routes>
 							</ContentWindowDiv>
 						</ComponentDiv>
