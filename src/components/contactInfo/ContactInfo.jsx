@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import ComponentDiv from '../componentDiv/ComponentDiv';
 import styled from 'styled-components';
+import ContactForm from './ContactForm';
 
 export const ContactInfoDiv = styled.div`
 max-width: 100%;
@@ -88,6 +89,7 @@ const ContactInfo = () => {
 					</div>
 				</ComponentDiv>
 			</div>
+			<ContactForm />
 		</ContactInfoDiv>
 	);
 };
