@@ -1,7 +1,7 @@
 {
   "name": "my-portfolio",
   "homepage": "https://EddieMoger.com",
-  "proxy": "https://portfolio-server-xa7k-bv90-main-kposozymga-wm.a.run.app/",
+  "proxy": "https://portfolio-server-xa7k-bv90-main-kposozymga-wm.a.run.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
