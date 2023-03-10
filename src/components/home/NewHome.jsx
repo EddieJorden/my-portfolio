@@ -4,7 +4,6 @@ import NewHomeDiv from './NewHomeDiv';
 import ContentWindow from './ContentWindow';
 import MyResume from '../myResume/MyResume';
 import ContactInfo from '../contactInfo/ContactInfo';
-
 import MyProjects from '../myProjects/MyProjects';
 import Home from '../home/Home';
 import styled from 'styled-components';
@@ -60,7 +59,7 @@ const SideBarFooterContainer = styled.div`
 
 const ProfileDiv = styled.div``;
 
-const NavigationDiv = styled.div`
+const NavigationDiv = styled.nav`
 	min-width: 100%;
 `;
 
@@ -223,7 +222,9 @@ const NewHome = ({ myProjectsArray }) => {
 													updateDisplayedContent(
 														'/contactInfo',
 													)
-												}>
+												}
+												href="/contactInfo"
+											>
 											Contact
 											</NewHomeButton>
 											<NewHomeButton
@@ -231,7 +232,9 @@ const NewHome = ({ myProjectsArray }) => {
 													updateDisplayedContent(
 														'/myProjects',
 													)
-												}>
+												}
+												href="/myProjects"
+											>
 											Projects
 											</NewHomeButton>
 											<NewHomeButton
@@ -239,7 +242,9 @@ const NewHome = ({ myProjectsArray }) => {
 													updateDisplayedContent(
 														'/resume',
 													)
-												}>
+												}
+												href="/resume"
+											>
 											Resume
 											</NewHomeButton>
 											<NewHomeButton
@@ -247,7 +252,9 @@ const NewHome = ({ myProjectsArray }) => {
 													updateDisplayedContent(
 														'/aboutme',
 													)
-												}>
+												}
+												href="/aboutme"
+											>
 											About
 											</NewHomeButton>
 											<NewHomeButton
@@ -255,7 +262,9 @@ const NewHome = ({ myProjectsArray }) => {
 													updateDisplayedContent(
 														'/',
 													)
-												}>
+												}
+												href="/"
+											>
 											Home
 											</NewHomeButton>
 											<NewHomeButton
@@ -263,7 +272,9 @@ const NewHome = ({ myProjectsArray }) => {
 													updateDisplayedContent(
 														'/certifications',
 													)
-												}>
+												}
+												href="/certifications"
+											>
 											Certifications
 											</NewHomeButton>
 											<NewHomeButton
@@ -271,7 +282,9 @@ const NewHome = ({ myProjectsArray }) => {
 													updateDisplayedContent(
 														'/services',
 													)
-												}>
+												}
+												href="/services"
+											>
 											Services
 											</NewHomeButton>
 											{/* <NewHomeButton

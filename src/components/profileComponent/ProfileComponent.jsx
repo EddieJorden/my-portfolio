@@ -96,7 +96,9 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 							<CallToActionButton
 								onClick={() =>
 									updateDisplayedContent('contactinfo')
-								}>
+								}
+								href="#contactinfo"
+							>
 								Contact
 							</CallToActionButton>
 							<div style={{ margin: '5px 0px' }}>
