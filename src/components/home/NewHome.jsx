@@ -138,7 +138,7 @@ const ContentWindowWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	max-width: 100%;
-	min-width: 85%;
+	min-width: 100%;
 
 	@media only screen and (max-width: 900px) {
 
