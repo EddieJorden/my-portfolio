@@ -169,8 +169,8 @@ img {
 const NewHome = ({ myProjectsArray }) => {
 	const navigate = useNavigate();
 
-	const updateDisplayedContent = (path) => {
-		navigate(path);
+	const updateDisplayedContent = (path, state) => {
+		navigate(path, { state: state });
 	};
 
 	const title = 'EddieMoger.com';
@@ -221,9 +221,10 @@ const NewHome = ({ myProjectsArray }) => {
 												onClick={() =>
 													updateDisplayedContent(
 														'/contactInfo',
+														{section: 'contactInfo'}
 													)
 												}
-												href="/contactInfo"
+												href="#contactInfo"
 												aria-label="Contact"
 											>
 											Contact
@@ -232,9 +233,10 @@ const NewHome = ({ myProjectsArray }) => {
 												onClick={() =>
 													updateDisplayedContent(
 														'/myProjects',
+														{section: 'myProjects'}
 													)
 												}
-												href="/myProjects"
+												href="#myProjects"
 												aria-label="Projects"
 											>
 											Projects
@@ -243,9 +245,10 @@ const NewHome = ({ myProjectsArray }) => {
 												onClick={() =>
 													updateDisplayedContent(
 														'/resume',
+														{section: 'resume'}
 													)
 												}
-												href="/resume"
+												href="#resume"
 												aria-label="Resume"
 											>
 											Resume
@@ -254,9 +257,10 @@ const NewHome = ({ myProjectsArray }) => {
 												onClick={() =>
 													updateDisplayedContent(
 														'/aboutme',
+														{section: 'aboutme'}
 													)
 												}
-												href="/aboutme"
+												href="#aboutme"
 												aria-label="About"
 											>
 											About
@@ -265,9 +269,10 @@ const NewHome = ({ myProjectsArray }) => {
 												onClick={() =>
 													updateDisplayedContent(
 														'/',
+														{section: 'home'}
 													)
 												}
-												href="/"
+												href="#"
 												aria-label="Home"
 											>
 											Home
@@ -276,9 +281,10 @@ const NewHome = ({ myProjectsArray }) => {
 												onClick={() =>
 													updateDisplayedContent(
 														'/certifications',
+														{section: 'certifications'}
 													)
 												}
-												href="/certifications"
+												href="#certifications"
 												aria-label="Certifications"
 											>
 											Certifications
@@ -287,9 +293,10 @@ const NewHome = ({ myProjectsArray }) => {
 												onClick={() =>
 													updateDisplayedContent(
 														'/services',
+														{section: 'services'}
 													)
 												}
-												href="/services"
+												href="#services"
 												aria-label="Services"
 											>
 											Services
@@ -298,6 +305,7 @@ const NewHome = ({ myProjectsArray }) => {
 												onClick={() =>
 													updateDisplayedContent(
 														'/blog',
+														{section: 'blog'}
 													)
 												}>
 											Blog
