@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+export const prefix = 'localhost:8888';
+
 export const TextDiv = styled.div`
 	padding: 0px 15px;
 	margin: 0px 10px;

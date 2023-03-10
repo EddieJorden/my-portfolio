@@ -9,6 +9,7 @@ const ComponentDiv = styled.div`
     border-radius: 5px;
     text-align: center;
     max-width: 100%;
+    min-width: 95%;
     max-height: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
     margin: 10px;
