@@ -25,7 +25,7 @@ const StyledTextarea = styled.textarea`
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	resize: vertical;
-	hegiht: 100px;
+	height: 100px;
 `;
 
 const StyledButton = styled.button`

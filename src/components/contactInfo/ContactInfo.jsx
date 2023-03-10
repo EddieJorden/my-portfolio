@@ -1,11 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
-
-
 import ContactForm from './ContactForm';
 import { ImageDiv } from '../../utils';
 
 const ContactInfo = () => {
-
 	return (
 		<div style={{margin: '15px'}}>
 			<ImageDiv>
