@@ -4,7 +4,6 @@ import NewHomeDiv from './NewHomeDiv';
 import ContentWindow from './ContentWindow';
 import MyResume from '../myResume/MyResume';
 import ContactInfo from '../contactInfo/ContactInfo';
-
 import MyProjects from '../myProjects/MyProjects';
 import Home from '../home/Home';
 import styled from 'styled-components';
@@ -60,7 +59,7 @@ const SideBarFooterContainer = styled.div`
 
 const ProfileDiv = styled.div``;
 
-const NavigationDiv = styled.div`
+const NavigationDiv = styled.nav`
 	min-width: 100%;
 `;
 
@@ -170,8 +169,8 @@ img {
 const NewHome = ({ myProjectsArray }) => {
 	const navigate = useNavigate();
 
-	const updateDisplayedContent = (path) => {
-		navigate(path);
+	const updateDisplayedContent = (path, state) => {
+		navigate(path, { state: state });
 	};
 
 	const title = 'EddieMoger.com';
@@ -222,62 +221,91 @@ const NewHome = ({ myProjectsArray }) => {
 												onClick={() =>
 													updateDisplayedContent(
 														'/contactInfo',
+														{section: 'contactInfo'}
 													)
-												}>
+												}
+												href="#contactInfo"
+												aria-label="Contact"
+											>
 											Contact
 											</NewHomeButton>
 											<NewHomeButton
 												onClick={() =>
 													updateDisplayedContent(
 														'/myProjects',
+														{section: 'myProjects'}
 													)
-												}>
+												}
+												href="#myProjects"
+												aria-label="Projects"
+											>
 											Projects
 											</NewHomeButton>
 											<NewHomeButton
 												onClick={() =>
 													updateDisplayedContent(
 														'/resume',
+														{section: 'resume'}
 													)
-												}>
+												}
+												href="#resume"
+												aria-label="Resume"
+											>
 											Resume
 											</NewHomeButton>
 											<NewHomeButton
 												onClick={() =>
 													updateDisplayedContent(
 														'/aboutme',
+														{section: 'aboutme'}
 													)
-												}>
+												}
+												href="#aboutme"
+												aria-label="About"
+											>
 											About
 											</NewHomeButton>
 											<NewHomeButton
 												onClick={() =>
 													updateDisplayedContent(
 														'/',
+														{section: 'home'}
 													)
-												}>
+												}
+												href="#"
+												aria-label="Home"
+											>
 											Home
 											</NewHomeButton>
 											<NewHomeButton
 												onClick={() =>
 													updateDisplayedContent(
 														'/certifications',
+														{section: 'certifications'}
 													)
-												}>
+												}
+												href="#certifications"
+												aria-label="Certifications"
+											>
 											Certifications
 											</NewHomeButton>
 											<NewHomeButton
 												onClick={() =>
 													updateDisplayedContent(
 														'/services',
+														{section: 'services'}
 													)
-												}>
+												}
+												href="#services"
+												aria-label="Services"
+											>
 											Services
 											</NewHomeButton>
 											{/* <NewHomeButton
 												onClick={() =>
 													updateDisplayedContent(
 														'/blog',
+														{section: 'blog'}
 													)
 												}>
 											Blog
@@ -300,28 +328,44 @@ const NewHome = ({ myProjectsArray }) => {
 								<Routes>
 									<Route
 										path={'/contactInfo'}
-										element={<ContactInfo/>} />
+										element={<ContactInfo/>}
+										title='Contact Info'
+									/>
 									<Route
 										path={'/myProjects'}
-										element={<MyProjects/>} />
+										element={<MyProjects/>}
+										title='My Projects'
+									/>
 									<Route
 										path={'/resume'}
-										element={<MyResume/>} />
+										element={<MyResume/>}
+										title='My Resume'
+									/>
 									<Route
 										path={'/aboutMe'}
-										element={<AboutMe/>} />
+										element={<AboutMe/>}
+										title='About Me'
+									/>
 									<Route
 										path={'/certifications'}
-										element={<Certifications/>} />
+										element={<Certifications/>}
+										title='Certifications'
+									/>
 									<Route
 										path={'/'} 
-										element={<Home/>} />
+										element={<Home/>}
+										title='Home'
+									/>
 									<Route
 										path={'/services'} 
-										element={<Services/>} />
+										element={<Services/>}
+										title='Services'
+									/>
 									{/* <Route
 										path={'/blog'} 
-										element={<Blog/>} /> */}
+										element={<Blog/>} 
+										title='Blog'
+										/> */}
 								</Routes>
 							</ContentWindowDiv>
 						</ComponentDiv>
@@ -329,8 +373,13 @@ const NewHome = ({ myProjectsArray }) => {
 				</ContentDiv>
 			</NewHomeDiv>
 			<footer>
-			© 2019 Eddie Moger. All rights reserved.
-
+				<div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+					<a href="https://github.com/EddieJorden" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Github">Github</a>
+					<a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Linkedin">Linkedin</a>
+					<a href="https://twitter.com/eddiemoger_com" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Twitter">Twitter</a>
+					<a href="https://www.instagram.com/eddiemoger_com/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Instagram">Instagram</a>
+				</div>
+				<p style={{margin: '5px', fontSize: '10px'}}>© 2021 Eddie Moger. All rights reserved.</p>
 			</footer>
 		</div>
 	);
