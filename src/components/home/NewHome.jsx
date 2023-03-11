@@ -373,8 +373,13 @@ const NewHome = ({ myProjectsArray }) => {
 				</ContentDiv>
 			</NewHomeDiv>
 			<footer>
-			© 2019 Eddie Moger. All rights reserved.
-
+				<div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+					<a href="https://github.com/EddieJorden" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Github">Github</a>
+					<a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Linkedin">Linkedin</a>
+					<a href="https://twitter.com/eddiemoger_com" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Twitter">Twitter</a>
+					<a href="https://www.instagram.com/eddiemoger_com/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Instagram">Instagram</a>
+				</div>
+				<p style={{margin: '5px', fontSize: '10px'}}>© 2021 Eddie Moger. All rights reserved.</p>
 			</footer>
 		</div>
 	);
