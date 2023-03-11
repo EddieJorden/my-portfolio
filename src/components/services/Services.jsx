@@ -26,6 +26,10 @@ const Services = () => {
 			<TextDiv>Custom Website: $5,000 - $25,000</TextDiv>
 			<TextDiv>E-commerce Website: $10,000 - $50,000</TextDiv>
 			<TextDiv>Custom Web Application: $20,000 - $100,000+</TextDiv>
+			<h3>Contact me for a free conusltaion</h3>
+			<CallToActionButton onClick={() =>
+				updateDisplayedContent('/contactinfo')
+			}>Contact Me</CallToActionButton>
 			<h1>SEO Services</h1>
 			<h3>Description</h3>
 			<TextDiv>
@@ -42,6 +46,10 @@ const Services = () => {
 			<TextDiv>Local SEO: $3,000 - $5,000 per month</TextDiv>
 			<TextDiv>Keyword research: $500 - $2,000 per month</TextDiv>
 			<TextDiv>SEO audit: $1,000 - $5,000 per project</TextDiv>
+			<h3>Contact me for a free conusltaion</h3>
+			<CallToActionButton onClick={() =>
+				updateDisplayedContent('/contactinfo')
+			}>Contact Me</CallToActionButton>
 			<h1>Website Maintenance Services</h1>
 			<h3>Description</h3>
 			<TextDiv>
@@ -67,7 +75,10 @@ const Services = () => {
 			<TextDiv>Prices for e-commerce development services typically range from $10,000 to $50,000, depending on the scope of the project. Some of the factors that can impact pricing include the number of products, the number of payment gateways, and the amount of content required. I offer customized e-commerce development packages tailored to each client&apos;s unique needs and budget.</TextDiv>
 			<TextDiv>Basic E-Commerce: $10,000 - $25,000</TextDiv>
 			<TextDiv>Custom E-Commerce: $25,000 - $50,000</TextDiv>
-
+			<h3>Contact me for a free conusltaion</h3>
+			<CallToActionButton onClick={() =>
+				updateDisplayedContent('/contactinfo')
+			}>Contact Me</CallToActionButton>
 			<h1>API Development Services</h1>
 			<h3>Description</h3>
 			<TextDiv>I offer API development services to help businesses integrate their website with third-party applications. From creating a custom API to integrating with a third-party API, I can help you create a seamless user experience.</TextDiv>
