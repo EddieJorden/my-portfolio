@@ -116,7 +116,7 @@ const ContentWindowDiv = styled.div`
 	flex-direction: column;
 	text-align: -webkit-center;
 	max-width: 100%;
-	height: 80vh;
+	height: 75vh;
 `;
 
 const ContentWindowWrapper = styled.div`
