@@ -27,15 +27,19 @@ const TextDiv = styled.div`
 const Home = () => {
 	return (
 		<HomeDiv>
-			<h1>Welcome to EddieMoger.com</h1>
-			<h2 >
+			<TextDiv>
+				<h1>Welcome to EddieMoger.com</h1>
+			</TextDiv>
+			<TextDiv>
+				<h2 >
 					Your one-stop destination for all your custom software needs. 
-			</h2>
+				</h2>
+			</TextDiv>
 			<ImageDiv>
 				<ShadowedImg
 					src="EddieInTheCity.jpg"
 					alt="Eddie Moger in San Francisco CA, enjoying the beautiful art"
-					
+					style={{height: '260px'}}
 				/>
 				<ImageDescription style={{fontSize: '10px'}}>Eddie in San Francisco CA enjoying some street art</ImageDescription>
 			</ImageDiv>
