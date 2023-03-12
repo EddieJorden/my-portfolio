@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ImageDescription, ImageDiv } from '../../utils';
+import { ImageDescription, ImageDiv, ShadowedImg } from '../../utils';
 
 const HomeDiv = styled.div`
 	max-height: 100%;
@@ -32,7 +32,7 @@ const Home = () => {
 					Your one-stop destination for all your custom software needs. 
 			</TextDiv>
 			<ImageDiv>
-				<img
+				<ShadowedImg
 					src="EddieInTheCity.jpg"
 					alt="Eddie Moger in San Francisco CA, enjoying the beautiful art"
 					

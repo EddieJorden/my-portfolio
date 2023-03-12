@@ -88,6 +88,13 @@ export const ImageDiv = styled.div`
 	}
 `;
 
+export const ShadowedImg = styled.img`
+border-radius: 5px;
+max-width: 100%;
+max-height: 100%;
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+`;
+
 export const StyledButton = styled.button`
 	font-size: 8px;
 	background-color: #89D943;
