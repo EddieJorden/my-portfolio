@@ -89,7 +89,7 @@ export const ImageDiv = styled.div`
 `;
 
 export const NavButton = styled.button`
-	font-size: 10px;
+	font-size: 14px;
 	background-color: #1a77f2;
 	border-radius: 6px;
 	border: 2px solid #1a77f2;

@@ -40,7 +40,7 @@ const SideBarFooterContainer = styled.div`
 const ProfileDiv = styled.div``;
 
 const NavigationDiv = styled.nav`
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1015px) {
 	display: none;
 }
 `;
@@ -51,7 +51,7 @@ const HamburgerMenuDiv = styled.div`
 	justify-content: center;
 	margin: 10px;
 
-	@media only screen and (min-width: 900px) {
+	@media only screen and (min-width: 1016px) {
 		display: none;
 
 	}`;
@@ -372,7 +372,7 @@ const NewHome = ({ myProjectsArray }) => {
 					<a href="https://twitter.com/eddiemoger_com" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Twitter">Twitter</a>
 					<a href="https://www.instagram.com/eddiemoger_com/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Instagram">Instagram</a>
 				</div>
-				<p style={{margin: '5px', fontSize: '10px'}}>© 2021 Eddie Moger. All rights reserved.</p>
+				<p style={{margin: '5px', fontSize: '14px'}}>© 2021 Eddie Moger. All rights reserved.</p>
 			</footer>
 		</div>
 	);
