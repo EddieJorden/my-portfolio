@@ -73,17 +73,19 @@ export const ImageDiv = styled.div`
 	max-width: 100%;
 	object-fit: contain;
 	overflow: none;
-	margin: 10px;
+	margin: 20px;
+	height: 420px;
 
 	img {
 		object-fit: contain;
 		overflow: hidden;
 	}
 
-	@media screen and (max-width: 390px) {
+	@media screen and (max-width: 500px) {
 		img {
 			margin: 0px;
 		}
+		height: auto;
 	}
 `;
 

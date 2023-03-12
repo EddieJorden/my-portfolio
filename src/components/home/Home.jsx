@@ -39,7 +39,7 @@ const Home = () => {
 					Just making the world a better place
 				</h2>
 			</TextDiv>
-			<ImageDiv>
+			<ImageDiv >
 				<ShadowedImg
 					src="EddieInTheCity.jpg"
 					alt="Eddie Moger in San Francisco CA enjoying some street art"

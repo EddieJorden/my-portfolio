@@ -32,8 +32,8 @@ const AboutMe = () => {
 			<div>
 				<div style={{padding: '5px'}}>
 					<h1>Welcome to my corner of the internet!</h1>
-					<ImageDiv>
-						<ShadowedImg src="gt86nurburgring.jpeg" alt="Eddie Moger racing a gt86 at the Nurburgring in Germany" title="Eddie Moger racing a gt86 at the Nurburgring in Germany" description="Eddie Moger racing a gt86 at the Nurburgring in Germany"/>
+					<ImageDiv >
+						<ShadowedImg src="gt86nurburgring.jpeg" alt="Eddie Moger racing a gt86 at the Nurburgring in Germany" title="Eddie Moger racing a gt86 at the Nurburgring in Germany" description="Eddie Moger racing a gt86 at the Nurburgring in Germany" style={{height: 'default'}}/>
 						<ImageDescription>Eddie Moger racing cars on the world famous Nurburgring in Germany</ImageDescription>
 					</ImageDiv>
 					<TextDiv>My name is Eddie and I am a software developer and 
@@ -44,21 +44,21 @@ const AboutMe = () => {
 						where I have been known to create solutions for small businesses including integrating AI and machine learning, 
 						fully custom CRMs, internal communications, websites, SEO, e-commerce, custom back-end software, 
 						financial simulations, data visualization, encryption and much more.</TextDiv>
-					<ImageDiv>
+					<ImageDiv >
 						<ShadowedImg src='New-startup-office.jpeg' alt='New startup New office' title="Eddie Moger in his new office at Biirdee Travel" description="Eddie Moger in his new office at Biirdee Travel" />
 						<ImageDescription>Eddie Moger in his new office at Biirdee Travel</ImageDescription>
 					</ImageDiv>
 					<TextDiv>I have a passion for dynamic programming and problem-solving. I spent 8 years in corporate management 
 						before starting my own business, which I ran with great success for 15 years before deciding to switch to something 
 						I am more passionate about - software development.</TextDiv>
-					<ImageDiv>
+					<ImageDiv >
 						<ShadowedImg src='Monday-Meeting-Biirdee.com-office-burlingame-ca.jpeg' alt='Eddie Moger enjoying a monday morning brainstorming session at Biirdee Travel' title="Eddie Moger enjoying a monday morning brainstorming session at Biirdee Travel" description="Eddie Moger enjoying a monday morning brainstorming session at Biirdee Travel" />
 						<ImageDescription>Eddie Moger enjoying a monday morning brainstorming session at Biirdee Travel</ImageDescription>
 					</ImageDiv>
 					<TextDiv>Now, let&apos;s talk about the fun stuff. I have competed in auto racing, motorcycle racing, 
 						rock climbing, downhill mountain bike racing, Muay Thai Kickboxing and much more. I believe that my passion 
 						for these activites translates into my work ethic - I am always pushing myself to be the best and constantly seeking new challenges.</TextDiv>
-					<ImageDiv>
+					<ImageDiv >
 						<ShadowedImg src="New-York-Xeni-app-office-.jpeg" alt="Eddie at Xeni App office in New York City" title="Eddie Moger at Xeni app office in New York" description="Eddie Moger at Xeni app office in New York" />
 						<ImageDescription>Eddie Moger at Xeni app office in New York</ImageDescription>
 					</ImageDiv>
