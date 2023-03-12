@@ -73,7 +73,7 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 					/>
 					<div >
 						<div style={{fontWeight: 'bold'}}>Tech Stack</div>
-						<div style={{fontSize: '12px', color: 'black', display: 'flex', justifyContent: 'center`'}}>
+						<div style={{fontSize: '12px', color: 'black', display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
 							<TechDiv><span><TechIcon src="javascript-icon.png"/></span></TechDiv>
 							<TechDiv><span><TechIcon src="react.js-icon.png"/></span></TechDiv>
 							<TechDiv><span><TechIcon src="redux.js-icon.png"/></span></TechDiv>
