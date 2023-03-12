@@ -86,16 +86,12 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 				
 				<span>
 					<UserInfoDiv>
-						<div
-							style={{
-								fontSize: '34px',
-								fontWeight: 'bold',
-							}}>
+						<h1 style={{margin: '10px 0px 5px 0px'}}>
 							Eddie Moger
-						</div>
-						<div style={{ margin: '5px 0px', color: 'black' }}>
+						</h1>
+						<h2 style={{margin: '0px'}}>
 							Full Stack Developer
-						</div>
+						</h2>
 						<div
 							style={{
 								width: '125px',

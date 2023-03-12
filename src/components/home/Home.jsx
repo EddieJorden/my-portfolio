@@ -27,10 +27,10 @@ const TextDiv = styled.div`
 const Home = () => {
 	return (
 		<HomeDiv>
-			<h3 style={{color: '#1a77f2'}}>Welcome to EddieMoger.com</h3>
-			<TextDiv >
+			<h1>Welcome to EddieMoger.com</h1>
+			<h2 >
 					Your one-stop destination for all your custom software needs. 
-			</TextDiv>
+			</h2>
 			<ImageDiv>
 				<ShadowedImg
 					src="EddieInTheCity.jpg"
