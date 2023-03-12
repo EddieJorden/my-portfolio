@@ -16,7 +16,7 @@ import Certifications from '../certifications/Certifications';
 // import Blog from '../blog/Blog';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
-const NewHomeButton = styled.button`
+const NavButton = styled.button`
 	font-size: 10px;
 	background-color: #1a77f2;
 	border-radius: 6px;
@@ -60,7 +60,7 @@ const SideBarFooterContainer = styled.div`
 const ProfileDiv = styled.div``;
 
 const NavigationDiv = styled.nav`
-	min-width: 100%;
+
 `;
 
 const SideBarLinksContainer = styled.div`
@@ -138,10 +138,6 @@ const ContentWindowWrapper = styled.div`
 	align-items: center;
 	max-width: 100%;
 	min-width: 100%;
-
-	@media only screen and (max-width: 900px) {
-
-	}
 `;
 
 const ButtonContainer = styled.div`
@@ -149,20 +145,20 @@ const ButtonContainer = styled.div`
 `;
 
 const TitleDiv = styled.div`
-color: #1a77f2;
+color: #ffffff;
 font-weight: bold;
-font-size: 34px;
-margin: 10px;
-padding: 8px;
+
+
 border-radius: 5px;
-background-color: rgba(255, 255, 255, 0.95);
+
 display: flex;
 justify-content: center;
 align-items: center;
 
 img {
-	margin: 5px;
-	width: 66px;
+	margin: 5px 20px;
+	width: 50px;
+	border-radius: 5px;
 }
 `;
 
@@ -177,6 +173,106 @@ const NewHome = ({ myProjectsArray }) => {
 
 	return (
 		<div>
+			<header>
+				<TitleDiv><img src='detailed-upscaled-logo.png' alt='EddieMoger.com high resolution logo'/><span><h1 style={{color: 'white', margin: '0px'}}>{title}</h1></span></TitleDiv>
+				<NavigationDiv>
+					<ButtonContainer>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/contactInfo',
+									{section: 'contactInfo'}
+								)
+							}
+							href="#contactInfo"
+							aria-label="Contact"
+						>
+											Contact
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/myProjects',
+									{section: 'myProjects'}
+								)
+							}
+							href="#myProjects"
+							aria-label="Projects"
+						>
+											Projects
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/resume',
+									{section: 'resume'}
+								)
+							}
+							href="#resume"
+							aria-label="Resume"
+						>
+											Resume
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/aboutme',
+									{section: 'aboutme'}
+								)
+							}
+							href="#aboutme"
+							aria-label="About"
+						>
+											About
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/',
+									{section: 'home'}
+								)
+							}
+							href="#"
+							aria-label="Home"
+						>
+											Home
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/certifications',
+									{section: 'certifications'}
+								)
+							}
+							href="#certifications"
+							aria-label="Certifications"
+						>
+											Certifications
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/services',
+									{section: 'services'}
+								)
+							}
+							href="#services"
+							aria-label="Services"
+						>
+											Services
+						</NavButton>
+						{/* <NavButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/blog',
+														{section: 'blog'}
+													)
+												}>
+											Blog
+											</NavButton> */}
+					</ButtonContainer>
+				</NavigationDiv>
+			</header>
 			<NewHomeDiv>
 				<SideBarDiv>
 					<SideBarDivContainer>
@@ -214,112 +310,13 @@ const NewHome = ({ myProjectsArray }) => {
 
 						<SideBarFooterContainer>
 							<SideBarFooterDiv>
-								<NavigationDiv>
-									<ComponentDiv>
-										<ButtonContainer>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/contactInfo',
-														{section: 'contactInfo'}
-													)
-												}
-												href="#contactInfo"
-												aria-label="Contact"
-											>
-											Contact
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/myProjects',
-														{section: 'myProjects'}
-													)
-												}
-												href="#myProjects"
-												aria-label="Projects"
-											>
-											Projects
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/resume',
-														{section: 'resume'}
-													)
-												}
-												href="#resume"
-												aria-label="Resume"
-											>
-											Resume
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/aboutme',
-														{section: 'aboutme'}
-													)
-												}
-												href="#aboutme"
-												aria-label="About"
-											>
-											About
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/',
-														{section: 'home'}
-													)
-												}
-												href="#"
-												aria-label="Home"
-											>
-											Home
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/certifications',
-														{section: 'certifications'}
-													)
-												}
-												href="#certifications"
-												aria-label="Certifications"
-											>
-											Certifications
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/services',
-														{section: 'services'}
-													)
-												}
-												href="#services"
-												aria-label="Services"
-											>
-											Services
-											</NewHomeButton>
-											{/* <NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/blog',
-														{section: 'blog'}
-													)
-												}>
-											Blog
-											</NewHomeButton> */}
-										</ButtonContainer>
-									</ComponentDiv>
-								</NavigationDiv>
+
 							</SideBarFooterDiv>
 						</SideBarFooterContainer>
 					</SideBarDivContainer>
 				</SideBarDiv>
 
 				<ContentDiv>
-					<TitleDiv><img src='detailed-upscaled-logo.png' alt='EddieMoger.com high resolution logo'/><span>{title}</span></TitleDiv>
 					<ContentWindowWrapper>
 						<ComponentDiv>
 							<ContentWindowDiv>

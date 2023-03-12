@@ -19,6 +19,19 @@ h1, h2, h3 {
 	Font-Family: 'Roboto Condensed', Sans-Serif;
 }
 
+header {
+  background-color: #1a77f2;
+  color: #eff2f5;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 900px) {
+    
+  }
+
+}
+
 footer {
   text-align: center;
   padding: .3rem;

@@ -3,7 +3,7 @@ import styled from  'styled-components';
 const NewHomeDiv = styled.div`
 		max-height: 100vh;
     max-width: 100vw;
-		height: 93vh;
+		height: 83vh;
     display: flex;
 		justify-content: space-between;
     align-items: center;
