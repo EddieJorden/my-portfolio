@@ -15,28 +15,8 @@ import ComponentDiv from '../componentDiv/ComponentDiv';
 import Certifications from '../certifications/Certifications';
 // import Blog from '../blog/Blog';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-
-const NavButton = styled.button`
-	font-size: 10px;
-	background-color: #1a77f2;
-	border-radius: 6px;
-	border: 2px solid #1a77f2;
-	color: #ffffff;
-	font-weight: bold;
-	padding: 0.5vw 1.5vw;
-	margin: 4px;
-	transition: 375ms;
-	transform: scale(1);
-	transition: transform 0.2s ease-in-out;
-
-	:hover {
-		cursor: pointer;
-		color: #ffffff;
-		font-weight: bold;
-		transition: 375ms;
-		transform: scale(1.05);
-	}
-`;
+import HamburgerMenu from './HamburgerMenu';
+import { NavButton } from '../../utils';
 
 const SideBarProfileDivContainer = styled.div`
 	@media only screen and (max-width: 900px) {
@@ -60,8 +40,21 @@ const SideBarFooterContainer = styled.div`
 const ProfileDiv = styled.div``;
 
 const NavigationDiv = styled.nav`
-
+@media only screen and (max-width: 900px) {
+	display: none;
+}
 `;
+
+const HamburgerMenuDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 10px;
+
+	@media only screen and (min-width: 900px) {
+		display: none;
+
+	}`;
 
 const SideBarLinksContainer = styled.div`
 	@media only screen and (max-width: 900px) {
@@ -175,6 +168,9 @@ const NewHome = ({ myProjectsArray }) => {
 		<div>
 			<header>
 				<TitleDiv><img src='detailed-upscaled-logo.png' alt='EddieMoger.com high resolution logo'/><span><h1 style={{color: 'white', margin: '0px'}}>{title}</h1></span></TitleDiv>
+				<HamburgerMenuDiv>
+					<HamburgerMenu updateDisplayedContent={updateDisplayedContent}/>
+				</HamburgerMenuDiv>
 				<NavigationDiv>
 					<ButtonContainer>
 						<NavButton
@@ -216,7 +212,7 @@ const NewHome = ({ myProjectsArray }) => {
 						<NavButton
 							onClick={() =>
 								updateDisplayedContent(
-									'/aboutme',
+									'aboutme',
 									{section: 'aboutme'}
 								)
 							}

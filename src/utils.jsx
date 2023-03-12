@@ -88,6 +88,28 @@ export const ImageDiv = styled.div`
 	}
 `;
 
+export const NavButton = styled.button`
+	font-size: 10px;
+	background-color: #1a77f2;
+	border-radius: 6px;
+	border: 2px solid #1a77f2;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 0.5vw 1.5vw;
+	margin: 4px;
+	transition: 375ms;
+	transform: scale(1);
+	transition: transform 0.2s ease-in-out;
+
+	:hover {
+		cursor: pointer;
+		color: #ffffff;
+		font-weight: bold;
+		transition: 375ms;
+		transform: scale(1.05);
+	}
+`;
+
 export const ShadowedImg = styled.img`
 border-radius: 5px;
 max-width: 100%;
