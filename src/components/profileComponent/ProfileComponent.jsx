@@ -28,7 +28,7 @@ const ProfileImageWrapper = styled.div`
 	max-width: 30%;
 	margin: 5%;
 	border-right: 1px solid #dadde1;
-	padding-right: 42px;
+	padding-right: 25px;
 `;
 
 const GithubButton = styled.button`
@@ -90,7 +90,6 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 							style={{
 								fontSize: '34px',
 								fontWeight: 'bold',
-								marginTop: '42px',
 							}}>
 							Eddie Moger
 						</div>
