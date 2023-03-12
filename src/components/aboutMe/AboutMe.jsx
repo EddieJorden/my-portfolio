@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { TextDiv } from '../../utils';
 import { ImageDescription, ImageDiv } from '../../utils';
+import { ShadowedImg } from '../../utils';
 
 import styled from 'styled-components';
 
@@ -41,7 +42,7 @@ const AboutMe = () => {
 				<div style={{padding: '5px'}}>
 					<h1>Welcome to my corner of the internet!</h1>
 					<ImageDiv>
-						<img src="gt86nurburgring.jpeg" alt="racing gt86 at nurburgring" />
+						<ShadowedImg src="gt86nurburgring.jpeg" alt="racing gt86 at nurburgring" />
 						<ImageDescription>Eddie Moger racing cars on the world famous Nurburgring in Germany</ImageDescription>
 					</ImageDiv>
 					
@@ -54,7 +55,7 @@ const AboutMe = () => {
 						fully custom CRMs, internal communications, websites, SEO, e-commerce, custom back-end software, 
 						financial simulations, data visualization, encryption and much more.</TextDiv>
 					<ImageDiv>
-						<img src='New-startup-office.jpeg' alt='New startup New office' />
+						<ShadowedImg src='New-startup-office.jpeg' alt='New startup New office' />
 						<ImageDescription>Eddie Moger in new office at Biirdee Travel</ImageDescription>
 					</ImageDiv>
 					
@@ -63,7 +64,7 @@ const AboutMe = () => {
 						before starting my own business, which I ran with great success for 15 years before deciding to switch to something 
 						I am more passionate about - software development.</TextDiv>
 					<ImageDiv>
-						<img src='Monday-Meeting-Biirdee.com-office-burlingame-ca.jpeg' alt='Monday meeting at startup' />
+						<ShadowedImg src='Monday-Meeting-Biirdee.com-office-burlingame-ca.jpeg' alt='Monday meeting at startup' />
 						<ImageDescription>Eddie Moger enjoying a monday morning brainstorming session at Biirdee Travel</ImageDescription>
 					</ImageDiv>
 					
@@ -71,7 +72,7 @@ const AboutMe = () => {
 						rock climbing, downhill mountain bike racing, Muay Thai Kickboxing and much more. I believe that my passion 
 						for these activites translates into my work ethic - I am always pushing myself to be the best and constantly seeking new challenges.</TextDiv>
 					<ImageDiv>
-						<img src="New-York-Xeni-app-office-.jpeg" alt="Eddie at Xeni App office in New York City" />
+						<ShadowedImg src="New-York-Xeni-app-office-.jpeg" alt="Eddie at Xeni App office in New York City" />
 						<ImageDescription>Eddie Moger at Xeni app office in New York</ImageDescription>
 					</ImageDiv>
 					

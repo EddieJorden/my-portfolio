@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { MyResumeDiv } from './styled_myResume';
 import styled from 'styled-components';
+import { ShadowedImg } from '../../utils';
 
 const ResumeDiv = styled.div`
 	img {
@@ -12,8 +13,8 @@ const MyResume = () => {
 	return (
 		<MyResumeDiv>
 			<ResumeDiv>
-				<img src="Eddie-Moger-Resume-Image-1.png" alt="Eddie_Moger_Software_Engineer_Resume_page_one" />
-				<img src="Eddie-Moger-Resume-Image-2.png" alt="Eddie_Moger_Software_Engineer_Resume_page_two" />
+				<ShadowedImg src="Eddie-Moger-Resume-Image-1.png" alt="Eddie_Moger_Software_Engineer_Resume_page_one" />
+				<ShadowedImg src="Eddie-Moger-Resume-Image-2.png" alt="Eddie_Moger_Software_Engineer_Resume_page_two" />
 				<p>
 					click{' '}
 					<span>

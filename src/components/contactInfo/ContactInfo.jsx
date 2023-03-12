@@ -1,12 +1,13 @@
 /* eslint-disable react/react-in-jsx-scope */
 import ContactForm from './ContactForm';
 import { ImageDiv } from '../../utils';
+import { ShadowedImg } from '../../utils';
 
 const ContactInfo = () => {
 	return (
 		<div style={{margin: '15px'}}>
 			<ImageDiv>
-				<img src="eddie_profile_pic.jpg" alt="Eddie Profile Picture" />
+				<ShadowedImg src="eddie_profile_pic.jpg" alt="Eddie Profile Picture" />
 			</ImageDiv>
 			<div>
 				<div>

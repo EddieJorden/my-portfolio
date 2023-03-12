@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ImageDescription, ImageDiv } from '../../utils';
+import { ImageDescription, ImageDiv, ShadowedImg } from '../../utils';
 
 const HomeDiv = styled.div`
 	max-height: 100%;
@@ -27,12 +27,12 @@ const TextDiv = styled.div`
 const Home = () => {
 	return (
 		<HomeDiv>
-			<h3 style={{color: '#1a77f2'}}>Welcome to EddieMoger.com</h3>
-			<TextDiv >
+			<h1>Welcome to EddieMoger.com</h1>
+			<h2 >
 					Your one-stop destination for all your custom software needs. 
-			</TextDiv>
+			</h2>
 			<ImageDiv>
-				<img
+				<ShadowedImg
 					src="EddieInTheCity.jpg"
 					alt="Eddie Moger in San Francisco CA, enjoying the beautiful art"
 					

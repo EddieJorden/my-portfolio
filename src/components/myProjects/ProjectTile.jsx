@@ -3,6 +3,7 @@
 
 import ComponentDiv from '../componentDiv/ComponentDiv';
 import styled from 'styled-components';
+import { ShadowedImg } from '../../utils';
 
 const ProjectTileDiv = styled.div`
   display: flex;
@@ -28,7 +29,7 @@ const ProjectTile = (props) => {
 					<h3 style={{fontWeight: 'bolder'}}>{name}</h3>
 					<a href={link} target="_blank" rel="noreferrer" title="Link to this project">
 						<div className="image-container">
-							<img src={thumbnail} alt={altText}/>
+							<ShadowedImg src={thumbnail} alt={altText}/>
 						</div>
 					</a>
 					<div className='project-notes'>

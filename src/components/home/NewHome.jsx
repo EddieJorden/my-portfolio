@@ -15,28 +15,8 @@ import ComponentDiv from '../componentDiv/ComponentDiv';
 import Certifications from '../certifications/Certifications';
 // import Blog from '../blog/Blog';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-
-const NewHomeButton = styled.button`
-	font-size: 10px;
-	background-color: #1a77f2;
-	border-radius: 6px;
-	border: 2px solid #1a77f2;
-	color: #ffffff;
-	font-weight: bold;
-	padding: 0.5vw 1.5vw;
-	margin: 4px;
-	transition: 375ms;
-	transform: scale(1);
-	transition: transform 0.2s ease-in-out;
-
-	:hover {
-		cursor: pointer;
-		color: #ffffff;
-		font-weight: bold;
-		transition: 375ms;
-		transform: scale(1.05);
-	}
-`;
+import HamburgerMenu from './HamburgerMenu';
+import { NavButton } from '../../utils';
 
 const SideBarProfileDivContainer = styled.div`
 	@media only screen and (max-width: 900px) {
@@ -60,8 +40,21 @@ const SideBarFooterContainer = styled.div`
 const ProfileDiv = styled.div``;
 
 const NavigationDiv = styled.nav`
-	min-width: 100%;
+@media only screen and (max-width: 1015px) {
+	display: none;
+}
 `;
+
+const HamburgerMenuDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 10px;
+
+	@media only screen and (min-width: 1016px) {
+		display: none;
+
+	}`;
 
 const SideBarLinksContainer = styled.div`
 	@media only screen and (max-width: 900px) {
@@ -116,7 +109,6 @@ const ContentDiv = styled.div`
 `;
 
 const ContentWindowDiv = styled.div`
-
 	color: black;
 	overflow: scroll;
 	border-radius: 5px;
@@ -124,11 +116,7 @@ const ContentWindowDiv = styled.div`
 	flex-direction: column;
 	text-align: -webkit-center;
 	max-width: 100%;
-	height: 75vh;
-
-	@media only screen and (max-width: 900px) {
-		height: 66vh
-		};
+	height: 80vh;
 `;
 
 const ContentWindowWrapper = styled.div`
@@ -138,10 +126,6 @@ const ContentWindowWrapper = styled.div`
 	align-items: center;
 	max-width: 100%;
 	min-width: 100%;
-
-	@media only screen and (max-width: 900px) {
-
-	}
 `;
 
 const ButtonContainer = styled.div`
@@ -149,20 +133,20 @@ const ButtonContainer = styled.div`
 `;
 
 const TitleDiv = styled.div`
-color: #1a77f2;
+color: #ffffff;
 font-weight: bold;
-font-size: 34px;
-margin: 10px;
-padding: 8px;
+
+
 border-radius: 5px;
-background-color: rgba(255, 255, 255, 0.95);
+
 display: flex;
 justify-content: center;
 align-items: center;
 
 img {
-	margin: 5px;
-	width: 66px;
+	margin: 5px 20px;
+	width: 50px;
+	border-radius: 5px;
 }
 `;
 
@@ -177,6 +161,109 @@ const NewHome = ({ myProjectsArray }) => {
 
 	return (
 		<div>
+			<header>
+				<TitleDiv><img src='detailed-upscaled-logo.png' alt='EddieMoger.com high resolution logo'/><span><h1 style={{color: 'white', margin: '0px'}}>{title}</h1></span></TitleDiv>
+				<HamburgerMenuDiv>
+					<HamburgerMenu updateDisplayedContent={updateDisplayedContent}/>
+				</HamburgerMenuDiv>
+				<NavigationDiv>
+					<ButtonContainer>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/contactInfo',
+									{section: 'contactInfo'}
+								)
+							}
+							href="#contactInfo"
+							aria-label="Contact"
+						>
+											Contact
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/myProjects',
+									{section: 'myProjects'}
+								)
+							}
+							href="#myProjects"
+							aria-label="Projects"
+						>
+											Projects
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/resume',
+									{section: 'resume'}
+								)
+							}
+							href="#resume"
+							aria-label="Resume"
+						>
+											Resume
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'aboutme',
+									{section: 'aboutme'}
+								)
+							}
+							href="#aboutme"
+							aria-label="About"
+						>
+											About
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/',
+									{section: 'home'}
+								)
+							}
+							href="#"
+							aria-label="Home"
+						>
+											Home
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/certifications',
+									{section: 'certifications'}
+								)
+							}
+							href="#certifications"
+							aria-label="Certifications"
+						>
+											Certifications
+						</NavButton>
+						<NavButton
+							onClick={() =>
+								updateDisplayedContent(
+									'/services',
+									{section: 'services'}
+								)
+							}
+							href="#services"
+							aria-label="Services"
+						>
+											Services
+						</NavButton>
+						{/* <NavButton
+												onClick={() =>
+													updateDisplayedContent(
+														'/blog',
+														{section: 'blog'}
+													)
+												}>
+											Blog
+											</NavButton> */}
+					</ButtonContainer>
+				</NavigationDiv>
+			</header>
 			<NewHomeDiv>
 				<SideBarDiv>
 					<SideBarDivContainer>
@@ -214,112 +301,13 @@ const NewHome = ({ myProjectsArray }) => {
 
 						<SideBarFooterContainer>
 							<SideBarFooterDiv>
-								<NavigationDiv>
-									<ComponentDiv>
-										<ButtonContainer>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/contactInfo',
-														{section: 'contactInfo'}
-													)
-												}
-												href="#contactInfo"
-												aria-label="Contact"
-											>
-											Contact
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/myProjects',
-														{section: 'myProjects'}
-													)
-												}
-												href="#myProjects"
-												aria-label="Projects"
-											>
-											Projects
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/resume',
-														{section: 'resume'}
-													)
-												}
-												href="#resume"
-												aria-label="Resume"
-											>
-											Resume
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/aboutme',
-														{section: 'aboutme'}
-													)
-												}
-												href="#aboutme"
-												aria-label="About"
-											>
-											About
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/',
-														{section: 'home'}
-													)
-												}
-												href="#"
-												aria-label="Home"
-											>
-											Home
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/certifications',
-														{section: 'certifications'}
-													)
-												}
-												href="#certifications"
-												aria-label="Certifications"
-											>
-											Certifications
-											</NewHomeButton>
-											<NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/services',
-														{section: 'services'}
-													)
-												}
-												href="#services"
-												aria-label="Services"
-											>
-											Services
-											</NewHomeButton>
-											{/* <NewHomeButton
-												onClick={() =>
-													updateDisplayedContent(
-														'/blog',
-														{section: 'blog'}
-													)
-												}>
-											Blog
-											</NewHomeButton> */}
-										</ButtonContainer>
-									</ComponentDiv>
-								</NavigationDiv>
+
 							</SideBarFooterDiv>
 						</SideBarFooterContainer>
 					</SideBarDivContainer>
 				</SideBarDiv>
 
 				<ContentDiv>
-					<TitleDiv><img src='detailed-upscaled-logo.png' alt='EddieMoger.com high resolution logo'/><span>{title}</span></TitleDiv>
 					<ContentWindowWrapper>
 						<ComponentDiv>
 							<ContentWindowDiv>
@@ -379,7 +367,7 @@ const NewHome = ({ myProjectsArray }) => {
 					<a href="https://twitter.com/eddiemoger_com" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Twitter">Twitter</a>
 					<a href="https://www.instagram.com/eddiemoger_com/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Instagram">Instagram</a>
 				</div>
-				<p style={{margin: '5px', fontSize: '10px'}}>© 2021 Eddie Moger. All rights reserved.</p>
+				<p style={{margin: '5px', fontSize: '14px'}}>© 2021 Eddie Moger. All rights reserved.</p>
 			</footer>
 		</div>
 	);

@@ -2,6 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import styled from 'styled-components';
 import { CallToActionButton } from '../../utils';
+import { ShadowedImg } from '../../utils';
 
 const ProfileComponentWrapper = styled.div`
 	min-height: 100%;
@@ -27,7 +28,7 @@ const ProfileImageWrapper = styled.div`
 	max-width: 30%;
 	margin: 5%;
 	border-right: 1px solid #dadde1;
-	padding-right: 42px;
+	padding-right: 25px;
 `;
 
 const GithubButton = styled.button`
@@ -56,38 +57,41 @@ const TechDiv = styled.div`
 	margin: 2px 5px
 `;
 
+const TechIcon = styled.img`
+	width: 30px;
+	height: 30px;
+`;
+
 const ProfileComponent = ({ updateDisplayedContent }) => {
 	return (
 		<ProfileComponentWrapper>
 			<ProfileDiv>
 				<ProfileImageWrapper>
-					<img
+					<ShadowedImg
 						src="eddie_profile_pic.jpg"
 						alt="eddie_moger_profile"
 					/>
 					<div >
-						<div style={{fontWeight: 'bold'}}>Services</div>
-						<div className='technoldogies-div' style={{fontSize: '12px', color: 'black'}}>
-							<TechDiv>Full Stack Web Development</TechDiv>
-							<TechDiv>SEO</TechDiv>
-							<TechDiv>Consulting</TechDiv>
+						<div style={{fontWeight: 'bold'}}>Tech Stack</div>
+						<div style={{fontSize: '12px', color: 'black', display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
+							<TechDiv><span><TechIcon src="javascript-icon.png"/></span></TechDiv>
+							<TechDiv><span><TechIcon src="react.js-icon.png"/></span></TechDiv>
+							<TechDiv><span><TechIcon src="redux.js-icon.png"/></span></TechDiv>
+							<TechDiv><span><TechIcon src="express.js-icon.png"/></span></TechDiv>
+							<TechDiv><span><TechIcon src="node.js-icon.png"/></span></TechDiv>
+							<TechDiv><span><TechIcon src="SQL-icon.png"/></span></TechDiv>
 						</div>
 					</div>
 				</ProfileImageWrapper>
 				
 				<span>
 					<UserInfoDiv>
-						<div
-							style={{
-								fontSize: '34px',
-								fontWeight: 'bold',
-								marginTop: '42px',
-							}}>
+						<h1 style={{margin: '10px 0px 5px 0px'}}>
 							Eddie Moger
-						</div>
-						<div style={{ margin: '5px 0px', color: 'black' }}>
+						</h1>
+						<h2 style={{margin: '0px'}}>
 							Full Stack Developer
-						</div>
+						</h2>
 						<div
 							style={{
 								width: '125px',

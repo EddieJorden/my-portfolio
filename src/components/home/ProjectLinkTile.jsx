@@ -2,7 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 import ConditionalGithubButton from './ConditionalGithubButton';
-import { StyledButton } from '../../utils';
+import { ShadowedImg, StyledButton } from '../../utils';
 
 import styled from 'styled-components';
 
@@ -67,7 +67,7 @@ const ProjectLinkTile = ({ project }) => {
 				title="Link to this project"
 			>
 				<div className="divider" style={{}}>
-					<img src={project.thumbnail} alt={project.name} />
+					<ShadowedImg src={project.thumbnail} alt={project.name} />
 				</div>
 			</a>
 			<div>
