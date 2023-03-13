@@ -69,12 +69,10 @@ export const ImageDescription = styled.div`
 `;
 
 export const ImageDiv = styled.div`
-	max-hegiht: 100%;
 	max-width: 100%;
 	object-fit: contain;
 	overflow: none;
 	margin: 20px;
-	height: 420px;
 
 	img {
 		object-fit: contain;
@@ -114,8 +112,13 @@ export const NavButton = styled.button`
 export const ShadowedImg = styled.img`
 border-radius: 5px;
 max-width: 100%;
-max-height: 100%;
+max-height: 59vh;
 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+@media screen and (max-width: 500px) {
+	max-height: 50vh;
+}
+
 `;
 
 export const StyledButton = styled.button`

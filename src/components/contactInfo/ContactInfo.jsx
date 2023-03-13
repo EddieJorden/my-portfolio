@@ -7,7 +7,7 @@ const ContactInfo = () => {
 	return (
 		<div style={{margin: '15px'}}>
 			<ImageDiv>
-				<ShadowedImg src="eddie_profile_pic.jpg" alt="Eddie Profile Picture" />
+				<ShadowedImg src="eddie_profile_pic.jpg" alt="Eddie Profile Picture" style={{maxHeight: '33vh'}}/>
 			</ImageDiv>
 			<div>
 				<div>
