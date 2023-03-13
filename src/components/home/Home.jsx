@@ -45,7 +45,6 @@ const Home = () => {
 					alt="Eddie Moger in San Francisco CA enjoying some street art"
 					title="Eddie Moger in San Francisco CA enjoying some street art"
 					description="Eddie Moger in San Francisco CA enjoying some street art"
-					style={{height: '280px'}}
 				/>
 				<ImageDescription style={{fontSize: '10px'}}>Eddie Moger in San Francisco CA enjoying some street art</ImageDescription>
 			</ImageDiv>
