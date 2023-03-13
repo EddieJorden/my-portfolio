@@ -33,7 +33,7 @@ const AboutMe = () => {
 				<div style={{padding: '5px'}}>
 					<h1>Welcome to my corner of the internet!</h1>
 					<ImageDiv >
-						<ShadowedImg src="gt86nurburgring.jpeg" alt="Eddie Moger racing a gt86 at the Nurburgring in Germany" title="Eddie Moger racing a gt86 at the Nurburgring in Germany" description="Eddie Moger racing a gt86 at the Nurburgring in Germany" style={{height: 'default'}}/>
+						<ShadowedImg src="gt86nurburgring.jpeg" alt="Eddie Moger racing a gt86 at the Nurburgring in Germany" title="Eddie Moger racing a gt86 at the Nurburgring in Germany" description="Eddie Moger racing a gt86 at the Nurburgring in Germany" />
 						<ImageDescription>Eddie Moger racing cars on the world famous Nurburgring in Germany</ImageDescription>
 					</ImageDiv>
 					<TextDiv>My name is Eddie and I am a software developer and 

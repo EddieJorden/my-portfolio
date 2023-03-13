@@ -32,7 +32,7 @@ const Home = () => {
 	return (
 		<HomeDiv>
 			<TextDiv>
-				<h1 style={{marginBottom: '5px'}}>Welcome to EddieMoger.com</h1>
+				<h1 style={{marginBottom: '0px'}}>Welcome to EddieMoger.com</h1>
 			</TextDiv>
 			<TextDiv>
 				<h2 style={{marginTop: '0px'}}>
@@ -45,6 +45,7 @@ const Home = () => {
 					alt="Eddie Moger in San Francisco CA enjoying some street art"
 					title="Eddie Moger in San Francisco CA enjoying some street art"
 					description="Eddie Moger in San Francisco CA enjoying some street art"
+					style={{height: '280px'}}
 				/>
 				<ImageDescription style={{fontSize: '10px'}}>Eddie Moger in San Francisco CA enjoying some street art</ImageDescription>
 			</ImageDiv>
