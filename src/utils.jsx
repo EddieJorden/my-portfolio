@@ -74,7 +74,7 @@ export const ImageDiv = styled.div`
 	object-fit: contain;
 	overflow: none;
 	margin: 20px;
-	height: 420px;
+	height: 400px;
 
 	img {
 		object-fit: contain;
