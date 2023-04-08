@@ -47,49 +47,70 @@ const HamburgerMenu = ({updateDisplayedContent}) => {
 			<Menu isOpen={isOpen}>
 				<NavLink
 					href="#/contactInfo"
-					onClick={() => updateDisplayedContent('/contactInfo', { section: 'contactInfo' })}
+					onClick={() => {
+						updateDisplayedContent('/contactInfo', { section: 'contactInfo' });
+						toggleMenu();
+					}}
 					aria-label="Contact"
 				>
           Contact
 				</NavLink>
 				<NavLink
 					href="#/myProjects"
-					onClick={() => updateDisplayedContent('/myProjects', { section: 'myProjects' })}
+					onClick={() => {
+						updateDisplayedContent('/myProjects', { section: 'myProjects' });
+						toggleMenu();
+					}}
 					aria-label="Projects"
 				>
           Projects
 				</NavLink>
 				<NavLink
 					href="#/resume"
-					onClick={() => updateDisplayedContent('/resume', { section: 'resume' })}
+					onClick={() => {
+						updateDisplayedContent('/resume', { section: 'resume' });
+						toggleMenu();
+					}}
 					aria-label="Resume"
 				>
           Resume
 				</NavLink>
 				<NavLink
 					href="#/aboutme"
-					onClick={() => updateDisplayedContent('/aboutme', { section: 'aboutme' })}
+					onClick={() => {
+						updateDisplayedContent('/aboutme', { section: 'aboutme' });
+						toggleMenu();
+					}}
 					aria-label="About"
 				>
           About
 				</NavLink>
 				<NavLink
 					href="#/"
-					onClick={() => updateDisplayedContent('/', { section: 'home' })}
+					onClick={() => {
+						updateDisplayedContent('/', { section: 'home' });
+						toggleMenu();
+					}}
 					aria-label="Home"
 				>
           Home
 				</NavLink>
 				<NavLink
 					href="#/certifications"
-					onClick={() => updateDisplayedContent('/certifications', { section: 'certifications' })}
+					onClick={() => {
+						updateDisplayedContent('/certifications', { section: 'certifications' });
+						toggleMenu();
+					}}
 					aria-label="Certifications"
 				>
           Certifications
 				</NavLink>
 				<NavLink
 					href="#/services"
-					onClick={() => updateDisplayedContent('/services', { section: 'services' })}
+					onClick={() => {
+						updateDisplayedContent('/services', { section: 'services' });
+						toggleMenu();
+					}}
 					aria-label="Services"
 				>
           Services
