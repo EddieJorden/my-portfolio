@@ -83,7 +83,7 @@ export const ImageDiv = styled.div`
 		img {
 			margin: 0px;
 		}
-		height: 360px;
+
 	}
 `;
 
