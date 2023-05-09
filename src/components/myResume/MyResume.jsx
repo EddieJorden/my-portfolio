@@ -13,8 +13,8 @@ const MyResume = () => {
 	return (
 		<MyResumeDiv>
 			<ResumeDiv>
-				<ShadowedImg src="Eddie-Moger-Resume-Image-1.png" alt="Eddie_Moger_Software_Engineer_Resume_page_one" />
-				<ShadowedImg src="Eddie-Moger-Resume-Image-2.png" alt="Eddie_Moger_Software_Engineer_Resume_page_two" />
+				<ShadowedImg src="Resume-thumbnail-1.png" alt="Eddie_Moger_Software_Engineer_Resume_page_one" />
+				<ShadowedImg src="Resume-thumbnail-2.png" alt="Eddie_Moger_Software_Engineer_Resume_page_two" />
 				<p>
 					click{' '}
 					<span>
