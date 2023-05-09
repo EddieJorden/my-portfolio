@@ -367,7 +367,7 @@ const NewHome = ({ myProjectsArray }) => {
 					<a href="https://twitter.com/eddiemoger_com" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Twitter">Twitter</a>
 					<a href="https://www.instagram.com/eddiemoger_com/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Instagram">Instagram</a>
 				</div>
-				<p style={{margin: '5px', fontSize: '14px'}}>© 2021 Eddie Moger. All rights reserved.</p>
+				<p style={{margin: '5px', fontSize: '14px'}}>© 2023 Eddie Moger. All rights reserved.</p>
 			</footer>
 		</div>
 	);
