@@ -2,6 +2,7 @@
 import ContactForm from './ContactForm';
 import { ImageDiv } from '../../utils';
 import { ShadowedImg } from '../../utils';
+import { InlineWidget } from 'react-calendly';
 
 const ContactInfo = () => {
 	return (
@@ -13,6 +14,10 @@ const ContactInfo = () => {
 				<div>
 					<h1 className="contact-info">Contact</h1>
 					<ContactForm />
+				</div>
+				<div >
+					{/* <h3><span><a href="https://calendly.com/eddiemoger_com/30min" target="_blank" rel="noopener noreferrer" title="Schedule a 30 minute appointment">Click here to schedule a 30 minute appointment</a></span></h3> */}
+					<InlineWidget url="https://calendly.com/eddiemoger_com/30min" styles={{height: '1030px'}}/>
 				</div>
 				<h3 className="email"><span><a href="mailto:eddie@eddiemoger.com" rel="noopener" title="email Eddie@EddieMoger.com">Eddie@EddieMoger.com</a></span></h3>
 				<h3 className="github"><span><a href="https://github.com/EddieJorden" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Github">Github</a></span></h3>
