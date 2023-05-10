@@ -85,7 +85,6 @@ const SideBarDivContainer = styled.div`
 const SideBarDiv = styled.div`
 	color: #1a77f2;
 	width: 38%;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -137,10 +136,7 @@ const ButtonContainer = styled.div`
 const TitleDiv = styled.div`
 color: #ffffff;
 font-weight: bold;
-
-
 border-radius: 5px;
-
 display: flex;
 justify-content: center;
 align-items: center;
@@ -154,16 +150,13 @@ img {
 
 const NewHome = ({ myProjectsArray }) => {
 	const navigate = useNavigate();
-
 	const contentRef = useRef(null);
-
+	const title = 'EddieMoger.com';
 
 	const updateDisplayedContent = (path, state) => {
 		navigate(path, { state: state });
 		contentRef.current.scrollTop = 0;
 	};
-
-	const title = 'EddieMoger.com';
 
 	return (
 		<div>
