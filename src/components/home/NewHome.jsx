@@ -17,6 +17,7 @@ import Certifications from '../certifications/Certifications';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
 import { NavButton } from '../../utils';
+import { useRef } from 'react';
 
 const SideBarProfileDivContainer = styled.div`
 	@media only screen and (max-width: 900px) {
@@ -111,6 +112,7 @@ const ContentDiv = styled.div`
 const ContentWindowDiv = styled.div`
 	color: black;
 	overflow: scroll;
+	setScrollPosition: 0;
 	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
@@ -153,11 +155,16 @@ img {
 const NewHome = ({ myProjectsArray }) => {
 	const navigate = useNavigate();
 
+	const contentRef = useRef(null);
+
 	const updateDisplayedContent = (path, state) => {
 		navigate(path, { state: state });
+		contentRef.current.scrollTop = 0;
 	};
 
 	const title = 'EddieMoger.com';
+
+	console.log(useRef(null));
 
 	return (
 		<div>
@@ -310,7 +317,7 @@ const NewHome = ({ myProjectsArray }) => {
 				<ContentDiv>
 					<ContentWindowWrapper>
 						<ComponentDiv>
-							<ContentWindowDiv>
+							<ContentWindowDiv ref={contentRef}>
 								<ContentWindow
 								/>
 								<Routes>
