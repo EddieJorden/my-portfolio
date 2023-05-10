@@ -157,14 +157,13 @@ const NewHome = ({ myProjectsArray }) => {
 
 	const contentRef = useRef(null);
 
+
 	const updateDisplayedContent = (path, state) => {
 		navigate(path, { state: state });
 		contentRef.current.scrollTop = 0;
 	};
 
 	const title = 'EddieMoger.com';
-
-	console.log(useRef(null));
 
 	return (
 		<div>
