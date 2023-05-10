@@ -17,6 +17,7 @@ import Certifications from '../certifications/Certifications';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
 import { NavButton } from '../../utils';
+import { useRef } from 'react';
 
 const SideBarProfileDivContainer = styled.div`
 	@media only screen and (max-width: 900px) {
@@ -84,7 +85,6 @@ const SideBarDivContainer = styled.div`
 const SideBarDiv = styled.div`
 	color: #1a77f2;
 	width: 38%;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -111,6 +111,7 @@ const ContentDiv = styled.div`
 const ContentWindowDiv = styled.div`
 	color: black;
 	overflow: scroll;
+	setScrollPosition: 0;
 	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
@@ -135,10 +136,7 @@ const ButtonContainer = styled.div`
 const TitleDiv = styled.div`
 color: #ffffff;
 font-weight: bold;
-
-
 border-radius: 5px;
-
 display: flex;
 justify-content: center;
 align-items: center;
@@ -152,12 +150,13 @@ img {
 
 const NewHome = ({ myProjectsArray }) => {
 	const navigate = useNavigate();
+	const contentRef = useRef(null);
+	const title = 'EddieMoger.com';
 
 	const updateDisplayedContent = (path, state) => {
 		navigate(path, { state: state });
+		contentRef.current.scrollTop = 0;
 	};
-
-	const title = 'EddieMoger.com';
 
 	return (
 		<div>
@@ -310,7 +309,7 @@ const NewHome = ({ myProjectsArray }) => {
 				<ContentDiv>
 					<ContentWindowWrapper>
 						<ComponentDiv>
-							<ContentWindowDiv>
+							<ContentWindowDiv ref={contentRef}>
 								<ContentWindow
 								/>
 								<Routes>
