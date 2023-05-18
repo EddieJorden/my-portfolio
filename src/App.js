@@ -2,13 +2,13 @@
 import './App.css';
 
 import myProjectsArray from './components/myProjects/myProjectsArray';
-import NewHome from './components/home/NewHome';
+import MainLayout from './components/mainLayout/MainLayout';
 
 function App() {
 	console.log('Thank you for showing interest in EddieMoger.com ~Eddie Moger~');
 	return (
 		<div className="App">
-			<NewHome myProjectsArray={myProjectsArray} />
+			<MainLayout myProjectsArray={myProjectsArray} />
 		</div>
 	);
 }
