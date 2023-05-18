@@ -99,7 +99,7 @@ const ProfileComponent = ({ updateDisplayedContent }) => {
 							}}>
 							<CallToActionButton
 								onClick={() =>
-									updateDisplayedContent('contactinfo')
+									updateDisplayedContent('contact')
 								}
 								href="#contactinfo"
 							>
