@@ -35,6 +35,7 @@ import {
 	ContentWindowDiv
 } from './styledMainLayoutComponents';
 import NavButtonRenderer from './NavButtonRenderer';
+import {navItems} from './navItems';
 
 const MainLayout = ({ myProjectsArray }) => {
 	const navigate = useNavigate();
@@ -45,41 +46,6 @@ const MainLayout = ({ myProjectsArray }) => {
 		navigate(path, { state: state });
 		contentRef.current.scrollTop = 0;
 	};
-
-	const navItems = [
-		{
-			path: '/contact',
-			section: 'Contact'
-		},
-		{
-			path: '/myProjects',
-			section: 'Projects'
-		},
-		{
-			path: '/resume',
-			section: 'Resume'
-		},
-		{
-			path: '/aboutMe',
-			section: 'About'
-		},
-		{
-			path: '/',
-			section: 'Home'
-		},
-		{
-			path: '/certifications',
-			section: 'Certifications'
-		},
-		{
-			path: '/services',
-			section: 'Services'
-		},
-		// {
-		// 	path: '/blog',
-		// 	section: 'Blog'
-		// }
-	];
 
 	return (
 		<div>
@@ -131,7 +97,6 @@ const MainLayout = ({ myProjectsArray }) => {
 
 						<SideBarFooterContainer>
 							<SideBarFooterDiv>
-
 							</SideBarFooterDiv>
 						</SideBarFooterContainer>
 					</SideBarDivContainer>
