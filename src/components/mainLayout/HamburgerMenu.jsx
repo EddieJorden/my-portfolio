@@ -46,9 +46,9 @@ const HamburgerMenu = ({updateDisplayedContent}) => {
 			</MenuIcon>
 			<Menu isOpen={isOpen}>
 				<NavLink
-					href="#/contactInfo"
+					href="#/contact"
 					onClick={() => {
-						updateDisplayedContent('/contactInfo', { section: 'contactInfo' });
+						updateDisplayedContent('/contact', { section: 'contactInfo' });
 						toggleMenu();
 					}}
 					aria-label="Contact"

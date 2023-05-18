@@ -1,18 +1,10 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
 import ContentWindow from './ContentWindow';
-import MyResume from '../myResume/MyResume';
-import ContactInfo from '../contactInfo/ContactInfo';
-import MyProjects from '../myProjects/MyProjects';
-import Home from '../home/Home';
-import AboutMe from '../aboutMe/AboutMe';
-import Services from '../services/Services';
 import ProfileComponent from '../profileComponent/ProfileComponent';
 import ProjectsRenderer from './ProjectsRenderer';
 import ComponentDiv from '../componentDiv/ComponentDiv';
-import Certifications from '../certifications/Certifications';
-// import Blog from '../blog/Blog';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
 import { useRef } from 'react';
 import { 
@@ -35,7 +27,8 @@ import {
 	ContentWindowDiv
 } from './styledMainLayoutComponents';
 import NavButtonRenderer from './NavButtonRenderer';
-import {navItems} from './navItems';
+
+import RouteRenderer from './RouteRenderer';
 
 const MainLayout = ({ myProjectsArray }) => {
 	const navigate = useNavigate();
@@ -56,7 +49,7 @@ const MainLayout = ({ myProjectsArray }) => {
 				</HamburgerMenuDiv>
 				<NavigationDiv>
 					<ButtonContainer>
-						<NavButtonRenderer navItems={navItems} updateDisplayedContent={updateDisplayedContent}/>
+						<NavButtonRenderer updateDisplayedContent={updateDisplayedContent}/>
 					</ButtonContainer>
 				</NavigationDiv>
 			</header>
@@ -108,48 +101,9 @@ const MainLayout = ({ myProjectsArray }) => {
 							<ContentWindowDiv ref={contentRef}>
 								<ContentWindow
 								/>
-								<Routes>
-									<Route
-										path={'/contact'}
-										element={<ContactInfo/>}
-										title='Contact Info'
-									/>
-									<Route
-										path={'/myProjects'}
-										element={<MyProjects/>}
-										title='My Projects'
-									/>
-									<Route
-										path={'/resume'}
-										element={<MyResume/>}
-										title='My Resume'
-									/>
-									<Route
-										path={'/aboutMe'}
-										element={<AboutMe/>}
-										title='About Me'
-									/>
-									<Route
-										path={'/certifications'}
-										element={<Certifications/>}
-										title='Certifications'
-									/>
-									<Route
-										path={'/'} 
-										element={<Home/>}
-										title='Home'
-									/>
-									<Route
-										path={'/services'} 
-										element={<Services/>}
-										title='Services'
-									/>
-									{/* <Route
-										path={'/blog'} 
-										element={<Blog/>} 
-										title='Blog'
-										/> */}
-								</Routes>
+								<div>
+									<RouteRenderer/>
+								</div>
 							</ContentWindowDiv>
 						</ComponentDiv>
 					</ContentWindowWrapper>

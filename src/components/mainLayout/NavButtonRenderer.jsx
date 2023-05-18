@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavButton } from '../../utils';
 import PropTypes from 'prop-types';
+import { navItems } from './navItems';
 
-const NavButtonRenderer = ({ navItems, updateDisplayedContent }) => {
+const NavButtonRenderer = ({ updateDisplayedContent }) => {
 	if (!navItems || navItems.length === 0) {
 		return null;
 	}
