@@ -19,7 +19,7 @@ const MyResume = () => {
 					click{' '}
 					<span>
 						<a
-							href="Eddie-Moger-Software-Engineer-Resume.pdf"
+							href="Software-Engineer-Resume-May-2023.pdf"
 							target="_blank"
 							rel="noreferrer"
 							title="Eddie Moger's resume"
