@@ -26,7 +26,7 @@ const myProjectsArray = [
 		name: 'SimpleSpectra.com',
 		thumbnail: 'SimpleSpectra.com-thumbnail.png',
 		altText: 'SimpleSpectra.com thumbnail',
-		link: 'https://testspectra.wpengine.com/',
+		link: 'https://simplespectra.com/',
 		linkText: 'SimpleSpectra.com',
 		notes: {
 			notes: 'E-commerce site(currently in development)'
