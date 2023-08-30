@@ -31,7 +31,6 @@ const NavLink = styled.a`
   }
 `;
 
-
 const HamburgerMenu = ({updateDisplayedContent}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -50,6 +49,7 @@ const HamburgerMenu = ({updateDisplayedContent}) => {
 					onClick={() => {
 						updateDisplayedContent('/contact', { section: 'contactInfo' });
 						toggleMenu();
+						console.log(isOpen);
 					}}
 					aria-label="Contact"
 				>

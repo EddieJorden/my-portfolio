@@ -30,11 +30,11 @@ const myProjectsArray = [
 		linkText: 'SimpleSpectra.com',
 		notes: {
 			notes: 'E-commerce site(currently in development)'
-		}
+		},
 	},
 	{
 		name: 'Data Visualization',
-		thumbnail: 'Data Visualization with D3 thumbnail.png',
+		thumbnail: 'Data-viz.png',
 		altText: 'Data Visualization with D3 thumbnail',
 		link: 'https://eddiejorden.github.io/ui-ux-project/',
 		linkText: 'Data Visualization',
@@ -44,13 +44,13 @@ const myProjectsArray = [
 		github: 'https://github.com/EddieJorden/ui-ux-project',
 	},
 	{
-		name: 'Editable Fields With Filter',
-		thumbnail: 'React-Reudx-Challenge-thumbnail.png',
+		name: 'Customer Directory',
+		thumbnail: 'Customer-directory.png',
 		altText: 'React-Redux-Challenge-project',
 		link: 'https://eddiejorden.github.io/ctw-project/',
 		linkText: 'React Redux Challenge Project',
 		notes: {
-			notes: 'A React Redux application,  that renders 1000 input fields, all with the ability to update the state, as well as filters.'
+			notes: 'A React Redux application,  that renders 1000 input fields, using React memo and useCallback to optimize performance'
 		},
 		github: 'https://github.com/EddieJorden/ctw-project',
 	},
@@ -72,7 +72,7 @@ const myProjectsArray = [
 		link: 'https://eddiejorden.github.io/flashcards/',
 		linkText: 'Flash Cards',
 		notes: {
-			notes: 'This custom Flash Cards app was built using React with Redux. It allows you to make flashcard quizzes for topics you decide,  you can name the quizzes and add custom created flashcards.'
+			notes: 'This custom Flash Cards app was built using React with Redux. It allows you to put in topics and make flashcard quizzes.'
 		},
 		github: 'https://github.com/EddieJorden/flashcards',
   
@@ -125,8 +125,8 @@ const myProjectsArray = [
 	},
 	{
 		name: 'This Portfolio',
-		thumbnail: 'My_Portfolio_thumbnail.png',
-		altText: 'My_Portfolio_thumbnail',
+		thumbnail: 'Eddie-Moger-Developer-Portfolio.png',
+		altText: 'Developer Portfolio for Eddie Moger',
 		link: 'https://eddiemoger.com',
 		linkText: 'This Portfolio',
 		notes: {

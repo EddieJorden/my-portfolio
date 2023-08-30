@@ -15,6 +15,7 @@ const ContactInfo = () => {
 	const updateDisplayedContent = (path, state) => {
 		navigate(path, { state: state });
 		contentRef.current.scrollTop = 0;
+		console.log(contentRef);
 	};
 	return (
 		<div style={{margin: '15px'}}>
