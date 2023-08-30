@@ -98,9 +98,8 @@ const MainLayout = ({ myProjectsArray }) => {
 				<ContentDiv>
 					<ContentWindowWrapper>
 						<ComponentDiv>
-							<ContentWindowDiv ref={contentRef}>
-								<ContentWindow
-								/>
+							<ContentWindowDiv >
+								<ContentWindow />
 								<div>
 									<RouteRenderer/>
 								</div>

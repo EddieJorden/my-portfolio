@@ -13,8 +13,6 @@ const MyResume = () => {
 	return (
 		<MyResumeDiv>
 			<ResumeDiv>
-				<ShadowedImg src="Resume-thumbnail-1.png" alt="Eddie_Moger_Software_Engineer_Resume_page_one" />
-				<ShadowedImg src="Resume-thumbnail-2.png" alt="Eddie_Moger_Software_Engineer_Resume_page_two" />
 				<p>
 					click{' '}
 					<span>
@@ -29,6 +27,9 @@ const MyResume = () => {
 					</span>
 					to view and download the pdf.
 				</p>
+				<ShadowedImg src="Resume-thumbnail-1.png" alt="Eddie_Moger_Software_Engineer_Resume_page_one" />
+				<ShadowedImg src="Resume-thumbnail-2.png" alt="Eddie_Moger_Software_Engineer_Resume_page_two" />
+
 			</ResumeDiv>
 		</MyResumeDiv>
 	);
