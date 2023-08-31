@@ -34,7 +34,7 @@ const ProjectTile = (props) => {
 					</a>
 					<div className='project-notes'>
 						<p style={{margin: '10px'}}>{props.project.notes.notes}</p>
-						<a style={{margin: '10px'}}>{props.project.notes.notesLink}</a>
+						<p style={{margin: '10px'}}>{props.project.notes.notesLink}</p>
 					</div>
 					<div>
 						{github !== undefined	?	<div style={{margin: '10px'}} className='github-link'>
