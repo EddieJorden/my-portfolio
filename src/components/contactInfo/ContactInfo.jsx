@@ -3,8 +3,20 @@ import ContactForm from './ContactForm';
 import { ImageDiv } from '../../utils';
 import { ShadowedImg } from '../../utils';
 import { InlineWidget } from 'react-calendly';
+import { navItems } from '../mainLayout/navItems';
+
+import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 
 const ContactInfo = () => {
+	const navigate = useNavigate();
+	const contentRef = useRef(null);
+
+	const updateDisplayedContent = (path, state) => {
+		navigate(path, { state: state });
+		contentRef.current.scrollTop = 0;
+		console.log(contentRef);
+	};
 	return (
 		<div style={{margin: '15px'}}>
 			<ImageDiv>
@@ -25,7 +37,17 @@ const ContactInfo = () => {
 				<h3 className="linkedin"><a href="https://www.linkedin.com/in/edward-moger-1a50b21bb/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Linkedin">Linkedin</a></h3>
 				<h3 className="twitter"><a href="https://twitter.com/eddiemoger_com" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Twitter">Twitter</a></h3>
 				<h3 className="instagram"><a href="https://www.instagram.com/eddiemoger_com/" target="_blank" rel="noopener noreferrer" title="Eddie Moger's Instagram">Instagram</a></h3>
-				<h3 className="resume"><a href="Software-Engineer-Resume-May-2023.pdf" rel="noopener" title="Eddie Moger's Resume">Resume</a></h3>
+				{/* <h3 className="resume"><a href="Software-Engineer-Resume-May-2023.pdf" rel="noopener" title="Eddie Moger's Resume">Resume</a></h3> */}
+				<h3 className="resume"
+					onClick={() => 
+						updateDisplayedContent(
+							`${navItems[2].path}`,
+							{section: '${navItems[2].section}'}
+						)}
+					href="#${navItems[2].section}"
+					aria-label="${navItems[2].section}"
+				>{navItems[2].section}
+				</h3>
 			</div>
 		</div>
 	);

@@ -32,7 +32,7 @@ import RouteRenderer from './RouteRenderer';
 
 const MainLayout = ({ myProjectsArray }) => {
 	const navigate = useNavigate();
-	const contentRef = useRef(null);
+	const contentRef = useRef();
 	const title = 'EddieMoger.com';
 
 	const updateDisplayedContent = (path, state) => {
@@ -95,12 +95,11 @@ const MainLayout = ({ myProjectsArray }) => {
 					</SideBarDivContainer>
 				</SideBarDiv>
 
-				<ContentDiv>
+				<ContentDiv >
 					<ContentWindowWrapper>
 						<ComponentDiv>
 							<ContentWindowDiv ref={contentRef}>
-								<ContentWindow
-								/>
+								<ContentWindow />
 								<div>
 									<RouteRenderer/>
 								</div>
