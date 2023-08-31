@@ -34,6 +34,7 @@ const NavLink = styled.a`
 const HamburgerMenu = ({updateDisplayedContent}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
+
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
@@ -47,9 +48,9 @@ const HamburgerMenu = ({updateDisplayedContent}) => {
 				<NavLink
 					href="#/contact"
 					onClick={() => {
-						updateDisplayedContent('/contact', { section: 'contactInfo' });
+						updateDisplayedContent('/contact', { section: 'contactInfo'});
 						toggleMenu();
-						console.log(isOpen);
+						console.log('logging isOpen', isOpen);
 					}}
 					aria-label="Contact"
 				>
