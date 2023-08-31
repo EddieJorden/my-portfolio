@@ -7,23 +7,22 @@ const RouteRenderer = () => {
 	if (!navItems || navItems.length === 0) {
 		return null;
 	}
-	return navItems.map((each, i) => {
-		return (
-			<Routes key={i}>
+
+	return (
+		<Routes>
+			{navItems.map((each, i) => (
 				<Route
 					path={each.path}
 					element={each.element}
-					title={each.title}
 					key={i}
 				/>
-			</Routes>
-		);
-	});
+			))}
+		</Routes>
+	);
 };
 
 RouteRenderer.propTypes = {
 	routes: PropTypes.array
-
 };
 
 export default RouteRenderer;

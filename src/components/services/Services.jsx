@@ -13,7 +13,7 @@ const Services = () => {
 			<h1>Web Development Services</h1>
 			<h3>Contact Eddie for a free conusltaion</h3>
 			<CallToActionButton onClick={() =>
-				updateDisplayedContent('/contactinfo')
+				updateDisplayedContent('/contact')
 			}>Contact Eddie</CallToActionButton>
 			<h3>Description</h3>
 			<TextDiv>
@@ -28,7 +28,7 @@ const Services = () => {
 			<TextDiv>Custom Web Application: $20,000 - $100,000+</TextDiv>
 			<h3>Contact Eddie for a free conusltaion</h3>
 			<CallToActionButton onClick={() =>
-				updateDisplayedContent('/contactinfo')
+				updateDisplayedContent('/contact')
 			}>Contact Eddie</CallToActionButton>
 			<h1>SEO Services</h1>
 			<h3>Description</h3>
@@ -49,7 +49,7 @@ const Services = () => {
 			<TextDiv>SEO audit: $1,000 - $5,000 per project</TextDiv>
 			<h3>Contact Eddie for a free conusltaion</h3>
 			<CallToActionButton onClick={() =>
-				updateDisplayedContent('/contactinfo')
+				updateDisplayedContent('/contact')
 			}>Contact Eddie</CallToActionButton>
 			<h1>Website Maintenance Services</h1>
 			<h3>Description</h3>
@@ -66,7 +66,7 @@ const Services = () => {
 			<TextDiv>Security and Backups: $1,500 - $3,000 per month</TextDiv>
 			<h3>Contact Eddie for a free conusltaion</h3>
 			<CallToActionButton onClick={() =>
-				updateDisplayedContent('/contactinfo')
+				updateDisplayedContent('/contact')
 			}>Contact Eddie</CallToActionButton>
 			<h1>E-Commerce Development Services</h1>
 			<h3>Description</h3>
@@ -80,7 +80,7 @@ const Services = () => {
 			<TextDiv>Custom E-Commerce: $25,000 - $50,000</TextDiv>
 			<h3>Contact Eddie for a free conusltaion</h3>
 			<CallToActionButton onClick={() =>
-				updateDisplayedContent('/contactinfo')
+				updateDisplayedContent('/contact')
 			}>Contact Eddie</CallToActionButton>
 			<h1>API Development Services</h1>
 			<h3>Description</h3>
@@ -97,7 +97,7 @@ const Services = () => {
 			<TextDiv>API Documentation: $2,500 - $10,000</TextDiv>
 			<h3>Contact Eddie for a free conusltaion</h3>
 			<CallToActionButton style={{marginBottom: '15px'}} onClick={() =>
-				updateDisplayedContent('/contactinfo')
+				updateDisplayedContent('/contact')
 			}>Contact Eddie</CallToActionButton>
 			
 		</div>
