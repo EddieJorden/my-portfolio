@@ -147,26 +147,26 @@ export const About: React.FC = () => {
   const skills = [
     'React',
     'TypeScript',
-    'Next.js',
     'Node.js',
-    'Python',
-    'JavaScript',
+    'Express',
     'Redux',
-    'GraphQL',
-    'REST APIs',
+    'Next.js',
+    'D3.js',
+    'MySQL',
     'PostgreSQL',
     'MongoDB',
-    'AWS',
     'Docker',
+    'AWS',
+    'API Design',
+    'AI/LLM Integration',
+    'JavaScript',
     'Git',
-    'CI/CD',
-    'Agile',
   ];
 
   const stats = [
-    { number: '5+', label: 'Years Experience' },
-    { number: '50+', label: 'Projects Completed' },
-    { number: '15+', label: 'Technologies' },
+    { number: '15+', label: 'Years Business Experience' },
+    { number: '30+', label: 'Projects Completed' },
+    { number: '20+', label: 'Technologies' },
   ];
 
   const containerVariants = {
@@ -204,23 +204,32 @@ export const About: React.FC = () => {
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
+          <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1rem' }}>
+            Welcome to my corner of the internet!
+          </h3>
           <p>
-            I'm a passionate software engineer based in Silicon Valley, specializing
-            in building exceptional digital experiences. With a strong foundation in
-            modern web development, I create solutions that are both beautiful and
-            functional.
+            My name is Eddie and I am a software developer and entrepreneur with a passion 
+            for building innovative solutions. I have an extensive background in automotive 
+            racing, specializing in chassis tuning, and a background in PC building, including 
+            hardware assembly, overclocking, and using aftermarket software.
           </p>
           <p>
-            My expertise spans full-stack development with a focus on React ecosystems,
-            TypeScript, and modern JavaScript frameworks. I'm particularly interested
-            in AI/LLM integration, multi-agent systems, and real-time applications that
-            push the boundaries of what's possible.
+            My true passion lies in software development, where I have been known to create 
+            solutions for small businesses including integrating AI and machine learning, fully 
+            custom CRMs, internal communications, websites, SEO, e-commerce, custom back-end 
+            software, financial simulations, data visualization, encryption and much more.
           </p>
           <p>
-            I believe in writing clean, maintainable code and following best practices.
-            Whether it's architecting scalable APIs, implementing complex UI interactions,
-            or optimizing performance, I approach every challenge with enthusiasm and
-            attention to detail.
+            I have a passion for dynamic programming and problem-solving. I spent 8 years in 
+            corporate management before starting my own business, which I ran with great success 
+            for 15 years before deciding to switch to something I am more passionate about - 
+            software development.
+          </p>
+          <p>
+            I have competed in auto racing, motorcycle racing, rock climbing, downhill mountain 
+            bike racing, Muay Thai Kickboxing and much more. I believe that my passion for these 
+            activities translates into my work ethic - I am always pushing myself to be the best 
+            and constantly seeking new challenges.
           </p>
         </AboutText>
 
@@ -230,8 +239,56 @@ export const About: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           whileHover={{ scale: 1.02 }}
         >
-          <img src="/EddieInTheCity.jpg" alt="Eddie Moger" />
+          <img src="/gt86nurburgring.jpeg" alt="Eddie Moger racing cars on the world famous Nurburgring in Germany" />
         </ImageContainer>
+      </AboutGrid>
+
+      {/* Additional Images Section */}
+      <AboutGrid style={{ marginTop: '3rem' }}>
+        <ImageContainer
+          initial={{ opacity: 0, x: -50 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          whileHover={{ scale: 1.02 }}
+        >
+          <img src="/New-startup-office.jpeg" alt="Eddie Moger in his new office at Biirdee Travel" />
+        </ImageContainer>
+
+        <ImageContainer
+          initial={{ opacity: 0, x: 50 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          whileHover={{ scale: 1.02 }}
+        >
+          <img src="/Monday-Meeting-Biirdee.com-office-burlingame-ca.jpeg" alt="Eddie Moger enjoying a monday morning brainstorming session at Biirdee Travel" />
+        </ImageContainer>
+      </AboutGrid>
+
+      <AboutGrid style={{ marginTop: '3rem', marginBottom: '4rem' }}>
+        <ImageContainer
+          initial={{ opacity: 0, x: -50 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          whileHover={{ scale: 1.02 }}
+        >
+          <img src="/New-York-Xeni-app-office-.jpeg" alt="Eddie Moger at Xeni app office in New York" />
+        </ImageContainer>
+
+        <AboutText
+          initial={{ opacity: 0, x: 50 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <p>
+            So, why should you choose me for your next project? Well, I am a nerd at heart 
+            and love solving problems. My skills are not just tools, they are the tools I use 
+            for success. I am excited to work on new projects and help build your dreams.
+          </p>
+          <p>
+            Whether you're looking for a new website, custom software, or just someone to 
+            bounce ideas off of, I am here for you. Let's make something great together!
+          </p>
+        </AboutText>
       </AboutGrid>
 
       <motion.div

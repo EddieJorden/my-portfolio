@@ -54,13 +54,13 @@ export const ParticleBackground: React.FC = () => {
           },
           particles: {
             color: {
-              value: isDark ? '#818cf8' : '#6366f1',
+              value: isDark ? '#e5e7eb' : '#9ca3af',
             },
             links: {
-              color: isDark ? '#818cf8' : '#6366f1',
+              color: isDark ? '#e5e7eb' : '#9ca3af',
               distance: 150,
               enable: true,
-              opacity: 0.3,
+              opacity: 0.1,
               width: 1,
             },
             collisions: {
@@ -81,16 +81,16 @@ export const ParticleBackground: React.FC = () => {
                 enable: true,
                 area: 800,
               },
-              value: 80,
+              value: 60,
             },
             opacity: {
-              value: 0.5,
+              value: 0.15,
             },
             shape: {
               type: 'circle',
             },
             size: {
-              value: { min: 1, max: 3 },
+              value: { min: 1, max: 2 },
             },
           },
           detectRetina: true,
