@@ -225,12 +225,27 @@ const CalendarSubtitle = styled.p`
   font-size: 1.1rem;
 `;
 
-const CalendarEmbed = styled.iframe`
+const CalendarWrapper = styled.div`
+  position: relative;
   width: 100%;
-  height: 700px;
-  border: none;
+  height: 0;
+  padding-bottom: 75%; /* 4:3 aspect ratio */
   border-radius: 15px;
+  overflow: hidden;
   background: white;
+
+  @media (max-width: 768px) {
+    padding-bottom: 100%; /* Taller on mobile for better fit */
+  }
+`;
+
+const CalendarEmbed = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 `;
 
 const SuccessMessage = styled(motion.div)`
@@ -481,10 +496,12 @@ const ContactPage: React.FC = () => {
         <CalendarSubtitle>
           Book a time that works for you, and let's discuss your project
         </CalendarSubtitle>
-        <CalendarEmbed
-          src="https://calendar.app.google/fB8YJ6Zj6WHjo9Hc9"
-          title="Schedule an appointment"
-        />
+        <CalendarWrapper>
+          <CalendarEmbed
+            src="https://calendar.app.google/fB8YJ6Zj6WHjo9Hc9"
+            title="Schedule an appointment"
+          />
+        </CalendarWrapper>
       </CalendarSection>
     </PageContainer>
   );
