@@ -490,7 +490,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
               <FiLinkedin />
             </SocialLink>
             <SocialLink
-              href="mailto:Eddie@EddieMoger.com"
+              href="mailto:eddie@eddiemoger.com"
               aria-label="Email"
               whileHover={{ y: -3 }}
             >

@@ -99,8 +99,8 @@ export const Contact: React.FC = () => {
     {
       icon: <FiMail />,
       label: 'Email',
-      value: 'Eddie@EddieMoger.com',
-      href: 'mailto:Eddie@EddieMoger.com',
+      value: 'eddie@eddiemoger.com',
+      href: 'mailto:eddie@eddiemoger.com',
     },
     {
       icon: <FiMapPin />,
@@ -178,7 +178,7 @@ export const Contact: React.FC = () => {
         >
           <CTAButton
             as={motion.a}
-            href="mailto:Eddie@EddieMoger.com"
+            href="mailto:eddie@eddiemoger.com"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
