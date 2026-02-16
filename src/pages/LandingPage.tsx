@@ -16,6 +16,12 @@ const float = keyframes`
   66% { transform: translateY(-15px) rotate(-3deg); }
 `;
 
+const floatFast = keyframes`
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-40px) rotate(5deg); }
+  66% { transform: translateY(-20px) rotate(-5deg); }
+`;
+
 const pulse = keyframes`
   0%, 100% { transform: scale(1); opacity: 0.5; }
   50% { transform: scale(1.1); opacity: 0.8; }
@@ -53,8 +59,8 @@ const GeometricShape = styled(motion.div)<{ $size: number; $delay: number; $top:
   height: ${props => props.$size}px;
   top: ${props => props.$top};
   left: ${props => props.$left};
-  border: 2px solid rgba(0, 180, 255, 0.3);
-  animation: ${float} ${props => 10 + props.$delay}s ease-in-out infinite;
+  border: 2px solid rgba(0, 180, 255, 0.4);
+  animation: ${floatFast} ${props => 5 + props.$delay}s ease-in-out infinite;
   animation-delay: ${props => props.$delay}s;
   
   &:nth-child(odd) {
@@ -304,10 +310,10 @@ const LandingPage: React.FC = () => {
   ];
 
   const stats = [
-    { number: '11+', label: 'Projects' },
-    { number: '10+', label: 'Years' },
-    { number: '100%', label: 'Satisfaction' },
-    { number: '∞', label: 'Creativity' },
+    { number: '11+', label: 'Projects Delivered' },
+    { number: '10+', label: 'Years Experience' },
+    { number: '15+', label: 'Technologies' },
+    { number: '500+', label: 'GitHub Commits' },
   ];
 
   return (
