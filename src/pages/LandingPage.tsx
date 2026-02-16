@@ -235,8 +235,6 @@ const FeatureCard = styled(motion.div)`
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
   const containerVariants = {
     hidden: { opacity: 0 },
