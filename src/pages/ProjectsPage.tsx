@@ -264,6 +264,33 @@ const projects: Project[] = [
     liveUrl: 'https://eddiemoger.com',
     githubUrl: 'https://github.com/EddieJorden/my-portfolio',
     image: '/Eddie-Moger-Developer-Portfolio.png'
+  },
+  {
+    id: 12,
+    title: 'Modern Portfolio - Racing Theme',
+    description: 'Dynamic racing-inspired portfolio with bold animations, unique UI/UX design, and modern aesthetics. Features glassmorphism, particle effects, and smooth transitions.',
+    tech: ['React', 'TypeScript', 'Framer Motion', 'Styled Components'],
+    category: 'Frontend',
+    liveUrl: 'https://eddie-portfolio-1k7tzzrm0-eddiejordens-projects.vercel.app/',
+    githubUrl: 'https://github.com/EddieJorden/my-portfolio',
+  },
+  {
+    id: 13,
+    title: 'Modern Portfolio - Premium Dark',
+    description: 'Sleek dark-themed portfolio with premium animations and professional design. Showcases clean code architecture and modern React patterns.',
+    tech: ['React', 'TypeScript', 'Framer Motion', 'Styled Components'],
+    category: 'Frontend',
+    liveUrl: 'https://eddie-portfolio-lwtoc5izw-eddiejordens-projects.vercel.app/',
+    githubUrl: 'https://github.com/EddieJorden/my-portfolio',
+  },
+  {
+    id: 14,
+    title: 'Modern Portfolio - Gradient Showcase',
+    description: 'Vibrant gradient-based portfolio featuring Apple-inspired animations and modern design principles. Multi-page architecture with SEO optimization.',
+    tech: ['React', 'TypeScript', 'Framer Motion', 'React Router'],
+    category: 'Frontend',
+    liveUrl: 'https://eddie-portfolio-8picjqkwj-eddiejordens-projects.vercel.app/',
+    githubUrl: 'https://github.com/EddieJorden/my-portfolio',
   }
 ];
 

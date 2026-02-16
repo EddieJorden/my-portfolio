@@ -60,7 +60,7 @@ export const Footer: React.FC = () => (
         <FooterLink href="https://www.linkedin.com/in/eddie-moger/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <FiLinkedin size={16} />
         </FooterLink>
-        <FooterLink href="mailto:Eddie@EddieMoger.com" aria-label="Email">
+        <FooterLink href="mailto:eddie@eddiemoger.com" aria-label="Email">
           <FiMail size={16} />
         </FooterLink>
       </Links>
