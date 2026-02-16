@@ -1,13 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import { Theme } from '../theme/theme';
 
-const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
-  /* Import racing-inspired bold fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-
-  *,
-  *::before,
-  *::after {
+const GlobalStyles = createGlobalStyle`
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,85 +9,156 @@ const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
 
   html {
     scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    /* BOLD RACING TYPOGRAPHY - Rajdhani has that speed/tech aesthetic */
-    font-family: 'Space Grotesk', 'Rajdhani', -apple-system, BlinkMacSystemFont, 
-      'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.text};
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background: linear-gradient(135deg, #0a0a1e 0%, #1a1a2e 50%, #16213e 100%);
+    background-attachment: fixed;
+    color: white;
     overflow-x: hidden;
-    line-height: 1.6;
-    font-size: 16px;
-    letter-spacing: -0.011em;
+    min-height: 100vh;
   }
 
-  /* Bold headings with racing aesthetic */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Rajdhani', 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
 
-  p {
-    line-height: 1.7;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  button {
-    font-family: inherit;
-  }
-
-  img {
-    display: block;
-    max-width: 100%;
-  }
-
-  /* Racing-themed scrollbar */
+  /* Scrollbar Styling */
   ::-webkit-scrollbar {
     width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: ${({ theme }) => theme.colors.background};
+    background: rgba(255, 255, 255, 0.05);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.gradients.racing};
-    border-radius: 5px;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${({ theme }) => theme.colors.racing};
+    background: linear-gradient(180deg, #764ba2 0%, #667eea 100%);
   }
 
-  /* Racing red selection */
+  /* Selection */
   ::selection {
-    background-color: ${({ theme }) => theme.colors.racing};
+    background: rgba(102, 126, 234, 0.3);
     color: white;
   }
 
-  /* Focus styles with racing accent */
+  /* Focus Outline */
   *:focus-visible {
-    outline: 2px solid ${({ theme }) => theme.colors.racing};
-    outline-offset: 3px;
-    border-radius: 4px;
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
   }
 
-  /* Smooth mobile scrolling */
+  /* Smooth transitions for theme changes */
+  body, button, input, textarea {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Remove default button styles */
+  button {
+    font-family: inherit;
+  }
+
+  /* Links */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  /* Paragraphs */
+  p {
+    line-height: 1.6;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Main Content */
+  main {
+    min-height: 100vh;
+  }
+
+  /* Animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  /* Utility classes */
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .pulse-animation {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* Glassmorphism utility */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Gradient text utility */
+  .gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Responsive typography */
   @media (max-width: 768px) {
-    html {
-      scroll-padding-top: 80px;
+    body {
+      font-size: 14px;
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    body {
+      background: white;
+      color: black;
     }
   }
 `;

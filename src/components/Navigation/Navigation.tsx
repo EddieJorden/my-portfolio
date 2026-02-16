@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
+import styled from 'styled-components';
 import { useTheme } from '../../context/ThemeContext';
 
 const Nav = styled(motion.nav)<{ $scrolled: boolean }>`
@@ -10,17 +10,18 @@ const Nav = styled(motion.nav)<{ $scrolled: boolean }>`
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: ${({ $scrolled }) => ($scrolled ? '0.875rem 1.5rem' : '1.25rem 1.5rem')};
-  background: ${({ theme, $scrolled }) =>
-    $scrolled ? theme.colors.background + 'f5' : 'rgba(10, 10, 10, 0.4)'};
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid ${({ theme, $scrolled }) =>
-    $scrolled ? theme.colors.racing : 'rgba(255, 255, 255, 0.05)'};
+  padding: ${props => props.$scrolled ? '1rem 2rem' : '1.5rem 2rem'};
+  background: ${props => props.$scrolled 
+    ? 'rgba(10, 10, 30, 0.95)' 
+    : 'transparent'};
+  backdrop-filter: ${props => props.$scrolled ? 'blur(10px)' : 'none'};
   transition: all 0.3s ease;
+  border-bottom: ${props => props.$scrolled 
+    ? '1px solid rgba(255, 255, 255, 0.1)' 
+    : 'none'};
 `;
 
-const NavInner = styled.div`
+const NavContainer = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
@@ -28,24 +29,50 @@ const NavInner = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.a`
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.text};
-  cursor: pointer;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+const Logo = styled(Link)`
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+const NavLinks = styled.div`
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const NavLink = styled(Link)<{ $active: boolean }>`
+  color: ${props => props.$active ? '#667eea' : 'rgba(255, 255, 255, 0.8)'};
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
   position: relative;
-  
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #667eea;
+  }
+
   &::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: -5px;
     left: 0;
-    width: 0;
+    width: ${props => props.$active ? '100%' : '0'};
     height: 2px;
-    background: ${({ theme }) => theme.gradients.racing};
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     transition: width 0.3s ease;
   }
 
@@ -54,241 +81,188 @@ const Logo = styled.a`
   }
 `;
 
-const NavLinks = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const NavLink = styled.a`
-  color: ${({ theme }) => theme.colors.textSecondary};
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 0.625rem 1.25rem;
-  border-radius: ${({ theme }) => theme.radius.sm};
-  cursor: pointer;
-  transition: ${({ theme }) => theme.transitions.fast};
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: ${({ theme }) => theme.colors.racing};
-    transition: width 0.3s ease;
-  }
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.text};
-    
-    &::before {
-      width: 70%;
-    }
-  }
-`;
-
-const ThemeToggle = styled.button`
-  width: 38px;
-  height: 38px;
-  border-radius: ${({ theme }) => theme.radius.sm};
-  border: 2px solid ${({ theme }) => theme.colors.border};
-  background: transparent;
+const ThemeToggle = styled(motion.button)`
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  transition: ${({ theme }) => theme.transitions.fast};
-  margin-left: 0.75rem;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.racing};
-    border-color: ${({ theme }) => theme.colors.racing};
-    background: rgba(255, 0, 57, 0.05);
+    background: rgba(255, 255, 255, 0.2);
     transform: rotate(180deg);
   }
 `;
 
-const MobileBtn = styled.button`
+const MobileMenuButton = styled(motion.button)`
   display: none;
   background: transparent;
-  border: 2px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radius.sm};
-  color: ${({ theme }) => theme.colors.text};
-  font-size: 1.25rem;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
   cursor: pointer;
   padding: 0.5rem;
-  transition: ${({ theme }) => theme.transitions.fast};
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.racing};
-    background: rgba(255, 0, 57, 0.05);
-  }
 
   @media (max-width: 768px) {
-    display: flex;
-    align-items: center;
+    display: block;
   }
-`;
-
-const Overlay = styled(motion.div)`
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
-  z-index: 1000;
 `;
 
 const MobileMenu = styled(motion.div)`
   position: fixed;
   top: 0;
   right: 0;
-  width: min(320px, 85vw);
+  width: 100%;
+  max-width: 300px;
   height: 100vh;
-  background: ${({ theme }) => theme.colors.background};
-  border-left: 2px solid ${({ theme }) => theme.colors.racing};
-  z-index: 1001;
+  background: rgba(10, 10, 30, 0.98);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  z-index: 999;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  box-shadow: ${({ theme }) => theme.shadows.xl};
+  gap: 2rem;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
 `;
 
-const MobileTop = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.border};
-`;
-
-const MobileLink = styled.a`
-  display: block;
-  color: ${({ theme }) => theme.colors.text};
-  font-size: 1.1rem;
-  font-weight: 700;
-  padding: 1rem 0;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+const MobileMenuClose = styled.button`
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
   cursor: pointer;
-  transition: ${({ theme }) => theme.transitions.fast};
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  position: relative;
+  padding: 0.5rem;
+`;
 
-  &::before {
-    content: '▸';
-    position: absolute;
-    left: -1.5rem;
-    opacity: 0;
-    color: ${({ theme }) => theme.colors.racing};
-    transition: ${({ theme }) => theme.transitions.fast};
-  }
+const MobileNavLink = styled(Link)<{ $active: boolean }>`
+  color: ${props => props.$active ? '#667eea' : 'rgba(255, 255, 255, 0.8)'};
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem;
+  border-left: 3px solid ${props => props.$active ? '#667eea' : 'transparent'};
+  transition: all 0.3s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.racing};
+    color: #667eea;
     padding-left: 1.5rem;
-    
-    &::before {
-      left: 0;
-      opacity: 1;
-    }
+    border-left-color: #667eea;
   }
 `;
 
-interface NavigationProps {
-  scrollToSection: (section: string) => void;
-}
+const Overlay = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+`;
 
-export const Navigation: React.FC<NavigationProps> = ({ scrollToSection }) => {
-  const { isDark, toggleTheme } = useTheme();
-  const [open, setOpen] = useState(false);
+export const Navigation: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const nav = (section: string) => {
-    scrollToSection(section);
-    setOpen(false);
-  };
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
 
-  const links = ['About', 'Skills', 'Projects', 'Contact'];
+  const navItems = [
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/skills', label: 'Skills' },
+    { path: '/contact', label: 'Contact' }
+  ];
 
   return (
     <>
-      <Nav
-        $scrolled={scrolled}
-        initial={{ y: -80 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <NavInner>
-          <Logo onClick={() => nav('home')}>Eddie Moger</Logo>
-
+      <Nav $scrolled={scrolled}>
+        <NavContainer>
+          <Logo to="/">EM</Logo>
+          
           <NavLinks>
-            {links.map((l) => (
-              <NavLink key={l} onClick={() => nav(l.toLowerCase())}>
-                {l}
+            {navItems.map(item => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                $active={location.pathname === item.path}
+              >
+                {item.label}
               </NavLink>
             ))}
-            <ThemeToggle onClick={toggleTheme} aria-label="Toggle theme">
-              {isDark ? <FiSun size={16} /> : <FiMoon size={16} />}
+            <ThemeToggle
+              onClick={toggleTheme}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
             </ThemeToggle>
           </NavLinks>
 
-          <MobileBtn onClick={() => setOpen(true)} aria-label="Open menu">
-            <FiMenu />
-          </MobileBtn>
-        </NavInner>
+          <MobileMenuButton
+            onClick={() => setMobileMenuOpen(true)}
+            whileTap={{ scale: 0.9 }}
+          >
+            ☰
+          </MobileMenuButton>
+        </NavContainer>
       </Nav>
 
       <AnimatePresence>
-        {open && (
+        {mobileMenuOpen && (
           <>
             <Overlay
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setOpen(false)}
+              onClick={() => setMobileMenuOpen(false)}
             />
             <MobileMenu
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              transition={{ type: 'tween', duration: 0.3 }}
             >
-              <MobileTop>
-                <Logo as="span">Eddie Moger</Logo>
-                <MobileBtn onClick={() => setOpen(false)} aria-label="Close menu">
-                  <FiX />
-                </MobileBtn>
-              </MobileTop>
-
-              {links.map((l) => (
-                <MobileLink key={l} onClick={() => nav(l.toLowerCase())}>
-                  {l}
-                </MobileLink>
+              <MobileMenuClose onClick={() => setMobileMenuOpen(false)}>
+                ✕
+              </MobileMenuClose>
+              {navItems.map(item => (
+                <MobileNavLink
+                  key={item.path}
+                  to={item.path}
+                  $active={location.pathname === item.path}
+                >
+                  {item.label}
+                </MobileNavLink>
               ))}
-
-              <div style={{ marginTop: '2rem' }}>
-                <ThemeToggle onClick={toggleTheme} aria-label="Toggle theme">
-                  {isDark ? <FiSun size={16} /> : <FiMoon size={16} />}
-                </ThemeToggle>
-              </div>
+              <ThemeToggle
+                onClick={toggleTheme}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                style={{ marginTop: 'auto' }}
+              >
+                {theme === 'dark' ? '☀️' : '🌙'}
+              </ThemeToggle>
             </MobileMenu>
           </>
         )}
