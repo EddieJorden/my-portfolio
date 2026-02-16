@@ -152,6 +152,7 @@ interface Project {
   category: string;
   liveUrl?: string;
   githubUrl?: string;
+  image?: string;
 }
 
 const projects: Project[] = [
@@ -162,7 +163,8 @@ const projects: Project[] = [
     tech: ['React', 'Redux', 'TypeScript', 'Node.js', 'Express', 'MySQL'],
     category: 'Full-Stack',
     liveUrl: 'https://eddies-balance-app.netlify.app/',
-    githubUrl: 'https://github.com/EddieJorden/balance-app'
+    githubUrl: 'https://github.com/EddieJorden/balance-app',
+    image: '/Task-app-thumbnail.png'
   },
   {
     id: 2,
@@ -170,7 +172,8 @@ const projects: Project[] = [
     description: 'E-commerce platform currently in development. Built with modern web technologies to provide seamless shopping experience.',
     tech: ['React', 'Node.js', 'E-Commerce'],
     category: 'Full-Stack',
-    liveUrl: 'https://simplespectra.com/'
+    liveUrl: 'https://simplespectra.com/',
+    image: '/SimpleSpectra.com-thumbnail.png'
   },
   {
     id: 3,
@@ -179,7 +182,8 @@ const projects: Project[] = [
     tech: ['React', 'Redux', 'D3.js', 'Express'],
     category: 'Frontend',
     liveUrl: 'https://eddiejorden.github.io/ui-ux-project/',
-    githubUrl: 'https://github.com/EddieJorden/ui-ux-project'
+    githubUrl: 'https://github.com/EddieJorden/ui-ux-project',
+    image: '/Data-viz.png'
   },
   {
     id: 4,
@@ -188,7 +192,8 @@ const projects: Project[] = [
     tech: ['React', 'Redux', 'Performance Optimization'],
     category: 'Frontend',
     liveUrl: 'https://eddiejorden.github.io/ctw-project/',
-    githubUrl: 'https://github.com/EddieJorden/ctw-project'
+    githubUrl: 'https://github.com/EddieJorden/ctw-project',
+    image: '/Customer-directory.png'
   },
   {
     id: 5,
@@ -197,7 +202,8 @@ const projects: Project[] = [
     tech: ['React', 'Redux', 'REST API'],
     category: 'Frontend',
     liveUrl: 'https://eddiejorden.github.io/reddit-clone/',
-    githubUrl: 'https://github.com/EddieJorden/reddit-clone'
+    githubUrl: 'https://github.com/EddieJorden/reddit-clone',
+    image: '/reddit_clone_thumbnail.png'
   },
   {
     id: 6,
@@ -206,7 +212,8 @@ const projects: Project[] = [
     tech: ['React', 'Redux'],
     category: 'Frontend',
     liveUrl: 'https://eddiejorden.github.io/flashcards/',
-    githubUrl: 'https://github.com/EddieJorden/flashcards'
+    githubUrl: 'https://github.com/EddieJorden/flashcards',
+    image: '/flashcards-thumbnail.png'
   },
   {
     id: 7,
@@ -215,7 +222,8 @@ const projects: Project[] = [
     tech: ['HTML', 'CSS', 'Flexbox', 'Responsive Design'],
     category: 'Frontend',
     liveUrl: 'https://eddiejorden.github.io/fotomatic/',
-    githubUrl: 'https://github.com/EddieJorden/fotomatic'
+    githubUrl: 'https://github.com/EddieJorden/fotomatic',
+    image: '/fotomatic-thumbnail.png'
   },
   {
     id: 8,
@@ -224,7 +232,8 @@ const projects: Project[] = [
     tech: ['React'],
     category: 'Frontend',
     liveUrl: 'https://eddiejorden.github.io/react_challenge/',
-    githubUrl: 'https://github.com/EddieJorden/react_challenge'
+    githubUrl: 'https://github.com/EddieJorden/react_challenge',
+    image: '/appointment-planner-thumbnail.png'
   },
   {
     id: 9,
@@ -233,7 +242,8 @@ const projects: Project[] = [
     tech: ['React', 'Yelp API'],
     category: 'Frontend',
     liveUrl: 'https://eddiejorden.github.io/food.near.me/',
-    githubUrl: 'https://github.com/EddieJorden/food.near.me'
+    githubUrl: 'https://github.com/EddieJorden/food.near.me',
+    image: '/food_near_me_thumbnail.png'
   },
   {
     id: 10,
@@ -242,7 +252,8 @@ const projects: Project[] = [
     tech: ['React', 'Spotify API', 'OAuth'],
     category: 'Frontend',
     liveUrl: 'https://eddiejorden.github.io/my-jams',
-    githubUrl: 'https://github.com/EddieJorden/my-jams'
+    githubUrl: 'https://github.com/EddieJorden/my-jams',
+    image: '/myJams-thumbnail.png'
   },
   {
     id: 11,
@@ -251,7 +262,8 @@ const projects: Project[] = [
     tech: ['React', 'Express', 'Responsive Design'],
     category: 'Full-Stack',
     liveUrl: 'https://eddiemoger.com',
-    githubUrl: 'https://github.com/EddieJorden/my-portfolio'
+    githubUrl: 'https://github.com/EddieJorden/my-portfolio',
+    image: '/Eddie-Moger-Developer-Portfolio.png'
   }
 ];
 
@@ -312,7 +324,7 @@ const ProjectsPage: React.FC = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              <ProjectImage />
+              <ProjectImage $image={project.image} />
               <ProjectContent>
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <ProjectDescription>{project.description}</ProjectDescription>
