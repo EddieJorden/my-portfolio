@@ -1,22 +1,31 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import styled, { keyframes } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { TypeAnimation } from 'react-type-animation';
 
-const float = keyframes`
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-`;
-
-const pulse = keyframes`
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-`;
-
-const gradientShift = keyframes`
+const gradientAnimation = keyframes`
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+`;
+
+const float = keyframes`
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-30px) rotate(3deg); }
+  66% { transform: translateY(-15px) rotate(-3deg); }
+`;
+
+const pulse = keyframes`
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+`;
+
+const PageWrapper = styled.div`
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 25%, #0f1b2e 50%, #1a1f3a 75%, #0a0e27 100%);
+  background-size: 400% 400%;
+  animation: ${gradientAnimation} 15s ease infinite;
+  min-height: 100vh;
 `;
 
 const HeroSection = styled.section`
@@ -24,92 +33,107 @@ const HeroSection = styled.section`
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #0a0e27 0%, #162447 25%, #1f4068 50%, #162447 75%, #0a0e27 100%);
-  background-size: 400% 400%;
-  animation: ${gradientShift} 20s ease infinite;
 `;
 
-const ParticlesContainer = styled.div`
+const AnimatedBackground = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 0;
 `;
 
-const Particle = styled.div<{ delay: number; duration: number; left: string; size: string }>`
+const GeometricShape = styled(motion.div)<{ $size: number; $delay: number; $top: string; $left: string }>`
   position: absolute;
-  width: ${props => props.size};
-  height: ${props => props.size};
-  background: radial-gradient(circle, rgba(0, 180, 255, 0.8) 0%, transparent 70%);
-  border-radius: 50%;
-  left: ${props => props.left};
-  bottom: -50px;
-  animation: ${float} ${props => props.duration}s ease-in-out infinite;
-  animation-delay: ${props => props.delay}s;
-  filter: blur(2px);
-  opacity: 0.6;
+  width: ${props => props.$size}px;
+  height: ${props => props.$size}px;
+  top: ${props => props.$top};
+  left: ${props => props.$left};
+  border: 2px solid rgba(0, 180, 255, 0.3);
+  animation: ${float} ${props => 10 + props.$delay}s ease-in-out infinite;
+  animation-delay: ${props => props.$delay}s;
+  
+  &:nth-child(odd) {
+    border-radius: 50%;
+  }
 `;
 
-const GlowOrb = styled.div<{ top: string; left: string; size: string; delay: number }>`
+const GlowingOrb = styled(motion.div)<{ $size: number; $x: string; $y: string }>`
   position: absolute;
-  width: ${props => props.size};
-  height: ${props => props.size};
-  top: ${props => props.top};
-  left: ${props => props.left};
-  background: radial-gradient(circle, rgba(0, 200, 255, 0.3) 0%, transparent 70%);
+  width: ${props => props.$size}px;
+  height: ${props => props.$size}px;
+  left: ${props => props.$x};
+  top: ${props => props.$y};
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.4) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(60px);
   animation: ${pulse} 4s ease-in-out infinite;
-  animation-delay: ${props => props.delay}s;
+`;
+
+const GridOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 150, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 150, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
 `;
 
 const HeroContent = styled.div`
   position: relative;
-  z-index: 1;
+  z-index: 10;
   text-align: center;
-  max-width: 1200px;
-  width: 100%;
+  max-width: 1000px;
 `;
 
-const Greeting = styled(motion.div)`
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  color: #00b4ff;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-`;
-
-const HeroTitle = styled(motion.h1)`
-  font-size: clamp(3rem, 10vw, 7rem);
-  font-weight: 900;
+const TopLine = styled(motion.div)`
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #00d4ff;
+  font-weight: 600;
+  letter-spacing: 4px;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #00b4ff 50%, #ffffff 100%);
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+`;
+
+const MainTitle = styled(motion.h1)`
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 0.9;
+  letter-spacing: -4px;
+  background: linear-gradient(135deg, #fff 0%, #00d4ff 50%, #fff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.1;
-  letter-spacing: -2px;
+  text-shadow: 0 0 80px rgba(0, 212, 255, 0.3);
+  filter: drop-shadow(0 5px 30px rgba(0, 212, 255, 0.5));
 `;
 
-const HeroSubtitle = styled(motion.p)`
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
-  color: rgba(255, 255, 255, 0.9);
+const TypedText = styled.div`
+  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  color: #fff;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 3rem;
-  line-height: 1.6;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  font-weight: 500;
+  
+  .typed {
+    color: #00d4ff;
+    font-weight: 700;
+  }
 `;
 
-const CTAContainer = styled(motion.div)`
+const CTASection = styled(motion.div)`
   display: flex;
   gap: 1.5rem;
   justify-content: center;
@@ -117,89 +141,121 @@ const CTAContainer = styled(motion.div)`
   margin-bottom: 4rem;
 `;
 
-const CTAButton = styled(motion.button)<{ $primary?: boolean }>`
-  background: ${props => props.$primary 
-    ? 'linear-gradient(135deg, #0096ff 0%, #0066cc 100%)' 
-    : 'transparent'};
-  border: 2px solid #0096ff;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 1.2rem 3rem;
+const PrimaryButton = styled(motion.button)`
+  background: linear-gradient(135deg, #00d4ff 0%, #0096ff 100%);
+  border: none;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1.5rem 3.5rem;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: ${props => props.$primary 
-    ? '0 10px 40px rgba(0, 150, 255, 0.4)' 
-    : '0 5px 20px rgba(0, 150, 255, 0.2)'};
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 50px rgba(0, 212, 255, 0.4);
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 
   @media (max-width: 768px) {
-    font-size: 1rem;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
   }
 
   &::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
   }
 
-  &:hover::before {
-    width: 300px;
-    height: 300px;
+  @keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
   }
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 60px rgba(0, 150, 255, 0.6);
-  }
-
-  span {
-    position: relative;
-    z-index: 1;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 60px rgba(0, 212, 255, 0.6);
   }
 `;
 
-const ScrollIndicator = styled(motion.div)`
+const SecondaryButton = styled(motion.button)`
+  background: transparent;
+  border: 3px solid #00d4ff;
+  color: #00d4ff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1.5rem 3.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 30px rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  &:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 212, 255, 0.4);
+  }
+`;
+
+const ScrollHint = styled(motion.div)`
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 0.9rem;
   cursor: pointer;
 
   @media (max-width: 768px) {
-    bottom: 1rem;
+    bottom: 1.5rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .arrow {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(180deg, transparent, #00d4ff);
+    position: relative;
+    animation: ${float} 2s ease-in-out infinite;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid #00d4ff;
+      border-bottom: 2px solid #00d4ff;
+      transform: translateX(-50%) rotate(45deg);
+    }
   }
 `;
 
-const ScrollArrow = styled.div`
-  width: 24px;
-  height: 24px;
-  border-left: 2px solid #0096ff;
-  border-bottom: 2px solid #0096ff;
-  transform: rotate(-45deg);
-  animation: ${float} 2s ease-in-out infinite;
-`;
-
-const StatsSection = styled.section`
-  padding: 4rem 2rem;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
+const StatsBar = styled(motion.div)`
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(0, 212, 255, 0.2);
 `;
 
 const StatsGrid = styled.div`
@@ -208,147 +264,173 @@ const StatsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 3rem;
-  text-align: center;
 `;
 
-const StatCard = styled(motion.div)`
-  h3 {
-    font-size: 3rem;
-    color: #00b4ff;
-    margin-bottom: 0.5rem;
+const StatItem = styled(motion.div)`
+  text-align: center;
+
+  .number {
+    font-size: 3.5rem;
     font-weight: 900;
+    background: linear-gradient(135deg, #00d4ff 0%, #0096ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
   }
 
-  p {
-    color: rgba(255, 255, 255, 0.8);
+  .label {
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 `;
 
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const particles = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    delay: Math.random() * 5,
-    duration: 10 + Math.random() * 10,
-    left: `${Math.random() * 100}%`,
-    size: `${10 + Math.random() * 30}px`,
-  }));
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const shapes = [
+    { size: 300, delay: 0, top: '10%', left: '10%' },
+    { size: 200, delay: 1, top: '20%', left: '80%' },
+    { size: 250, delay: 2, top: '70%', left: '15%' },
+    { size: 180, delay: 1.5, top: '60%', left: '75%' },
+    { size: 220, delay: 0.5, top: '40%', left: '50%' },
+  ];
 
   const orbs = [
-    { top: '10%', left: '10%', size: '400px', delay: 0 },
-    { top: '60%', left: '80%', size: '500px', delay: 2 },
-    { top: '30%', left: '50%', size: '350px', delay: 4 },
+    { size: 500, x: '10%', y: '20%' },
+    { size: 600, x: '80%', y: '60%' },
+    { size: 400, x: '50%', y: '10%' },
   ];
 
   const stats = [
-    { number: '50+', label: 'Projects Completed' },
-    { number: '10+', label: 'Years Experience' },
-    { number: '100%', label: 'Client Satisfaction' },
-    { number: '24/7', label: 'Available' },
+    { number: '11+', label: 'Projects' },
+    { number: '10+', label: 'Years' },
+    { number: '100%', label: 'Satisfaction' },
+    { number: '∞', label: 'Creativity' },
   ];
 
   return (
-    <>
+    <PageWrapper>
       <HeroSection>
-        <ParticlesContainer>
-          {particles.map(particle => (
-            <Particle
-              key={particle.id}
-              delay={particle.delay}
-              duration={particle.duration}
-              left={particle.left}
-              size={particle.size}
+        <AnimatedBackground>
+          <GridOverlay />
+          {shapes.map((shape, i) => (
+            <GeometricShape
+              key={i}
+              $size={shape.size}
+              $delay={shape.delay}
+              $top={shape.top}
+              $left={shape.left}
             />
           ))}
           {orbs.map((orb, i) => (
-            <GlowOrb
-              key={i}
-              top={orb.top}
-              left={orb.left}
-              size={orb.size}
-              delay={orb.delay}
-            />
+            <GlowingOrb key={i} $size={orb.size} $x={orb.x} $y={orb.y} />
           ))}
-        </ParticlesContainer>
+        </AnimatedBackground>
 
         <HeroContent>
-          <Greeting
+          <TopLine
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Hello, I'm
-          </Greeting>
+            Welcome
+          </TopLine>
 
-          <HeroTitle
+          <MainTitle
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Eddie Moger
-          </HeroTitle>
+            EDDIE
+            <br />
+            MOGER
+          </MainTitle>
 
-          <HeroSubtitle
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            Full-Stack Developer | React Specialist | Creative Problem Solver
-          </HeroSubtitle>
+          <TypedText>
+            <TypeAnimation
+              sequence={[
+                'Full-Stack Developer',
+                2000,
+                'React Specialist',
+                2000,
+                'Problem Solver',
+                2000,
+                'Code Architect',
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+              className="typed"
+            />
+          </TypedText>
 
-          <CTAContainer
-            initial={{ opacity: 0, y: 20 }}
+          <CTASection
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 1 }}
           >
-            <CTAButton
-              $primary
+            <PrimaryButton
               onClick={() => navigate('/projects')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>View My Work</span>
-            </CTAButton>
-            <CTAButton
+              VIEW PROJECTS
+            </PrimaryButton>
+            <SecondaryButton
               onClick={() => navigate('/contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Get In Touch</span>
-            </CTAButton>
-          </CTAContainer>
+              CONTACT ME
+            </SecondaryButton>
+          </CTASection>
         </HeroContent>
 
-        <ScrollIndicator
+        <ScrollHint
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >
-          <span>Scroll Down</span>
-          <ScrollArrow />
-        </ScrollIndicator>
+          <span className="text">Scroll</span>
+          <div className="arrow" />
+        </ScrollHint>
       </HeroSection>
 
-      <StatsSection>
+      <StatsBar
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <StatsGrid>
-          {stats.map((stat, index) => (
-            <StatCard
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
+          {stats.map((stat, i) => (
+            <StatItem
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: i * 0.1 }}
             >
-              <h3>{stat.number}</h3>
-              <p>{stat.label}</p>
-            </StatCard>
+              <div className="number">{stat.number}</div>
+              <div className="label">{stat.label}</div>
+            </StatItem>
           ))}
         </StatsGrid>
-      </StatsSection>
-    </>
+      </StatsBar>
+    </PageWrapper>
   );
 };
 
