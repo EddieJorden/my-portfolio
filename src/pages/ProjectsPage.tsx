@@ -152,37 +152,66 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Enterprise CRM System',
-    description: 'Full-featured CRM with work orders, invoicing, customer management, and real-time notifications.',
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800',
-    tech: ['React', 'Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Supabase'],
+    title: 'E-Commerce Platform',
+    description: 'Full-stack e-commerce solution with product management, shopping cart, payment integration, and admin dashboard.',
+    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800',
+    tech: ['React', 'Next.js', 'Stripe', 'PostgreSQL', 'Prisma'],
     category: 'Full-Stack'
   },
   {
     id: 2,
-    title: 'Kanban Board',
-    description: 'Real-time collaborative task management board with drag-and-drop, status tracking, and persistent storage on Fly.io.',
-    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800',
-    tech: ['React', 'Node.js', 'Express', 'Fly.io'],
-    category: 'Full-Stack',
-    liveUrl: 'https://kanban-server.fly.dev',
-    githubUrl: 'https://github.com/arlo-e-dev/eddie-kanban'
+    title: 'Real-Time Chat Application',
+    description: 'WebSocket-based messaging app with direct messages, group chats, file sharing, and online status indicators.',
+    image: 'https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=800',
+    tech: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Express'],
+    category: 'Full-Stack'
   },
   {
     id: 3,
-    title: 'AI Assistant OpenClaw',
-    description: 'Personal AI development assistant with GitHub integration, Slack connectivity, and automated workflow management.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800',
-    tech: ['Node.js', 'Claude API', 'Slack API', 'GitHub API'],
-    category: 'AI/ML',
-    githubUrl: 'https://github.com/openclaw/openclaw'
+    title: 'Project Management Dashboard',
+    description: 'Collaborative task management with drag-and-drop kanban boards, team analytics, and real-time updates.',
+    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800',
+    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
+    category: 'Full-Stack'
   },
   {
     id: 4,
-    title: 'Interactive Portfolio',
-    description: 'Modern portfolio website with 3D animations, smooth scroll effects, and responsive design showcasing React expertise.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800',
-    tech: ['React', 'Three.js', 'Framer Motion', 'TypeScript', 'Styled Components'],
+    title: 'Weather Forecast App',
+    description: 'Beautiful weather application with 7-day forecasts, location search, and interactive weather maps.',
+    image: 'https://images.unsplash.com/photo-1561484930-998b6a7b22e8?w=800',
+    tech: ['React', 'OpenWeather API', 'Mapbox', 'Tailwind CSS'],
+    category: 'Frontend'
+  },
+  {
+    id: 5,
+    title: 'AI Content Generator',
+    description: 'AI-powered tool for generating marketing copy, blog posts, and social media content using GPT-4.',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800',
+    tech: ['React', 'OpenAI API', 'Node.js', 'Redis'],
+    category: 'AI/ML'
+  },
+  {
+    id: 6,
+    title: 'Social Media Analytics Dashboard',
+    description: 'Analytics platform tracking engagement metrics, follower growth, and content performance across multiple platforms.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
+    tech: ['React', 'D3.js', 'Node.js', 'PostgreSQL'],
+    category: 'Full-Stack'
+  },
+  {
+    id: 7,
+    title: 'Fitness Tracking App',
+    description: 'Mobile-responsive fitness tracker with workout logging, progress charts, and personalized goal setting.',
+    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800',
+    tech: ['React', 'Chart.js', 'Firebase', 'PWA'],
+    category: 'Frontend'
+  },
+  {
+    id: 8,
+    title: 'Recipe Finder',
+    description: 'Search and discover recipes with dietary filters, ingredient-based search, and meal planning features.',
+    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800',
+    tech: ['React', 'Spoonacular API', 'Redux', 'Styled Components'],
     category: 'Frontend'
   }
 ];
