@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { InlineWidget } from 'react-calendly';
 
 const PageContainer = styled.div`
   min-height: 100vh;
@@ -201,7 +200,7 @@ const SocialIcon = styled(motion.a)`
   }
 `;
 
-const CalendlySection = styled(motion.div)`
+const CalendarSection = styled(motion.div)`
   margin-top: 4rem;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -210,7 +209,7 @@ const CalendlySection = styled(motion.div)`
   border: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
-const CalendlyTitle = styled.h2`
+const CalendarTitle = styled.h2`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 1rem;
@@ -219,11 +218,19 @@ const CalendlyTitle = styled.h2`
   -webkit-text-fill-color: transparent;
 `;
 
-const CalendlySubtitle = styled.p`
+const CalendarSubtitle = styled.p`
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2rem;
   font-size: 1.1rem;
+`;
+
+const CalendarEmbed = styled.iframe`
+  width: 100%;
+  height: 700px;
+  border: none;
+  border-radius: 15px;
+  background: white;
 `;
 
 const SuccessMessage = styled(motion.div)`
@@ -435,24 +442,21 @@ const ContactPage: React.FC = () => {
         </ContactInfo>
       </ContentGrid>
 
-      <CalendlySection
+      <CalendarSection
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <CalendlyTitle>Schedule a Meeting</CalendlyTitle>
-        <CalendlySubtitle>
+        <CalendarTitle>Schedule a Meeting</CalendarTitle>
+        <CalendarSubtitle>
           Book a time that works for you, and let's discuss your project
-        </CalendlySubtitle>
-        <InlineWidget
-          url="https://calendly.com/your-calendly-username"
-          styles={{
-            height: '700px',
-            borderRadius: '15px'
-          }}
+        </CalendarSubtitle>
+        <CalendarEmbed
+          src="https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID"
+          title="Schedule an appointment"
         />
-      </CalendlySection>
+      </CalendarSection>
     </PageContainer>
   );
 };

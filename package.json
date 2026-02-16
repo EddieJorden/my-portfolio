@@ -15,7 +15,6 @@
     "@types/styled-components": "^5.1.26",
     "framer-motion": "^10.18.0",
     "react": "^18.2.0",
-    "react-calendly": "^4.4.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-intersection-observer": "^9.4.3",
