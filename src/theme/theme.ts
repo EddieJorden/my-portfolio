@@ -4,140 +4,119 @@ export interface Theme {
     secondary: string;
     accent: string;
     background: string;
-    backgroundSecondary: string;
+    surfaceOne: string;
+    surfaceTwo: string;
     text: string;
     textSecondary: string;
+    textTertiary: string;
     border: string;
+    borderHover: string;
     success: string;
     error: string;
-    gradientStart: string;
-    gradientEnd: string;
   };
   gradients: {
-    primary: string;
-    secondary: string;
     accent: string;
-    glass: string;
+    subtle: string;
   };
   shadows: {
-    small: string;
-    medium: string;
-    large: string;
-    glow: string;
-  };
-  transitions: {
-    fast: string;
-    medium: string;
-    slow: string;
-  };
-  borderRadius: {
-    small: string;
-    medium: string;
-    large: string;
-    full: string;
-  };
-  spacing: {
-    xs: string;
     sm: string;
     md: string;
     lg: string;
     xl: string;
-    xxl: string;
+    glow: string;
+  };
+  transitions: {
+    fast: string;
+    base: string;
+    slow: string;
+  };
+  radius: {
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    full: string;
   };
 }
 
-export const lightTheme: Theme = {
+export const darkTheme: Theme = {
   colors: {
-    primary: '#6366f1',
-    secondary: '#8b5cf6',
-    accent: '#ec4899',
-    background: '#f8fafc',
-    backgroundSecondary: '#ffffff',
-    text: '#1e293b',
-    textSecondary: '#64748b',
-    border: 'rgba(100, 116, 139, 0.2)',
-    success: '#10b981',
+    primary: '#3b82f6',
+    secondary: '#06b6d4',
+    accent: '#3b82f6',
+    background: '#09090b',
+    surfaceOne: '#111113',
+    surfaceTwo: '#18181b',
+    text: '#fafafa',
+    textSecondary: '#a1a1aa',
+    textTertiary: '#71717a',
+    border: 'rgba(63, 63, 70, 0.5)',
+    borderHover: 'rgba(63, 63, 70, 0.8)',
+    success: '#22c55e',
     error: '#ef4444',
-    gradientStart: '#6366f1',
-    gradientEnd: '#ec4899',
   },
   gradients: {
-    primary: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-    secondary: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)',
-    accent: 'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',
-    glass: 'rgba(255, 255, 255, 0.1)',
+    accent: 'linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)',
+    subtle: 'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(6, 182, 212, 0.04) 100%)',
   },
   shadows: {
-    small: '0 2px 8px rgba(0, 0, 0, 0.1)',
-    medium: '0 4px 16px rgba(0, 0, 0, 0.12)',
-    large: '0 8px 32px rgba(0, 0, 0, 0.15)',
-    glow: '0 0 20px rgba(99, 102, 241, 0.3)',
+    sm: '0 1px 2px rgba(0, 0, 0, 0.3)',
+    md: '0 4px 12px rgba(0, 0, 0, 0.4)',
+    lg: '0 8px 24px rgba(0, 0, 0, 0.5)',
+    xl: '0 16px 48px rgba(0, 0, 0, 0.6)',
+    glow: '0 0 24px rgba(59, 130, 246, 0.15)',
   },
   transitions: {
-    fast: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-    medium: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    slow: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+    fast: 'all 0.15s cubic-bezier(0.4, 0, 0.2, 1)',
+    base: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+    slow: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
   },
-  borderRadius: {
-    small: '8px',
-    medium: '12px',
-    large: '16px',
+  radius: {
+    sm: '6px',
+    md: '10px',
+    lg: '14px',
+    xl: '20px',
     full: '9999px',
-  },
-  spacing: {
-    xs: '0.5rem',
-    sm: '1rem',
-    md: '1.5rem',
-    lg: '2rem',
-    xl: '3rem',
-    xxl: '4rem',
   },
 };
 
-export const darkTheme: Theme = {
+export const lightTheme: Theme = {
   colors: {
-    primary: '#818cf8',
-    secondary: '#a78bfa',
-    accent: '#f472b6',
-    background: '#0f172a',
-    backgroundSecondary: '#1e293b',
-    text: '#f1f5f9',
-    textSecondary: '#94a3b8',
-    border: 'rgba(148, 163, 184, 0.2)',
-    success: '#34d399',
-    error: '#f87171',
-    gradientStart: '#818cf8',
-    gradientEnd: '#f472b6',
+    primary: '#2563eb',
+    secondary: '#0891b2',
+    accent: '#2563eb',
+    background: '#fafafa',
+    surfaceOne: '#ffffff',
+    surfaceTwo: '#f4f4f5',
+    text: '#09090b',
+    textSecondary: '#52525b',
+    textTertiary: '#a1a1aa',
+    border: 'rgba(228, 228, 231, 0.8)',
+    borderHover: 'rgba(212, 212, 216, 1)',
+    success: '#16a34a',
+    error: '#dc2626',
   },
   gradients: {
-    primary: 'linear-gradient(135deg, #818cf8 0%, #a78bfa 100%)',
-    secondary: 'linear-gradient(135deg, #a78bfa 0%, #f472b6 100%)',
-    accent: 'linear-gradient(135deg, #f472b6 0%, #fb923c 100%)',
-    glass: 'rgba(15, 23, 42, 0.4)',
+    accent: 'linear-gradient(135deg, #2563eb 0%, #0891b2 100%)',
+    subtle: 'linear-gradient(135deg, rgba(37, 99, 235, 0.06) 0%, rgba(8, 145, 178, 0.03) 100%)',
   },
   shadows: {
-    small: '0 2px 8px rgba(0, 0, 0, 0.3)',
-    medium: '0 4px 16px rgba(0, 0, 0, 0.4)',
-    large: '0 8px 32px rgba(0, 0, 0, 0.5)',
-    glow: '0 0 20px rgba(129, 140, 248, 0.4)',
+    sm: '0 1px 2px rgba(0, 0, 0, 0.05)',
+    md: '0 4px 12px rgba(0, 0, 0, 0.08)',
+    lg: '0 8px 24px rgba(0, 0, 0, 0.1)',
+    xl: '0 16px 48px rgba(0, 0, 0, 0.12)',
+    glow: '0 0 24px rgba(37, 99, 235, 0.1)',
   },
   transitions: {
-    fast: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-    medium: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    slow: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+    fast: 'all 0.15s cubic-bezier(0.4, 0, 0.2, 1)',
+    base: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+    slow: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
   },
-  borderRadius: {
-    small: '8px',
-    medium: '12px',
-    large: '16px',
+  radius: {
+    sm: '6px',
+    md: '10px',
+    lg: '14px',
+    xl: '20px',
     full: '9999px',
-  },
-  spacing: {
-    xs: '0.5rem',
-    sm: '1rem',
-    md: '1.5rem',
-    lg: '2rem',
-    xl: '3rem',
-    xxl: '4rem',
   },
 };

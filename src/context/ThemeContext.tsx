@@ -25,7 +25,9 @@ interface ThemeProviderProps {
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [isDark, setIsDark] = useState<boolean>(() => {
     const saved = localStorage.getItem('theme');
-    return saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (saved) return saved === 'dark';
+    // Default to dark for premium look
+    return true;
   });
 
   const theme = isDark ? darkTheme : lightTheme;
@@ -41,7 +43,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   useEffect(() => {
     document.body.style.backgroundColor = theme.colors.background;
     document.body.style.color = theme.colors.text;
-    document.body.style.transition = theme.transitions.medium;
   }, [theme]);
 
   return (

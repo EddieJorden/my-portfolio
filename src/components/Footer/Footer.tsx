@@ -1,82 +1,69 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FiHeart } from 'react-icons/fi';
-import { GradientText } from '../shared/GlassCard';
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
-const FooterContainer = styled.footer`
-  padding: 3rem 2rem;
-  background: ${({ theme }) =>
-    theme.colors.backgroundSecondary === '#ffffff'
-      ? 'rgba(255, 255, 255, 0.8)'
-      : 'rgba(15, 23, 42, 0.8)'
-  };
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+const FooterWrap = styled.footer`
+  padding: 3rem 1.5rem;
   border-top: 1px solid ${({ theme }) => theme.colors.border};
-  text-align: center;
 `;
 
-const FooterContent = styled.div`
-  max-width: 1400px;
+const FooterInner = styled.div`
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
 `;
 
 const Copyright = styled.p`
-  color: ${({ theme }) => theme.colors.textSecondary};
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-
-  svg {
-    color: ${({ theme }) => theme.colors.accent};
-  }
+  font-size: 0.85rem;
+  color: ${({ theme }) => theme.colors.textTertiary};
 `;
 
-const FooterLinks = styled.div`
+const Links = styled.div`
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+  gap: 0.5rem;
 `;
 
 const FooterLink = styled.a`
-  color: ${({ theme }) => theme.colors.textSecondary};
-  text-decoration: none;
-  font-size: 0.95rem;
+  width: 34px;
+  height: 34px;
+  border-radius: ${({ theme }) => theme.radius.sm};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme.colors.textTertiary};
   transition: ${({ theme }) => theme.transitions.fast};
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text};
+    background: ${({ theme }) => theme.colors.surfaceTwo};
   }
 `;
 
-export const Footer: React.FC = () => {
-  return (
-    <FooterContainer>
-      <FooterContent>
-        <FooterLinks>
-          <FooterLink href="https://github.com/EddieJorden" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </FooterLink>
-          <FooterLink href="https://www.linkedin.com/in/eddie-moger/" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </FooterLink>
-          <FooterLink href="https://twitter.com/eddiemoger_com" target="_blank" rel="noopener noreferrer">
-            Twitter
-          </FooterLink>
-          <FooterLink href="mailto:Eddie@EddieMoger.com">
-            Email
-          </FooterLink>
-        </FooterLinks>
-        <Copyright>
-          © {new Date().getFullYear()} <GradientText>Eddie Moger</GradientText>. 
-          Built with <FiHeart /> using React, TypeScript & Framer Motion
-        </Copyright>
-      </FooterContent>
-    </FooterContainer>
-  );
-};
+export const Footer: React.FC = () => (
+  <FooterWrap>
+    <FooterInner>
+      <Copyright>
+        © {new Date().getFullYear()} Eddie Moger. Built with React & TypeScript.
+      </Copyright>
+      <Links>
+        <FooterLink href="https://github.com/EddieJorden" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <FiGithub size={16} />
+        </FooterLink>
+        <FooterLink href="https://www.linkedin.com/in/eddie-moger/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <FiLinkedin size={16} />
+        </FooterLink>
+        <FooterLink href="mailto:Eddie@EddieMoger.com" aria-label="Email">
+          <FiMail size={16} />
+        </FooterLink>
+      </Links>
+    </FooterInner>
+  </FooterWrap>
+);

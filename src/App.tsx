@@ -1,6 +1,5 @@
 import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
-import { ParticleBackground } from './components/ParticleBackground/ParticleBackground';
 import { Navigation } from './components/Navigation/Navigation';
 import { Hero } from './components/Hero/Hero';
 import { About } from './components/About/About';
@@ -8,6 +7,7 @@ import { Skills } from './components/Skills/Skills';
 import { Projects } from './components/Projects/Projects';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
+import { Divider } from './components/shared/GlassCard';
 import GlobalStyles from './styles/GlobalStyles';
 
 const App: React.FC = () => {
@@ -18,20 +18,19 @@ const App: React.FC = () => {
     }
   };
 
-  React.useEffect(() => {
-    console.log('Welcome to EddieMoger.com - Built with React 18, TypeScript & Framer Motion 🚀');
-  }, []);
-
   return (
     <ThemeProvider>
       <GlobalStyles />
-      <ParticleBackground />
       <Navigation scrollToSection={scrollToSection} />
       <main>
         <Hero scrollToSection={scrollToSection} />
+        <Divider />
         <About />
+        <Divider />
         <Skills />
+        <Divider />
         <Projects />
+        <Divider />
         <Contact />
       </main>
       <Footer />

@@ -2,7 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import { Theme } from '../theme/theme';
 
 const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
-  * {
+  *,
+  *::before,
+  *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,32 +12,31 @@ const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
 
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Helvetica Neue', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
-  }
-
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+    line-height: 1.6;
+    font-size: 16px;
+    letter-spacing: -0.011em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
   }
 
   p {
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   a {
@@ -47,31 +48,31 @@ const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     font-family: inherit;
   }
 
-  /* Custom scrollbar */
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Clean scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: ${({ theme }) => theme.colors.background};
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.colors.primary};
-    border-radius: 5px;
+    background: ${({ theme }) => theme.colors.border};
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${({ theme }) => theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.borderHover};
   }
 
   /* Selection */
   ::selection {
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: white;
-  }
-
-  ::-moz-selection {
     background-color: ${({ theme }) => theme.colors.primary};
     color: white;
   }

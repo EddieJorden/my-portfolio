@@ -2,94 +2,147 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi';
-import { GlassButton, GradientText } from '../shared/GlassCard';
+import { PrimaryButton, SecondaryButton, GradientText } from '../shared/GlassCard';
 
 const HeroSection = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-`;
-
-const HeroContent = styled.div`
+  padding: 6rem 1.5rem 4rem;
   max-width: 1200px;
-  width: 100%;
-  text-align: center;
-  z-index: 1;
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 5rem 1.25rem 3rem;
+    min-height: auto;
+  }
 `;
 
-const Title = styled(motion.h1)`
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: ${({ theme }) => theme.colors.text};
-  line-height: 1.2;
-`;
-
-const Subtitle = styled(motion.h2)`
-  font-size: clamp(1.25rem, 4vw, 2rem);
-  font-weight: 400;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  margin-bottom: 2rem;
-  line-height: 1.5;
-`;
-
-const Description = styled(motion.p)`
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: ${({ theme }) => theme.colors.textSecondary};
-  margin-bottom: 3rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.8;
-`;
-
-const ButtonGroup = styled(motion.div)`
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
-`;
-
-const SocialLinks = styled(motion.div)`
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
+const HeroGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: center;
+  width: 100%;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
 `;
 
-const SocialIcon = styled(motion.a)`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: ${({ theme }) =>
-    theme.colors.backgroundSecondary === '#ffffff'
-      ? 'rgba(255, 255, 255, 0.7)'
-      : 'rgba(30, 41, 59, 0.7)'
-  };
-  backdrop-filter: blur(12px);
+const HeroText = styled.div`
+  @media (max-width: 968px) {
+    order: 2;
+  }
+`;
+
+const Eyebrow = styled(motion.p)`
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 1.25rem;
+`;
+
+const Name = styled(motion.h1)`
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.text};
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+`;
+
+const Title = styled(motion.p)`
+  font-size: clamp(1.125rem, 2vw, 1.35rem);
+  color: ${({ theme }) => theme.colors.textSecondary};
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+
+  @media (max-width: 968px) {
+    max-width: none;
+  }
+`;
+
+const ButtonRow = styled(motion.div)`
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 968px) {
+    justify-content: center;
+  }
+`;
+
+const SocialRow = styled(motion.div)`
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    justify-content: center;
+  }
+`;
+
+const SocialLink = styled(motion.a)`
+  width: 40px;
+  height: 40px;
+  border-radius: ${({ theme }) => theme.radius.md};
   border: 1px solid ${({ theme }) => theme.colors.border};
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) => theme.colors.text};
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition: ${({ theme }) => theme.transitions.medium};
+  color: ${({ theme }) => theme.colors.textSecondary};
+  font-size: 1.1rem;
+  transition: ${({ theme }) => theme.transitions.fast};
 
   &:hover {
-    background: ${({ theme }) => theme.gradients.primary};
-    color: white;
-    transform: translateY(-4px);
-    box-shadow: ${({ theme }) => theme.shadows.glow};
+    color: ${({ theme }) => theme.colors.text};
+    border-color: ${({ theme }) => theme.colors.borderHover};
+    background: ${({ theme }) => theme.colors.surfaceTwo};
   }
 `;
 
-const ScrollIndicator = styled(motion.div)`
+const HeroImageWrap = styled(motion.div)`
+  position: relative;
+
+  @media (max-width: 968px) {
+    order: 1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+`;
+
+const HeroImage = styled.div`
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: ${({ theme }) => theme.radius.xl};
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+`;
+
+const ImageAccent = styled.div`
+  position: absolute;
+  inset: -1px;
+  border-radius: ${({ theme }) => theme.radius.xl};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  pointer-events: none;
+`;
+
+const ScrollHint = styled(motion.div)`
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -98,14 +151,15 @@ const ScrollIndicator = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: ${({ theme }) => theme.colors.textTertiary};
   cursor: pointer;
-`;
-
-const ScrollText = styled.span`
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  letter-spacing: 2px;
+
+  @media (max-width: 968px) {
+    display: none;
+  }
 `;
 
 interface HeroProps {
@@ -113,108 +167,132 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 24 },
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
+      transition: { duration: 0.6, delay: i * 0.12, ease: [0.25, 0.1, 0.25, 1] },
+    }),
   };
 
   return (
     <HeroSection id="home">
-      <HeroContent>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <Title variants={itemVariants}>
-            Hi, I'm <GradientText>Eddie Moger</GradientText>
+      <HeroGrid>
+        <HeroText>
+          <Eyebrow
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0}
+          >
+            Software Engineer & Entrepreneur
+          </Eyebrow>
+
+          <Name
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={1}
+          >
+            Eddie<br />
+            <GradientText>Moger</GradientText>
+          </Name>
+
+          <Title
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={2}
+          >
+            I build exceptional digital products with 15+ years of business insight.
+            From corporate leadership to founding companies to writing
+            code&nbsp;— I bring perspective most developers don't&nbsp;have.
           </Title>
 
-          <Subtitle variants={itemVariants}>
-            Senior Software Engineer & AI Systems Architect
-          </Subtitle>
-
-          <Description variants={itemVariants}>
-            I build exceptional digital experiences with modern web technologies,
-            AI/LLM integration, and scalable architectures. Specializing in React,
-            TypeScript, and real-time applications that solve complex problems.
-          </Description>
-
-          <ButtonGroup variants={itemVariants}>
-            <GlassButton
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          <ButtonRow
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={3}
+          >
+            <PrimaryButton
               onClick={() => scrollToSection('projects')}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               View My Work
-            </GlassButton>
-            <GlassButton
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            </PrimaryButton>
+            <SecondaryButton
               onClick={() => scrollToSection('contact')}
-              style={{
-                background: 'transparent',
-                border: '2px solid',
-                borderImage: 'linear-gradient(135deg, #6366f1 0%, #ec4899 100%) 1',
-              }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               Get In Touch
-            </GlassButton>
-          </ButtonGroup>
+            </SecondaryButton>
+          </ButtonRow>
 
-          <SocialLinks variants={itemVariants}>
-            <SocialIcon
+          <SocialRow
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={4}
+          >
+            <SocialLink
               href="https://github.com/EddieJorden"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              aria-label="GitHub"
             >
               <FiGithub />
-            </SocialIcon>
-            <SocialIcon
+            </SocialLink>
+            <SocialLink
               href="https://www.linkedin.com/in/eddie-moger/"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              aria-label="LinkedIn"
             >
               <FiLinkedin />
-            </SocialIcon>
-            <SocialIcon
+            </SocialLink>
+            <SocialLink
               href="mailto:Eddie@EddieMoger.com"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              aria-label="Email"
             >
               <FiMail />
-            </SocialIcon>
-          </SocialLinks>
-        </motion.div>
-      </HeroContent>
+            </SocialLink>
+          </SocialRow>
+        </HeroText>
 
-      <ScrollIndicator
+        <HeroImageWrap
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          <HeroImage>
+            <img
+              src="/EddieInTheCity.jpg"
+              alt="Eddie Moger — Software Engineer"
+              loading="eager"
+            />
+            <ImageAccent />
+          </HeroImage>
+        </HeroImageWrap>
+      </HeroGrid>
+
+      <ScrollHint
         onClick={() => scrollToSection('about')}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
       >
-        <ScrollText>Scroll</ScrollText>
-        <FiArrowDown />
-      </ScrollIndicator>
+        <span>Scroll</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
+        >
+          <FiArrowDown size={16} />
+        </motion.div>
+      </ScrollHint>
     </HeroSection>
   );
 };

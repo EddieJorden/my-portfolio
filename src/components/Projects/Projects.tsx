@@ -3,338 +3,311 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
-import { GlassCard, GradientText } from '../shared/GlassCard';
+import {
+  SectionContainer,
+  SectionHeading,
+  SectionSubheading,
+  GradientText,
+} from '../shared/GlassCard';
 
-const ProjectsSection = styled.section`
-  min-height: 100vh;
-  padding: 6rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    padding: 4rem 1.5rem;
-  }
+const HeaderBlock = styled.div`
+  margin-bottom: 4rem;
 `;
 
-const SectionTitle = styled(motion.h2)`
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: ${({ theme }) => theme.colors.text};
-`;
-
-const ProjectsGrid = styled.div`
+const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
 
-const ProjectCard = styled(GlassCard)`
-  position: relative;
+const ProjectCard = styled(motion.div)`
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: ${({ theme }) => theme.radius.lg};
+  background: ${({ theme }) => theme.colors.surfaceOne};
   overflow: hidden;
-  padding: 0;
-  cursor: pointer;
+  transition: ${({ theme }) => theme.transitions.base};
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.borderHover};
+    box-shadow: ${({ theme }) => theme.shadows.md};
+    transform: translateY(-2px);
+  }
 `;
 
-const ProjectImage = styled.div`
+const Thumbnail = styled.div`
   width: 100%;
-  height: 240px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  height: 200px;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
-    z-index: 1;
-  }
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  ${ProjectCard}:hover & img {
+    transform: scale(1.03);
   }
 `;
 
-const ProjectContent = styled.div`
-  padding: 2rem;
+const CardBody = styled.div`
+  padding: 1.5rem;
 `;
 
-const ProjectTitle = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 700;
+const ProjectName = styled.h3`
+  font-size: 1.15rem;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
 `;
 
-const ProjectDescription = styled.p`
-  font-size: 1rem;
-  line-height: 1.7;
+const ProjectDesc = styled.p`
+  font-size: 0.9rem;
+  line-height: 1.65;
   color: ${({ theme }) => theme.colors.textSecondary};
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 `;
 
-const TechStack = styled.div`
+const TechRow = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.375rem;
+  margin-bottom: 1.25rem;
 `;
 
 const TechTag = styled.span`
-  padding: 0.375rem 0.875rem;
-  background: ${({ theme }) =>
-    theme.colors.backgroundSecondary === '#ffffff'
-      ? 'rgba(99, 102, 241, 0.1)'
-      : 'rgba(129, 140, 248, 0.1)'
-  };
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.borderRadius.full};
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: 0.875rem;
+  font-size: 0.72rem;
   font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: ${({ theme }) => theme.radius.sm};
+  background: ${({ theme }) => theme.gradients.subtle};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
-const ProjectLinks = styled.div`
+const LinkRow = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
 `;
 
-const ProjectLink = styled(motion.a)`
+const ProjectLink = styled.a`
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: ${({ theme }) => theme.gradients.primary};
-  color: white;
-  border-radius: ${({ theme }) => theme.borderRadius.full};
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: ${({ theme }) => theme.transitions.medium};
+  gap: 0.375rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  transition: ${({ theme }) => theme.transitions.fast};
+  padding: 0.5rem 0.875rem;
+  border-radius: ${({ theme }) => theme.radius.sm};
+  border: 1px solid ${({ theme }) => theme.colors.border};
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: ${({ theme }) => theme.shadows.glow};
+    color: ${({ theme }) => theme.colors.text};
+    border-color: ${({ theme }) => theme.colors.borderHover};
+    background: ${({ theme }) => theme.colors.surfaceTwo};
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+`;
+
+const PrimaryLink = styled(ProjectLink)`
+  background: ${({ theme }) => theme.colors.primary};
+  color: white;
+  border-color: ${({ theme }) => theme.colors.primary};
+
+  &:hover {
+    color: white;
+    opacity: 0.9;
+    border-color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.primary};
   }
 `;
 
 interface Project {
   name: string;
   thumbnail: string;
-  altText: string;
+  alt: string;
   link: string;
-  notes: {
-    notes: string;
-  };
+  description: string;
   github?: string;
-  technologies?: string[];
+  technologies: string[];
 }
 
 export const Projects: React.FC = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.05 });
 
   const projects: Project[] = [
     {
-      name: 'Full Stack Task Manager App',
+      name: 'Full-Stack Task Manager',
       thumbnail: 'Task-app-thumbnail.png',
-      altText: 'Full Stack Task Manager App',
+      alt: 'Full-Stack Task Manager Application',
       link: 'https://eddies-balance-app.netlify.app/',
-      notes: {
-        notes: 'This is a full stack task manager app built using React, Redux, Typescript, Node.js, Express.js, and MySQL.',
-      },
+      description:
+        'Production task management app built with React, Redux, TypeScript, Node.js, Express, and MySQL. Full CRUD with real-time state management.',
       github: 'https://github.com/EddieJorden/balance-app',
       technologies: ['React', 'Redux', 'TypeScript', 'Node.js', 'Express', 'MySQL'],
     },
     {
       name: 'SimpleSpectra.com',
       thumbnail: 'SimpleSpectra.com-thumbnail.png',
-      altText: 'SimpleSpectra.com thumbnail',
+      alt: 'SimpleSpectra e-commerce website',
       link: 'https://simplespectra.com/',
-      notes: {
-        notes: 'E-commerce site (currently in development)',
-      },
+      description:
+        'Full-featured e-commerce platform with product catalog, shopping cart, and payment integration. Currently in active development.',
       technologies: ['React', 'E-commerce', 'Full Stack'],
     },
     {
-      name: 'Data Visualization',
+      name: 'Data Visualization Dashboard',
       thumbnail: 'Data-viz.png',
-      altText: 'Data Visualization with D3 thumbnail',
+      alt: 'Interactive Data Visualization Dashboard',
       link: 'https://eddiejorden.github.io/ui-ux-project/',
-      notes: {
-        notes: 'A data visualization component built using D3.js with React, Redux and Express.js.',
-      },
+      description:
+        'Interactive data visualization component built with D3.js, React, Redux, and Express. Transforms complex datasets into clear visual narratives.',
       github: 'https://github.com/EddieJorden/ui-ux-project',
       technologies: ['D3.js', 'React', 'Redux', 'Express'],
     },
     {
       name: 'Customer Directory',
       thumbnail: 'Customer-directory.png',
-      altText: 'React-Redux-Challenge-project',
+      alt: 'Performance-optimized Customer Directory',
       link: 'https://eddiejorden.github.io/ctw-project/',
-      notes: {
-        notes: 'A React Redux application that renders 1000 input fields, using React memo and useCallback to optimize performance',
-      },
+      description:
+        'React Redux app rendering 1,000 input fields, using React.memo and useCallback for optimized performance at scale.',
       github: 'https://github.com/EddieJorden/ctw-project',
       technologies: ['React', 'Redux', 'Performance Optimization'],
     },
     {
       name: 'Reddit Clone',
       thumbnail: 'reddit_clone_thumbnail.png',
-      altText: 'reddit-clone',
+      alt: 'Reddit Clone Application',
       link: 'https://eddiejorden.github.io/reddit-clone/',
-      notes: {
-        notes: 'A Simple Reddit Clone using reddit API in a React, Redux app.',
-      },
+      description:
+        'Reddit-style application consuming the Reddit API. Built with React and Redux for clean state management and real-time content.',
       github: 'https://github.com/EddieJorden/reddit-clone',
-      technologies: ['React', 'Redux', 'API Integration'],
+      technologies: ['React', 'Redux', 'Reddit API'],
     },
     {
-      name: 'Flash Card Tests',
+      name: 'Flash Card App',
       thumbnail: 'flashcards-thumbnail.png',
-      altText: 'Flash Cards App',
+      alt: 'Flash Card Quiz Application',
       link: 'https://eddiejorden.github.io/flashcards/',
-      notes: {
-        notes: 'This custom Flash Cards app was built using React with Redux. It allows you to put in topics and make flashcard quizzes.',
-      },
+      description:
+        'Custom flashcard quiz platform with topic management and interactive study modes. Built with React and Redux.',
       github: 'https://github.com/EddieJorden/flashcards',
       technologies: ['React', 'Redux', 'Education'],
     },
     {
       name: 'My Planner',
       thumbnail: 'appointment-planner-thumbnail.png',
-      altText: 'appointment-planner-thumbnail',
+      alt: 'Appointment Planner Application',
       link: 'https://eddiejorden.github.io/react_challenge/',
-      notes: {
-        notes: 'Contacts and appointments component built using React.',
-      },
+      description:
+        'Contacts and appointments management tool with clean UX for scheduling and organizing daily tasks.',
       github: 'https://github.com/EddieJorden/react_challenge',
-      technologies: ['React', 'Scheduling'],
+      technologies: ['React', 'Scheduling', 'UI/UX'],
     },
     {
       name: 'Food Near Me',
       thumbnail: 'food_near_me_thumbnail.png',
-      altText: 'food-near-me-thumbnail',
+      alt: 'Food Near Me - Restaurant Finder',
       link: 'https://eddiejorden.github.io/food.near.me/',
-      notes: {
-        notes: 'This is a React app built using the Yelp API to find restaurants near you.',
-      },
+      description:
+        'Location-aware restaurant finder using the Yelp API. Search, filter, and discover restaurants near any location.',
       github: 'https://github.com/EddieJorden/food.near.me',
       technologies: ['React', 'Yelp API', 'Geolocation'],
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 24 },
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 },
-    },
+      transition: { duration: 0.5, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] },
+    }),
   };
 
   return (
-    <ProjectsSection id="projects" ref={ref}>
-      <SectionTitle
-        initial={{ opacity: 0, y: -20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-      >
-        Featured <GradientText>Projects</GradientText>
-      </SectionTitle>
+    <SectionContainer id="projects" ref={ref}>
+      <HeaderBlock>
+        <SectionHeading
+          variants={fadeUp}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          custom={0}
+        >
+          Featured <GradientText>Projects</GradientText>
+        </SectionHeading>
+        <SectionSubheading
+          variants={fadeUp}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          custom={1}
+        >
+          Real applications built to solve real problems.
+        </SectionSubheading>
+      </HeaderBlock>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-      >
-        <ProjectsGrid>
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              as={motion.div}
-              variants={itemVariants}
-              whileHover={{ y: -8 }}
-            >
-              <ProjectImage>
-                <img
-                  src={`/${project.thumbnail}`}
-                  alt={project.altText}
-                />
-              </ProjectImage>
+      <Grid>
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={project.name}
+            variants={fadeUp}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            custom={2 + index}
+          >
+            <Thumbnail>
+              <img
+                src={`/${project.thumbnail}`}
+                alt={project.alt}
+                loading="lazy"
+              />
+            </Thumbnail>
 
-              <ProjectContent>
-                <ProjectTitle>{project.name}</ProjectTitle>
-                <ProjectDescription>{project.notes.notes}</ProjectDescription>
+            <CardBody>
+              <ProjectName>{project.name}</ProjectName>
+              <ProjectDesc>{project.description}</ProjectDesc>
 
-                {project.technologies && (
-                  <TechStack>
-                    {project.technologies.map((tech, techIndex) => (
-                      <TechTag key={techIndex}>{tech}</TechTag>
-                    ))}
-                  </TechStack>
+              <TechRow>
+                {project.technologies.map((tech) => (
+                  <TechTag key={tech}>{tech}</TechTag>
+                ))}
+              </TechRow>
+
+              <LinkRow>
+                {project.link && (
+                  <PrimaryLink
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FiExternalLink size={14} /> Live Demo
+                  </PrimaryLink>
                 )}
-
-                <ProjectLinks>
-                  {project.github && (
-                    <ProjectLink
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FiGithub /> Code
-                    </ProjectLink>
-                  )}
-                  {project.link && (
-                    <ProjectLink
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      style={{
-                        background: 'transparent',
-                        color: 'inherit',
-                        border: '2px solid',
-                      }}
-                    >
-                      <FiExternalLink /> Demo
-                    </ProjectLink>
-                  )}
-                </ProjectLinks>
-              </ProjectContent>
-            </ProjectCard>
-          ))}
-        </ProjectsGrid>
-      </motion.div>
-    </ProjectsSection>
+                {project.github && (
+                  <ProjectLink
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FiGithub size={14} /> Source
+                  </ProjectLink>
+                )}
+              </LinkRow>
+            </CardBody>
+          </ProjectCard>
+        ))}
+      </Grid>
+    </SectionContainer>
   );
 };

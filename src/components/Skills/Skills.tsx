@@ -10,208 +10,187 @@ import {
   FiServer,
   FiTrendingUp,
 } from 'react-icons/fi';
-import { GlassCard, GradientText } from '../shared/GlassCard';
+import {
+  SectionContainer,
+  SectionHeading,
+  SectionSubheading,
+  GradientText,
+} from '../shared/GlassCard';
 
-const SkillsSection = styled.section`
-  min-height: 100vh;
-  padding: 6rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    padding: 4rem 1.5rem;
-  }
+const HeaderBlock = styled.div`
+  margin-bottom: 4rem;
 `;
 
-const SectionTitle = styled(motion.h2)`
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: ${({ theme }) => theme.colors.text};
-`;
-
-const SkillsGrid = styled.div`
+const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 968px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
 `;
 
-const SkillCard = styled(GlassCard)`
-  padding: 2.5rem;
-  transition: ${({ theme }) => theme.transitions.medium};
+const ExpertiseCard = styled(motion.div)`
+  padding: 2rem;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: ${({ theme }) => theme.radius.lg};
+  background: ${({ theme }) => theme.colors.surfaceOne};
+  transition: ${({ theme }) => theme.transitions.base};
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: ${({ theme }) => theme.shadows.large};
+    border-color: ${({ theme }) => theme.colors.primary};
+    box-shadow: ${({ theme }) => theme.shadows.glow};
   }
 `;
 
-const IconWrapper = styled.div`
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
-  background: ${({ theme }) => theme.gradients.primary};
+const IconWrap = styled.div`
+  width: 44px;
+  height: 44px;
+  border-radius: ${({ theme }) => theme.radius.md};
+  background: ${({ theme }) => theme.gradients.subtle};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
-  color: white;
-  margin-bottom: 1.5rem;
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
 `;
 
-const SkillTitle = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 700;
+const CardTitle = styled.h3`
+  font-size: 1.125rem;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 1rem;
+  margin-bottom: 0.625rem;
+  letter-spacing: -0.02em;
 `;
 
-const SkillDescription = styled.p`
-  font-size: 1rem;
-  line-height: 1.7;
+const CardDescription = styled.p`
+  font-size: 0.925rem;
+  line-height: 1.65;
   color: ${({ theme }) => theme.colors.textSecondary};
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 `;
 
-const TechList = styled.ul`
-  list-style: none;
-  padding: 0;
+const TagRow = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.375rem;
 `;
 
-const TechTag = styled.li`
-  padding: 0.5rem 1rem;
-  background: ${({ theme }) =>
-    theme.colors.backgroundSecondary === '#ffffff'
-      ? 'rgba(99, 102, 241, 0.1)'
-      : 'rgba(129, 140, 248, 0.1)'
-  };
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.borderRadius.full};
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: 0.875rem;
+const Tag = styled.span`
+  font-size: 0.75rem;
   font-weight: 500;
-  transition: ${({ theme }) => theme.transitions.fast};
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.primary};
-    color: white;
-    transform: translateY(-2px);
-  }
+  padding: 0.3rem 0.65rem;
+  border-radius: ${({ theme }) => theme.radius.sm};
+  background: ${({ theme }) => theme.gradients.subtle};
+  color: ${({ theme }) => theme.colors.primary};
+  letter-spacing: 0.01em;
 `;
 
 export const Skills: React.FC = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const expertise = [
     {
       icon: <FiCode />,
       title: 'Modern Web Development',
       description:
-        'Building scalable, performant web applications with cutting-edge technologies and best practices.',
-      technologies: ['React 18', 'Next.js', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS'],
+        'Scalable, performant web applications built with cutting-edge technologies and clean architecture.',
+      tags: ['React 18', 'Next.js', 'TypeScript', 'Redux', 'Tailwind'],
     },
     {
       icon: <FiCpu />,
-      title: 'AI/LLM Integration',
+      title: 'AI & LLM Integration',
       description:
-        'Integrating intelligent systems and language models to create smart, context-aware applications.',
-      technologies: ['LLM APIs', 'Prompt Engineering', 'RAG Systems', 'Vector DBs', 'AI Workflows'],
+        'Intelligent systems that leverage language models for smart, context-aware applications.',
+      tags: ['LLM APIs', 'Prompt Engineering', 'RAG', 'Vector DBs'],
     },
     {
       icon: <FiLayers />,
-      title: 'Multi-Agent Systems',
+      title: 'Full-Stack Architecture',
       description:
-        'Architecting complex systems with multiple autonomous agents working together seamlessly.',
-      technologies: ['Agent Design', 'Task Orchestration', 'State Management', 'Event Systems'],
+        'End-to-end systems with robust backends, clean APIs, and seamless frontend experiences.',
+      tags: ['Node.js', 'Express', 'MySQL', 'PostgreSQL', 'MongoDB'],
     },
     {
       icon: <FiZap />,
       title: 'Real-Time Applications',
       description:
-        'Creating responsive, live applications with instant data updates and seamless user experiences.',
-      technologies: ['WebSockets', 'Server-Sent Events', 'Real-time APIs', 'State Sync'],
+        'Live, responsive applications with instant data updates and seamless user interaction.',
+      tags: ['WebSockets', 'SSE', 'Real-time APIs', 'State Sync'],
     },
     {
       icon: <FiServer />,
-      title: 'API Design & Architecture',
+      title: 'API Design & DevOps',
       description:
-        'Designing robust, scalable APIs and system architectures that grow with your business.',
-      technologies: ['REST', 'GraphQL', 'Microservices', 'API Gateway', 'Authentication'],
+        'Robust API architectures, containerized deployments, and scalable cloud infrastructure.',
+      tags: ['REST', 'GraphQL', 'Docker', 'AWS', 'CI/CD'],
     },
     {
       icon: <FiTrendingUp />,
-      title: 'Performance & Optimization',
+      title: 'Data & Visualization',
       description:
-        'Optimizing applications for speed, efficiency, and exceptional user experience.',
-      technologies: ['Code Splitting', 'Lazy Loading', 'Caching', 'CDN', 'Performance Monitoring'],
+        'Turning complex datasets into clear, interactive visual stories that drive decisions.',
+      tags: ['D3.js', 'Data Analysis', 'Dashboards', 'Financial Sims'],
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 24 },
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 },
-    },
+      transition: { duration: 0.5, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] },
+    }),
   };
 
   return (
-    <SkillsSection id="skills" ref={ref}>
-      <SectionTitle
-        initial={{ opacity: 0, y: -20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-      >
-        Areas of <GradientText>Expertise</GradientText>
-      </SectionTitle>
+    <SectionContainer id="skills" ref={ref}>
+      <HeaderBlock>
+        <SectionHeading
+          variants={fadeUp}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          custom={0}
+        >
+          Areas of <GradientText>Expertise</GradientText>
+        </SectionHeading>
+        <SectionSubheading
+          variants={fadeUp}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          custom={1}
+        >
+          Technologies and capabilities I bring to every project.
+        </SectionSubheading>
+      </HeaderBlock>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-      >
-        <SkillsGrid>
-          {expertise.map((skill, index) => (
-            <SkillCard
-              key={index}
-              as={motion.div}
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-            >
-              <IconWrapper>{skill.icon}</IconWrapper>
-              <SkillTitle>{skill.title}</SkillTitle>
-              <SkillDescription>{skill.description}</SkillDescription>
-              <TechList>
-                {skill.technologies.map((tech, techIndex) => (
-                  <TechTag key={techIndex}>{tech}</TechTag>
-                ))}
-              </TechList>
-            </SkillCard>
-          ))}
-        </SkillsGrid>
-      </motion.div>
-    </SkillsSection>
+      <Grid>
+        {expertise.map((item, index) => (
+          <ExpertiseCard
+            key={item.title}
+            variants={fadeUp}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            custom={2 + index}
+          >
+            <IconWrap>{item.icon}</IconWrap>
+            <CardTitle>{item.title}</CardTitle>
+            <CardDescription>{item.description}</CardDescription>
+            <TagRow>
+              {item.tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </TagRow>
+          </ExpertiseCard>
+        ))}
+      </Grid>
+    </SectionContainer>
   );
 };
