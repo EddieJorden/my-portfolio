@@ -312,8 +312,8 @@ const LandingPage: React.FC = () => {
   const stats = [
     { number: '11+', label: 'Projects Delivered' },
     { number: '10+', label: 'Years Experience' },
-    { number: '15+', label: 'Technologies' },
-    { number: '500+', label: 'GitHub Commits' },
+    { number: '25+', label: 'Technologies' },
+    { number: '69', label: 'GitHub Repos' },
   ];
 
   return (
