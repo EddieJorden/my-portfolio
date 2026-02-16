@@ -44,7 +44,7 @@ const FilterButton = styled(motion.button)<{ $active: boolean }>`
 
 const ProjectsGrid = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
 
   @media (max-width: 768px) {
@@ -60,15 +60,17 @@ const ProjectCard = styled(motion.div)`
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   position: relative;
-  height: 450px;
   display: flex;
   flex-direction: column;
+  min-height: 400px;
 `;
 
-const ProjectImage = styled.div<{ $image: string }>`
+const ProjectImage = styled.div<{ $image?: string }>`
   width: 100%;
-  height: 250px;
-  background: url(${props => props.$image}) center/cover;
+  height: 220px;
+  background: ${props => props.$image 
+    ? `url(${props.$image}) center/cover` 
+    : 'linear-gradient(135deg, #0096ff 0%, #0066cc 100%)'};
   position: relative;
   overflow: hidden;
 
@@ -100,13 +102,14 @@ const ProjectDescription = styled.p`
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   flex: 1;
+  margin-bottom: 1rem;
 `;
 
 const TechStack = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 `;
 
 const TechBadge = styled.span`
@@ -114,13 +117,14 @@ const TechBadge = styled.span`
   background: rgba(0, 150, 255, 0.2);
   border-radius: 15px;
   font-size: 0.85rem;
-  color: #a0aeff;
+  color: #5dbaff;
+  border: 1px solid rgba(0, 150, 255, 0.3);
 `;
 
 const ProjectLinks = styled.div`
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: auto;
 `;
 
 const LinkButton = styled(motion.a)`
@@ -131,6 +135,8 @@ const LinkButton = styled(motion.a)`
   text-decoration: none;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  text-align: center;
+  flex: 1;
 
   &:hover {
     transform: translateY(-2px);
@@ -142,7 +148,6 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
   tech: string[];
   category: string;
   liveUrl?: string;
@@ -152,73 +157,107 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce solution with product management, shopping cart, payment integration, and admin dashboard.',
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800',
-    tech: ['React', 'Next.js', 'Stripe', 'PostgreSQL', 'Prisma'],
-    category: 'Full-Stack'
+    title: 'Full Stack Task Manager',
+    description: 'Complete task management application built with React, Redux, TypeScript, Node.js, Express, and MySQL. Features user authentication, task CRUD operations, and real-time updates.',
+    tech: ['React', 'Redux', 'TypeScript', 'Node.js', 'Express', 'MySQL'],
+    category: 'Full-Stack',
+    liveUrl: 'https://eddies-balance-app.netlify.app/',
+    githubUrl: 'https://github.com/EddieJorden/balance-app'
   },
   {
     id: 2,
-    title: 'Real-Time Chat Application',
-    description: 'WebSocket-based messaging app with direct messages, group chats, file sharing, and online status indicators.',
-    image: 'https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=800',
-    tech: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Express'],
-    category: 'Full-Stack'
+    title: 'SimpleSpectra.com',
+    description: 'E-commerce platform currently in development. Built with modern web technologies to provide seamless shopping experience.',
+    tech: ['React', 'Node.js', 'E-Commerce'],
+    category: 'Full-Stack',
+    liveUrl: 'https://simplespectra.com/'
   },
   {
     id: 3,
-    title: 'Project Management Dashboard',
-    description: 'Collaborative task management with drag-and-drop kanban boards, team analytics, and real-time updates.',
-    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800',
-    tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    category: 'Full-Stack'
+    title: 'Data Visualization Dashboard',
+    description: 'Interactive data visualization component using D3.js. Built with React, Redux, and Express to display complex data in intuitive visual formats.',
+    tech: ['React', 'Redux', 'D3.js', 'Express'],
+    category: 'Frontend',
+    liveUrl: 'https://eddiejorden.github.io/ui-ux-project/',
+    githubUrl: 'https://github.com/EddieJorden/ui-ux-project'
   },
   {
     id: 4,
-    title: 'Weather Forecast App',
-    description: 'Beautiful weather application with 7-day forecasts, location search, and interactive weather maps.',
-    image: 'https://images.unsplash.com/photo-1561484930-998b6a7b22e8?w=800',
-    tech: ['React', 'OpenWeather API', 'Mapbox', 'Tailwind CSS'],
-    category: 'Frontend'
+    title: 'Optimized Customer Directory',
+    description: 'High-performance React Redux application rendering 1000+ input fields. Optimized using React.memo and useCallback for maximum performance.',
+    tech: ['React', 'Redux', 'Performance Optimization'],
+    category: 'Frontend',
+    liveUrl: 'https://eddiejorden.github.io/ctw-project/',
+    githubUrl: 'https://github.com/EddieJorden/ctw-project'
   },
   {
     id: 5,
-    title: 'AI Content Generator',
-    description: 'AI-powered tool for generating marketing copy, blog posts, and social media content using GPT-4.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800',
-    tech: ['React', 'OpenAI API', 'Node.js', 'Redis'],
-    category: 'AI/ML'
+    title: 'Reddit Clone',
+    description: 'Fully functional Reddit clone using the official Reddit API. Built with React and Redux for state management.',
+    tech: ['React', 'Redux', 'REST API'],
+    category: 'Frontend',
+    liveUrl: 'https://eddiejorden.github.io/reddit-clone/',
+    githubUrl: 'https://github.com/EddieJorden/reddit-clone'
   },
   {
     id: 6,
-    title: 'Social Media Analytics Dashboard',
-    description: 'Analytics platform tracking engagement metrics, follower growth, and content performance across multiple platforms.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
-    tech: ['React', 'D3.js', 'Node.js', 'PostgreSQL'],
-    category: 'Full-Stack'
+    title: 'Flash Card Study App',
+    description: 'Custom flashcard application for creating and studying topics with quiz functionality. Built with React and Redux.',
+    tech: ['React', 'Redux'],
+    category: 'Frontend',
+    liveUrl: 'https://eddiejorden.github.io/flashcards/',
+    githubUrl: 'https://github.com/EddieJorden/flashcards'
   },
   {
     id: 7,
-    title: 'Fitness Tracking App',
-    description: 'Mobile-responsive fitness tracker with workout logging, progress charts, and personalized goal setting.',
-    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800',
-    tech: ['React', 'Chart.js', 'Firebase', 'PWA'],
-    category: 'Frontend'
+    title: 'Fotomatic Responsive Site',
+    description: 'Pixel-perfect responsive website built to exact designer specifications using modern CSS flexbox techniques.',
+    tech: ['HTML', 'CSS', 'Flexbox', 'Responsive Design'],
+    category: 'Frontend',
+    liveUrl: 'https://eddiejorden.github.io/fotomatic/',
+    githubUrl: 'https://github.com/EddieJorden/fotomatic'
   },
   {
     id: 8,
-    title: 'Recipe Finder',
-    description: 'Search and discover recipes with dietary filters, ingredient-based search, and meal planning features.',
-    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800',
-    tech: ['React', 'Spoonacular API', 'Redux', 'Styled Components'],
-    category: 'Frontend'
+    title: 'Appointment Planner',
+    description: 'Contact and appointment management system built with React. Features contact organization and scheduling.',
+    tech: ['React'],
+    category: 'Frontend',
+    liveUrl: 'https://eddiejorden.github.io/react_challenge/',
+    githubUrl: 'https://github.com/EddieJorden/react_challenge'
+  },
+  {
+    id: 9,
+    title: 'Food Near Me',
+    description: 'Restaurant finder using the Yelp API. Search for restaurants by location with detailed information and reviews.',
+    tech: ['React', 'Yelp API'],
+    category: 'Frontend',
+    liveUrl: 'https://eddiejorden.github.io/food.near.me/',
+    githubUrl: 'https://github.com/EddieJorden/food.near.me'
+  },
+  {
+    id: 10,
+    title: 'My Jams - Spotify Playlist Manager',
+    description: 'Spotify playlist creator using the Spotify API. Create and manage playlists, search tracks, and add songs to existing playlists.',
+    tech: ['React', 'Spotify API', 'OAuth'],
+    category: 'Frontend',
+    liveUrl: 'https://eddiejorden.github.io/my-jams',
+    githubUrl: 'https://github.com/EddieJorden/my-jams'
+  },
+  {
+    id: 11,
+    title: 'Developer Portfolio',
+    description: 'Custom-built responsive portfolio showcasing projects and skills. Built from scratch using React.js and Express.',
+    tech: ['React', 'Express', 'Responsive Design'],
+    category: 'Full-Stack',
+    liveUrl: 'https://eddiemoger.com',
+    githubUrl: 'https://github.com/EddieJorden/my-portfolio'
   }
 ];
 
 const ProjectsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const categories = ['All', 'Full-Stack', 'Frontend', 'AI/ML'];
+  const categories = ['All', 'Full-Stack', 'Frontend'];
 
   const filteredProjects = selectedCategory === 'All'
     ? projects
@@ -266,14 +305,14 @@ const ProjectsPage: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.05 }}
               whileHover={{
                 scale: 1.03,
                 y: -10,
                 transition: { duration: 0.3 }
               }}
             >
-              <ProjectImage $image={project.image} />
+              <ProjectImage />
               <ProjectContent>
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <ProjectDescription>{project.description}</ProjectDescription>
