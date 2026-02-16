@@ -482,7 +482,7 @@ const ContactPage: React.FC = () => {
           Book a time that works for you, and let's discuss your project
         </CalendarSubtitle>
         <CalendarEmbed
-          src="https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID"
+          src="https://calendar.app.google/fB8YJ6Zj6WHjo9Hc9"
           title="Schedule an appointment"
         />
       </CalendarSection>
