@@ -42,7 +42,7 @@ const ProfileImage = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500') center/cover;
+    background: url('/eddie_profile_pic.jpg') center/cover;
   }
 `;
 
@@ -79,6 +79,7 @@ const StatCard = styled(motion.div)`
   padding: 2rem;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 
   &:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -101,131 +102,61 @@ const StatLabel = styled.div`
   color: rgba(255, 255, 255, 0.7);
 `;
 
-const TimelineSection = styled.div`
-  margin-top: 6rem;
+const ImagesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
 `;
 
-const TimelineTitle = styled.h2`
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 3rem;
-  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`;
-
-const Timeline = styled.div`
+const ImageCard = styled(motion.div)`
   position: relative;
-  padding: 2rem 0;
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, #0096ff 0%, #0066cc 100%);
-
-    @media (max-width: 768px) {
-      left: 20px;
-    }
-  }
-`;
-
-const TimelineItem = styled(motion.div)<{ $align: 'left' | 'right' }>`
-  display: flex;
-  justify-content: ${props => props.$align === 'left' ? 'flex-end' : 'flex-start'};
-  padding: 0 2rem;
-  margin-bottom: 3rem;
-  position: relative;
-
-  @media (max-width: 768px) {
-    justify-content: flex-start;
-    padding-left: 60px;
-  }
-`;
-
-const TimelineContent = styled.div<{ $align: 'left' | 'right' }>`
-  width: 45%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
   border-radius: 15px;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    ${props => props.$align === 'left' ? 'right: -10px' : 'left: -10px'};
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(0, 150, 255, 0.6);
-
-    @media (max-width: 768px) {
-      left: -40px;
-    }
-  }
-
-  @media (max-width: 768px) {
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  box-shadow: 0 10px 40px rgba(0, 150, 255, 0.2);
+  
+  img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
+  
+  &:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+`;
 
-  h3 {
-    font-size: 1.5rem;
-    color: #0096ff;
-    margin-bottom: 0.5rem;
-  }
-
-  .year {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 1rem;
-  }
-
-  p {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-  }
+const ImageCaption = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  color: white;
+  font-size: 0.9rem;
 `;
 
 const AboutPage: React.FC = () => {
   const stats = [
-    { number: '10+', label: 'Years Experience' },
-    { number: '50+', label: 'Projects Completed' },
-    { number: '100%', label: 'Client Satisfaction' },
-    { number: '24/7', label: 'Support' }
+    { number: '15+', label: 'Years Business' },
+    { number: '10+', label: 'Years Coding' },
+    { number: '50+', label: 'Projects Built' },
+    { number: '100%', label: 'Dedication' }
   ];
 
-  const timeline = [
+  const images = [
     {
-      year: '2026',
-      title: 'Freelance Development',
-      description: 'Building custom web applications and automation systems for clients across various industries.',
-      align: 'right' as const
+      src: '/gt86nurburgring.jpeg',
+      alt: 'Eddie Moger racing a GT86 at the Nurburgring in Germany',
+      caption: 'Racing cars on the world famous Nürburgring in Germany'
     },
     {
-      year: '2020-2025',
-      title: 'Full-Stack Development',
-      description: 'Specialized in React, Node.js, and modern web technologies. Built enterprise applications and custom solutions.',
-      align: 'left' as const
-    },
-    {
-      year: '2015-2020',
-      title: 'Software Engineering',
-      description: 'Developed scalable applications and learned the fundamentals of system architecture and design.',
-      align: 'right' as const
-    },
-    {
-      year: '2012',
-      title: 'Started Coding',
-      description: 'Began the journey into software development, learning programming fundamentals and web technologies.',
-      align: 'left' as const
+      src: '/Biirdee-office-Burlingame-CA.jpeg',
+      alt: 'Eddie Moger at Biirdee Travel office',
+      caption: 'At the Biirdee Travel office in Burlingame, CA'
     }
   ];
 
@@ -245,33 +176,57 @@ const AboutPage: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Title>About Me</Title>
+          <Title>Welcome to my corner of the internet!</Title>
           <Paragraph
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            I'm a full-stack developer with a passion for creating innovative solutions
-            that make a real difference. I specialize in building modern web applications
-            with React, Node.js, and cutting-edge technologies.
+            My name is Eddie and I am a software developer and entrepreneur with a passion for 
+            building innovative solutions.
           </Paragraph>
           <Paragraph
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            With over a decade of experience in software development, I specialize in
-            React, Node.js, and modern web technologies. I love building things that
-            are not just functional, but beautiful and intuitive.
+            I have an extensive background in automotive racing, specializing in chassis tuning, 
+            and a background in PC building, including hardware assembly, overclocking, and using 
+            aftermarket software. But that's just the tip of the iceberg. My true passion lies in 
+            software development, where I create solutions for small businesses including integrating 
+            AI and machine learning, fully custom CRMs, internal communications, websites, SEO, 
+            e-commerce, custom back-end software, financial simulations, data visualization, encryption 
+            and much more.
           </Paragraph>
           <Paragraph
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            When I'm not coding, you'll find me exploring new technologies, optimizing
-            workflows, or collaborating with AI assistants to push the boundaries of
-            what's possible.
+            I have a passion for dynamic programming and problem-solving. I spent 8 years in corporate 
+            management before starting my own business, which I ran with great success for 15 years 
+            before deciding to switch to something I am more passionate about - software development.
+          </Paragraph>
+          <Paragraph
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.0 }}
+          >
+            I have competed in auto racing, motorcycle racing, rock climbing, downhill mountain bike 
+            racing, Muay Thai Kickboxing and much more. I believe that my passion for these activities 
+            translates into my work ethic - I am always pushing myself to be the best and constantly 
+            seeking new challenges.
+          </Paragraph>
+          <Paragraph
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+          >
+            So, why should you choose me for your next project? Well, I am a nerd at heart and love 
+            solving problems. My skills are not just tools, they are the tools I use for success. I 
+            am excited to work on new projects and help build your dreams. Whether you're looking for 
+            a new website, custom software, or just someone to bounce ideas off of, I am here for you. 
+            Let's make something great together!
           </Paragraph>
         </TextSection>
       </ContentGrid>
@@ -284,7 +239,6 @@ const AboutPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            whileHover={{ y: -5 }}
           >
             <StatNumber>{stat.number}</StatNumber>
             <StatLabel>{stat.label}</StatLabel>
@@ -292,27 +246,20 @@ const AboutPage: React.FC = () => {
         ))}
       </StatsGrid>
 
-      <TimelineSection>
-        <TimelineTitle>My Journey</TimelineTitle>
-        <Timeline>
-          {timeline.map((item, index) => (
-            <TimelineItem
-              key={index}
-              $align={item.align}
-              initial={{ opacity: 0, x: item.align === 'left' ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-            >
-              <TimelineContent $align={item.align}>
-                <h3>{item.title}</h3>
-                <div className="year">{item.year}</div>
-                <p>{item.description}</p>
-              </TimelineContent>
-            </TimelineItem>
-          ))}
-        </Timeline>
-      </TimelineSection>
+      <ImagesGrid>
+        {images.map((image, index) => (
+          <ImageCard
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.2 }}
+          >
+            <img src={image.src} alt={image.alt} />
+            <ImageCaption>{image.caption}</ImageCaption>
+          </ImageCard>
+        ))}
+      </ImagesGrid>
     </PageContainer>
   );
 };
