@@ -30,10 +30,10 @@ const ProfileImage = styled.div`
   max-width: 500px;
   aspect-ratio: 1;
   border-radius: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 150, 255, 0.4);
 
   &::before {
     content: '';
@@ -53,7 +53,7 @@ const TextSection = styled(motion.div)`
 const Title = styled.h1`
   font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
@@ -83,14 +83,14 @@ const StatCard = styled(motion.div)`
   &:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 150, 255, 0.3);
   }
 `;
 
 const StatNumber = styled.div`
   font-size: 2.5rem;
   font-weight: bold;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
@@ -109,7 +109,7 @@ const TimelineTitle = styled.h2`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
@@ -125,7 +125,7 @@ const Timeline = styled.div`
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(180deg, #0096ff 0%, #0066cc 100%);
 
     @media (max-width: 768px) {
       left: 20px;
@@ -163,9 +163,9 @@ const TimelineContent = styled.div<{ $align: 'left' | 'right' }>`
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.6);
 
     @media (max-width: 768px) {
       left: -40px;
@@ -178,7 +178,7 @@ const TimelineContent = styled.div<{ $align: 'left' | 'right' }>`
 
   h3 {
     font-size: 1.5rem;
-    color: #667eea;
+    color: #0096ff;
     margin-bottom: 0.5rem;
   }
 
@@ -205,8 +205,8 @@ const AboutPage: React.FC = () => {
   const timeline = [
     {
       year: '2026',
-      title: 'EDI Audiology',
-      description: 'Founded audiology calibration and repair business, building custom CRM and automation systems.',
+      title: 'Freelance Development',
+      description: 'Building custom web applications and automation systems for clients across various industries.',
       align: 'right' as const
     },
     {
@@ -252,8 +252,8 @@ const AboutPage: React.FC = () => {
             transition={{ delay: 0.4 }}
           >
             I'm a full-stack developer with a passion for creating innovative solutions
-            that make a real difference. Currently building EDI Audiology, a business
-            focused on audiology equipment calibration and repair.
+            that make a real difference. I specialize in building modern web applications
+            with React, Node.js, and cutting-edge technologies.
           </Paragraph>
           <Paragraph
             initial={{ opacity: 0 }}

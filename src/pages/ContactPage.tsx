@@ -14,7 +14,7 @@ const PageTitle = styled(motion.h1)`
   font-size: clamp(3rem, 6vw, 5rem);
   text-align: center;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
@@ -68,8 +68,8 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+    border-color: #0096ff;
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
   }
 
   &::placeholder {
@@ -92,8 +92,8 @@ const TextArea = styled.textarea`
 
   &:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+    border-color: #0096ff;
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
   }
 
   &::placeholder {
@@ -104,7 +104,7 @@ const TextArea = styled.textarea`
 const SubmitButton = styled(motion.button)`
   width: 100%;
   padding: 1.2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   border: none;
   border-radius: 50px;
   color: white;
@@ -114,7 +114,7 @@ const SubmitButton = styled(motion.button)`
   transition: all 0.3s ease;
 
   &:hover {
-    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 150, 255, 0.5);
   }
 
   &:disabled {
@@ -134,7 +134,7 @@ const ContactInfo = styled(motion.div)`
 const InfoTitle = styled.h2`
   font-size: 2rem;
   margin-bottom: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
@@ -195,9 +195,9 @@ const SocialIcon = styled(motion.a)`
   transition: all 0.3s ease;
 
   &:hover {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 150, 255, 0.4);
   }
 `;
 
@@ -214,7 +214,7 @@ const CalendlyTitle = styled.h2`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;

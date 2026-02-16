@@ -13,7 +13,7 @@ const PageTitle = styled(motion.h1)`
   font-size: clamp(3rem, 6vw, 5rem);
   text-align: center;
   margin-bottom: 3rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
@@ -29,15 +29,15 @@ const FilterBar = styled(motion.div)`
 const FilterButton = styled(motion.button)<{ $active: boolean }>`
   padding: 0.8rem 2rem;
   border-radius: 50px;
-  border: 2px solid ${props => props.$active ? '#667eea' : 'rgba(255, 255, 255, 0.2)'};
-  background: ${props => props.$active ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' : 'transparent'};
+  border: 2px solid ${props => props.$active ? '#0096ff' : 'rgba(255, 255, 255, 0.2)'};
+  background: ${props => props.$active ? 'linear-gradient(135deg, #0096ff 0%, #0066cc 100%)' : 'transparent'};
   color: white;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
-    border-color: #667eea;
+    border-color: #0096ff;
     transform: translateY(-2px);
   }
 `;
@@ -93,7 +93,7 @@ const ProjectContent = styled.div`
 const ProjectTitle = styled.h3`
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #667eea;
+  color: #0096ff;
 `;
 
 const ProjectDescription = styled.p`
@@ -111,7 +111,7 @@ const TechStack = styled.div`
 
 const TechBadge = styled.span`
   padding: 0.3rem 0.8rem;
-  background: rgba(102, 126, 234, 0.2);
+  background: rgba(0, 150, 255, 0.2);
   border-radius: 15px;
   font-size: 0.85rem;
   color: #a0aeff;
@@ -125,7 +125,7 @@ const ProjectLinks = styled.div`
 
 const LinkButton = styled(motion.a)`
   padding: 0.6rem 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   border-radius: 25px;
   color: white;
   text-decoration: none;
@@ -134,7 +134,7 @@ const LinkButton = styled(motion.a)`
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 150, 255, 0.4);
   }
 `;
 
@@ -152,13 +152,11 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'EDI CRM System',
-    description: 'Full-featured CRM for audiology calibration business with work orders, invoicing, customer management, and real-time notifications.',
+    title: 'Enterprise CRM System',
+    description: 'Full-featured CRM with work orders, invoicing, customer management, and real-time notifications.',
     image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800',
     tech: ['React', 'Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Supabase'],
-    category: 'Full-Stack',
-    liveUrl: 'https://edi-crm.com',
-    githubUrl: 'https://github.com/EddieJorden/edi-crm'
+    category: 'Full-Stack'
   },
   {
     id: 2,

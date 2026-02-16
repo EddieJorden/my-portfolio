@@ -13,7 +13,7 @@ const PageTitle = styled(motion.h1)`
   font-size: clamp(3rem, 6vw, 5rem);
   text-align: center;
   margin-bottom: 3rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
@@ -35,7 +35,7 @@ const SkillCategory = styled(motion.div)`
   h2 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -63,9 +63,9 @@ const SkillBar = styled.div`
 
 const SkillProgress = styled(motion.div)<{ $level: number }>`
   height: 100%;
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, #0096ff 0%, #0066cc 100%);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+  box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
 `;
 
 const InteractiveSection = styled.div`
@@ -76,7 +76,7 @@ const InteractiveSection = styled.div`
 const InteractiveTitle = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
@@ -92,9 +92,9 @@ const TechStack = styled.div`
 const TechBadge = styled(motion.div)<{ $active: boolean }>`
   padding: 1rem 2rem;
   background: ${props => props.$active 
-    ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' 
+    ? 'linear-gradient(135deg, #0096ff 0%, #0066cc 100%)' 
     : 'rgba(255, 255, 255, 0.05)'};
-  border: 2px solid ${props => props.$active ? '#667eea' : 'rgba(255, 255, 255, 0.1)'};
+  border: 2px solid ${props => props.$active ? '#0096ff' : 'rgba(255, 255, 255, 0.1)'};
   backdrop-filter: blur(10px);
   border-radius: 50px;
   cursor: pointer;
@@ -103,9 +103,9 @@ const TechBadge = styled(motion.div)<{ $active: boolean }>`
   transition: all 0.3s ease;
 
   &:hover {
-    border-color: #667eea;
+    border-color: #0096ff;
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 150, 255, 0.4);
   }
 `;
 
@@ -120,7 +120,7 @@ const ExperienceDescription = styled(motion.div)`
   text-align: left;
 
   h3 {
-    color: #667eea;
+    color: #0096ff;
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }

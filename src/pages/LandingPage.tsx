@@ -19,7 +19,7 @@ const AnimatedBackground = styled.div`
   width: 100%;
   height: 100%;
   z-index: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a1a2e 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
 
@@ -42,9 +42,9 @@ const AnimatedBackground = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(240, 147, 251, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(118, 75, 162, 0.3) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 50%, rgba(0, 150, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 200, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 180, 255, 0.15) 0%, transparent 50%);
     animation: pulse 8s ease-in-out infinite;
   }
 
@@ -165,24 +165,30 @@ const HeroSubtitle = styled(motion.p)`
 `;
 
 const CTAButton = styled(motion.button)`
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 150, 255, 0.2);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(0, 150, 255, 0.4);
   color: white;
   font-size: 1.2rem;
   padding: 1rem 2.5rem;
   border-radius: 50px;
   cursor: pointer;
-  margin: 0 1rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  margin: 0 0.5rem 0.5rem;
+  box-shadow: 0 10px 40px rgba(0, 150, 255, 0.2);
   transition: all 0.3s ease;
   font-weight: 600;
 
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    margin: 0.3rem;
+  }
+
   &:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 150, 255, 0.4);
+    border-color: rgba(0, 150, 255, 0.6);
     transform: translateY(-3px);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 50px rgba(0, 150, 255, 0.4);
   }
 `;
 
@@ -215,15 +221,13 @@ const FeatureCard = styled(motion.div)`
   &:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 150, 255, 0.3);
   }
 
   h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #00aaff;
   }
 
   p {
@@ -300,12 +304,13 @@ const LandingPage: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            Full-Stack Developer | Audiology Tech Innovator | Problem Solver
+            Full-Stack Developer | React Specialist | Creative Problem Solver
           </HeroSubtitle>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.5 }}
+            style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}
           >
             <CTAButton
               onClick={() => navigate('/projects')}
