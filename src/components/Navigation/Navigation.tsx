@@ -170,7 +170,7 @@ const Overlay = styled(motion.div)`
 export const Navigation: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { isDark, toggleTheme } = useTheme();
   const location = useLocation();
 
   useEffect(() => {
@@ -215,7 +215,7 @@ export const Navigation: React.FC = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              {theme === 'dark' ? '☀️' : '🌙'}
+              {isDark ? '☀️' : '🌙'}
             </ThemeToggle>
           </NavLinks>
 
@@ -261,7 +261,7 @@ export const Navigation: React.FC = () => {
                 whileTap={{ scale: 0.9 }}
                 style={{ marginTop: 'auto' }}
               >
-                {theme === 'dark' ? '☀️' : '🌙'}
+                {isDark ? '☀️' : '🌙'}
               </ThemeToggle>
             </MobileMenu>
           </>
