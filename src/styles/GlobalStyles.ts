@@ -2,6 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import { Theme } from '../theme/theme';
 
 const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
+  /* Import racing-inspired bold fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
   *,
   *::before,
   *::after {
@@ -16,8 +19,9 @@ const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Helvetica Neue', Arial, sans-serif;
+    /* BOLD RACING TYPOGRAPHY - Rajdhani has that speed/tech aesthetic */
+    font-family: 'Space Grotesk', 'Rajdhani', -apple-system, BlinkMacSystemFont, 
+      'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${({ theme }) => theme.colors.background};
@@ -29,10 +33,12 @@ const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     letter-spacing: -0.011em;
   }
 
+  /* Bold headings with racing aesthetic */
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
+    font-family: 'Rajdhani', 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
 
   p {
@@ -53,34 +59,42 @@ const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     max-width: 100%;
   }
 
-  /* Clean scrollbar */
+  /* Racing-themed scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: transparent;
+    background: ${({ theme }) => theme.colors.background};
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.colors.border};
-    border-radius: 4px;
+    background: ${({ theme }) => theme.gradients.racing};
+    border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${({ theme }) => theme.colors.borderHover};
+    background: ${({ theme }) => theme.colors.racing};
   }
 
-  /* Selection */
+  /* Racing red selection */
   ::selection {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.racing};
     color: white;
   }
 
-  /* Focus styles */
+  /* Focus styles with racing accent */
   *:focus-visible {
-    outline: 2px solid ${({ theme }) => theme.colors.primary};
-    outline-offset: 2px;
+    outline: 2px solid ${({ theme }) => theme.colors.racing};
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Smooth mobile scrolling */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 80px;
+    }
   }
 `;
 
