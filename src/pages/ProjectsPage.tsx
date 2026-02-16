@@ -273,6 +273,7 @@ const projects: Project[] = [
     category: 'Frontend',
     liveUrl: 'https://eddie-portfolio-1k7tzzrm0-eddiejordens-projects.vercel.app/',
     githubUrl: 'https://github.com/EddieJorden/my-portfolio',
+    image: '/portfolio-gradient.jpg'
   },
   {
     id: 13,
@@ -282,6 +283,7 @@ const projects: Project[] = [
     category: 'Frontend',
     liveUrl: 'https://eddie-portfolio-lwtoc5izw-eddiejordens-projects.vercel.app/',
     githubUrl: 'https://github.com/EddieJorden/my-portfolio',
+    image: '/portfolio-premium.jpg'
   },
   {
     id: 14,
@@ -291,6 +293,7 @@ const projects: Project[] = [
     category: 'Frontend',
     liveUrl: 'https://eddie-portfolio-8picjqkwj-eddiejordens-projects.vercel.app/',
     githubUrl: 'https://github.com/EddieJorden/my-portfolio',
+    image: '/portfolio-racing.jpg'
   }
 ];
 
