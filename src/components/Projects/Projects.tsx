@@ -41,10 +41,10 @@ const ProjectCard = styled(GlassCard)`
   cursor: pointer;
 `;
 
-const ProjectImage = styled.div<{ $bgColor: string }>`
+const ProjectImage = styled.div`
   width: 100%;
   height: 240px;
-  background: ${({ $bgColor }) => $bgColor};
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,12 +133,15 @@ const ProjectLink = styled(motion.a)`
 `;
 
 interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
+  name: string;
+  thumbnail: string;
+  altText: string;
+  link: string;
+  notes: {
+    notes: string;
+  };
   github?: string;
-  demo?: string;
-  bgColor: string;
+  technologies?: string[];
 }
 
 export const Projects: React.FC = () => {
@@ -149,58 +152,91 @@ export const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
-      title: 'E-Commerce Platform',
-      description:
-        'Full-stack e-commerce solution with real-time inventory management, payment processing, and advanced analytics dashboard.',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis'],
-      github: 'https://github.com/EddieJorden',
-      demo: '#',
-      bgColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      name: 'Full Stack Task Manager App',
+      thumbnail: 'Task-app-thumbnail.png',
+      altText: 'Full Stack Task Manager App',
+      link: 'https://eddies-balance-app.netlify.app/',
+      notes: {
+        notes: 'This is a full stack task manager app built using React, Redux, Typescript, Node.js, Express.js, and MySQL.',
+      },
+      github: 'https://github.com/EddieJorden/balance-app',
+      technologies: ['React', 'Redux', 'TypeScript', 'Node.js', 'Express', 'MySQL'],
     },
     {
-      title: 'AI Chat Assistant',
-      description:
-        'Intelligent chat application leveraging LLM APIs for natural conversations with context awareness and multi-turn dialogue support.',
-      technologies: ['React', 'TypeScript', 'LLM APIs', 'WebSockets', 'MongoDB'],
-      github: 'https://github.com/EddieJorden',
-      demo: '#',
-      bgColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+      name: 'SimpleSpectra.com',
+      thumbnail: 'SimpleSpectra.com-thumbnail.png',
+      altText: 'SimpleSpectra.com thumbnail',
+      link: 'https://simplespectra.com/',
+      notes: {
+        notes: 'E-commerce site (currently in development)',
+      },
+      technologies: ['React', 'E-commerce', 'Full Stack'],
     },
     {
-      title: 'Real-Time Collaboration Tool',
-      description:
-        'Collaborative workspace with live updates, real-time cursors, and synchronized state management for team productivity.',
-      technologies: ['Next.js', 'WebSockets', 'Redis', 'Tailwind', 'Prisma'],
-      github: 'https://github.com/EddieJorden',
-      demo: '#',
-      bgColor: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+      name: 'Data Visualization',
+      thumbnail: 'Data-viz.png',
+      altText: 'Data Visualization with D3 thumbnail',
+      link: 'https://eddiejorden.github.io/ui-ux-project/',
+      notes: {
+        notes: 'A data visualization component built using D3.js with React, Redux and Express.js.',
+      },
+      github: 'https://github.com/EddieJorden/ui-ux-project',
+      technologies: ['D3.js', 'React', 'Redux', 'Express'],
     },
     {
-      title: 'Task Automation System',
-      description:
-        'Multi-agent task automation platform with intelligent workflow orchestration and seamless third-party integrations.',
-      technologies: ['React', 'Python', 'FastAPI', 'Docker', 'AWS'],
-      github: 'https://github.com/EddieJorden',
-      demo: '#',
-      bgColor: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+      name: 'Customer Directory',
+      thumbnail: 'Customer-directory.png',
+      altText: 'React-Redux-Challenge-project',
+      link: 'https://eddiejorden.github.io/ctw-project/',
+      notes: {
+        notes: 'A React Redux application that renders 1000 input fields, using React memo and useCallback to optimize performance',
+      },
+      github: 'https://github.com/EddieJorden/ctw-project',
+      technologies: ['React', 'Redux', 'Performance Optimization'],
     },
     {
-      title: 'Analytics Dashboard',
-      description:
-        'Comprehensive analytics platform with real-time data visualization, custom reports, and predictive insights.',
-      technologies: ['React', 'D3.js', 'GraphQL', 'Node.js', 'TimescaleDB'],
-      github: 'https://github.com/EddieJorden',
-      demo: '#',
-      bgColor: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+      name: 'Reddit Clone',
+      thumbnail: 'reddit_clone_thumbnail.png',
+      altText: 'reddit-clone',
+      link: 'https://eddiejorden.github.io/reddit-clone/',
+      notes: {
+        notes: 'A Simple Reddit Clone using reddit API in a React, Redux app.',
+      },
+      github: 'https://github.com/EddieJorden/reddit-clone',
+      technologies: ['React', 'Redux', 'API Integration'],
     },
     {
-      title: 'API Gateway Service',
-      description:
-        'Scalable API gateway with rate limiting, authentication, request transformation, and comprehensive monitoring.',
-      technologies: ['Node.js', 'Express', 'Redis', 'PostgreSQL', 'Docker'],
-      github: 'https://github.com/EddieJorden',
-      demo: '#',
-      bgColor: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+      name: 'Flash Card Tests',
+      thumbnail: 'flashcards-thumbnail.png',
+      altText: 'Flash Cards App',
+      link: 'https://eddiejorden.github.io/flashcards/',
+      notes: {
+        notes: 'This custom Flash Cards app was built using React with Redux. It allows you to put in topics and make flashcard quizzes.',
+      },
+      github: 'https://github.com/EddieJorden/flashcards',
+      technologies: ['React', 'Redux', 'Education'],
+    },
+    {
+      name: 'My Planner',
+      thumbnail: 'appointment-planner-thumbnail.png',
+      altText: 'appointment-planner-thumbnail',
+      link: 'https://eddiejorden.github.io/react_challenge/',
+      notes: {
+        notes: 'Contacts and appointments component built using React.',
+      },
+      github: 'https://github.com/EddieJorden/react_challenge',
+      technologies: ['React', 'Scheduling'],
+    },
+    {
+      name: 'Food Near Me',
+      thumbnail: 'food_near_me_thumbnail.png',
+      altText: 'food-near-me-thumbnail',
+      link: 'https://eddiejorden.github.io/food.near.me/',
+      notes: {
+        notes: 'This is a React app built using the Yelp API to find restaurants near you.',
+      },
+      github: 'https://github.com/EddieJorden/food.near.me',
+      technologies: ['React', 'Yelp API', 'Geolocation'],
     },
   ];
 
@@ -246,19 +282,24 @@ export const Projects: React.FC = () => {
               variants={itemVariants}
               whileHover={{ y: -8 }}
             >
-              <ProjectImage $bgColor={project.bgColor}>
-                {/* Gradient placeholder - can be replaced with actual images */}
+              <ProjectImage>
+                <img
+                  src={`/${project.thumbnail}`}
+                  alt={project.altText}
+                />
               </ProjectImage>
 
               <ProjectContent>
-                <ProjectTitle>{project.title}</ProjectTitle>
-                <ProjectDescription>{project.description}</ProjectDescription>
+                <ProjectTitle>{project.name}</ProjectTitle>
+                <ProjectDescription>{project.notes.notes}</ProjectDescription>
 
-                <TechStack>
-                  {project.technologies.map((tech, techIndex) => (
-                    <TechTag key={techIndex}>{tech}</TechTag>
-                  ))}
-                </TechStack>
+                {project.technologies && (
+                  <TechStack>
+                    {project.technologies.map((tech, techIndex) => (
+                      <TechTag key={techIndex}>{tech}</TechTag>
+                    ))}
+                  </TechStack>
+                )}
 
                 <ProjectLinks>
                   {project.github && (
@@ -272,9 +313,9 @@ export const Projects: React.FC = () => {
                       <FiGithub /> Code
                     </ProjectLink>
                   )}
-                  {project.demo && (
+                  {project.link && (
                     <ProjectLink
-                      href={project.demo}
+                      href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
