@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navigation } from './components/Navigation/Navigation';
 import { Footer } from './components/Footer/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 import GlobalStyles from './styles/GlobalStyles';
 
 // Pages
@@ -17,6 +18,7 @@ const App: React.FC = () => {
     <ThemeProvider>
       <Router>
         <GlobalStyles />
+        <ScrollToTop />
         <Navigation />
         <main>
           <Routes>

@@ -51,7 +51,7 @@ export const Footer: React.FC = () => (
   <FooterWrap>
     <FooterInner>
       <Copyright>
-        © {new Date().getFullYear()} Eddie Moger. Built with React & TypeScript.
+        © 2016 Eddie Moger. Built with React & TypeScript.
       </Copyright>
       <Links>
         <FooterLink href="https://github.com/EddieJorden" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
