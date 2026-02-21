@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const FooterWrap = styled.footer`
@@ -13,11 +14,27 @@ const FooterInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 
   @media (max-width: 600px) {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
+  }
+`;
+
+const PitchLink = styled(Link)`
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.colors.textTertiary};
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s, color 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 1;
+    color: #a78bfa;
   }
 `;
 
@@ -53,6 +70,7 @@ export const Footer: React.FC = () => (
       <Copyright>
         © 2016 Eddie Moger. Built with React & TypeScript.
       </Copyright>
+      <PitchLink to="/pitch">AI Venture Proposal →</PitchLink>
       <Links>
         <FooterLink href="https://github.com/EddieJorden" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <FiGithub size={16} />
