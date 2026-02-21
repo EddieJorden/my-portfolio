@@ -4,7 +4,7 @@ import { ClientPitchTemplate, ClientPitchProps } from '../../components/ClientPi
 
 const FutureSection = styled.div`
   max-width: 800px;
-  margin: -1rem auto 2rem;
+  margin: 0 0 2rem;
   padding: 2rem 1.5rem;
   background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
   border: 1px solid rgba(168, 85, 247, 0.3);
@@ -172,8 +172,7 @@ const TravelPitch: React.FC = () => {
   };
 
   return (
-    <>
-      <ClientPitchTemplate {...pitchData} />
+      <ClientPitchTemplate {...pitchData}>
       <FutureSection>
         <FutureTitle>🔮 Future Project: Miles Bank as a Service</FutureTitle>
         <FutureIntro>
@@ -201,7 +200,7 @@ const TravelPitch: React.FC = () => {
           You'd be the first to market with an AI-powered miles banking platform — built on the system we create for your business first.
         </FutureNote>
       </FutureSection>
-    </>
+      </ClientPitchTemplate>
   );
 };
 

@@ -42,6 +42,7 @@ export interface ClientPitchProps {
     amount: string;
     details: string;
   };
+  children?: React.ReactNode;
 }
 
 const Container = styled.div`
@@ -311,6 +312,7 @@ export const ClientPitchTemplate: React.FC<ClientPitchProps> = ({
   deliverables,
   costComparison,
   investment,
+  children,
 }) => {
   // Calculate percentage for progress bars (assuming current is 100%)
   const currentPercentage = 100;
@@ -485,6 +487,8 @@ export const ClientPitchTemplate: React.FC<ClientPitchProps> = ({
             📧 Email Eddie
           </CTAButton>
         </CTASection>
+
+        {children}
       </ContentWrapper>
     </Container>
   );

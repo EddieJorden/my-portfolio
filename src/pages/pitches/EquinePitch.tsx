@@ -4,7 +4,7 @@ import { ClientPitchTemplate, ClientPitchProps } from '../../components/ClientPi
 
 const FutureSection = styled.div`
   max-width: 800px;
-  margin: -1rem auto 2rem;
+  margin: 0 0 2rem;
   padding: 2rem 1.5rem;
   background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
   border: 1px solid rgba(168, 85, 247, 0.3);
@@ -175,8 +175,7 @@ const EquinePitch: React.FC = () => {
   };
 
   return (
-    <>
-      <ClientPitchTemplate {...pitchData} />
+      <ClientPitchTemplate {...pitchData}>
       <FutureSection>
         <FutureTitle>🔮 Future Project: AI Racing Edge</FutureTitle>
         <FutureIntro>
@@ -204,7 +203,7 @@ const EquinePitch: React.FC = () => {
           This is a longer-term project we'd build together — but the foundation starts with your training system.
         </FutureNote>
       </FutureSection>
-    </>
+      </ClientPitchTemplate>
   );
 };
 
