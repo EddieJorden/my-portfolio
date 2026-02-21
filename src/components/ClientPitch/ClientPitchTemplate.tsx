@@ -93,8 +93,8 @@ const Section = styled(motion.section)`
 `;
 
 const ProblemSection = styled(Section)`
-  background: rgba(239, 68, 68, 0.08);
-  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.15);
+  border: 2px solid rgba(239, 68, 68, 0.5);
 `;
 
 const SectionTitle = styled.h2`
