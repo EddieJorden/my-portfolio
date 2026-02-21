@@ -25,16 +25,19 @@ const FooterInner = styled.div`
 `;
 
 const PitchLink = styled(Link)`
-  font-size: 0.8rem;
-  color: ${({ theme }) => theme.colors.textTertiary};
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #10b981;
   text-decoration: none;
-  opacity: 0.7;
-  transition: opacity 0.2s, color 0.2s;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 999px;
+  transition: all 0.2s;
   white-space: nowrap;
 
   &:hover {
-    opacity: 1;
-    color: #a78bfa;
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.6);
   }
 `;
 
@@ -70,7 +73,7 @@ export const Footer: React.FC = () => (
       <Copyright>
         © 2016 Eddie Moger. Built with React & TypeScript.
       </Copyright>
-      <PitchLink to="/pitch">AI Venture Proposal →</PitchLink>
+      <PitchLink to="/pitch">🚀 Investment Deck →</PitchLink>
       <Links>
         <FooterLink href="https://github.com/EddieJorden" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <FiGithub size={16} />
