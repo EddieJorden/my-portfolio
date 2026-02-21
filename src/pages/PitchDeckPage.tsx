@@ -701,6 +701,79 @@ const PitchDeckPage: React.FC = () => {
         </Container>
       </Section>
 
+
+      {/* ══════ AGENTIC AI ══════ */}
+      <Section $alt>
+        <Container>
+          <Label>The Secret Weapon</Label>
+          <H2>AI That <em>Works Like an Employee</em></H2>
+          <Lead style={{ marginBottom: "2rem" }}>
+            This isn't chatbot AI. We run autonomous AI agents that operate a computer
+            like a human would — except with a genius-level IQ and a PhD in everything.
+          </Lead>
+
+          <AnalogyBox style={{ background: "rgba(16,185,129,0.02)", marginBottom: "1.5rem" }}>
+            <AnalogyFlow>
+              <FlowStep>
+                <FlowIcon>🧠</FlowIcon>
+                <FlowLabel>AI Agent</FlowLabel>
+              </FlowStep>
+              <FlowArrow>→</FlowArrow>
+              <FlowStep>
+                <FlowIcon>💻</FlowIcon>
+                <FlowLabel>Uses Computer</FlowLabel>
+              </FlowStep>
+              <FlowArrow>→</FlowArrow>
+              <FlowStep>
+                <FlowIcon>🌐</FlowIcon>
+                <FlowLabel>Browses Web</FlowLabel>
+              </FlowStep>
+              <FlowArrow>→</FlowArrow>
+              <FlowStep>
+                <FlowIcon>📧</FlowIcon>
+                <FlowLabel>Sends Email</FlowLabel>
+              </FlowStep>
+              <FlowArrow>→</FlowArrow>
+              <FlowStep>
+                <FlowIcon>📊</FlowIcon>
+                <FlowLabel>Runs Business</FlowLabel>
+              </FlowStep>
+            </AnalogyFlow>
+          </AnalogyBox>
+
+          <Grid $cols={2}>
+            <Card initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}>
+              <IconBox>🤖</IconBox>
+              <H3>What Our Agents Can Do</H3>
+              <Bullets>
+                <li>Browse the web, research, and gather information</li>
+                <li>Read and send emails, manage calendars</li>
+                <li>Write code, build software, deploy applications</li>
+                <li>Analyze documents, spreadsheets, and databases</li>
+                <li>Handle customer inquiries across channels</li>
+                <li>Monitor systems, run reports, flag issues 24/7</li>
+              </Bullets>
+            </Card>
+
+            <Card initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0.1}>
+              <IconBox>⚡</IconBox>
+              <H3>Why This Is Different</H3>
+              <Bullets>
+                <li>Not a chatbot — a fully autonomous digital worker</li>
+                <li>Operates tools, browsers, and systems like a human</li>
+                <li>IQ estimated at 120+ with PhD-level knowledge across every field</li>
+                <li>Works 24/7/365 — no breaks, no sick days, no training period</li>
+                <li>Costs a fraction of a single employee</li>
+                <li>Already in production — we use this daily for our own operations</li>
+              </Bullets>
+            </Card>
+          </Grid>
+
+          <Card style={{ marginTop: "1.5rem", textAlign: "center", padding: "1.5rem" }}>
+            <StatNum $sm>The AI employee that never sleeps, knows everything, and costs less than your internet bill.</StatNum>
+          </Card>
+        </Container>
+      </Section>
       {/* ══════ WHY NOW ══════ */}
       <Section>
         <Container>
@@ -711,7 +784,7 @@ const PitchDeckPage: React.FC = () => {
             {[
               { icon: '🌊', title: 'AI Demand Is Exploding', desc: 'Every business will need AI within 2–3 years. Most can\'t build it themselves. The companies that own the infrastructure win.' },
               { icon: '🔐', title: 'Privacy Laws Are Tightening', desc: 'HIPAA, GDPR, EU AI Act — all pushing data sovereignty. Local AI gets more valuable every year as regulation increases.' },
-              { icon: '📉', title: 'Models Are Getting Better & Free', desc: 'Open-source AI models now match GPT-4. They run on our hardware at zero cost. The gap between "free model" and "expensive API" is our margin.' },
+              { icon: '📉', title: 'Open Models Are Closing the Gap', desc: 'Open-weight models like Kimi K2 score #2 globally on the hardest AI benchmarks. They run on our hardware at zero cost. Each generation gets closer to the frontier — the gap is our margin.' },
               { icon: '⚡', title: 'First Movers Win', desc: 'Client relationships + custom models = a moat that deepens with every engagement. Switching costs keep clients locked in.' },
             ].map((item, i) => (
               <Card key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}
@@ -792,9 +865,9 @@ const PitchDeckPage: React.FC = () => {
 
           <Grid $cols={4} style={{ marginTop: '1.5rem' }}>
             {[
-              { icon: '💻', t: 'Full-Stack Dev', d: 'Ships production apps solo — built a complete CRM from scratch' },
-              { icon: '🤖', t: 'AI Operator', d: 'Running production AI agents for business ops since 2025' },
-              { icon: '🏢', t: 'Business Owner', d: 'Active field service company with real clients & revenue' },
+              { icon: '💻', t: 'Full-Stack Dev', d: 'Built an enterprise-grade CRM with cutting-edge AI — solo, from scratch' },
+              { icon: '🏢', t: 'Business Owner Since \'05', d: '20 years building business solutions and software across multiple industries' },
+              { icon: '🤖', t: 'AI-Native Operator', d: 'Running production AI agents that autonomously handle real business operations' },
               { icon: '⚡', t: 'Day 1 Ready', d: 'Already on the full stack — zero ramp-up, immediate execution' },
             ].map((item, i) => (
               <Card key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.1}>
