@@ -92,6 +92,11 @@ const Section = styled(motion.section)`
   }
 `;
 
+const ProblemSection = styled(Section)`
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.3);
+`;
+
 const SectionTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 700;
@@ -326,8 +331,8 @@ export const ClientPitchTemplate: React.FC<ClientPitchProps> = ({
           </Greeting>
         </Header>
 
-        <Section {...fadeInUp}>
-          <SectionTitle>😓 The Problems You're Facing</SectionTitle>
+        <ProblemSection {...fadeInUp}>
+          <SectionTitle style={{ color: '#ef4444' }}>😓 The Problems You're Facing</SectionTitle>
           <List>
             {painPoints.map((point, index) => (
               <ListItem
@@ -341,7 +346,7 @@ export const ClientPitchTemplate: React.FC<ClientPitchProps> = ({
               </ListItem>
             ))}
           </List>
-        </Section>
+        </ProblemSection>
 
         <Section {...fadeInUp}>
           <SectionTitle>✨ How AI Solves This</SectionTitle>
