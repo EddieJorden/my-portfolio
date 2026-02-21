@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect, ReactNode } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme, Theme } from '../theme/theme';
+import { darkTheme, Theme } from '../theme/theme';
 
 interface ThemeContextType {
   theme: Theme;
@@ -23,22 +23,10 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    const saved = localStorage.getItem('theme');
-    if (saved) return saved === 'dark';
-    // Default to dark for premium look
-    return true;
-  });
+  const theme = darkTheme;
 
-  const theme = isDark ? darkTheme : lightTheme;
-
-  const toggleTheme = () => {
-    setIsDark(prev => {
-      const newValue = !prev;
-      localStorage.setItem('theme', newValue ? 'dark' : 'light');
-      return newValue;
-    });
-  };
+  // No-op toggle — dark mode only
+  const toggleTheme = () => {};
 
   useEffect(() => {
     document.body.style.backgroundColor = theme.colors.background;
@@ -46,7 +34,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, isDark, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, isDark: true, toggleTheme }}>
       <StyledThemeProvider theme={theme}>
         {children}
       </StyledThemeProvider>

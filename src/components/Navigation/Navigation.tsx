@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
-import { useTheme } from '../../context/ThemeContext';
+// Dark mode only — no theme toggle
 
 const Nav = styled(motion.nav)<{ $scrolled: boolean }>`
   position: fixed;
@@ -81,25 +81,6 @@ const NavLink = styled(Link)<{ $active: boolean }>`
   }
 `;
 
-const ThemeToggle = styled(motion.button)`
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.3rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(180deg);
-  }
-`;
-
 const MobileMenuButton = styled(motion.button)`
   display: none;
   background: transparent;
@@ -170,7 +151,6 @@ const Overlay = styled(motion.div)`
 export const Navigation: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { isDark, toggleTheme } = useTheme();
   const location = useLocation();
 
   useEffect(() => {
@@ -210,13 +190,6 @@ export const Navigation: React.FC = () => {
                 {item.label}
               </NavLink>
             ))}
-            <ThemeToggle
-              onClick={toggleTheme}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              {isDark ? '☀️' : '🌙'}
-            </ThemeToggle>
           </NavLinks>
 
           <MobileMenuButton
@@ -255,14 +228,6 @@ export const Navigation: React.FC = () => {
                   {item.label}
                 </MobileNavLink>
               ))}
-              <ThemeToggle
-                onClick={toggleTheme}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                style={{ marginTop: 'auto' }}
-              >
-                {isDark ? '☀️' : '🌙'}
-              </ThemeToggle>
             </MobileMenu>
           </>
         )}
