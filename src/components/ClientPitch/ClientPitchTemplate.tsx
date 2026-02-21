@@ -212,6 +212,45 @@ const InvestmentDetails = styled.p`
   line-height: 1.6;
 `;
 
+const AIPersonaSection = styled(Section)`
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+  border-color: rgba(6, 182, 212, 0.3);
+`;
+
+const ChannelGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+`;
+
+const ChannelBadge = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+`;
+
+const BetaBadge = styled.span`
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #06b6d4;
+  background: rgba(6, 182, 212, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+`;
+
 const CTASection = styled(motion.section)`
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.05) 100%);
   border: 2px solid #10b981;
@@ -386,6 +425,36 @@ export const ClientPitchTemplate: React.FC<ClientPitchProps> = ({
             ))}
           </List>
         </Section>
+
+        <AIPersonaSection {...fadeInUp}>
+          <SectionTitle style={{ color: '#06b6d4' }}>🧠 Your Own AI — Trained to Be You</SectionTitle>
+          <List>
+            <ListItem {...fadeInUp}>
+              <Icon>🎯</Icon>
+              <Text><strong>Knows your industry inside-out</strong> — trained on your specific domain, terminology, and best practices</Text>
+            </ListItem>
+            <ListItem {...fadeInUp}>
+              <Icon>🗣️</Icon>
+              <Text><strong>Talks like you</strong> — matches your tone, style, and personality so customers feel like they're talking to you</Text>
+            </ListItem>
+            <ListItem {...fadeInUp}>
+              <Icon>👥</Icon>
+              <Text><strong>Knows all your customers</strong> — remembers preferences, history, and context for every client relationship</Text>
+            </ListItem>
+            <ListItem {...fadeInUp}>
+              <Icon>💬</Icon>
+              <Text><strong>Every channel, one AI</strong> — handles communication across all platforms your customers use</Text>
+            </ListItem>
+          </List>
+          <ChannelGrid>
+            <ChannelBadge whileHover={{ scale: 1.05 }}>📱 Text/SMS</ChannelBadge>
+            <ChannelBadge whileHover={{ scale: 1.05 }}>📧 Email</ChannelBadge>
+            <ChannelBadge whileHover={{ scale: 1.05 }}>💬 Website Chat</ChannelBadge>
+            <ChannelBadge whileHover={{ scale: 1.05 }}>📘 Social DMs</ChannelBadge>
+            <ChannelBadge whileHover={{ scale: 1.05 }}>📞 Phone Calls</ChannelBadge>
+            <ChannelBadge whileHover={{ scale: 1.05 }}>🎤 Voice <BetaBadge>Beta</BetaBadge></ChannelBadge>
+          </ChannelGrid>
+        </AIPersonaSection>
 
         <InvestmentSection {...fadeInUp}>
           <SectionTitle>💵 Your Investment</SectionTitle>
