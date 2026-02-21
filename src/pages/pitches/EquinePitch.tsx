@@ -1,5 +1,69 @@
 import React from 'react';
+import styled from 'styled-components';
 import { ClientPitchTemplate, ClientPitchProps } from '../../components/ClientPitch/ClientPitchTemplate';
+
+const FutureSection = styled.div`
+  max-width: 800px;
+  margin: -1rem auto 2rem;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 12px;
+  color: #e5e7eb;
+
+  @media (min-width: 768px) {
+    padding: 2.5rem;
+  }
+`;
+
+const FutureTitle = styled.h3`
+  color: #a855f7;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const FutureIntro = styled.p`
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+`;
+
+const FutureList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+const FutureItem = styled.li`
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const FutureIcon = styled.span`
+  font-size: 1.25rem;
+  flex-shrink: 0;
+`;
+
+const FutureText = styled.span`
+  font-size: 0.95rem;
+  line-height: 1.6;
+`;
+
+const FutureNote = styled.p`
+  font-size: 0.85rem;
+  color: #a855f7;
+  margin-top: 1rem;
+  font-style: italic;
+`;
 
 const EquinePitch: React.FC = () => {
   const pitchData: ClientPitchProps = {
@@ -113,39 +177,33 @@ const EquinePitch: React.FC = () => {
   return (
     <>
       <ClientPitchTemplate {...pitchData} />
-      {/* Future Project Teaser */}
-      <div style={{
-        maxWidth: '800px',
-        margin: '-1rem auto 2rem',
-        padding: '2rem 1.5rem',
-        background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%)',
-        border: '1px solid rgba(168, 85, 247, 0.3)',
-        borderRadius: '12px',
-        color: '#e5e7eb',
-      }}>
-        <h3 style={{ color: '#a855f7', fontSize: '1.25rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          🔮 Future Project: AI Racing Edge
-        </h3>
-        <p style={{ lineHeight: 1.6, marginBottom: '1rem', fontSize: '0.95rem' }}>
+      <FutureSection>
+        <FutureTitle>🔮 Future Project: AI Racing Edge</FutureTitle>
+        <FutureIntro>
           Once we have the video analysis system dialed in on your horses, there's a bigger play:
-        </p>
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-          {[
-            { icon: '🎥', text: 'Film other horses training at the track — build a massive video dataset' },
-            { icon: '🧠', text: 'AI analyzes stride patterns, form, conditioning across hundreds of horses' },
-            { icon: '📊', text: 'Advanced AI betting agent — data-driven race predictions based on real training footage' },
-            { icon: '💰', text: 'Edge that no one else has — actual training data, not just past results' },
-          ].map((item, i) => (
-            <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginBottom: '0.75rem' }}>
-              <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>{item.icon}</span>
-              <span style={{ fontSize: '0.95rem' }}>{item.text}</span>
-            </li>
-          ))}
-        </ul>
-        <p style={{ fontSize: '0.85rem', color: '#a855f7', marginTop: '1rem', fontStyle: 'italic' }}>
+        </FutureIntro>
+        <FutureList>
+          <FutureItem>
+            <FutureIcon>🎥</FutureIcon>
+            <FutureText>Film other horses training at the track — build a massive video dataset</FutureText>
+          </FutureItem>
+          <FutureItem>
+            <FutureIcon>🧠</FutureIcon>
+            <FutureText>AI analyzes stride patterns, form, conditioning across hundreds of horses</FutureText>
+          </FutureItem>
+          <FutureItem>
+            <FutureIcon>📊</FutureIcon>
+            <FutureText>Advanced AI betting agent — data-driven race predictions based on real training footage</FutureText>
+          </FutureItem>
+          <FutureItem>
+            <FutureIcon>💰</FutureIcon>
+            <FutureText>Edge that no one else has — actual training data, not just past results</FutureText>
+          </FutureItem>
+        </FutureList>
+        <FutureNote>
           This is a longer-term project we'd build together — but the foundation starts with your training system.
-        </p>
-      </div>
+        </FutureNote>
+      </FutureSection>
     </>
   );
 };
