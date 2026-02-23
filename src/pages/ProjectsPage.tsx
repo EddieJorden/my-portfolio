@@ -157,6 +157,16 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 15,
+    title: 'SwingBy — Startup Landing Page',
+    description: 'Investor-grade landing page for SwingBy, an AI-powered crowdsourced parcel pickup startup. Multi-audience sections for investors, drivers, and shippers — with real market data, dynamic pricing tiers, full business model page with unit economics, and contextual sign-up flows. Built with React + Vite, deployed on Vercel.',
+    tech: ['React', 'Vite', 'CSS Modules', 'React Router', 'Vercel'],
+    category: 'Full-Stack',
+    liveUrl: 'https://swingby-landing.vercel.app',
+    githubUrl: 'https://github.com/arlo-e-dev/swingby-landing',
+    image: '/swingby-thumbnail.jpg'
+  },
+  {
     id: 1,
     title: 'Full Stack Task Manager',
     description: 'Complete task management application built with React, Redux, TypeScript, Node.js, Express, and MySQL. Features user authentication, task CRUD operations, and real-time updates.',
