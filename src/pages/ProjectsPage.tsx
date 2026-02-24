@@ -163,7 +163,7 @@ const projects: Project[] = [
     tech: ['React', 'Vite', 'CSS Modules', 'React Router', 'Vercel'],
     category: 'Full-Stack',
     liveUrl: 'https://privy-landing.vercel.app',
-    githubUrl: 'https://github.com/arlo-e-dev/privy-landing',
+    githubUrl: 'https://github.com/arlo-e-dev/preba-landing',
     image: '/preba-thumbnail.jpg'
   },
   {
