@@ -157,6 +157,16 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 16,
+    title: 'RateSwipe — Mortgage Marketplace',
+    description: 'Tinder-style mortgage shopping app where buyers swipe through broker offers and brokers compete for leads. Features a full buyer swipe UI, broker dashboard, subscription gate, match flow, and dark mode. Built with Next.js 15, TypeScript, TailwindCSS, and Framer Motion.',
+    tech: ['Next.js', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'Vercel'],
+    category: 'Full-Stack',
+    liveUrl: 'https://rateswipe.vercel.app',
+    githubUrl: 'https://github.com/arlo-e-dev/rateswipe',
+    image: '/rateswipe-thumbnail.jpg'
+  },
+  {
     id: 15,
     title: 'SwingBy — Startup Landing Page',
     description: 'Investor-grade landing page for SwingBy, an AI-powered crowdsourced parcel pickup startup. Multi-audience sections for investors, drivers, and shippers — with real market data, dynamic pricing tiers, full business model page with unit economics, and contextual sign-up flows. Built with React + Vite, deployed on Vercel.',
