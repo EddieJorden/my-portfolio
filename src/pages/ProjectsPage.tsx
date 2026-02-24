@@ -158,13 +158,13 @@ interface Project {
 const projects: Project[] = [
   {
     id: 17,
-    title: 'Privy — Clean Restroom Access App',
-    description: 'Startup landing page for Privy, an app that gives users instant access to verified, rated public restrooms via business-hosted access codes. Features sections for users, business owners, and investors — with pricing tiers, trust/ratings system, live map mockup, and business revenue dashboard. Built with React + Vite, deployed on Vercel.',
+    title: 'Preba — Premium Bathroom Access App',
+    description: 'Startup landing page for Preba (Premium Bathroom), an app that gives users instant access to verified, rated public restrooms via business-hosted access codes. Features sections for users, business owners, and investors — with pricing tiers, trust/ratings system, live map mockup, and business revenue dashboard. Built with React + Vite, deployed on Vercel.',
     tech: ['React', 'Vite', 'CSS Modules', 'React Router', 'Vercel'],
     category: 'Full-Stack',
     liveUrl: 'https://privy-landing.vercel.app',
     githubUrl: 'https://github.com/arlo-e-dev/privy-landing',
-    image: '/privy-thumbnail.jpg'
+    image: '/preba-thumbnail.jpg'
   },
   {
     id: 16,
