@@ -70,17 +70,20 @@ const ProjectCard = styled(motion.div)`
   min-height: 400px;
 `;
 
-const ProjectImage = styled.div<{ $image?: string }>`
+const ProjectImage = styled.div`
   width: 100%;
   height: 220px;
-  background-color: #0a0a1a;
-  background-image: ${props => props.$image ? `url(${props.$image})` : 'none'};
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  ${props => !props.$image && `background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);`}
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
 
   &::after {
     content: '';
@@ -216,7 +219,9 @@ const ProjectsPage: React.FC = () => {
                 onClick={() => navigate(`/projects/${project.slug}`)}
                 style={{ cursor: 'pointer' }}
               >
-                <ProjectImage $image={project.image} />
+                <ProjectImage>
+                  {project.image && <img src={project.image} alt={project.title} />}
+                </ProjectImage>
                 <ProjectContent>
                   <ProjectTitle>{project.title}</ProjectTitle>
                   <ProjectDescription>{project.description}</ProjectDescription>
