@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import { projectsData } from '../data/projectsData';
@@ -55,11 +55,7 @@ const ProjectsGrid = styled(motion.div)`
   }
 `;
 
-const CardLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-  display: block;
-`;
+
 
 const ProjectCard = styled(motion.div)`
   background: rgba(255, 255, 255, 0.05);
@@ -158,6 +154,7 @@ const LinkButton = styled.a`
 `;
 
 const ProjectsPage: React.FC = () => {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const categories = ['All', 'Full-Stack', 'Frontend', 'Infrastructure'];
 
@@ -201,8 +198,8 @@ const ProjectsPage: React.FC = () => {
       >
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, index) => (
-            <CardLink key={project.id} to={`/projects/${project.slug}`}>
-              <ProjectCard
+            <ProjectCard
+                key={project.id}
                 layout
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -213,6 +210,8 @@ const ProjectsPage: React.FC = () => {
                   y: -10,
                   transition: { duration: 0.3 },
                 }}
+                onClick={() => navigate(`/projects/${project.slug}`)}
+                style={{ cursor: 'pointer' }}
               >
                 <ProjectImage $image={project.image} />
                 <ProjectContent>
@@ -247,7 +246,6 @@ const ProjectsPage: React.FC = () => {
                   </ProjectLinks>
                 </ProjectContent>
               </ProjectCard>
-            </CardLink>
           ))}
         </AnimatePresence>
       </ProjectsGrid>
