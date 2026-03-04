@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const PageContainer = styled.div`
@@ -157,6 +158,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 18,
+    title: 'On-Premise AI Inference Cluster',
+    description: 'Multi-node Apple M3 Ultra cluster running large open-source language models locally via a full Thunderbolt mesh. Built from bare metal — including patching the distributed inference framework to make it stable. Zero data egress, OpenAI-compatible API.',
+    tech: ['Apple Silicon', 'Thunderbolt 4', 'MLX', 'exo', 'Python', 'macOS', 'Distributed Systems'],
+    category: 'Infrastructure',
+    liveUrl: '/projects/inference-cluster',
+  },
+  {
     id: 17,
     title: 'Preba — Premium Bathroom Access App',
     description: 'Startup landing page for Preba (Premium Bathroom), an app that gives users instant access to verified, rated public restrooms via business-hosted access codes. Features sections for users, business owners, and investors — with pricing tiers, trust/ratings system, live map mockup, and business revenue dashboard. Built with React + Vite, deployed on Vercel.',
@@ -195,6 +204,15 @@ const projects: Project[] = [
     liveUrl: 'https://eddies-balance-app.netlify.app/',
     githubUrl: 'https://github.com/EddieJorden/balance-app',
     image: '/Task-app-thumbnail.png'
+  },
+  {
+    id: 19,
+    title: 'Custom AI Chatbot',
+    description: 'A custom AI chatbot capable of answering questions and producing natural language text responses.',
+    tech: ['React', 'Node.js', 'AI/ML API', 'Express'],
+    category: 'Full-Stack',
+    liveUrl: 'https://eddies-balance-app.netlify.app/',
+    githubUrl: 'https://github.com/EddieJorden/balance-app',
   },
   {
     id: 2,
@@ -329,7 +347,8 @@ const projects: Project[] = [
 
 const ProjectsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const categories = ['All', 'Full-Stack', 'Frontend'];
+  const navigate = useNavigate();
+  const categories = ['All', 'Full-Stack', 'Frontend', 'Infrastructure'];
 
   const filteredProjects = selectedCategory === 'All'
     ? projects
@@ -397,12 +416,13 @@ const ProjectsPage: React.FC = () => {
                   {project.liveUrl && (
                     <LinkButton
                       href={project.liveUrl}
-                      target="_blank"
+                      target={project.liveUrl.startsWith('/') ? '_self' : '_blank'}
                       rel="noopener noreferrer"
+                      onClick={project.liveUrl.startsWith('/') ? (e) => { e.preventDefault(); navigate(project.liveUrl!); } : undefined}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      Live Demo
+                      {project.liveUrl.startsWith('/') ? 'View Project' : 'Live Demo'}
                     </LinkButton>
                   )}
                   {project.githubUrl && (

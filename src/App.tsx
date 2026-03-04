@@ -13,6 +13,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import SkillsPage from './pages/SkillsPage';
 import ContactPage from './pages/ContactPage';
 import PitchDeckPage from './pages/PitchDeckPage';
+import InferenceClusterPage from './pages/InferenceClusterPage';
 
 // Client Pitch Pages
 import DentalPitch from './pages/pitches/DentalPitch';
@@ -40,6 +41,7 @@ const AppContent: React.FC = () => {
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/pitch" element={<PitchDeckPage />} />
+          <Route path="/projects/inference-cluster" element={<InferenceClusterPage />} />
           
           {/* Private Client Pitch Pages */}
           <Route path="/for/dental" element={<DentalPitch />} />
