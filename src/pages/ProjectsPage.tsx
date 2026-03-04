@@ -163,6 +163,7 @@ const projects: Project[] = [
     description: 'Multi-node Apple M3 Ultra cluster running large open-source language models locally via a full Thunderbolt mesh. Built from bare metal — including patching the distributed inference framework to make it stable. Zero data egress, OpenAI-compatible API.',
     tech: ['Apple Silicon', 'Thunderbolt 4', 'MLX', 'exo', 'Python', 'macOS', 'Distributed Systems'],
     category: 'Infrastructure',
+    image: '/inference-cluster-thumbnail.jpg',
     liveUrl: '/projects/inference-cluster',
   },
   {
@@ -211,6 +212,7 @@ const projects: Project[] = [
     description: 'A custom AI chatbot capable of answering questions and producing natural language text responses.',
     tech: ['React', 'Node.js', 'AI/ML API', 'Express'],
     category: 'Full-Stack',
+    image: '/AI-chatbot-thumbnail.png',
     liveUrl: 'https://eddies-balance-app.netlify.app/',
     githubUrl: 'https://github.com/EddieJorden/balance-app',
   },
