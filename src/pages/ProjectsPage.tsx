@@ -73,9 +73,12 @@ const ProjectCard = styled(motion.div)`
 const ProjectImage = styled.div<{ $image?: string }>`
   width: 100%;
   height: 220px;
-  background: ${props => props.$image 
-    ? `url(${props.$image}) center/cover` 
-    : 'linear-gradient(135deg, #0096ff 0%, #0066cc 100%)'};
+  background-color: #0a0a1a;
+  background-image: ${props => props.$image ? `url(${props.$image})` : 'none'};
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  ${props => !props.$image && `background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);`}
   position: relative;
   overflow: hidden;
 
