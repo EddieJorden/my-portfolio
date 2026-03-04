@@ -27,11 +27,11 @@ export const projectsData: Project[] = [
     image: '/inference-cluster-thumbnail.jpg',
     githubUrl: 'https://github.com/EddieJorden',
     features: [
-      '5-node Mac Studio M3 Ultra cluster (480GB total RAM)',
+      '5-node Apple Silicon cluster with full Thunderbolt mesh',
       'Thunderbolt full-mesh network topology',
       'Tensor-parallel model sharding across nodes',
       'Exo framework for distributed LLM inference',
-      'Runs 270B+ parameter models locally',
+      'Runs large open-source language models locally',
       'OpenAI-compatible API endpoint',
     ],
     challenges: 'Configuring low-latency peer-to-peer networking across 5 nodes, tuning tensor parallelism for optimal throughput, and debugging distributed inference failures at the systems level.',
