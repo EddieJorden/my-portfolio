@@ -14,6 +14,8 @@ import ProjectDetailPage from './pages/ProjectDetailPage';
 import SkillsPage from './pages/SkillsPage';
 import ContactPage from './pages/ContactPage';
 import PitchDeckPage from './pages/PitchDeckPage';
+import ServicesPage from './pages/ServicesPage';
+import WorkspaceDomainSetupPage from './pages/WorkspaceDomainSetupPage';
 
 // Client Pitch Pages
 import DentalPitch from './pages/pitches/DentalPitch';
@@ -40,6 +42,8 @@ const AppContent: React.FC = () => {
           <Route path="/projects/:slug" element={<ProjectDetailPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/skills" element={<SkillsPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/workspace-domain-setup" element={<WorkspaceDomainSetupPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/pitch" element={<PitchDeckPage />} />
           
