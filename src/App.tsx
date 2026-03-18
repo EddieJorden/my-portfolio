@@ -17,6 +17,8 @@ import PitchDeckPage from './pages/PitchDeckPage';
 import ServicesPage from './pages/ServicesPage';
 import WorkspaceDomainSetupPage from './pages/WorkspaceDomainSetupPage';
 import OpenClawInstallPage from './pages/OpenClawInstallPage';
+import HourlySupportPage from './pages/HourlySupportPage';
+import ManagedHostingPage from './pages/ManagedHostingPage';
 
 // Client Pitch Pages
 import DentalPitch from './pages/pitches/DentalPitch';
@@ -46,6 +48,8 @@ const AppContent: React.FC = () => {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/workspace-domain-setup" element={<WorkspaceDomainSetupPage />} />
           <Route path="/services/openclaw-install-local" element={<OpenClawInstallPage />} />
+          <Route path="/services/hourly-ai-support" element={<HourlySupportPage />} />
+          <Route path="/services/managed-hosting-ai-ops" element={<ManagedHostingPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/pitch" element={<PitchDeckPage />} />
           

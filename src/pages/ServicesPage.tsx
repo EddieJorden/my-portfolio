@@ -275,16 +275,14 @@ const ServicesPage: React.FC = () => {
           </ServiceCard>
 
           <ServiceCard
-            href="https://calendar.app.google/fB8YJ6Zj6WHjo9Hc9"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/services/hourly-ai-support"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.01 }}
             transition={{ delay: 0.16 }}
           >
-            <ServiceTag>Support</ServiceTag>
+            <ServiceTag>Service page</ServiceTag>
             <ServiceTitle>Hourly AI Systems Support</ServiceTitle>
             <ServicePrice>$125/hr</ServicePrice>
             <ServiceDescription>
@@ -296,22 +294,20 @@ const ServicesPage: React.FC = () => {
               <FeatureItem>Good fit for already-running systems</FeatureItem>
             </FeatureList>
             <CardFooter>
-              <span>Book support call</span>
-              <FooterHint>↗</FooterHint>
+              <span>Open service page</span>
+              <FooterHint>→</FooterHint>
             </CardFooter>
           </ServiceCard>
 
           <ServiceCard
-            href="https://calendar.app.google/fB8YJ6Zj6WHjo9Hc9"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/services/managed-hosting-ai-ops"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.01 }}
             transition={{ delay: 0.24 }}
           >
-            <ServiceTag>Managed service</ServiceTag>
+            <ServiceTag>Service page</ServiceTag>
             <ServiceTitle>Managed Hosting + AI Operations</ServiceTitle>
             <ServicePrice>Starting at $249/mo</ServicePrice>
             <ServiceDescription>
@@ -323,8 +319,8 @@ const ServicesPage: React.FC = () => {
               <FeatureItem>Best fit for ongoing business use</FeatureItem>
             </FeatureList>
             <CardFooter>
-              <span>Talk through options</span>
-              <FooterHint>↗</FooterHint>
+              <span>Open service page</span>
+              <FooterHint>→</FooterHint>
             </CardFooter>
           </ServiceCard>
         </ServiceGrid>
