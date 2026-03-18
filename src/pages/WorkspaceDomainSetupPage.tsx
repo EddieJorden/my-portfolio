@@ -366,9 +366,12 @@ const requiredFields: Array<keyof FormData> = [
   'businessName',
   'email',
   'domainName',
+  'domainRegistrar',
   'workspaceType',
   'numberOfUsers',
   'primaryUseCase',
+  'purchasedAlready',
+  'adminAccessReady',
 ];
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -470,9 +473,10 @@ const WorkspaceDomainSetupPage: React.FC = () => {
       });
 
       const result = await response.json().catch(() => null);
+      const confirmed = result?.success === true || result?.success === 'true';
 
-      if (!response.ok || (result && result.success === 'false')) {
-        throw new Error(result?.message || 'Form submission failed.');
+      if (!response.ok || !confirmed) {
+        throw new Error(result?.message || 'The setup request could not be confirmed by the intake service.');
       }
 
       setShowSuccess(true);
@@ -481,7 +485,8 @@ const WorkspaceDomainSetupPage: React.FC = () => {
       setTimeout(() => setShowSuccess(false), 6000);
     } catch (error) {
       console.error('Workspace setup form submission error:', error);
-      setSubmitError('Form submit failed. The intake service did not confirm delivery, so I did not mark this as sent.');
+      const message = error instanceof Error ? error.message : 'The setup request could not be sent.';
+      setSubmitError(`Could not send setup request. ${message}`);
     } finally {
       setIsSubmitting(false);
     }

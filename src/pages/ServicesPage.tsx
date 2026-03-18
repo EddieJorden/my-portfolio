@@ -250,16 +250,14 @@ const ServicesPage: React.FC = () => {
           </ServiceCard>
 
           <ServiceCard
-            href="https://calendar.app.google/fB8YJ6Zj6WHjo9Hc9"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/services/openclaw-install-local"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.01 }}
             transition={{ delay: 0.08 }}
           >
-            <ServiceTag>Consultation</ServiceTag>
+            <ServiceTag>Service page</ServiceTag>
             <ServiceTitle>OpenClaw Install + Local Setup</ServiceTitle>
             <ServicePrice>$299 one-time</ServicePrice>
             <ServiceDescription>
@@ -271,8 +269,8 @@ const ServicesPage: React.FC = () => {
               <FeatureItem>Best if you already know you want your own instance</FeatureItem>
             </FeatureList>
             <CardFooter>
-              <span>Book consultation</span>
-              <FooterHint>↗</FooterHint>
+              <span>Open service page</span>
+              <FooterHint>→</FooterHint>
             </CardFooter>
           </ServiceCard>
 
