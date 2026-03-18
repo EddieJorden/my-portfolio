@@ -226,26 +226,41 @@ const CalendarSubtitle = styled.p`
 `;
 
 const CalendarWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 75%; /* 4:3 aspect ratio */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
   border-radius: 15px;
-  overflow: hidden;
-  background: white;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+`;
 
-  @media (max-width: 768px) {
-    padding-bottom: 100%; /* Taller on mobile for better fit */
+const CalendarButton = styled(motion.a)`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #0096ff 0%, #0066cc 100%);
+  border-radius: 999px;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 12px 30px rgba(0, 150, 255, 0.35);
+    transform: translateY(-2px);
   }
 `;
 
-const CalendarEmbed = styled.iframe`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+const CalendarNote = styled.p`
+  max-width: 680px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin: 0;
 `;
 
 const SuccessMessage = styled(motion.div)`
@@ -497,10 +512,19 @@ const ContactPage: React.FC = () => {
           Book a time that works for you, and let's discuss your project
         </CalendarSubtitle>
         <CalendarWrapper>
-          <CalendarEmbed
-            src="https://calendar.app.google/fB8YJ6Zj6WHjo9Hc9"
-            title="Schedule an appointment"
-          />
+          <CalendarButton
+            href="https://calendar.app.google/fB8YJ6Zj6WHjo9Hc9"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Book a Meeting
+          </CalendarButton>
+          <CalendarNote>
+            The Google booking page opens in a new tab because Google blocks direct iframe embedding on this domain.
+            This keeps scheduling working instead of showing a broken widget.
+          </CalendarNote>
         </CalendarWrapper>
       </CalendarSection>
     </PageContainer>
