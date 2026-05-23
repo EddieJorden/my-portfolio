@@ -1,0 +1,422 @@
+From 4e9dfd7689a2d6ba5e48dabbc983979e28b26a14 Mon Sep 17 00:00:00 2001
+From: Arlo <Arlo.E.Dev@gmail.com>
+Date: Wed, 18 Mar 2026 13:43:29 -0700
+Subject: [PATCH 1/2] Add portfolio CI, preview workflow, and safety tests
+
+---
+ .github/CODEOWNERS                    |  1 +
+ .github/pull_request_template.md      | 21 ++++++++
+ .github/workflows/ci.yml              | 33 ++++++++++++
+ .github/workflows/develop-preview.yml | 74 +++++++++++++++++++++++++++
+ README.md                             | 15 +++++-
+ docs/portfolio-recovery-runbook.md    | 70 +++++++++++++++++++++++++
+ src/App.tsx                           | 17 +++++-
+ src/__tests__/projectsData.test.ts    | 23 +++++++++
+ src/__tests__/routes.smoke.test.tsx   | 35 +++++++++++++
+ src/data/projectsData.ts              |  2 +-
+ src/setupTests.js                     | 11 ++++
+ 11 files changed, 299 insertions(+), 3 deletions(-)
+ create mode 100644 .github/CODEOWNERS
+ create mode 100644 .github/pull_request_template.md
+ create mode 100644 .github/workflows/ci.yml
+ create mode 100644 .github/workflows/develop-preview.yml
+ create mode 100644 docs/portfolio-recovery-runbook.md
+ create mode 100644 src/__tests__/projectsData.test.ts
+ create mode 100644 src/__tests__/routes.smoke.test.tsx
+
+diff --git a/.github/CODEOWNERS b/.github/CODEOWNERS
+new file mode 100644
+index 0000000..8841e1d
+--- /dev/null
++++ b/.github/CODEOWNERS
+@@ -0,0 +1 @@
++* @EddieJorden
+diff --git a/.github/pull_request_template.md b/.github/pull_request_template.md
+new file mode 100644
+index 0000000..ae6e3ee
+--- /dev/null
++++ b/.github/pull_request_template.md
+@@ -0,0 +1,21 @@
++## What changed
++- 
++
++## Why
++- 
++
++## Checks completed
++- [ ] `npm test -- --watchAll=false`
++- [ ] `npm run build`
++- [ ] I reviewed the changed pages manually
++- [ ] If routes/content changed, I verified the affected URLs
++- [ ] If this should go live, Eddie has reviewed the dev preview first
++
++## Preview / screenshots
++- Dev preview URL: `https://eddiemoger.com/dev/`
++- Add screenshots or notes here
++
++## Risk check
++- [ ] No pages/routes were removed unintentionally
++- [ ] No project/service entries were overwritten or dropped
++- [ ] No secrets or private notes were committed
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..3f51f00
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,33 @@
++name: CI
++
++on:
++  push:
++    branches:
++      - main
++      - develop
++      - 'feature/**'
++      - 'fix/**'
++  pull_request:
++
++jobs:
++  test-and-build:
++    runs-on: ubuntu-latest
++
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v4
++
++      - name: Setup Node
++        uses: actions/setup-node@v4
++        with:
++          node-version: 20
++          cache: npm
++
++      - name: Install dependencies
++        run: npm ci
++
++      - name: Run tests
++        run: CI=true npm test -- --watchAll=false
++
++      - name: Build
++        run: npm run build
+diff --git a/.github/workflows/develop-preview.yml b/.github/workflows/develop-preview.yml
+new file mode 100644
+index 0000000..fc1f788
+--- /dev/null
++++ b/.github/workflows/develop-preview.yml
+@@ -0,0 +1,74 @@
++name: Deploy develop preview
++
++on:
++  push:
++    branches:
++      - develop
++
++permissions:
++  contents: write
++
++jobs:
++  deploy-preview:
++    runs-on: ubuntu-latest
++
++    steps:
++      - name: Checkout source
++        uses: actions/checkout@v4
++        with:
++          fetch-depth: 0
++
++      - name: Setup Node
++        uses: actions/setup-node@v4
++        with:
++          node-version: 20
++          cache: npm
++
++      - name: Install dependencies
++        run: npm ci
++
++      - name: Test
++        run: CI=true npm test -- --watchAll=false
++
++      - name: Build preview bundle
++        env:
++          PUBLIC_URL: /dev
++        run: npm run build
++
++      - name: Publish preview into gh-pages /dev
++        run: |
++          set -euo pipefail
++          git config user.name "github-actions[bot]"
++          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
++
++          workdir="$(mktemp -d)"
++          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then
++            git clone --branch gh-pages "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$workdir"
++          else
++            git clone "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$workdir"
++            cd "$workdir"
++            git checkout --orphan gh-pages
++            find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
++            touch .nojekyll
++            git add .nojekyll
++            git commit -m "Initialize gh-pages"
++            git push origin gh-pages
++          fi
++
++          cd "$workdir"
++          mkdir -p dev
++          find dev -mindepth 1 -maxdepth 1 -exec rm -rf {} +
++          cp -R "$GITHUB_WORKSPACE"/build/. dev/
++          touch .nojekyll
++          git add dev .nojekyll
++
++          if git diff --cached --quiet; then
++            echo "No preview changes to publish"
++            exit 0
++          fi
++
++          git commit -m "Deploy develop preview (${GITHUB_SHA::7})"
++          git push origin gh-pages
++
++      - name: Preview URL
++        run: echo "Preview should be available at https://eddiemoger.com/dev/ after Pages finishes serving the updated gh-pages branch."
+diff --git a/README.md b/README.md
+index 09ad4c3..8e12b33 100644
+--- a/README.md
++++ b/README.md
+@@ -141,12 +141,25 @@ yarn build
+ # or
+ npm run build
+ 
+-# Deploy to GitHub Pages
++# Run tests once (CI mode)
++CI=true npm test -- --watchAll=false
++
++# Deploy production (main -> GitHub Pages root)
+ yarn deploy
+ # or
+ npm run deploy
+ ```
+ 
++## 🔀 Branch & review flow
++
++- `main` = production
++- `develop` = live review preview at `https://eddiemoger.com/dev/`
++- feature branches -> PR into `develop`
++- after review, PR `develop` -> `main`
++
++CI now runs tests + production build on pushes and pull requests.
++See `docs/portfolio-recovery-runbook.md` for the full release/recovery workflow.
++
+ ## 🎯 Key Components
+ 
+ ### GlassCard
+diff --git a/docs/portfolio-recovery-runbook.md b/docs/portfolio-recovery-runbook.md
+new file mode 100644
+index 0000000..dfec9bf
+--- /dev/null
++++ b/docs/portfolio-recovery-runbook.md
+@@ -0,0 +1,70 @@
++# Portfolio recovery + release runbook
++
++## What happened with the missing pages
++A few content pages and project entries disappeared during portfolio edits/recovery work. Based on the repo history and notes from 2026-03-18, the main failure mode was not "GitHub lost files" — it was us shipping page/content changes without enough safety rails.
++
++Recovered work that had to be restored:
++- services catalog + workspace/domain setup page
++- services navigation
++- support + managed hosting service detail pages
++- missing project entries (`Custom AI Agent Setup`, `AI Agent Orchestrator`)
++- contact-form success handling fix
++- removal of the broken embedded Google Calendar booking iframe
++
++## Why this can happen again if we stay sloppy
++1. Content lives in multiple places (`pages/`, `data/projectsData.ts`, nav links, static assets).
++2. A route can still compile while the linked content silently disappears.
++3. GitHub Pages will happily publish a broken-but-building site.
++4. Direct-to-main pushes remove the review checkpoint.
++
++## New rules
++1. **No direct feature work on `main`.**
++   - `main` = production
++   - `develop` = always-on preview / review branch
++   - feature branches branch off `develop`
++2. **Every change comes through a PR.**
++3. **Eddie reviews on the dev site before merge to `main`.**
++4. **CI must pass before merge.**
++5. **Any route/data/content change must include test coverage or a smoke test update.**
++
++## Branch flow
++- Create feature branch from `develop`
++- Open PR into `develop`
++- CI runs tests + build
++- GitHub Action publishes `develop` preview to:
++  - `https://eddiemoger.com/dev/`
++- Eddie reviews preview
++- Merge to `develop`
++- When approved for production, open PR from `develop` -> `main`
++- After merge to `main`, deploy production
++
++## Minimum checks for route/content changes
++- `npm test -- --watchAll=false`
++- `npm run build`
++- Visit changed page(s)
++- Verify no project/service entries disappeared
++- Verify any new links/routes are reachable
++
++## Testing added specifically to prevent silent breakage
++- route smoke tests for major pages
++- data integrity tests for unique project ids/slugs and required content fields
++
++## Important deployment note
++Production is still GitHub Pages for `eddiemoger.com`.
++The preview workflow publishes a review build into `/dev/` on the `gh-pages` branch so preview work stays visible without replacing production root content.
++
++## Recommended repo settings (manual admin step)
++These require repo admin access in GitHub settings:
++- protect `main`
++- require pull request before merge
++- require at least 1 approval
++- require status checks: `CI / test-and-build`
++- optionally restrict who can push directly to `main`
++- optionally enable auto-delete head branches after merge
++
++## AI review tools
++Good options:
++- **CodeRabbit** for PR summaries/review suggestions
++- **GitHub Copilot code review** if enabled on the repo/account
++
++These require installing/configuring a GitHub App in repo settings, so they were not fully auto-enabled from this workspace session.
+diff --git a/src/App.tsx b/src/App.tsx
+index d57a430..0910170 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -68,10 +68,25 @@ const AppContent: React.FC = () => {
+   );
+ };
+ 
++const getRouterBasename = () => {
++  const publicUrl = process.env.PUBLIC_URL;
++
++  if (!publicUrl) {
++    return '/';
++  }
++
++  try {
++    const parsed = new URL(publicUrl, window.location.origin);
++    return parsed.pathname || '/';
++  } catch {
++    return publicUrl.startsWith('/') ? publicUrl : '/';
++  }
++};
++
+ const App: React.FC = () => {
+   return (
+     <ThemeProvider>
+-      <Router>
++      <Router basename={getRouterBasename()}>
+         <AppContent />
+       </Router>
+     </ThemeProvider>
+diff --git a/src/__tests__/projectsData.test.ts b/src/__tests__/projectsData.test.ts
+new file mode 100644
+index 0000000..e525bdd
+--- /dev/null
++++ b/src/__tests__/projectsData.test.ts
+@@ -0,0 +1,23 @@
++import { projectsData } from '../data/projectsData';
++
++describe('projectsData integrity', () => {
++  it('uses unique ids', () => {
++    const ids = projectsData.map((project) => project.id);
++    expect(new Set(ids).size).toBe(ids.length);
++  });
++
++  it('uses unique slugs', () => {
++    const slugs = projectsData.map((project) => project.slug);
++    expect(new Set(slugs).size).toBe(slugs.length);
++  });
++
++  it('keeps required project content populated', () => {
++    for (const project of projectsData) {
++      expect(project.title.trim().length).toBeGreaterThan(0);
++      expect(project.description.trim().length).toBeGreaterThan(0);
++      expect(project.longDescription.trim().length).toBeGreaterThan(0);
++      expect(project.tech.length).toBeGreaterThan(0);
++      expect(project.features.length).toBeGreaterThan(0);
++    }
++  });
++});
+diff --git a/src/__tests__/routes.smoke.test.tsx b/src/__tests__/routes.smoke.test.tsx
+new file mode 100644
+index 0000000..dcf71e9
+--- /dev/null
++++ b/src/__tests__/routes.smoke.test.tsx
+@@ -0,0 +1,35 @@
++import React from 'react';
++import { render, screen } from '@testing-library/react';
++import App from '../App';
++
++jest.mock('react-tsparticles', () => ({
++  __esModule: true,
++  default: () => <div data-testid="particle-background" />,
++}));
++
++jest.mock('tsparticles', () => ({
++  loadFull: jest.fn(),
++}));
++
++const routeExpectations: Array<{ path: string; text: RegExp }> = [
++  { path: '/', text: /eddie moger/i },
++  { path: '/projects', text: /my projects/i },
++  { path: '/services', text: /professional services/i },
++  { path: '/services/workspace-domain-setup', text: /workspace \+ domain setup/i },
++  { path: '/services/openclaw-install-local', text: /openclaw install/i },
++  { path: '/services/hourly-ai-support', text: /hourly ai systems support/i },
++  { path: '/services/managed-hosting-ai-ops', text: /managed hosting/i },
++  { path: '/projects/custom-ai-agents', text: /custom ai agent setup/i },
++];
++
++describe('portfolio route smoke tests', () => {
++  afterEach(() => {
++    window.history.pushState({}, '', '/');
++  });
++
++  it.each(routeExpectations)('renders $path', ({ path, text }) => {
++    window.history.pushState({}, '', path);
++    render(<App />);
++    expect(screen.getAllByText(text).length).toBeGreaterThan(0);
++  });
++});
+diff --git a/src/data/projectsData.ts b/src/data/projectsData.ts
+index deca370..b52ccfc 100644
+--- a/src/data/projectsData.ts
++++ b/src/data/projectsData.ts
+@@ -173,7 +173,7 @@ export const projectsData: Project[] = [
+     year: '2023',
+   },
+   {
+-    id: 19,
++    id: 21,
+     slug: 'ai-chatbot',
+     title: 'Custom AI Chatbot',
+     description: 'A custom AI chatbot capable of answering questions and producing natural language text responses.',
+diff --git a/src/setupTests.js b/src/setupTests.js
+index 8f2609b..b9cb3f8 100644
+--- a/src/setupTests.js
++++ b/src/setupTests.js
+@@ -3,3 +3,14 @@
+ // expect(element).toHaveTextContent(/react/i)
+ // learn more: https://github.com/testing-library/jest-dom
+ import '@testing-library/jest-dom';
++
++window.scrollTo = jest.fn();
++
++class IntersectionObserverMock {
++  observe() {}
++  unobserve() {}
++  disconnect() {}
++}
++
++window.IntersectionObserver = IntersectionObserverMock;
++global.IntersectionObserver = IntersectionObserverMock;
+-- 
+2.50.1 (Apple Git-155)
+

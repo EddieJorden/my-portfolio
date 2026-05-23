@@ -1,0 +1,110 @@
+From 2ac754451eafd87b073203421dbbdb234f1b5480 Mon Sep 17 00:00:00 2001
+From: Arlo <Arlo.E.Dev@gmail.com>
+Date: Mon, 23 Mar 2026 06:32:37 -0700
+Subject: [PATCH 2/2] Add production deploy workflow
+
+---
+ .github/workflows/deploy-production.yml | 75 +++++++++++++++++++++++++
+ .github/workflows/develop-preview.yml   |  4 ++
+ 2 files changed, 79 insertions(+)
+ create mode 100644 .github/workflows/deploy-production.yml
+
+diff --git a/.github/workflows/deploy-production.yml b/.github/workflows/deploy-production.yml
+new file mode 100644
+index 0000000..a7acdcf
+--- /dev/null
++++ b/.github/workflows/deploy-production.yml
+@@ -0,0 +1,75 @@
++name: Deploy production site
++
++on:
++  push:
++    branches:
++      - main
++
++permissions:
++  contents: write
++
++concurrency:
++  group: portfolio-production-deploy
++  cancel-in-progress: true
++
++jobs:
++  deploy-production:
++    runs-on: ubuntu-latest
++
++    steps:
++      - name: Checkout source
++        uses: actions/checkout@v4
++        with:
++          fetch-depth: 0
++
++      - name: Setup Node
++        uses: actions/setup-node@v4
++        with:
++          node-version: 20
++          cache: npm
++
++      - name: Install dependencies
++        run: npm ci
++
++      - name: Test
++        run: CI=true npm test -- --watchAll=false
++
++      - name: Build production bundle
++        run: npm run build
++
++      - name: Publish production into gh-pages root
++        run: |
++          set -euo pipefail
++          git config user.name "github-actions[bot]"
++          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
++
++          workdir="$(mktemp -d)"
++          if git ls-remote --exit-code origin gh-pages >/dev/null 2>&1; then
++            git clone --branch gh-pages "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$workdir"
++          else
++            git clone "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$workdir"
++            cd "$workdir"
++            git checkout --orphan gh-pages
++            find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
++            touch .nojekyll
++            git add .nojekyll
++            git commit -m "Initialize gh-pages"
++            git push origin gh-pages
++          fi
++
++          cd "$workdir"
++          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name dev -exec rm -rf {} +
++          cp -R "$GITHUB_WORKSPACE"/build/. .
++          touch .nojekyll
++          git add -A
++
++          if git diff --cached --quiet; then
++            echo "No production changes to publish"
++            exit 0
++          fi
++
++          git commit -m "Deploy production site (${GITHUB_SHA::7})"
++          git push origin gh-pages
++
++      - name: Production URL
++        run: echo "Production should be available at https://eddiemoger.com/ after Pages finishes serving the updated gh-pages branch."
+diff --git a/.github/workflows/develop-preview.yml b/.github/workflows/develop-preview.yml
+index fc1f788..4b75137 100644
+--- a/.github/workflows/develop-preview.yml
++++ b/.github/workflows/develop-preview.yml
+@@ -8,6 +8,10 @@ on:
+ permissions:
+   contents: write
+ 
++concurrency:
++  group: portfolio-develop-preview
++  cancel-in-progress: true
++
+ jobs:
+   deploy-preview:
+     runs-on: ubuntu-latest
+-- 
+2.50.1 (Apple Git-155)
+
